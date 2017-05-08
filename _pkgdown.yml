@@ -3,7 +3,7 @@ template:
    bootswatch: readable
    ganalytics: UA-90706059-1
 
-name:
+name: docs | docs.evanodell.com
 navbar:
   left:
     - text: "Home"
