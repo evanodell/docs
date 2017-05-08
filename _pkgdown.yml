@@ -20,4 +20,4 @@ navbar:
 
   right:
     - icon: fa-home fa-lg
-    - href: http://evanodell.com
+      href: http://evanodell.com
