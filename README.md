@@ -1,8 +1,6 @@
-# docs.evanodell.com
-
 Online documentation for my R packages.
 
-## R Packages
+## Packages:
 
 ### [`hansard`](http://docs.evanodell.com/hansard)
 An ironically named R package to automatically fetch data from the UK Parliament API. Available on [CRAN](https://cran.r-project.org/package=hansard) and [GitHub](https://github.com/EvanOdell/hansard).
