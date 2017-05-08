@@ -11,11 +11,11 @@ navbar:
     - text: "Documentation Home"
       href: http://docs.evanodell.com
     - text: "---------"
-    - text: "`hansard`"
+    - text: "hansard"
       href: http://docs.evanodell.com/hansard
-    - text: "`mnis`"
+    - text: "mnis"
       href: http://docs.evanodell.com/mnis
-    - text: "`parlitools`"
+    - text: "parlitools"
       href: http://docs.evanodell.com/parlitools
 
   right:
