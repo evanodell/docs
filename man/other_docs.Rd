@@ -4,10 +4,15 @@
 \alias{other_docs}
 \title{other_docs}
 \usage{
-other_docs(other = NULL)
+other_docs(pkg = "/Users/evanodell/Documents/GitHub/",
+  path = "/Users/evanodell/Documents/GitHub/docs/", other = NULL)
 }
 \arguments{
-\item{other}{The name of another R packages to build documentation for. Can only accept one package at a time. Must be a character vector, and equal to the folder name of the repository in the local GitHub folder.}
+\item{pkg}{Location of files for input}
+
+\item{path}{Output location, defaults to this folder.}
+
+\item{other}{The name of another R packages to build documentation for.}
 }
 \description{
 other_docs

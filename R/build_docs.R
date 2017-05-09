@@ -23,17 +23,20 @@ build_docs <- function(){
 
 
 #' other_docs
-#' @param other The name of another R packages to build documentation for. Can only accept one package at a time. Must be a character vector, and equal to the folder name of the repository in the local GitHub folder.
+#' @param pkg Location of files for input
+#' @param path Output location, defaults to this folder.
+#' @param other The name of another R packages to build documentation for.
 #' @export
-other_docs <- function(other=NULL){
+other_docs <- function(pkg="/Users/evanodell/Documents/GitHub/", path="/Users/evanodell/Documents/GitHub/docs/", other=NULL){
   
-    pkgdown::build_site(pkg = paste0("/Users/evanodell/Documents/GitHub/", other), path= paste0("/Users/evanodell/Documents/GitHub/docs/", other))
+    pkgdown::build_site(pkg = paste0(pkg, other), path= paste0(path, other))
 }
 
 
-#' build_home
+
+#' build_docs_home
 #'
 #' @export
-build_home <- function(){
+build_docs_home <- function(){
   pkgdown::build_site(path=".")
 }
