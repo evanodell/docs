@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>other_docs � other_docs • docs</title>
+<title>other_docs — other_docs • docs</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -105,14 +105,23 @@
     <p>other_docs</p>
     
 
-    <pre class="usage"><span class='fu'>other_docs</span>(<span class='kw'>other</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>other_docs</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"/Users/evanodell/Documents/GitHub/"</span>,
+  <span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"/Users/evanodell/Documents/GitHub/docs/"</span>, <span class='kw'>other</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>pkg</th>
+      <td><p>Location of files for input</p></td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><p>Output location, defaults to this folder.</p></td>
+    </tr>
+    <tr>
       <th>other</th>
-      <td><p>The name of another R packages to build documentation for. Can only accept one package at a time. Must be a character vector, and equal to the folder name of the repository in the local GitHub folder.</p></td>
+      <td><p>The name of another R packages to build documentation for.</p></td>
     </tr>
     </table>
     

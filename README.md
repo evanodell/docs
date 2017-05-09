@@ -1,6 +1,5 @@
 # Documentation
 
-
 Online documentation for my R packages.
 
 ## Packages:
