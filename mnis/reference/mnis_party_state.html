@@ -132,14 +132,15 @@
     <p>A tibble with information on the numbers and gender of MPs, by party, for the given date.</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_party_state</span>(<span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"Commons"</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>mnis_party_state</span>(<span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"Commons"</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>house</th>
-      <td><p>The house of parliament. Defaults to 'Commons'.</p></td>
+      <td><p>The house of parliament. Accepts either 'Lords' or 'Commons'. Defaults to 'Commons'.</p></td>
     </tr>
     <tr>
       <th>date</th>
@@ -147,7 +148,11 @@
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to snake_case. Defaults to TRUE.</p></td>
+      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
     </tr>
     </table>
     

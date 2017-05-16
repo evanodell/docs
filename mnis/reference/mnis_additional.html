@@ -134,45 +134,65 @@
 
     <pre class="usage"><span class='fu'>mnis_additional</span>()
 
-<span class='fu'>mnis_basic_details</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_basic_details</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_biography_entries</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_biography_entries</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_committees</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_committees</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_addresses</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_addresses</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_constituencies</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_constituencies</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_elections_contested</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_elections_contested</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_experiences</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_experiences</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_government_posts</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_government_posts</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_honours</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_honours</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_house_memberships</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_house_memberships</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_statuses</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_statuses</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_staff</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_staff</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_interests</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_interests</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_known_as</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_known_as</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_maiden_speeches</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_maiden_speeches</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_opposition_posts</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_opposition_posts</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_other_parliaments</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_other_parliaments</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_parliamentary_posts</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_parliamentary_posts</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_parties</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>mnis_parties</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
-<span class='fu'>mnis_preferred_names</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>mnis_preferred_names</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -187,7 +207,11 @@
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove non-alphanumeric characters and superfluous text. Defaults to TRUE.</p></td>
+      <td><p>If TRUE, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
     </tr>
     </table>
     
