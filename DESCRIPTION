@@ -4,8 +4,6 @@ Version: 0.0.1
 Authors@R: person("Evan Odell", email="evanodell91@gmail.com", role=c("aut", "cre"))
 Author: Evan Odell [aut, cre]
 Maintainer: Evan Odell <evanodell91@gmail.com>
-URL: https://github.com/EvanOdell/docs
-BugReports: https://github.com/EvanOdell/docs/issues
 License: MIT
 LazyData: TRUE
 Depends: R(>= 2.10.0)
