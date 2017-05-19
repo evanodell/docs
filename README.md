@@ -1,4 +1,3 @@
-
 Documentation
 =============
 
@@ -17,6 +16,4 @@ An R package for downloading data from the Members' Names Information Service AP
 
 ### [`parlitools`](http://docs.evanodell.com/parlitools)
 
-A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools).
-
-<img src="tools/hex_map.png" width="536" height="100%" />
+A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools). 

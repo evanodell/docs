@@ -132,7 +132,8 @@
     <p>Function returns all members who are eligible to sit in either house.</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_eligible</span>(<span class='kw'>eligible</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>party</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>mnis_eligible</span>(<span class='kw'>eligible</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>party</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -151,7 +152,11 @@
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to snake_case. Defaults to TRUE.</p></td>
+      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case"</p></td>
     </tr>
     </table>
     

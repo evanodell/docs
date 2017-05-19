@@ -154,11 +154,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>date1</th>
-      <td><p>The date to return the list of mps from. Defaults to current system date.</p></td>
+      <td><p>The date to return the list of MPs from. Accepts character values in "YYYY-MM-DD" format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to current system date.</p></td>
     </tr>
     <tr>
       <th>date2</th>
-      <td><p>An optional query parameter. If a proper date in "YYYY-MM-DD" format, the function returns a list of all MPs who were members between date2 and date1. Defaults to NULL.</p></td>
+      <td><p>An optional query parameter. Accepts character values in "YYYY-MM-DD" format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. If a proper date, the function returns a list of all MPs who were members between date2 and date1. Defaults to NULL.</p></td>
     </tr>
     <tr>
       <th>tidy</th>

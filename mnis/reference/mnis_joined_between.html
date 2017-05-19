@@ -133,18 +133,19 @@
     
 
     <pre class="usage"><span class='fu'>mnis_joined_between</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(),
-  <span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>party</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eligible</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>party</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eligible</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>start_date</th>
-      <td><p>The start date of the search, in yyyy-mm-dd format. Defaults to '1900-01-01'.</p></td>
+      <td><p>The start date of the search, Accepts character values in "YYYY-MM-DD" format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to '1900-01-01'.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>The end date of the search, in yyyy-mm-dd format. Defaults to the current date.</p></td>
+      <td><p>The end date of the search. Accepts character values in "YYYY-MM-DD" format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to the current date.</p></td>
     </tr>
     <tr>
       <th>house</th>
@@ -160,15 +161,18 @@
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove non-alphanumeric characters and superfluous text. Defaults to FALSE.</p></td>
+      <td><p>Fix the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert variable names to a consistent style. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
     </tr>
     </table>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
-  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_joined_between</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>'2015-01-01'</span>, <span class='kw'>end_date</span> <span class='kw'>=</span><span class='st'>'2017-01-01'</span>,
-                           <span class='kw'>house</span><span class='kw'>=</span><span class='st'>'all'</span>, <span class='kw'>party</span><span class='kw'>=</span><span class='st'>'labour'</span>, <span class='kw'>eligible</span><span class='kw'>=</span><span class='st'>'all'</span>)
+  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_joined_between</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>'2015-01-01'</span>, <span class='kw'>end_date</span> <span class='kw'>=</span><span class='st'>'2017-01-01'</span>, <span class='kw'>party</span><span class='kw'>=</span><span class='st'>'labour'</span>)
 
 })</div></pre>
   </div>

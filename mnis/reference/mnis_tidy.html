@@ -130,13 +130,14 @@
 
     
     <p>Internal tidying functions</p>
+<p>ref_tidy</p>
 <p>tidy_bom
 Strips BOM out of JSON data that does not need to be there.</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>x</span>, <span class='no'>tidy_style</span>)
 
-<span class='fu'>ref_tidy</span>(<span class='no'>x</span>)
+<span class='fu'>ref_tidy</span>(<span class='no'>x</span>, <span class='no'>tidy_style</span>)
 
 <span class='fu'>constituency_results_tidy</span>(<span class='no'>results</span>, <span class='no'>details</span>)
 
@@ -148,6 +149,10 @@ Strips BOM out of JSON data that does not need to be there.</p>
     <tr>
       <th>x</th>
       <td><p>The dataframe to tidy</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to tidy the dataframe with.</p></td>
     </tr>
     <tr>
       <th>results</th>

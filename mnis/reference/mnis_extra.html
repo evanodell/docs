@@ -140,7 +140,7 @@ Variable descriptions are taken from the mnis website: &lt;http://data.parliamen
   <span class='kw'>interests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>known_as</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>maiden_speeches</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>opposition_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>other_parliaments</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>parliamentary_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>parties</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>preferred_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>staff</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>statuses</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>staff</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>statuses</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -239,7 +239,11 @@ Variable descriptions are taken from the mnis website: &lt;http://data.parliamen
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to snake_case. Defaults to TRUE.</p></td>
+      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case"</p></td>
     </tr>
     </table>
     

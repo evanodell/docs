@@ -132,7 +132,8 @@
     <p>Imports data on elections</p>
     
 
-    <pre class="usage"><span class='fu'>elections</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>elections</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>NULL</span>, <span class='st'>"General Election"</span>, <span class='st'>"By-election"</span>),
+  <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -140,6 +141,10 @@
     <tr>
       <th>ID</th>
       <td><p>Accepts an ID for a general or by-election from the 2010 general election onwards, and returns the date and type of the elction. If NULL, returns the date and type of all available elections. Defaults to NULL.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>Accepts "General Election" or "By-election" as arguments if ID is NULL. Returns all General Elections or all By-elections.</p></td>
     </tr>
     <tr>
       <th>extra_args</th>
