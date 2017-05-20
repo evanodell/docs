@@ -8,15 +8,15 @@
 build_docs <- function(){
 
 ### Build `hansard`
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard", path= "/Users/evanodell/Documents/GitHub/docs/hansard")
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard", path= "/Users/evanodell/Documents/GitHub/docs/hansard", preview = FALSE)
 
 ### Build `mnis`
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/mnis", path= "/Users/evanodell/Documents/GitHub/docs/mnis")
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/mnis", path= "/Users/evanodell/Documents/GitHub/docs/mnis", preview = FALSE)
 
 ### Build `parlitools`
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/parlitools", path= "/Users/evanodell/Documents/GitHub/docs/parlitools")
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/parlitools", path= "/Users/evanodell/Documents/GitHub/docs/parlitools", preview = FALSE)
 
-  pkgdown::build_site(path=".")
+  pkgdown::build_site(path=".", preview = FALSE)
 
 }
 

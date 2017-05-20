@@ -147,7 +147,8 @@
     <p>Request information on all MPs who were members of the House of Commons on the date specificed (if only one date is included as a parameter), or on or between the two dates if two are specified. Includes constituency and electoral information if the date is 2010-05-06 or later, or if the date range is entirely within 2010-05-06 and the present day.</p>
     
 
-    <pre class="usage"><span class='fu'>mps_on_date</span>(<span class='kw'>date1</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>date2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>mps_on_date</span>(<span class='kw'>date1</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>date2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -162,7 +163,11 @@
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove extra characters, superfluous text and convert variable names to snake_case. Defaults to TRUE.</p></td>
+      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case"</p></td>
     </tr>
     </table>
     

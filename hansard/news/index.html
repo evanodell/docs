@@ -130,13 +130,29 @@
     </div>
 
     <div class="contents">
+    <div id="hansard-0-4-6" class="section level1">
+<h1 class="hasAnchor">
+<a href="#hansard-0-4-6" class="anchor"></a>hansard 0.4.6</h1>
+<div id="new-features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-features" class="anchor"></a>New features</h2>
+<p>Added optional <code>tidy_style</code> parameter, allowing users to decide which style of snake_case, camelCase and period.case they want variable names to be in, if <code>tidy</code>==TRUE.</p>
+<p>The <code><a href="../reference/elections.html">elections()</a></code> function now accepts <code>start_date</code> and <code>end_date</code> parameters. As the API called by the <code><a href="../reference/elections.html">elections()</a></code> function only accepts one additional argument not included in the package (the label of the election), changed the <code>extra_args</code> parameter to <code>label</code> to query that argument.</p>
+<p>The <code>tidy</code> parameter now changes date values to Date class with <code>as.Date()</code>, or to POSIXct with the <code>parse_date_time</code> from the <code>lubridate</code> package where applicable.</p>
+</div>
+<div id="bug-fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bug-fixes" class="anchor"></a>Bug fixes</h2>
+<p>Updated <code><a href="../reference/elections.html">elections()</a></code> to work with new API syntax.</p>
+</div>
+</div>
     <div id="hansard-0-4-5" class="section level1">
 <h1 class="hasAnchor">
 <a href="#hansard-0-4-5" class="anchor"></a>hansard 0.4.5</h1>
 <div id="date-classes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#date-classes" class="anchor"></a>Date Classes</h2>
-<p><code>hansard</code> functions with ‘start_date’ and ‘end_date’ parameters now accept any input that can be coerced to a date with the <code>as.Date()</code> function.</p>
+<p><code><a href="../reference/hansard.html">hansard()</a></code> functions with <code>start_date</code> and <code>end_date</code> parameters now accept any input that can be coerced to a date with the <code>as.Date()</code> function.</p>
 </div>
 </div>
     <div id="hansard-0-4-4" class="section level1">
@@ -145,19 +161,19 @@
 <div id="election-types" class="section level2">
 <h2 class="hasAnchor">
 <a href="#election-types" class="anchor"></a>Election types</h2>
-<p>Added a ‘type’ parameter to <code>elections</code>, to return all elections of a particular type.</p>
+<p>Added a <code>type</code> parameter to <code><a href="../reference/elections.html">elections()</a></code>, to return all elections of a particular type.</p>
 </div>
 <div id="constituency-details" class="section level2">
 <h2 class="hasAnchor">
 <a href="#constituency-details" class="anchor"></a>Constituency details</h2>
-<p>Added optional ‘constit_details’ parameter to <code>election_result</code> function. If TRUE, ‘constit_details’ retrieves additional constituency details from <code>constituencies</code>, most notably including GSS code.</p>
+<p>Added optional <code>constit_details</code> parameter to <code>election_result()</code> function. If TRUE, <code>constit_details</code> retrieves additional constituency details from <code><a href="../reference/constituencies.html">constituencies()</a></code>, most notably including GSS code.</p>
 </div>
-<div id="bug-fixes" class="section level2">
+<div id="bug-fixes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bug-fixes" class="anchor"></a>Bug fixes</h2>
-<p>Fixed bug on <code>commons_oral_question_times</code> where some calls did not return tibbles.</p>
-<p>Fixed bug in <code>lords_divisons</code> that did prevented vote summary queries from being returned.</p>
-<p>Removed superfluous ‘x’ from names in <code>elections</code> when tidy=TRUE.</p>
+<a href="#bug-fixes-1" class="anchor"></a>Bug fixes</h2>
+<p>Fixed bug on <code><a href="../reference/commons_oral_question_times.html">commons_oral_question_times()</a></code> where some calls did not return tibbles.</p>
+<p>Fixed bug in <code>lords_divisons()</code> that did prevented vote summary queries from being returned.</p>
+<p>Removed superfluous <code>x</code> from names in <code><a href="../reference/elections.html">elections()</a></code> when tidy=TRUE.</p>
 </div>
 </div>
     <div id="hansard-0-4-3" class="section level1">
@@ -166,7 +182,7 @@
 <div id="voting-margins" class="section level2">
 <h2 class="hasAnchor">
 <a href="#voting-margins" class="anchor"></a>Voting margins</h2>
-<p>Added optional ‘calculate_percent’ parameter to <code>election_result</code> function. If TRUE, ‘calculate_percent’ calculates the turnout percentage for each constituency in the tibble and the majority of the winning candidate to one decimal place, and includes this information in the tibble in columns labelled ‘turnout_percentage’ and ‘majority_percentage’. Defaults to FALSE.</p>
+<p>Added optional <code>calculate_percent</code> parameter to <code>election_result()</code> function. If TRUE, <code>calculate_percent</code> calculates the turnout percentage for each constituency in the tibble and the majority of the winning candidate to one decimal place, and includes this information in the tibble in columns labelled <code>turnout_percentage</code> and <code>majority_percentage</code>. Defaults to FALSE.</p>
 </div>
 </div>
     <div id="hansard-0-4-2" class="section level1">
@@ -175,14 +191,14 @@
 <div id="tibbling" class="section level2">
 <h2 class="hasAnchor">
 <a href="#tibbling" class="anchor"></a>tibbling</h2>
-<p><code>hansard</code> now uses tibbles instead of data frames as the data class returned from API calls.</p>
+<p><code><a href="../reference/hansard.html">hansard()</a></code> now uses tibbles instead of data frames as the data class returned from API calls.</p>
 </div>
 </div>
     <div id="hansard-0-4-1" class="section level1">
 <h1 class="hasAnchor">
 <a href="#hansard-0-4-1" class="anchor"></a>hansard 0.4.1</h1>
 <p>Fixes discrepency between output displayed and vignette and actual package output (#7, @pssguy)</p>
-<p>tidy parameter in <code>members_search</code> now does some additional tidying up.</p>
+<p>tidy parameter in <code><a href="../reference/members_search.html">members_search()</a></code> now does some additional tidying up.</p>
 </div>
     <div id="hansard-0-4-0" class="section level1">
 <h1 class="hasAnchor">
@@ -190,42 +206,42 @@
 <p>Major re-write, breaks compatibility with previous versions, please check your code to ensure it still works with the new package, as console input functionality has been removed from all functions. These changes ensure greater consistency in syntax across the package, in both the body and formals of the functions.</p>
 <p>If you need the old console based functions, they can be accessed through the <code>hansardconsole</code> package at <a href="https://github.com/EvanOdell/hansard-console" class="uri">https://github.com/EvanOdell/hansard-console</a>.</p>
 <p>Changes have been made to most functions, including:</p>
-<p><code>all_answered_questions</code>: Console interface is gone, now operates as a function with the ID for a given MP accepted as the only function parameter. Returns all answered questions if blank.</p>
-<p><code>bills</code>: Rewritten, now with the ability to look up bills by ID, as well as bill amendments. Added <code>bill_stage_types</code> function.</p>
-<p><code>commons_answered_questions</code>: Changed parameter name <code>answeredBy</code> to <code>answered_by</code>; improved ability to search by date, dropped console inputs.</p>
-<p><code>commons_divisions</code>: Removed console inputs, simplified options.</p>
-<p><code>commons_oral_question_times</code>: Simplified function, removed need for console input.</p>
-<p><code>commons_oral_questions</code>: Simpler process, same result, more flexibility in requests</p>
-<p><code>commons_answered_questions</code>: Removed need for console input.</p>
-<p><code>commons_terms</code>: Simplified formals.</p>
-<p><code>commons_written_questions</code>: Removed need for console input.</p>
-<p><code>constituencies</code>: Simplified formals.</p>
-<p><code>early_day_motions</code>: Changed all camelCase to snake_case.</p>
-<p><code>election_results</code>: Removed console input, simplified formals.</p>
-<p><code>elections</code>: Removed console input, simplified formals.</p>
-<p><code>lords_attendance</code>: Removed console input, simplified formals.</p>
-<p><code>lord_vote_record</code>: Removed console input, simplified formals.</p>
-<p><code>lords_divisions</code>: Removed console input, simplified formals.</p>
-<p><code>members</code>: Added additional <code>commons_members</code>, <code>commons_interests</code>, <code>lords_members</code> and <code>lords_interests</code> functions.</p>
-<p><code>mp_edms</code>: Improved functionality, can now call full text of early day motions.</p>
-<p><code>mp_questions</code>: Changed <code>questionType</code> to <code>question_type</code></p>
-<p><code>mp_vote_record</code>: Minor re-write</p>
-<p><code>papers_laid</code>: Incorporates new features in the API</p>
-<p><code>publication_logs</code>: Minor re-write, now includes start and end dates.</p>
-<p><code>sessions_info</code>: Added <code>start_date</code> and <code>end_date</code> parameters</p>
-<p><code>tv_channels</code> New function.</p>
-<p><code>tv_clips</code>: New function, previously part of <code>tv_programmes</code>.</p>
-<p><code>tv_programmes</code>: Minor re-write, now includes ability to select legislature.</p>
-<p>Adding of <code>research_briefings_lists</code> functions.</p>
+<p><code><a href="../reference/all_answered_questions.html">all_answered_questions()</a></code>: Console interface is gone, now operates as a function with the ID for a given MP accepted as the only function parameter. Returns all answered questions if blank.</p>
+<p><code><a href="../reference/bills.html">bills()</a></code>: Rewritten, now with the ability to look up bills by ID, as well as bill amendments. Added <code><a href="../reference/bills.html">bill_stage_types()</a></code> function.</p>
+<p><code><a href="../reference/commons_answered_questions.html">commons_answered_questions()</a></code>: Changed parameter name <code>answeredBy</code> to <code>answered_by</code>; improved ability to search by date, dropped console inputs.</p>
+<p><code><a href="../reference/commons_divisions.html">commons_divisions()</a></code>: Removed console inputs, simplified options.</p>
+<p><code><a href="../reference/commons_oral_question_times.html">commons_oral_question_times()</a></code>: Simplified function, removed need for console input.</p>
+<p><code><a href="../reference/commons_oral_questions.html">commons_oral_questions()</a></code>: Simpler process, same result, more flexibility in requests</p>
+<p><code><a href="../reference/commons_answered_questions.html">commons_answered_questions()</a></code>: Removed need for console input.</p>
+<p><code><a href="../reference/commons_terms.html">commons_terms()</a></code>: Simplified formals.</p>
+<p><code><a href="../reference/commons_written_questions.html">commons_written_questions()</a></code>: Removed need for console input.</p>
+<p><code><a href="../reference/constituencies.html">constituencies()</a></code>: Simplified formals.</p>
+<p><code><a href="../reference/early_day_motions.html">early_day_motions()</a></code>: Changed all camelCase to snake_case.</p>
+<p><code><a href="../reference/election_results.html">election_results()</a></code>: Removed console input, simplified formals.</p>
+<p><code><a href="../reference/elections.html">elections()</a></code>: Removed console input, simplified formals.</p>
+<p><code><a href="../reference/lords_attendance.html">lords_attendance()</a></code>: Removed console input, simplified formals.</p>
+<p><code><a href="../reference/lord_vote_record.html">lord_vote_record()</a></code>: Removed console input, simplified formals.</p>
+<p><code><a href="../reference/lords_divisions.html">lords_divisions()</a></code>: Removed console input, simplified formals.</p>
+<p><code><a href="../reference/members.html">members()</a></code>: Added additional <code><a href="../reference/members.html">commons_members()</a></code>, <code>commons_interests()</code>, <code><a href="../reference/members.html">lords_members()</a></code> and <code><a href="../reference/members.html">lords_interests()</a></code> functions.</p>
+<p><code><a href="../reference/mp_edms.html">mp_edms()</a></code>: Improved functionality, can now call full text of early day motions.</p>
+<p><code><a href="../reference/mp_questions.html">mp_questions()</a></code>: Changed <code>questionType</code> to <code>question_type</code></p>
+<p><code><a href="../reference/mp_vote_record.html">mp_vote_record()</a></code>: Minor re-write</p>
+<p><code><a href="../reference/papers_laid.html">papers_laid()</a></code>: Incorporates new features in the API</p>
+<p><code><a href="../reference/publication_logs.html">publication_logs()</a></code>: Minor re-write, now includes start and end dates.</p>
+<p><code><a href="../reference/sessions_info.html">sessions_info()</a></code>: Added <code>start_date()</code> and <code>end_date()</code> parameters</p>
+<p><code><a href="../reference/tv_programmes.html">tv_channels()</a></code> New function.</p>
+<p><code><a href="../reference/tv_programmes.html">tv_clips()</a></code>: New function, previously part of <code>tv_programmes</code>.</p>
+<p><code><a href="../reference/tv_programmes.html">tv_programmes()</a></code>: Minor re-write, now includes ability to select legislature.</p>
+<p>Adding of <code>research_briefings_lists()</code> functions.</p>
 </div>
     <div id="hansard-0-3-4" class="section level1">
 <h1 class="hasAnchor">
 <a href="#hansard-0-3-4" class="anchor"></a>hansard 0.3.4</h1>
-<div id="bug-fixes-1" class="section level2">
+<div id="bug-fixes-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bug-fixes-1" class="anchor"></a>Bug fixes</h2>
-<p>The <code>lords_attendance</code> function was not working. It was returning empty data frames when searching by date and failing entirely when trying to retrieve all attendance. This was due to url encoding issues, which have now been identified and fixed. (#4, @meenaparam)</p>
-<p>Fixed spelling of amendments, so that <code>lords_ammendments</code> is now <code>lords_amendments</code>. The <code>lords_ammendments</code> function has been deprecated, and will be removed in a future release.</p>
+<a href="#bug-fixes-2" class="anchor"></a>Bug fixes</h2>
+<p>The <code><a href="../reference/lords_attendance.html">lords_attendance()</a></code> function was not working. It was returning empty data frames when searching by date and failing entirely when trying to retrieve all attendance. This was due to url encoding issues, which have now been identified and fixed. (#4, @meenaparam)</p>
+<p>Fixed spelling of amendments, so that <code><a href="../reference/lords_ammendments.html">lords_ammendments()</a></code> is now <code>lords_amendments(0</code>. The <code><a href="../reference/lords_ammendments.html">lords_ammendments()</a></code> function has been deprecated, and will be removed in a future release.</p>
 </div>
 </div>
     <div id="hansard-0-3-3" class="section level1">
@@ -240,9 +256,9 @@
     <div id="hansard-0-3-2" class="section level1">
 <h1 class="hasAnchor">
 <a href="#hansard-0-3-2" class="anchor"></a>hansard 0.3.2</h1>
-<div id="bug-fixes-2" class="section level2">
+<div id="bug-fixes-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bug-fixes-2" class="anchor"></a>Bug Fixes</h2>
+<a href="#bug-fixes-3" class="anchor"></a>Bug Fixes</h2>
 </div>
 </div>
     <div id="hansard-0-3-0" class="section level1">
@@ -251,17 +267,17 @@
 <div id="requesting-data-through-function-parameters" class="section level2">
 <h2 class="hasAnchor">
 <a href="#requesting-data-through-function-parameters" class="anchor"></a>Requesting data through function parameters</h2>
-<p>In response to a request, I’ve added three new functions that allow you to request the voting record of both MPs and members of the House of Lords by using their ID as a function parameter, rather than as a console input. They are:</p>
-<p><code>lords_vote_record</code></p>
-<p><code>mp_questions</code></p>
-<p><code>mp_vote_record</code></p>
-<p><code>mp_edms</code></p>
-<p>The option to use console input has been preserved in <code>commons_divisions</code>, <code>lords_divisions</code>, <code>commons_written_questions</code> and <code>commons_oral_questions</code>, along with other features not available in the new functions.</p>
+<p>In response to a request, I`ve added three new functions that allow you to request the voting record of both MPs and members of the House of Lords by using their ID as a function parameter, rather than as a console input. They are:</p>
+<p><code>lords_vote_record()</code></p>
+<p><code><a href="../reference/mp_questions.html">mp_questions()</a></code></p>
+<p><code><a href="../reference/mp_vote_record.html">mp_vote_record()</a></code></p>
+<p><code><a href="../reference/mp_edms.html">mp_edms()</a></code></p>
+<p>The option to use console input has been preserved in <code><a href="../reference/commons_divisions.html">commons_divisions()</a></code>, <code><a href="../reference/lords_divisions.html">lords_divisions()</a></code>, <code><a href="../reference/commons_written_questions.html">commons_written_questions()</a></code> and <code><a href="../reference/commons_oral_questions.html">commons_oral_questions()</a></code>, along with other features not available in the new functions.</p>
 </div>
-<div id="bug-fixes-3" class="section level2">
+<div id="bug-fixes-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bug-fixes-3" class="anchor"></a>Bug fixes</h2>
-<p>This update fixes an issue with <code>lords_written_questions</code> and <code>commons_written_questions</code> where the functions returned a 404 error on some requests.</p>
+<a href="#bug-fixes-4" class="anchor"></a>Bug fixes</h2>
+<p>This update fixes an issue with <code><a href="../reference/lords_written_questions.html">lords_written_questions()</a></code> and <code><a href="../reference/commons_written_questions.html">commons_written_questions()</a></code> where the functions returned a 404 error on some requests.</p>
 </div>
 </div>
     <div id="hansard-0-2-5" class="section level1">
@@ -281,6 +297,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#hansard-0-4-6">0.4.6</a></li>
         <li><a href="#hansard-0-4-5">0.4.5</a></li>
         <li><a href="#hansard-0-4-4">0.4.4</a></li>
         <li><a href="#hansard-0-4-3">0.4.3</a></li>

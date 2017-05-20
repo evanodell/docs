@@ -103,7 +103,7 @@
       <h1>Introduction to hansard</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2017-05-13</h4>
+            <h4 class="date">2017-05-20</h4>
           </div>
 
     
@@ -144,54 +144,53 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <a href="#the-members_search-function" class="anchor"></a>The <code>members_search</code> function</h3>
 <p>Looking up information on an individual MP or Lord through the Parliamentary API requires knowing their parliamentary ID number. This can be hard to find on the web, but luckily you can look it up through the API. We want information on the voting record of the Labour MP for Hackney North and Stoke Newington Diane Abbott, but we don’t know her ID number, so we search for her:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(hansard)
-<span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>)
-<span class="co">#&gt; Connecting to API</span>
-<span class="co">#&gt; Retrieving page 1 of 1</span>
-<span class="co">#&gt;     mnis_id                         home_page additional_name_value                         constituency_about</span>
-<span class="co">#&gt; 1     172     http://www.dianeabbott.org.uk                 Julie http://data.parliament.uk/resources/146966</span>
-<span class="co">#&gt; 2    1651                              &lt;NA&gt;             Granville                                       &lt;NA&gt;</span>
-<span class="co">#&gt; 3    4249 http://www.annemariemorris.co.uk/                  &lt;NA&gt; http://data.parliament.uk/resources/147092</span>
-<span class="co">#&gt; 4    3827       http://www.judiciary.gov.uk                Edmond                                       &lt;NA&gt;</span>
-<span class="co">#&gt;            constituency_label_value family_name_value                full_name_value gender_value</span>
-<span class="co">#&gt; 1 Hackney North and Stoke Newington            Abbott                Ms Diane Abbott       Female</span>
-<span class="co">#&gt; 2                              &lt;NA&gt;           Hodgson Lord Hodgson of Astley Abbotts         Male</span>
-<span class="co">#&gt; 3                      Newton Abbot            Morris              Anne Marie Morris       Female</span>
-<span class="co">#&gt; 4                              &lt;NA&gt;         Neuberger   Lord Neuberger of Abbotsbury         Male</span>
-<span class="co">#&gt;   given_name_value                                              label_value  party_value</span>
-<span class="co">#&gt; 1            Diane                Biography information for Ms Diane Abbott       Labour</span>
-<span class="co">#&gt; 2            Robin Biography information for Lord Hodgson of Astley Abbotts         &lt;NA&gt;</span>
-<span class="co">#&gt; 3       Anne Marie              Biography information for Anne Marie Morris Conservative</span>
-<span class="co">#&gt; 4            David   Biography information for Lord Neuberger of Abbotsbury         &lt;NA&gt;</span>
-<span class="co">#&gt;                       twitter_value</span>
-<span class="co">#&gt; 1 https://twitter.com/HackneyAbbott</span>
-<span class="co">#&gt; 2                              &lt;NA&gt;</span>
-<span class="co">#&gt; 3    https://twitter.com/AMMorrisMP</span>
-<span class="co">#&gt; 4                              &lt;NA&gt;</span></code></pre></div>
+<span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>)</code></pre></div>
+<pre><code>## Connecting to API</code></pre>
+<pre><code>## Retrieving page 1 of 1</code></pre>
+<pre><code>## # A tibble: 4 x 12
+##   mnis_id                         home_page additional_name_value
+##     &lt;chr&gt;                             &lt;chr&gt;                 &lt;chr&gt;
+## 1     172     http://www.dianeabbott.org.uk                 Julie
+## 2    1651                              &lt;NA&gt;             Granville
+## 3    4249 http://www.annemariemorris.co.uk/                  &lt;NA&gt;
+## 4    3827       http://www.judiciary.gov.uk                Edmond
+## # ... with 9 more variables: constituency_about &lt;chr&gt;,
+## #   constituency_label_value &lt;chr&gt;, family_name_value &lt;chr&gt;,
+## #   full_name_value &lt;chr&gt;, gender_value &lt;chr&gt;, given_name_value &lt;chr&gt;,
+## #   label_value &lt;chr&gt;, party_value &lt;chr&gt;, twitter_value &lt;chr&gt;</code></pre>
 <p>The same function, without the use of the tidy parameter, illustrating the differences in the variable names and the presentation of information in the first column:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(hansard)
-<span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>, <span class="dt">tidy =</span> <span class="ot">FALSE</span>)
-<span class="co">#&gt; Connecting to API</span>
-<span class="co">#&gt; Retrieving page 1 of 1</span>
-<span class="co">#&gt;                                   _about                          homePage additionalName._value</span>
-<span class="co">#&gt; 1  http://data.parliament.uk/members/172     http://www.dianeabbott.org.uk                 Julie</span>
-<span class="co">#&gt; 2 http://data.parliament.uk/members/1651                              &lt;NA&gt;             Granville</span>
-<span class="co">#&gt; 3 http://data.parliament.uk/members/4249 http://www.annemariemorris.co.uk/                  &lt;NA&gt;</span>
-<span class="co">#&gt; 4 http://data.parliament.uk/members/3827       http://www.judiciary.gov.uk                Edmond</span>
-<span class="co">#&gt;                          constituency._about         constituency.label._value familyName._value                fullName._value</span>
-<span class="co">#&gt; 1 http://data.parliament.uk/resources/146966 Hackney North and Stoke Newington            Abbott                Ms Diane Abbott</span>
-<span class="co">#&gt; 2                                       &lt;NA&gt;                              &lt;NA&gt;           Hodgson Lord Hodgson of Astley Abbotts</span>
-<span class="co">#&gt; 3 http://data.parliament.uk/resources/147092                      Newton Abbot            Morris              Anne Marie Morris</span>
-<span class="co">#&gt; 4                                       &lt;NA&gt;                              &lt;NA&gt;         Neuberger   Lord Neuberger of Abbotsbury</span>
-<span class="co">#&gt;   gender._value givenName._value                                             label._value party._value</span>
-<span class="co">#&gt; 1        Female            Diane                Biography information for Ms Diane Abbott       Labour</span>
-<span class="co">#&gt; 2          Male            Robin Biography information for Lord Hodgson of Astley Abbotts         &lt;NA&gt;</span>
-<span class="co">#&gt; 3        Female       Anne Marie              Biography information for Anne Marie Morris Conservative</span>
-<span class="co">#&gt; 4          Male            David   Biography information for Lord Neuberger of Abbotsbury         &lt;NA&gt;</span>
-<span class="co">#&gt;                      twitter._value</span>
-<span class="co">#&gt; 1 https://twitter.com/HackneyAbbott</span>
-<span class="co">#&gt; 2                              &lt;NA&gt;</span>
-<span class="co">#&gt; 3    https://twitter.com/AMMorrisMP</span>
-<span class="co">#&gt; 4                              &lt;NA&gt;</span></code></pre></div>
+<span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>, <span class="dt">tidy =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## Connecting to API</code></pre>
+<pre><code>## Retrieving page 1 of 1</code></pre>
+<pre><code>## # A tibble: 4 x 12
+##                                 `_about`
+##                                    &lt;chr&gt;
+## 1  http://data.parliament.uk/members/172
+## 2 http://data.parliament.uk/members/1651
+## 3 http://data.parliament.uk/members/4249
+## 4 http://data.parliament.uk/members/3827
+## # ... with 11 more variables: homePage &lt;chr&gt;, additionalName._value &lt;chr&gt;,
+## #   constituency._about &lt;chr&gt;, constituency.label._value &lt;chr&gt;,
+## #   familyName._value &lt;chr&gt;, fullName._value &lt;chr&gt;, gender._value &lt;chr&gt;,
+## #   givenName._value &lt;chr&gt;, label._value &lt;chr&gt;, party._value &lt;chr&gt;,
+## #   twitter._value &lt;chr&gt;</code></pre>
+<p>The same function as above, but with <code>tidy_style = "period.case"</code>, so it returns a different</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(hansard)
+<span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>, <span class="dt">tidy =</span> <span class="ot">TRUE</span>, <span class="dt">tidy_style =</span> <span class="st">"period.case"</span>)</code></pre></div>
+<pre><code>## Connecting to API</code></pre>
+<pre><code>## Retrieving page 1 of 1</code></pre>
+<pre><code>## # A tibble: 4 x 12
+##   mnis.id                         home.page additional.name.value
+##     &lt;chr&gt;                             &lt;chr&gt;                 &lt;chr&gt;
+## 1     172     http://www.dianeabbott.org.uk                 Julie
+## 2    1651                              &lt;NA&gt;             Granville
+## 3    4249 http://www.annemariemorris.co.uk/                  &lt;NA&gt;
+## 4    3827       http://www.judiciary.gov.uk                Edmond
+## # ... with 9 more variables: constituency.about &lt;chr&gt;,
+## #   constituency.label.value &lt;chr&gt;, family.name.value &lt;chr&gt;,
+## #   full.name.value &lt;chr&gt;, gender.value &lt;chr&gt;, given.name.value &lt;chr&gt;,
+## #   label.value &lt;chr&gt;, party.value &lt;chr&gt;, twitter.value &lt;chr&gt;</code></pre>
 <p>The search function is not case sensitive, and searchs in the names and constituencies of all MPs and Lords. So even though we spelled her surname incorrectly, we can still find her. This API provides limited biographical details, to retrieve more detailed biographical information, use the related <a href="https://cran.r-project.org/package=mnis"><code>mnis</code></a> package to retrives data from the Members’ Names Information Service.</p>
 </div>
 <div id="the-commons_divisions-and-mp_vote_record-functions" class="section level3">

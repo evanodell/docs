@@ -132,8 +132,9 @@
     <p>Imports data on elections</p>
     
 
-    <pre class="usage"><span class='fu'>elections</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>NULL</span>, <span class='st'>"General Election"</span>, <span class='st'>"By-election"</span>),
-  <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>elections</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>,
+  <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>label</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -144,15 +145,27 @@
     </tr>
     <tr>
       <th>type</th>
-      <td><p>Accepts "General Election" or "By-election" as arguments if ID is NULL. Returns all General Elections or all By-elections.</p></td>
+      <td><p>Accepts 'General Election' or 'By-election' as arguments if ID is NULL, and returns all General Elections or all By-elections, as specified.</p></td>
     </tr>
     <tr>
-      <th>extra_args</th>
-      <td><p>Additional parameters to pass to API. Defaults to NULL.</p></td>
+      <th>start_date</th>
+      <td><p>The earliest date to include in the tibble. Defaults to '1900-01-01'. Accepts character values in 'YYYY-MM-DD' format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+    </tr>
+    <tr>
+      <th>end_date</th>
+      <td><p>The latest date to include in the tibble. Defaults to current system date. Defaults to '1900-01-01'. Accepts character values in 'YYYY-MM-DD' format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>Label of the election. By-elections are in 'dd-mmm-yyyy By-election' format; e.g. '23-Feb-2017 By-election', and general elections use 'YYYY General Election' format. The parameter cannot search, so check your format, spelling and make sure there were actually elections with the label specified. Defaults to NULL.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove extra characters, superfluous text and convert variable names to snake_case. Defaults to TRUE.</p></td>
+      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if tidy = TRUE. Accepts one of 'snake_case', 'camelCase' and 'period.case'. Defaults to 'snake_case'.</p></td>
     </tr>
     </table>
     
