@@ -136,9 +136,10 @@
 <div id="new-features" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-features" class="anchor"></a>New features</h2>
-<p>Added optional <code>tidy_style</code> parameter, allowing users to decide which style of snake_case, camelCase and period.case they want variable names to be in, if <code>tidy</code>==TRUE.</p>
+<p>Added optional <code>tidy_style</code> parameter, allowing users to decide which style of “snake_case”, “camelCase” and “period.case” they want variable names to be in, if <code>tidy</code>==TRUE.</p>
 <p>The <code><a href="../reference/elections.html">elections()</a></code> function now accepts <code>start_date</code> and <code>end_date</code> parameters. As the API called by the <code><a href="../reference/elections.html">elections()</a></code> function only accepts one additional argument not included in the package (the label of the election), changed the <code>extra_args</code> parameter to <code>label</code> to query that argument.</p>
-<p>The <code>tidy</code> parameter now changes date values to Date class with <code>as.Date()</code>, or to POSIXct with the <code>parse_date_time</code> from the <code>lubridate</code> package where applicable.</p>
+<p>The <code>tidy</code> parameter now changes date values to POSIXct class with <code>as.POSIXct()</code> when the API returns date information, or to POSIXct with the <code>parse_date_time</code> from the <code>lubridate</code> package where the API returns both date and time information.</p>
+<p><code>tidy</code> parameter now strips out more unneeded character strings from API response.</p>
 </div>
 <div id="bug-fixes" class="section level2">
 <h2 class="hasAnchor">

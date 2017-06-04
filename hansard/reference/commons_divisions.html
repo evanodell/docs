@@ -141,7 +141,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>division_id</th>
-      <td><p>The id of a particular vote. If empty, returns a tibble with information on all commons divisions. Defaults to NULL.</p></td>
+      <td><p>The id of a particular vote. If empty, returns a tibble with information on all commons divisions, subject to all other parameters. Defaults to NULL.</p></td>
     </tr>
     <tr>
       <th>summary</th>
@@ -161,7 +161,7 @@
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
+      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Removes extra URL data from voting type columns. Defaults to TRUE.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
@@ -180,6 +180,7 @@
   <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_divisions</span>()
 
   <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_divisions</span>(<span class='kw'>division_id</span> <span class='kw'>=</span> <span class='fl'>694163</span>, <span class='kw'>summary</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
 
 })</div></pre>
   </div>

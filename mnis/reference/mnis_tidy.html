@@ -131,8 +131,11 @@
     
     <p>Internal tidying functions</p>
 <p>ref_tidy</p>
+<p>constituency_results_tidy</p>
 <p>tidy_bom
 Strips BOM out of JSON data that does not need to be there.</p>
+<p>date_tidy
+Makes dates datable</p>
     
 
     <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>x</span>, <span class='no'>tidy_style</span>)
@@ -141,18 +144,20 @@ Strips BOM out of JSON data that does not need to be there.</p>
 
 <span class='fu'>constituency_results_tidy</span>(<span class='no'>results</span>, <span class='no'>details</span>)
 
-<span class='fu'>tidy_bom</span>(<span class='no'>df</span>)</pre>
+<span class='fu'>tidy_bom</span>(<span class='no'>df</span>)
+
+<span class='fu'>date_tidy</span>(<span class='no'>z</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The dataframe to tidy</p></td>
+      <td><p>The tibble to tidy</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to tidy the dataframe with.</p></td>
+      <td><p>The style to tidy the tibble with.</p></td>
     </tr>
     <tr>
       <th>results</th>
@@ -165,6 +170,10 @@ Strips BOM out of JSON data that does not need to be there.</p>
     <tr>
       <th>df</th>
       <td><p>The GET returned from call to API.</p></td>
+    </tr>
+    <tr>
+      <th>z</th>
+      <td><p>The tibble with the undateable dates.</p></td>
     </tr>
     </table>
     
