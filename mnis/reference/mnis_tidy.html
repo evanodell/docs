@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>mnis_tidy — mnis_tidy • mnis</title>
+<title>Functions to tidy up the variable names returned from the API. — mnis_tidy • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -125,34 +125,26 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>mnis_tidy</h1>
+    <h1>Functions to tidy up the variable names returned from the API.</h1>
     </div>
 
     
-    <p>Internal tidying functions</p>
+    <p>Functions to tidy up the variable names returned from the API.</p>
 <p>ref_tidy</p>
-<p>constituency_results_tidy</p>
-<p>tidy_bom
-Strips BOM out of JSON data that does not need to be there.</p>
-<p>date_tidy
-Makes dates datable</p>
+<p>A function to strip Byte Order Marks (BOM) out of JSON data returned from the API.</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>x</span>, <span class='no'>tidy_style</span>)
+    <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>df</span>, <span class='no'>tidy_style</span>)
 
-<span class='fu'>ref_tidy</span>(<span class='no'>x</span>, <span class='no'>tidy_style</span>)
+<span class='fu'>ref_tidy</span>(<span class='no'>df</span>, <span class='no'>tidy_style</span>)
 
-<span class='fu'>constituency_results_tidy</span>(<span class='no'>results</span>, <span class='no'>details</span>)
-
-<span class='fu'>tidy_bom</span>(<span class='no'>df</span>)
-
-<span class='fu'>date_tidy</span>(<span class='no'>z</span>)</pre>
+<span class='fu'>tidy_bom</span>(<span class='no'>df</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
+      <th>df</th>
       <td><p>The tibble to tidy</p></td>
     </tr>
     <tr>
@@ -160,20 +152,8 @@ Makes dates datable</p>
       <td><p>The style to tidy the tibble with.</p></td>
     </tr>
     <tr>
-      <th>results</th>
-      <td><p>The tibble to tidy</p></td>
-    </tr>
-    <tr>
-      <th>details</th>
-      <td><p>The list to tidy</p></td>
-    </tr>
-    <tr>
       <th>df</th>
       <td><p>The GET returned from call to API.</p></td>
-    </tr>
-    <tr>
-      <th>z</th>
-      <td><p>The tibble with the undateable dates.</p></td>
     </tr>
     </table>
     

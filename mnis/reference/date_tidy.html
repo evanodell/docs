@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns a tibble with information on al members of both houses or a given house. — mnis_all_members • mnis</title>
+<title>A function that makes date variables returned from the API datable, ie by converting them to POSIXct. Does the same thing for datetimes. — date_tidy • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -125,56 +125,31 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns a tibble with information on al members of both houses or a given house.</h1>
+    <h1>A function that makes date variables returned from the API datable, ie by converting them to POSIXct. Does the same thing for datetimes.</h1>
     </div>
 
     
-    <p>Returns a tibble with information on al members of both houses or a given house.</p>
+    <p>A function that makes date variables returned from the API datable, ie by converting them to POSIXct. Does the same thing for datetimes.</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_all_members</span>(<span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>party</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
+    <pre class="usage"><span class='fu'>date_tidy</span>(<span class='no'>df</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>house</th>
-      <td><p>The house to which the member belongs. Accepts one of 'all', 'lords' and 'commons', defaults to 'all'. This parameter is not case sensitive, so using 'commons', 'Commons' or 'cOmMOnS' will result in the same data being returned.</p></td>
-    </tr>
-    <tr>
-      <th>party</th>
-      <td><p>The party to which a member belongs. Defaults to NULL, in which case all members are returned, subject to other parameters. The party names are not case sensitive, but must be the complete string of the party name, searching and wildcard options are not accepted by the API, e.g. 'green party'.</p></td>
-    </tr>
-    <tr>
-      <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
-    </tr>
-    <tr>
-      <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case"</p></td>
+      <th>df</th>
+      <td><p>The tibble with the undateable dates.</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with information on all members of the House of Commons and/or the House of Lords that meet the criteria included in the function parameters.</p>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
-  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_all_members</span>(<span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>'all'</span>, <span class='kw'>party</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span><span class='kw'>=</span><span class='st'>"snake_case"</span>)
-})</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>

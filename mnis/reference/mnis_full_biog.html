@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>mnis_full_biog — mnis_full_biog • mnis</title>
+<title>Requests all available biographical information for a given member, and returns it in the form of a tibble. — mnis_full_biog • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -125,7 +125,7 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>mnis_full_biog</h1>
+    <h1>Requests all available biographical information for a given member, and returns it in the form of a tibble.</h1>
     </div>
 
     
@@ -140,7 +140,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>ID</th>
-      <td><p>The ID number of the member, using the default MNIS scheme. If <code>ref_dods</code> is TRUE, accepts the Dods monitoring scheme instead. If left empty, returns the same data as <code><a href='mnis_all_members.html'>mnis_all_members</a></code>.</p></td>
+      <td><p>The ID number of the member, using the default MNIS scheme. If <code>ref_dods</code> is TRUE, accepts the Dods monitoring scheme instead. If left empty, returns the same data as <code><a href='mnis_all_members.html'>mnis_all_members</a></code> with default parameters.</p></td>
     </tr>
     <tr>
       <th>ref_dods</th>
@@ -163,6 +163,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
+
   <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_full_biog</span>(<span class='fl'>172</span>)
 
 })</div></pre>

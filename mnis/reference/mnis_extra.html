@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>mnis_extra — mnis_extra • mnis</title>
+<title>A wrapper for <code>mnis_additional</code> functions. — mnis_extra • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -125,12 +125,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>mnis_extra</h1>
+    <h1>A wrapper for <code>mnis_additional</code> functions.</h1>
     </div>
 
     
-    <p>A wrapper for <code><a href='mnis_additional.html'>mnis_additional</a></code> functions. It combines the various options of mnis_additional into one dataframe, and the default is similar to <code><a href='mnis_full_biog.html'>mnis_full_biog</a></code>.
-Variable descriptions are taken from the mnis website: &lt;http://data.parliament.uk/membersdataplatform/memberquery.aspx&gt;</p>
+    <p>It combines the various options of mnis_additional into one dataframe, and the default is similar to <code><a href='mnis_full_biog.html'>mnis_full_biog</a></code>. Variable descriptions are taken from the mnis website: &lt;http://data.parliament.uk/membersdataplatform/memberquery.aspx&gt;</p>
     
 
     <pre class="usage"><span class='fu'>mnis_extra</span>(<span class='no'>ID</span>, <span class='kw'>mnis_id</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>addresses</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -147,7 +146,7 @@ Variable descriptions are taken from the mnis website: &lt;http://data.parliamen
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>ID</th>
-      <td><p>The ID number of the member. Defaults to NULL.</p></td>
+      <td><p>The ID number of the member. Defaults to NULL. If NULL, returns</p></td>
     </tr>
     <tr>
       <th>mnis_id</th>
@@ -159,83 +158,83 @@ Variable descriptions are taken from the mnis website: &lt;http://data.parliamen
     </tr>
     <tr>
       <th>addresses</th>
-      <td><p>Member address information (e.g. website, twitter, consituency address etc...).</p></td>
+      <td><p>Member address information (e.g. website, twitter, consituency address etc...). Defaults to TRUE. If TRUE, address details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>basic_details</th>
-      <td><p>Basic information about the Member (e.g. given name, HoL membership type, oaths etc...)</p></td>
+      <td><p>Basic information about the Member (e.g. given name, HoL membership type, oaths etc...) Defaults to TRUE. If TRUE, basic details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>biography_entries</th>
-      <td><p>Member biographical information (e.g. countries of interest, policy expertise etc...)</p></td>
+      <td><p>Member biographical information (e.g. countries of interest, policy expertise etc...) Defaults to TRUE. If TRUE, biographical details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>committees</th>
-      <td><p>Committees a Member sits or has sat on as well details on committee chairing.</p></td>
+      <td><p>Committees a Member sits or has sat on as well details on committee chairing. Defaults to TRUE. If TRUE, committee details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>constituencies</th>
-      <td><p>constituencies a Member has represented.</p></td>
+      <td><p>constituencies a Member has represented. Defaults to TRUE. If TRUE, constituency details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>elections_contested</th>
-      <td><p>Elections a Member has contested but not won.</p></td>
+      <td><p>Elections a Member has contested but not won. Defaults to TRUE. If TRUE, details of unsuccessful election contests are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>experiences</th>
-      <td><p>Non-parliamentary experience of a Member.</p></td>
+      <td><p>Non-parliamentary experience of a Member. Defaults to TRUE. If TRUE, extra-parliamentary experience details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>government_posts</th>
-      <td><p>Government posts a Member currently holds.</p></td>
+      <td><p>Government posts a Member currently holds. Defaults to TRUE. If TRUE, government posts details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>honours</th>
-      <td><p>Honours (e.g. MBE, OBE etc...) held by a Member.</p></td>
+      <td><p>Honours (e.g. MBE, OBE etc...) held by a Member. Defaults to TRUE. If TRUE, honours details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>house_memberships</th>
-      <td><p>House membership list of a Member.</p></td>
+      <td><p>House membership list of a Member. Defaults to TRUE. If TRUE, house membership details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>interests</th>
-      <td><p>Registered interests (financial) of a Member.</p></td>
+      <td><p>Registered interests (financial) of a Member. Defaults to TRUE. If TRUE, interest details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>known_as</th>
-      <td><p>Details of names a Member has chosen to be known as instead of their full title (House of Lords members only).</p></td>
+      <td><p>Details of names a Member has chosen to be known as instead of their full title (House of Lords members only). Defaults to TRUE. If TRUE, known as details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>maiden_speeches</th>
-      <td><p>Maiden speech dates for a Member.</p></td>
+      <td><p>Maiden speech dates for a Member. Defaults to TRUE. If TRUE, maiden speech details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>opposition_posts</th>
-      <td><p>Opposition posts a Member has held.</p></td>
+      <td><p>Opposition posts a Member has held. Defaults to TRUE. If TRUE, opposition post details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>other_parliaments</th>
-      <td><p>Other Parliaments that a Member has held a membership of.</p></td>
+      <td><p>Other Parliaments that a Member has held a membership of. Defaults to TRUE. If TRUE, details of other parliaments are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>parliamentary_posts</th>
-      <td><p>Parliamentary posts a Member has held.</p></td>
+      <td><p>Parliamentary posts a Member has held. Defaults to TRUE. If TRUE, parliamentary posts details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>parties</th>
-      <td><p>Party affiliations of a Member.</p></td>
+      <td><p>Party affiliations of a Member. Defaults to TRUE. If TRUE, address details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>preferred_names</th>
-      <td><p>Full set of data about a Members' name (e.g. surname, forename, Honorary prefixes, full details of HoL title and rank etc...).</p></td>
+      <td><p>Full set of data about a Members' name (e.g. surname, forename, Honorary prefixes, full details of HoL title and rank etc...). Defaults to TRUE. If TRUE, preferred names details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>staff</th>
-      <td><p>The staff employed by a Member.</p></td>
+      <td><p>The staff employed by a Member. Defaults to TRUE. If TRUE, staff details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>statuses</th>
-      <td><p>Status history (e.g. suspensions and disqualifications) for a Member.</p></td>
+      <td><p>Status history (e.g. suspensions and disqualifications) for a Member. Defaults to TRUE. If TRUE, status details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
@@ -249,7 +248,7 @@ Variable descriptions are taken from the mnis website: &lt;http://data.parliamen
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with data on a given MP.</p>
+    <p>A tibble with the requested data on a given MP.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
