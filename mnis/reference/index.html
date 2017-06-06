@@ -143,7 +143,7 @@
         <tr>
           <th colspan="2">
             <h2 id="section-reference-functions" class="hasAnchor"><a href="#section-reference-functions" class="anchor"></a>Reference Functions</h2>
-            <p class="section-desc"><p>Reference Functions</p></p>
+            <p class="section-desc"><p>Reference functions</p></p>
           </th>
         </tr>
         <tr>
@@ -163,7 +163,7 @@
         <tr>
           <th colspan="2">
             <h2 id="section-tidy-functions" class="hasAnchor"><a href="#section-tidy-functions" class="anchor"></a>Tidy Functions</h2>
-            <p class="section-desc"><p>Tidy Functions</p></p>
+            <p class="section-desc"><p>Tidy functions</p></p>
           </th>
         </tr>
         <tr>
@@ -178,12 +178,24 @@
             <p><code><a href="constituency_results_tidy.html">constituency_results_tidy</a></code> </p>
           </td>
           <td><p>constituency_results_tidy</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_bom.html">mnis_bom</a></code> </p>
+          </td>
+          <td><p>Strip out BOM from JSON data</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="date_tidy.html">date_tidy</a></code> </p>
+          </td>
+          <td><p>A function that makes date variables returned from the API datable, ie by converting them to POSIXct. Does the same thing for datetimes.</p></td>
         </tr>
       </tbody><tbody>
         <tr>
           <th colspan="2">
             <h2 id="section-additional-functions" class="hasAnchor"><a href="#section-additional-functions" class="anchor"></a>Additional Functions</h2>
-            <p class="section-desc"><p>Additional Functions</p></p>
+            <p class="section-desc"><p>Additional information functions</p></p>
           </th>
         </tr>
         <tr>
@@ -197,7 +209,7 @@
         <tr>
           <th colspan="2">
             <h2 id="section-fixed-scope-functions" class="hasAnchor"><a href="#section-fixed-scope-functions" class="anchor"></a>Fixed Scope Functions</h2>
-            <p class="section-desc"></p>
+            <p class="section-desc"><p>Fixed scope functions</p></p>
           </th>
         </tr>
         <tr>
@@ -237,6 +249,68 @@
           </td>
           <td><p>Returns a tibble with a member's status on a given date.</p></td>
         </tr>
+      </tbody><tbody>
+        <tr>
+          <th colspan="2">
+            <h2 id="section-general-functions" class="hasAnchor"><a href="#section-general-functions" class="anchor"></a>General Functions</h2>
+            <p class="section-desc"><p>General functions</p></p>
+          </th>
+        </tr>
+        <tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_all_members.html">mnis_all_members</a></code> </p>
+          </td>
+          <td><p>Returns a tibble with information on al members of both houses or a given house.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_base.html">mnis_base</a></code> </p>
+          </td>
+          <td><p>A generic function for the MNIS API lookup. The function requests data in JSON format, but the type of object, and all URLs, paths and parameters are user-defined. <code>mnis_base</code> does not include the option to tidy variable names and data types, but the <code>mnis_tidy</code> function can be called on the data returned from the API.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_eligible.html">mnis_eligible</a></code> </p>
+          </td>
+          <td><p>Returns all members who are able to sit in either house, or who are currently ineligible to sit. Members ineligible to sit include but are not necessarily limited to former MPs, members of the judiciary, who are recused from House of Lords duties.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_extra.html">mnis_extra</a></code> </p>
+          </td>
+          <td><p>A wrapper for <code>mnis_additional</code> functions.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_full_biog.html">mnis_full_biog</a></code> </p>
+          </td>
+          <td><p>Requests all available biographical information for a given member, and returns it in the form of a tibble.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_joined_between.html">mnis_joined_between</a></code> </p>
+          </td>
+          <td><p>Function returns all members who took their seats in the house between two given dates.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_mps_on_date.html">mnis_mps_on_date</a></code> </p>
+          </td>
+          <td><p>A tibble with information on all MPs who were members of the House of Commons on the date specificed (if only date1 is included as a parameter), or on or between the two dates if both date1 and date2 are specified.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis_peers_on_date.html">mnis_peers_on_date</a></code> </p>
+          </td>
+          <td><p>A tibble with information on all peers who were members of the House of Commons on the date specificed (if only date1 is included as a parameter), or on or between the two dates if both date1 and date2 are specified.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="mnis.html">mnis</a></code> </p>
+          </td>
+          <td><p>mnis: Easy Downloading Capabilities for the Member Name Information Service</p></td>
+        </tr>
       </tbody>
       </table>
     </div>
@@ -249,6 +323,7 @@
       <li><a href="#section-tidy-functions">Tidy Functions</a></li>
       <li><a href="#section-additional-functions">Additional Functions</a></li>
       <li><a href="#section-fixed-scope-functions">Fixed Scope Functions</a></li>
+      <li><a href="#section-general-functions">General Functions</a></li>
     </ul>
   </div>
 </div>
