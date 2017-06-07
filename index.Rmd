@@ -1,7 +1,7 @@
 ---
 title: "index"
 author: "Evan Odell"
-date: "Sys.Date()"
+date: "sys.Date()"
 always_allow_html: yes
 ---
 
