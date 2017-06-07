@@ -21,6 +21,8 @@ navbar:
   right:
     - icon: fa-home fa-lg
       href: http://evanodell.com
+    - icon: fa-github fa-lg
+      href: https://github.com/evanodell
 
 home:
   links:
