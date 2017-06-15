@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Imports data on early day motions — early_day_motions • hansard</title>
+<title>Imports data on early day motions, including the content, signatories, and sponsors of early day motions. — early_day_motions • hansard</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -125,11 +125,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Imports data on early day motions</h1>
+    <h1>Imports data on early day motions, including the content, signatories, and sponsors of early day motions.</h1>
     </div>
 
     
-    <p>Imports data on early day motions</p>
+    <p>Imports data on early day motions, including the content, signatories, and sponsors of early day motions.</p>
     
 
     <pre class="usage"><span class='fu'>early_day_motions</span>(<span class='kw'>edm_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>session</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
@@ -141,7 +141,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>edm_id</th>
-      <td><p>Accepts the ID number of an early day motion, and returns data on that motion. Note that EDM numbers reset each parliamentary session, so using this as the only parameter will return multiple early day motions. Defaults to NULL.</p></td>
+      <td><p>Accepts the ID number of an early day motion, and returns data on that motion. Note that EDM numbers reset each parliamentary session, so using this as the only parameter will return multiple early day motions with the same ID code. If NULL, returns all available Early Day Motions. Note that there, are as of 2017-06-15, 43330 early day motions on listed in the API, so requesting all early day motions without other parameters is slow and very demanding on the API itself. Defaults to NULL.</p></td>
     </tr>
     <tr>
       <th>session</th>

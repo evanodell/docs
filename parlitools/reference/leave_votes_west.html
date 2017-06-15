@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A tibble with the British Election Study 2015 Constituency Results Version 2.21, which corrected spelling mistakes in the Edinburgh constituency names. Variable names have been converted to snake_case and variables have been converted to appropriate R classes. — bes_2015 • parlitools</title>
+<title>A tibble with details on percentage of votes cast for leave in the 2016 referendum on British membership of the European Union in each British constituency, excluding Northern Ireland. Numbers for Britian were compiled by the House of Commons using data from Chris Hanretty's estimates of leave vote, and supplemented with data from BBC Freedom of Information requests for more finely grained voting data. Numbers for Northern Ireland, which reported results by constituency, are taken from the BBC. — leave_votes_west • parlitools</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -143,26 +143,31 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A tibble with the British Election Study 2015 Constituency Results Version 2.21, which corrected spelling mistakes in the Edinburgh constituency names. Variable names have been converted to snake_case and variables have been converted to appropriate R classes.</h1>
+    <h1>A tibble with details on percentage of votes cast for leave in the 2016 referendum on British membership of the European Union in each British constituency, excluding Northern Ireland. Numbers for Britian were compiled by the House of Commons using data from Chris Hanretty's estimates of leave vote, and supplemented with data from BBC Freedom of Information requests for more finely grained voting data. Numbers for Northern Ireland, which reported results by constituency, are taken from the BBC.</h1>
     </div>
 
     
-    <p>A tibble with the British Election Study 2015 Constituency Results Version 2.21, which corrected spelling mistakes in the Edinburgh constituency names. Variable names have been converted to snake_case and variables have been converted to appropriate R classes.</p>
+    <p>A tibble with details on percentage of votes cast for leave in the 2016 referendum on British membership of the European Union in each British constituency, excluding Northern Ireland. Numbers for Britian were compiled by the House of Commons using data from Chris Hanretty's estimates of leave vote, and supplemented with data from BBC Freedom of Information requests for more finely grained voting data. Numbers for Northern Ireland, which reported results by constituency, are taken from the BBC.</p>
     
 
-    <pre class="usage"><span class='no'>bes_2015</span></pre>
+    <pre class="usage"><span class='no'>leave_votes_west</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble, containing 632 rows and 277 columns. For details on all variables in the dataset please see the vignette: <a href = 'http://docs.evanodell.com/parlitools/articles/bes-2015.html'>http://docs.evanodell.com/parlitools/articles/bes-2015.html</a></p>
+    <p>A tibble, with 641 rows and 7 columns.</p><dl class='dl-horizontal'>
+<dt>gss_code</dt><dd><p>ONS code for constituency</p></dd>
+<dt>constituency</dt><dd><p>The name of the constituency.</p></dd>
+<dt>party_2016</dt><dd><p>The party holding the constituency on 23 June 2016, the date of the referendum.</p></dd>
+<dt>ch_leave_vote</dt><dd><p>Estimates of the leave vote produced by Chris Hanretty.</p></dd>
+<dt>known_leave_vote</dt><dd><p>A dummy variable indicating 'yes' if the actual leave vote percentage is known, and 'no' if the estimate by CHris Hanretty is available.</p></dd>
+<dt>known_leave_vote_perc</dt><dd><p>The percentage of votes cast for leave, if known.</p></dd>
+<dt>difference_estimate_known</dt><dd><p>Difference between the estimate by Chris Hanretty and the actual result, if known.</p></dd>
+</dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href = 'http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/'>http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/</a></p>
-    
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p>Fieldhouse, Edward, Jane Green, Geoffrey Evans, Hermann Schmitt, Cees van der Eijk, Jonathan Mellon, and Christopher Prosser. "British Election Study, 2015: General Election Results Dataset," 2015. doi:10.13140/RG.2.1.1162.1844.</p>
+    <p><a href = 'https://secondreading.uk/brexit/brexit-votes-by-constituency/'>https://secondreading.uk/brexit/brexit-votes-by-constituency/</a>
+<a href = 'http://www.bbc.co.uk/news/uk-northern-ireland-36616830'>http://www.bbc.co.uk/news/uk-northern-ireland-36616830</a></p>
     
 
   </div>
@@ -173,8 +178,6 @@
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-
-      <li><a href="#references">References</a></li>
           </ul>
 
   </div>
