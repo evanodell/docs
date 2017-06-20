@@ -52,7 +52,7 @@ west_hex_map <- parlitools::west_hex_map
 
 party_colour <- parlitools::party_colour
 
-mps <- mps_on_date("2017-04-19")
+mps <- mps_on_date("2017-06-20")
 
 mps_colours <- left_join(mps, party_colour, by = "party_id") #Join to current MP data
 

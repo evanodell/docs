@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Imports data in a tibble on House of Commons written questions. — commons_written_questions • hansard</title>
+<title>Get data on epetitions submitted to parliament, with the label, sponsor, number of signatures, date created and epetition ID. — epetition_tibble • hansard</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,14 +126,14 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Imports data in a tibble on House of Commons written questions.</h1>
+    <h1>Get data on epetitions submitted to parliament, with the label, sponsor, number of signatures, date created and epetition ID.</h1>
     </div>
 
     
-    <p>Imports data in a tibble on House of Commons written questions.</p>
+    <p>Get data on epetitions submitted to parliament, with the label, sponsor, number of signatures, date created and epetition ID.</p>
     
 
-    <pre class="usage"><span class='fu'>commons_written_questions</span>(<span class='kw'>mp_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>epetition_tibble</span>(<span class='kw'>min_signatures</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>max_signatures</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>status</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
@@ -141,12 +141,16 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>mp_id</th>
-      <td><p>Requests a member ID and returns a tibble with all written questions asked by that member. If NULL, mp_id is not included as a query parameter. Defaults to NULL.</p></td>
+      <th>min_signatures</th>
+      <td><p>The minimum number of signatures required for inclusion in the tibble. Defaults to 1.</p></td>
     </tr>
     <tr>
-      <th>answering_department</th>
-      <td><p>Accepts a string with a department name or partial name, and returns all written questions by that department. The query acts as a search, so entering &lt;health&gt; will return all questions answered by the Department of Health. If NULL, answering_department is not included as a query parameter. Defaults to NULL.</p></td>
+      <th>max_signatures</th>
+      <td><p>The maximum number of signatures required for inclusion in the tibble. If NULL, there no maximum number of signatures. Defaults to NULL.</p></td>
+    </tr>
+    <tr>
+      <th>status</th>
+      <td><p>The status of the petition, either 'open' or 'closed'. If NULL, returns all petitions both open and closed. Defaults to NULL.</p></td>
     </tr>
     <tr>
       <th>start_date</th>
@@ -172,14 +176,21 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with details on written questions in the House of Commons.</p>
+    <p>A tibble with details on electronic petitions submitted to parliament.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='epetition.html'>epetition</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
 
-  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_written_questions</span>(<span class='kw'>mp_id</span><span class='kw'>=</span><span class='fl'>410</span>, <span class='st'>'cabinet office'</span>)
-  <span class='co'>#Returns a tibble with written questions from Jon Trickett, answered by the Cabinet Office.</span>
+  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>epetition_tibble</span>()
+
+  <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>epetition_tibble</span>(<span class='kw'>max_signatures</span><span class='kw'>=</span><span class='fl'>500</span>)
+
+  <span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>epetition_tibble</span>(<span class='kw'>start_date</span><span class='kw'>=</span><span class='st'>"2016-12-01"</span>, <span class='kw'>end_date</span><span class='kw'>=</span><span class='st'>"2017-04-25"</span>)
 
 })</div></pre>
   </div>
@@ -189,6 +200,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

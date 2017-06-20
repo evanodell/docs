@@ -50,7 +50,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/introduction.html">Articles</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -103,7 +103,7 @@
       <h1>Introduction to hansard</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2017-06-15</h4>
+            <h4 class="date">2017-06-20</h4>
           </div>
 
     
@@ -116,7 +116,7 @@
 <div id="from-cran" class="section level3">
 <h3 class="hasAnchor">
 <a href="#from-cran" class="anchor"></a>From CRAN</h3>
-<pre><code>install.packages("hansard")`</code></pre>
+<pre><code>install.packages("hansard")</code></pre>
 </div>
 <div id="from-github-development-version" class="section level3">
 <h3 class="hasAnchor">
@@ -232,11 +232,11 @@ research_subtopics_list &lt;-<span class="st"> </span><span class="kw"><a href="
 <span class="kw">system.time</span>(without_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">subtopic =</span> research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</code></pre></div>
 <pre><code>## Retrieving page 1 of 1</code></pre>
 <pre><code>##    user  system elapsed 
-##   0.423   0.092  15.313</code></pre>
+##   0.412   0.087   7.029</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(with_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]], <span class="dt">subtopic=</span>research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</code></pre></div>
 <pre><code>## Retrieving page 1 of 1</code></pre>
 <pre><code>##    user  system elapsed 
-##   0.024   0.002   0.210</code></pre>
+##   0.030   0.002   0.104</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">identical</span>(with_topic, without_topic)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>If a specified subtopic is not a subtopic of the specified topic, the function will not return any data.</p>
@@ -308,7 +308,8 @@ research_subtopics_list &lt;-<span class="st"> </span><span class="kw"><a href="
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
-      <h2>Contents</h2>
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#installing-hansard">Installing hansard</a></li>
       <li><a href="#using-hansard">Using hansard</a></li>

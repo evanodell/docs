@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Imports data in a tibble on House of Commons written questions. — commons_written_questions • hansard</title>
+<title>Returns the name of all candidates standing in an election. — election_candidates • hansard</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,35 +126,26 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Imports data in a tibble on House of Commons written questions.</h1>
+    <h1>Returns the name of all candidates standing in an election.</h1>
     </div>
 
     
-    <p>Imports data in a tibble on House of Commons written questions.</p>
+    <p>Returns the name of all candidates standing in an election.</p>
     
 
-    <pre class="usage"><span class='fu'>commons_written_questions</span>(<span class='kw'>mp_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>election_candidates</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>constit_details</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>mp_id</th>
-      <td><p>Requests a member ID and returns a tibble with all written questions asked by that member. If NULL, mp_id is not included as a query parameter. Defaults to NULL.</p></td>
+      <th>ID</th>
+      <td><p>Accepts an ID for a general or by-election from the 2010 general election onwards, and returns the results. If NULL, returns all available election results. Defaults to NULL.</p></td>
     </tr>
     <tr>
-      <th>answering_department</th>
-      <td><p>Accepts a string with a department name or partial name, and returns all written questions by that department. The query acts as a search, so entering &lt;health&gt; will return all questions answered by the Department of Health. If NULL, answering_department is not included as a query parameter. Defaults to NULL.</p></td>
-    </tr>
-    <tr>
-      <th>start_date</th>
-      <td><p>The earliest date to include in the tibble. Defaults to '1900-01-01'. Accepts character values in 'YYYY-MM-DD' format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
-    </tr>
-    <tr>
-      <th>end_date</th>
-      <td><p>The latest date to include in the tibble. Defaults to current system date. Defaults to '1900-01-01'. Accepts character values in 'YYYY-MM-DD' format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <th>constit_details</th>
+      <td><p>If TRUE, returns additional details on each constituency, including its GSS (Government Statistical Service) code. Defaults to FALSE.</p></td>
     </tr>
     <tr>
       <th>extra_args</th>
@@ -172,14 +163,22 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with details on written questions in the House of Commons.</p>
+    <p>A tibble with the names of each candidate standing in each constituency in an election or elections. If there are multiple candidates from the same party, or multiple independent candidates, their names are combined into a list.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='elections.html'>elections</a></code> <code><a href='election_results.html'>election_results</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
 
-  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_written_questions</span>(<span class='kw'>mp_id</span><span class='kw'>=</span><span class='fl'>410</span>, <span class='st'>'cabinet office'</span>)
-  <span class='co'>#Returns a tibble with written questions from Jon Trickett, answered by the Cabinet Office.</span>
+  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>election_candidates</span>(<span class='kw'>ID</span><span class='kw'>=</span><span class='fl'>382037</span>)
+
+  <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>election_candidates</span>()
+
+  <span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>election_candidates</span>(<span class='kw'>constit_details</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
 
 })</div></pre>
   </div>
@@ -189,6 +188,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
