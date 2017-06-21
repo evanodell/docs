@@ -10,34 +10,34 @@ Online documentation for my R packages.
 
 ## Packages:
 
-### [`hansard`](http://docs.evanodell.com/hansard)
+### [`hansard`](https://docs.evanodell.com/hansard)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/hansard/blob/master/LICENSE) 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard) 
 [![GitHub tag](https://img.shields.io/github/tag/evanodell/hansard.svg)](https://github.com/evanodell/hansard) 
-[![](http://cranlogs.r-pkg.org/badges/grand-total/hansard)](https://dgrtwo.shinyapps.io/cranview/) 
+[![](https://cranlogs.r-pkg.org/badges/grand-total/hansard)](https://dgrtwo.shinyapps.io/cranview/) 
 [![DOI](https://zenodo.org/badge/72111315.svg)](https://zenodo.org/badge/latestdoi/72111315)
 
 An ironically named R package to automatically fetch data from the UK Parliament API. Available on [CRAN](https://cran.r-project.org/package=hansard) and [GitHub](https://github.com/EvanOdell/hansard).
 
-### [`mnis`](http://docs.evanodell.com/mnis)
+### [`mnis`](https://docs.evanodell.com/mnis)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnis/blob/master/LICENSE) 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis) 
 [![GitHub tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis) 
-[![](http://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://dgrtwo.shinyapps.io/cranview/)  
+[![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://dgrtwo.shinyapps.io/cranview/)  
 [![DOI](https://zenodo.org/badge/76553907.svg)](https://zenodo.org/badge/latestdoi/76553907)
 
 An R package for downloading data from the Members' Names Information Service API operated by the UK Parliament. Available on [CRAN](https://cran.r-project.org/package=mnis) and [GitHub](https://github.com/EvanOdell/mnis).
 
-### [`parlitools`](http://docs.evanodell.com/parlitools)
+### [`parlitools`](https://docs.evanodell.com/parlitools)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/parlitools/blob/master/LICENSE)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)
 [![GitHub tag](https://img.shields.io/github/tag/evanodell/parlitools.svg)](https://github.com/evanodell/parlitools)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://dgrtwo.shinyapps.io/cranview/)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.802938.svg)](https://doi.org/10.5281/zenodo.802938)
 
-A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools). Use [`parlitools`](http://docs.evanodell.com/parlitools) to create maps like this: 
+A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools). Use [`parlitools`](https://docs.evanodell.com/parlitools) to create maps like this: 
 
 ```{r map, echo=FALSE, fig.height=7, message=FALSE, warning=FALSE}
 library(leaflet)
