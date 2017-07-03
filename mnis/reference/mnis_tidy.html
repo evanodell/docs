@@ -131,15 +131,15 @@
 
     
     <p>Functions to tidy up the variable names returned from the API, and turn dates and datetimes to POSIXct.</p>
-<p>member_tidy</p>
-<p>ref_tidy</p>
     
 
     <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>df</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
 
 <span class='fu'>member_tidy</span>(<span class='no'>df</span>)
 
-<span class='fu'>ref_tidy</span>(<span class='no'>df</span>, <span class='no'>tidy_style</span>)</pre>
+<span class='fu'>ref_tidy</span>(<span class='no'>df</span>, <span class='no'>tidy_style</span>)
+
+<span class='fu'>constituency_results_tidy</span>(<span class='no'>results</span>, <span class='no'>details</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -151,6 +151,14 @@
     <tr>
       <th>tidy_style</th>
       <td><p>The style to tidy the tibble with.</p></td>
+    </tr>
+    <tr>
+      <th>results</th>
+      <td><p>The tibble to tidy</p></td>
+    </tr>
+    <tr>
+      <th>details</th>
+      <td><p>The list to tidy</p></td>
     </tr>
     </table>
     
