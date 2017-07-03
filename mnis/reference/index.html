@@ -200,7 +200,7 @@
         <tr>
           <th colspan="2">
             <h2 id="section-reference-functions" class="hasAnchor"><a href="#section-reference-functions" class="anchor"></a>Reference Functions</h2>
-            <p class="section-desc"><p>Functions to return reference data, which can provide parameters for other function calls. The functions do not accept any arguments aside from the ‘tidy’ argument, which defaults to TRUE.</p></p>
+            <p class="section-desc"><p>Functions to return reference data, which can provide parameters for other function calls. The functions do not accept any arguments aside from the <code>tidy</code> argument, which defaults to TRUE, and the <code>tidy_style</code> argument, which defaults to ‘snake_case’.</p></p>
           </th>
         </tr>
         <tr>
@@ -226,7 +226,7 @@
         <tr>
           <!--  -->
           <td>
-            <p><code><a href="mnis_tidy.html">mnis_tidy</a></code> <code><a href="mnis_tidy.html">ref_tidy</a></code> </p>
+            <p><code><a href="mnis_tidy.html">mnis_tidy</a></code> <code><a href="mnis_tidy.html">member_tidy</a></code> <code><a href="mnis_tidy.html">ref_tidy</a></code> </p>
           </td>
           <td><p>Functions to tidy up the variable names returned from the API, and turn dates and datetimes to POSIXct.</p></td>
         </tr><tr>
@@ -260,7 +260,7 @@
           <td>
             <p><code><a href="mnis_additional.html">mnis_additional</a></code> <code><a href="mnis_additional.html">mnis_basic_details</a></code> <code><a href="mnis_additional.html">mnis_biography_entries</a></code> <code><a href="mnis_additional.html">mnis_committees</a></code> <code><a href="mnis_additional.html">mnis_addresses</a></code> <code><a href="mnis_additional.html">mnis_constituencies</a></code> <code><a href="mnis_additional.html">mnis_elections_contested</a></code> <code><a href="mnis_additional.html">mnis_experiences</a></code> <code><a href="mnis_additional.html">mnis_government_posts</a></code> <code><a href="mnis_additional.html">mnis_honours</a></code> <code><a href="mnis_additional.html">mnis_house_memberships</a></code> <code><a href="mnis_additional.html">mnis_statuses</a></code> <code><a href="mnis_additional.html">mnis_staff</a></code> <code><a href="mnis_additional.html">mnis_interests</a></code> <code><a href="mnis_additional.html">mnis_known_as</a></code> <code><a href="mnis_additional.html">mnis_maiden_speeches</a></code> <code><a href="mnis_additional.html">mnis_opposition_posts</a></code> <code><a href="mnis_additional.html">mnis_other_parliaments</a></code> <code><a href="mnis_additional.html">mnis_parliamentary_posts</a></code> <code><a href="mnis_additional.html">mnis_parties</a></code> <code><a href="mnis_additional.html">mnis_preferred_names</a></code> </p>
           </td>
-          <td><p>A series of basic function for the API lookup. Each of these functions accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned.</p></td>
+          <td><p>A series of basic function for the API lookup. Each function accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned.</p></td>
         </tr><tr>
           <!--  -->
           <td>
@@ -286,13 +286,13 @@
           <td>
             <p><code><a href="mnis_constituency_results.html">mnis_constituency_results</a></code> </p>
           </td>
-          <td><p>Returns a single object containing a list with details of the constituency and a tibble with election results. For constituency IDs, see <code>ref_constituencies</code></p></td>
+          <td><p>Returns a single object containing a list with details of the constituency and a tibble with election results. For constituency IDs, see <code>ref_constituencies</code>.</p></td>
         </tr><tr>
           <!--  -->
           <td>
             <p><code><a href="mnis_department.html">mnis_department</a></code> </p>
           </td>
-          <td><p>Request data on the holders of cabinet/shadow cabinet positions. Request specific departments by department ID (see <code>mnis_reference</code> for the <code>ref_department</code> function to retrieve departmental IDs.)</p></td>
+          <td><p>Request data on the holders of cabinet/shadow cabinet positions. Request specific departments by department ID (see <code>mnis_reference</code> for the <code>ref_department</code> function to retrieve departmental IDs).</p></td>
         </tr><tr>
           <!--  -->
           <td>

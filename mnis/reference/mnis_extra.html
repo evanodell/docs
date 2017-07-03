@@ -130,17 +130,17 @@
     </div>
 
     
-    <p>It combines the various options of mnis_additional into one dataframe, and the default is similar to <code><a href='mnis_full_biog.html'>mnis_full_biog</a></code>. Variable descriptions are taken from the mnis website: &lt;http://data.parliament.uk/membersdataplatform/memberquery.aspx&gt;</p>
+    <p>It combines the various options of mnis_additional into one dataframe, and the default is similar to <code><a href='mnis_full_biog.html'>mnis_full_biog</a></code>. Variable descriptions are taken from the mnis website: &lt;http://data.parliament.uk/membersdataplatform/memberquery.aspx&gt;.</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_extra</span>(<span class='no'>ID</span>, <span class='kw'>mnis_id</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>addresses</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>basic_details</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>biography_entries</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>committees</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>constituencies</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>elections_contested</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>experiences</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>government_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>honours</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>house_memberships</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>interests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>known_as</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>maiden_speeches</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>opposition_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>other_parliaments</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>parliamentary_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>parties</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>preferred_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>staff</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>statuses</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
+    <pre class="usage"><span class='fu'>mnis_extra</span>(<span class='no'>ID</span>, <span class='kw'>ref_dods</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>addresses</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>biography_entries</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>committees</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>constituencies</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>elections_contested</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>experiences</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>government_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>honours</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>house_memberships</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>interests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>known_as</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>maiden_speeches</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>opposition_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>other_parliaments</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>parliamentary_posts</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>parties</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>preferred_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>staff</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>statuses</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -150,20 +150,12 @@
       <td><p>The ID number of the member. Defaults to NULL. If NULL, returns</p></td>
     </tr>
     <tr>
-      <th>mnis_id</th>
-      <td><p>Request based on the default membership ID scheme.</p></td>
-    </tr>
-    <tr>
       <th>ref_dods</th>
-      <td><p>Request based on the DODS membership ID scheme. Defaults to FALSE.</p></td>
+      <td><p>Request based on the DODS membership ID scheme. Defaults to FALSE. If FALSE, requests data based on the default membership ID scheme.</p></td>
     </tr>
     <tr>
       <th>addresses</th>
       <td><p>Member address information (e.g. website, twitter, consituency address etc...). Defaults to TRUE. If TRUE, address details are included in the tibble.</p></td>
-    </tr>
-    <tr>
-      <th>basic_details</th>
-      <td><p>Basic information about the Member (e.g. given name, HoL membership type, oaths etc...) Defaults to TRUE. If TRUE, basic details are included in the tibble.</p></td>
     </tr>
     <tr>
       <th>biography_entries</th>

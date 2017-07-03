@@ -131,10 +131,13 @@
 
     
     <p>Functions to tidy up the variable names returned from the API, and turn dates and datetimes to POSIXct.</p>
+<p>member_tidy</p>
 <p>ref_tidy</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>df</span>, <span class='no'>tidy_style</span>)
+    <pre class="usage"><span class='fu'>mnis_tidy</span>(<span class='no'>df</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)
+
+<span class='fu'>member_tidy</span>(<span class='no'>df</span>)
 
 <span class='fu'>ref_tidy</span>(<span class='no'>df</span>, <span class='no'>tidy_style</span>)</pre>
     
@@ -143,7 +146,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>df</th>
-      <td><p>The tibble to tidy</p></td>
+      <td><p>The tibble to tidy.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
