@@ -36,7 +36,7 @@ An R package for downloading data from the Members' Names Information Service AP
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)
 [![GitHub tag](https://img.shields.io/github/tag/evanodell/parlitools.svg)](https://github.com/evanodell/parlitools)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://dgrtwo.shinyapps.io/cranview/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.802938.svg)](https://doi.org/10.5281/zenodo.802938)
+[![DOI](https://zenodo.org/badge/86801920.svg)](https://zenodo.org/badge/latestdoi/86801920)
 
 A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools). Use [`parlitools`](https://docs.evanodell.com/parlitools) to create maps like this: 
 

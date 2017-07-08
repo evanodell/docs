@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Request data on the holders of cabinet/shadow cabinet positions. Request specific departments by department ID (see <code>mnis_reference</code> for the <code>ref_department</code> function to retrieve departmental IDs). — mnis_department • mnis</title>
+<title>Retrieve data on the holders of cabinet/shadow cabinet positions. — mnis_department • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,11 +126,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Request data on the holders of cabinet/shadow cabinet positions. Request specific departments by department ID (see <code>mnis_reference</code> for the <code>ref_department</code> function to retrieve departmental IDs).</h1>
+    <h1>Retrieve data on the holders of cabinet/shadow cabinet positions.</h1>
     </div>
 
     
-    <p>Request data on the holders of cabinet/shadow cabinet positions. Request specific departments by department ID (see <code><a href='mnis_reference.html'>mnis_reference</a></code> for the <code>ref_department</code> function to retrieve departmental IDs).</p>
+    <p>Request data on the holders of cabinet or shadow cabinet positions. Request specific departments by department ID (see <code><a href='mnis_reference.html'>mnis_reference</a></code> for the <code>ref_department</code> function to retrieve departmental IDs).</p>
     
 
     <pre class="usage"><span class='fu'>mnis_department</span>(<span class='kw'>department_id</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>bench</span> <span class='kw'>=</span> <span class='st'>"Government"</span>, <span class='kw'>former</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -141,7 +141,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>department_id</th>
-      <td><p>The department look up. 0 returns the cabinet/shadow cabinet, -1 returns a list of all ministers. Defaults to 0.</p></td>
+      <td><p>The department look up. 0 returns the cabinet/shadow cabinet, -1 returns a list of all ministers. Defaults to 0. For departmental IDs see <code>ref_department()</code> in <code><a href='mnis_reference.html'>mnis_reference</a></code>.</p></td>
     </tr>
     <tr>
       <th>bench</th>
