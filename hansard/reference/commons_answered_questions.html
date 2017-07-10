@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Imports data on House of Commons answered questions. If all parameters are left empty, imports all available answered questions in a tibble. — commons_answered_questions • hansard</title>
+<title>Imports data on House of Commons answered questions. — commons_answered_questions • hansard</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,7 +126,7 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Imports data on House of Commons answered questions. If all parameters are left empty, imports all available answered questions in a tibble.</h1>
+    <h1>Imports data on House of Commons answered questions.</h1>
     </div>
 
     
@@ -189,13 +189,12 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_answered_questions</span>(<span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='st'>'health'</span>, <span class='kw'>answered_by</span> <span class='kw'>=</span> <span class='st'>'4019'</span>)
 
-  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_answered_questions</span>(<span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='st'>'health'</span>, <span class='kw'>answered_by</span> <span class='kw'>=</span> <span class='st'>'4019'</span>)
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_answered_questions</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>'2017-03-26'</span>, <span class='kw'>end_date</span><span class='kw'>=</span><span class='st'>'2017-04-01'</span>)
 
-  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_answered_questions</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>'2017-03-26'</span>, <span class='kw'>end_date</span><span class='kw'>=</span><span class='st'>'2017-04-01'</span>)
-
-})</div></pre>
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
