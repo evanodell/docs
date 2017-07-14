@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Request information on all MPs who were members of the House of Commons on the date specificed (if only one date is included as a parameter), or on or between the two dates if two are specified. Includes constituency and electoral information if the date is 2010-05-06 or later, or if the date range is entirely within 2010-05-06 and the present day. — mps_on_date • parlitools</title>
+<title>A tibble with the results of the 2017 general election. — ge_2017 • parlitools</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -144,57 +144,39 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Request information on all MPs who were members of the House of Commons on the date specificed (if only one date is included as a parameter), or on or between the two dates if two are specified. Includes constituency and electoral information if the date is 2010-05-06 or later, or if the date range is entirely within 2010-05-06 and the present day.</h1>
+    <h1>A tibble with the results of the 2017 general election.</h1>
     </div>
 
     
-    <p>Request information on all MPs who were members of the House of Commons on the date specificed (if only one date is included as a parameter), or on or between the two dates if two are specified. Includes constituency and electoral information if the date is 2010-05-06 or later, or if the date range is entirely within 2010-05-06 and the present day.</p>
+    <p>A tibble with constituencies results from the 2017 general election, linked to census data for each constituency from the British Election Study 2015. Only covers Great Britain, so data on Northern Irish constituencies is not included.</p>
     
 
-    <pre class="usage"><span class='fu'>mps_on_date</span>(<span class='kw'>date1</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>date2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>date1</th>
-      <td><p>The date to return the list of MPs from. Accepts character values in "YYYY-MM-DD" format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to current system date.</p></td>
-    </tr>
-    <tr>
-      <th>date2</th>
-      <td><p>An optional query parameter. Accepts character values in "YYYY-MM-DD" format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. If a proper date, the function returns a list of all MPs who were members between date2 and date1. Defaults to NULL.</p></td>
-    </tr>
-    <tr>
-      <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
-    </tr>
-    <tr>
-      <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <pre class="usage"><span class='no'>ge_2017</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with information on all MPs who were members of the House of Commons on the date specificed (if only date1 is included as a parameter), or on or between the two dates if both date1 and date2 are specified.</p>
+    <p>A tibble, containing 632 row and 245 columns. For details on all variables in the dataset please see the vignette: <a href='http://docs.evanodell.com/parlitools/articles/ge-2017.html'>http://docs.evanodell.com/parlitools/articles/ge-2017.html</a></p>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='researchbriefings.parliament.uk/ResearchBriefing/Summary/CBP-7979'>researchbriefings.parliament.uk/ResearchBriefing/Summary/CBP-7979</a> <a href='http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/'>http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/</a></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Variable names have been converted to snake_case and variables have been converted to appropriate R classes.</p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mps_on_date</span>(<span class='kw'>date1</span><span class='kw'>=</span><span class='st'>"2017-04-19"</span>, <span class='kw'>date2</span><span class='kw'>=</span><span class='st'>"2010-05-04"</span>)
-
-<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>
