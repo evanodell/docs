@@ -148,14 +148,74 @@
     </div>
 
     
-    <p>A tibble with constituencies results from the 2017 general election, linked to census data for each constituency from the British Election Study 2015. Only covers Great Britain, so data on Northern Irish constituencies is not included.</p>
+    <p>A tibble with Great Britain constituencies results from the 2017 general election. This data can be linked to 2011 census information in <code><a href='bes_2015.html'>bes_2015</a></code>.</p>
     
 
     <pre class="usage"><span class='no'>ge_2017</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble, containing 632 row and 245 columns. For details on all variables in the dataset please see the vignette: <a href='http://docs.evanodell.com/parlitools/articles/ge-2017.html'>http://docs.evanodell.com/parlitools/articles/ge-2017.html</a></p>
+    <p>A tibble, containing 632 row and 58 columns.</p><dl class='dl-horizontal'>
+<dt>pano</dt><dd><p>Press Association Constituency ID. Numeric.</p></dd>
+<dt>onsconst_id</dt><dd><p>ONS Constituency ID. Character.</p></dd>
+<dt>constituency_name</dt><dd><p>Constituency Name. Factor.</p></dd>
+<dt>country</dt><dd><p>Country. Factor.</p></dd>
+<dt>region</dt><dd><p>Region. Factor.</p></dd>
+<dt>constituency_type</dt><dd><p>County or Borough Constituency. Factor.</p></dd>
+<dt>winner_17</dt><dd><p>2017 Winning party. Factor.</p></dd>
+<dt>electorate_17</dt><dd><p>2017 Size of electorate. Numeric.</p></dd>
+<dt>total_vote_17</dt><dd><p>2017 Total number of votes cast. Numeric.</p></dd>
+<dt>rejected_vote_17</dt><dd><p>2017 Number of rejected ballots. Numeric.</p></dd>
+<dt>majority_17</dt><dd><p>2017 Majority. Numeric.</p></dd>
+<dt>majority_17</dt><dd><p>2017 Majority. Numeric.</p></dd>
+<dt>turnout_17</dt><dd><p>2017 Turnout. Numeric.</p></dd>
+<dt>seat_change_1517</dt><dd><p>2017 winning party gain from 2015 winning party. Factor.</p></dd>
+<dt>con_vote_17</dt><dd><p>2017 Conservative number of votes. Numeric.</p></dd>
+<dt>lab_vote_17</dt><dd><p>2017 Labour number of votes. Numeric.</p></dd>
+<dt>ld_vote_17</dt><dd><p>2017 Liberal Democrat number of votes. Numeric.</p></dd>
+<dt>ukip_vote_17</dt><dd><p>2017 United Kingdom Independence Party (UKIP) number of votes. Numeric.</p></dd>
+<dt>green_vote_17</dt><dd><p>2017 Green Party number of votes. Numeric.</p></dd>
+<dt>snp_vote_17</dt><dd><p>2017 Scottish National Party (SNP) number of votes. Numeric.</p></dd>
+<dt>pc_vote_17</dt><dd><p>2017 Plaid Cymru number of votes. Numeric.</p></dd>
+<dt>other_vote_17</dt><dd><p>2017 Other vote share. Numeric.</p></dd>
+<dt>con_17</dt><dd><p>2017 Conservative vote share. Numeric.</p></dd>
+<dt>lab_17</dt><dd><p>2017 Labour vote share. Numeric.</p></dd>
+<dt>ld_17</dt><dd><p>2017 Liberal Democrat vote share. Numeric.</p></dd>
+<dt>snp_17</dt><dd><p>2017 Scottish National Party (SNP) vote share. Numeric.</p></dd>
+<dt>pc_17</dt><dd><p>2017 Plaid Cymru vote share. Numeric.</p></dd>
+<dt>ukip_17</dt><dd><p>2017 United Kingdom Independence Party (UKIP) vote share. Numeric.</p></dd>
+<dt>green_17</dt><dd><p>2017 Green Party vote share. Numeric.</p></dd>
+<dt>other_17</dt><dd><p>2017 Combined other vote share. Numeric.</p></dd>
+<dt>con_1517</dt><dd><p>2015-17 Conservative vote share change. Numeric.</p></dd>
+<dt>lab_1517</dt><dd><p>2015-17 Labour vote share change. Numeric.</p></dd>
+<dt>ld_1517</dt><dd><p>2015-17 Liberal Democrat vote share change. Numeric.</p></dd>
+<dt>snp_1517</dt><dd><p>2015-17 Scottish National Party (SNP) vote share change. Numeric.</p></dd>
+<dt>pc_1517</dt><dd><p>2015-17 Plaid Cymru vote share change. Numeric.</p></dd>
+<dt>ukip_1517</dt><dd><p>2015-17 United Kingdom Independence Party (UKIP) vote share change. Numeric.</p></dd>
+<dt>green_1517</dt><dd><p>2015-17 Green Party vote share change. Numeric.</p></dd>
+<dt>winner_15</dt><dd><p>2015 Winning party. Factor.</p></dd>
+<dt>con_15</dt><dd><p>2015 Conservative vote share. Numeric.</p></dd>
+<dt>lab_15</dt><dd><p>2015 Labour vote share. Numeric.</p></dd>
+<dt>ld_15</dt><dd><p>2015 Liberal Democrat vote share. Numeric.</p></dd>
+<dt>snp_15</dt><dd><p>2015 Scottish National Party (SNP) vote share. Numeric.</p></dd>
+<dt>pc_15</dt><dd><p>2015 Plaid Cymru vote share. Numeric.</p></dd>
+<dt>ukip_15</dt><dd><p>2015 United Kingdom Independence Party (UKIP) vote share. Numeric.</p></dd>
+<dt>green_15</dt><dd><p>2015 Green Party vote share. Numeric.</p></dd>
+<dt>other_15</dt><dd><p>2015 Combined other vote share. Numeric.</p></dd>
+<dt>majority_15</dt><dd><p>2015 Majority. Numeric.</p></dd>
+<dt>turnout_15</dt><dd><p>2015 Turnout. Numeric.</p></dd>
+<dt>con_vote_15</dt><dd><p>2015 Conservative number of votes. Numeric.</p></dd>
+<dt>lab_vote_15</dt><dd><p>2015 Labour number of votes. Numeric.</p></dd>
+<dt>ldvote_15</dt><dd><p>2015 Liberal Democrat number of votes. Numeric.</p></dd>
+<dt>snpvote_15</dt><dd><p>2015 Scottish National Party (SNP) number of votes. Numeric.</p></dd>
+<dt>pcvote_15</dt><dd><p>2015 Plaid Cymru number of votes. Numeric.</p></dd>
+<dt>ukipvote_15</dt><dd><p>2015 United Kingdom Independence Party (UKIP) number of votes. Numeric.</p></dd>
+<dt>green_vote_15</dt><dd><p>2015 Green Party number of votes. Numeric.</p></dd>
+<dt>bnpvote_15</dt><dd><p>2015 British National Party (BNP) number of votes. Numeric.</p></dd>
+<dt>total_vote_15</dt><dd><p>2015 Total number of votes cast. Numeric.</p></dd>
+<dt>rejected_vote_15</dt><dd><p>2015 Number of rejected ballots. Numeric.</p></dd>
+<dt>electorate_15</dt><dd><p>2015 Size of electorate. Numeric.</p></dd>
+</dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
