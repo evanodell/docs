@@ -2,12 +2,10 @@
 % Please edit documentation in R/build_docs.R
 \name{build_docs}
 \alias{build_docs}
-\title{build_docs
-Build documentation for docs.evanodell.com}
+\title{build_docs}
 \usage{
 build_docs()
 }
 \description{
-build_docs
-Build documentation for docs.evanodell.com
+Build documentation for R packages for for docs.evanodell.com
 }

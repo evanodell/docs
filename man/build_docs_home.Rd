@@ -7,5 +7,5 @@
 build_docs_home()
 }
 \description{
-build_docs_home
+Build the homepage of docs.evanodell.com
 }
