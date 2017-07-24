@@ -52,3 +52,7 @@ other_docs <- function(pkg="/Users/evanodell/Documents/GitHub/", path="/Users/ev
 build_docs_home <- function(){
   pkgdown::build_site(path=".", preview = FALSE)
 }
+
+
+
+

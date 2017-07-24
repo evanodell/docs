@@ -1,9 +1,14 @@
 Package: docs
-Title:  docs | docs.evanodell.com
+Type: Package
+Title: docs | docs.evanodell.com
+Description: An internal package to build docs with pkgdown.
 Authors@R: person("Evan Odell", email="evanodell91@gmail.com", role=c("aut", "cre"))
 Author: Evan Odell [aut, cre]
+Version: 0.1.0
 Maintainer: Evan Odell <evanodell91@gmail.com>
 License: MIT
+LazyData: TRUE
+Depends: R(>= 2.10.0)
 LazyData: TRUE
 Depends: R(>= 2.10.0)
 RoxygenNote: 6.0.1

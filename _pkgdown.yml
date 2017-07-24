@@ -17,6 +17,8 @@ navbar:
       href: http://docs.evanodell.com/mnis
     - text: "parlitools"
       href: http://docs.evanodell.com/parlitools
+    - text: "emisc"
+      href: http://docs.evanodell.com/emisc
 
   right:
     - icon: fa-home fa-lg

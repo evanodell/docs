@@ -4,3 +4,9 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^_pkgdown\.yml$
+^.DS_Store
+^.Rhistory
+^.gitignore
+^.travis.yml
+^src/.DS_Store
+.git
