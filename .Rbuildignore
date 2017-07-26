@@ -10,3 +10,4 @@
 ^.travis.yml
 ^src/.DS_Store
 .git
+^C:\Users\eodell\Documents\GitHub\docs\docs$

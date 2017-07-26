@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A function that locates all variables with "date" in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes. — dateable â€¢ emisc</title>
+<title>write_latex — write_latex â€¢ emisc</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -128,31 +128,53 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A function that locates all variables with "date" in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</h1>
+    <h1>write_latex</h1>
     </div>
 
     
-    <p>A function that locates all variables with "date" in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</p>
+    <p>Write R data to a LaTeX file. Similar functions, such as <code>latex</code> in <code>Hmisc</code>, write data to a LaTeX table, but there may be instances where you don't want data in a table, hence this function. Columns will printed in the order specified. The function adds a newline between each item printed.</p>
     
 
-    <pre class="usage"><span class='fu'>dateable</span>(<span class='no'>df</span>)</pre>
+    <pre class="usage"><span class='fu'>write_latex</span>(<span class='no'>df</span>, <span class='no'>...</span>, <span class='no'>file_name</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>df</th>
-      <td><p>The dataframe, tibble, data.table, etc, with the dates to be dated.</p></td>
+      <td><p>The dataframe, data.table, tibble, etc, containing the data to write to LaTeX.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>One or more unquoted, comma separated, variable names to write to LaTeX. If blank, all variables will be written to LaTeX.</p></td>
+    </tr>
+    <tr>
+      <th>file_name</th>
+      <td><p>File name to write to.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
+    <p>This function does not add any LaTeX syntax or markup to the data being printed. To add markup prior to printing, use the <code><a href='latex_markup.html'>latex_markup</a></code> function.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
+
+  <span class='fu'>write_latex</span>(<span class='no'>iris</span>, <span class='no'>Species</span>, <span class='no'>Petal.Width</span>, <span class='kw'>file_name</span> <span class='kw'>=</span> <span class='st'>"iris.tex"</span>)
+
+})</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
