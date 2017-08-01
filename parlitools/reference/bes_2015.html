@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A tibble with the British Election Study 2015 Constituency Results Version 2.21. — bes_2015 • parlitools</title>
+<title>2015 General Election Results — bes_2015 • parlitools</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -92,7 +92,13 @@
       <a href="../articles/mapping-local-authorities.html">Mapping Local Government</a>
     </li>
     <li>
-      <a href="../articles/bes-2015.html">British Election Study</a>
+      <a href="../articles/bes-2015.html">British Election Study 2015</a>
+    </li>
+    <li>
+      <a href="../articles/bes-2017.html">British Election Study 2017</a>
+    </li>
+    <li>
+      <a href="../articles/census-11.html">Constituency Level Census Data</a>
     </li>
   </ul>
 </li>
@@ -147,18 +153,18 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A tibble with the British Election Study 2015 Constituency Results Version 2.21.</h1>
+    <h1>2015 General Election Results</h1>
     </div>
 
     
-    <p>A tibble with constituencies results from the British Election Study 2015, linked to census data for each constituency. Only covers Great Britain, so data on Northern Irish constituencies is not included.</p>
+    <p>A tibble with the British Election Study 2015 Constituency Results Version 2.21.</p>
     
 
     <pre class="usage"><span class='no'>bes_2015</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble, containing 632 rows and 277 columns. For details on all variables in the dataset please see the vignette: <a href='http://docs.evanodell.com/parlitools/articles/bes-2015.html'>http://docs.evanodell.com/parlitools/articles/bes-2015.html</a></p>
+    <p>A tibble, containing 650 rows and 92 columns. For full details see the vignette: <a href='http://docs.evanodell.com/parlitools/articles/bes-2015.html'>http://docs.evanodell.com/parlitools/articles/bes-2015.html</a></p>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
@@ -166,7 +172,8 @@
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Variable names have been converted to snake_case and variables have been converted to appropriate R classes.</p>
+    <p>A tibble with constituencies results from the British Election Study 2015. Census data from the BES has been moved to the <code><a href='census_11.html'>census_11</a></code> dataset, and can be linked through the with the <code>pano</code>, <code>ons_const_id</code> and <code>constituency_name</code> variables. Only contains detailed results from Great Britain; the only data included on Northern Irish constituencies is the party that won the seat.</p>
+<p>Variable names have been converted to snake_case and variables have been converted to appropriate R classes.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 

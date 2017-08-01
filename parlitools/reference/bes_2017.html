@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • parlitools</title>
+<title>2017 General Election Results — bes_2017 • parlitools</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@
   </head>
 
   <body>
-    <div class="container template-vignette-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -150,25 +150,50 @@
       
       </header>
 
-      <div class="page-header">
-  <h1>Articles <small>version&nbsp;0.2.0</small></h1>
-</div>
-
-<div class="row">
-  <div class="col-md-9">
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="bes-2015.html">British Election Study variables</a></li>
-        <li><a href="bes-2017.html">British Election Study variables</a></li>
-        <li><a href="census-11.html">British Election Study variables</a></li>
-        <li><a href="introduction.html">Introduction to parlitools</a></li>
-        <li><a href="mapping-local-authorities.html">Mapping Local Authorities</a></li>
-        <li><a href="using-cartograms.html">Using cartograms with parlitools</a></li>
-      </ul>
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>2017 General Election Results</h1>
     </div>
+
+    
+    <p>A tibble with the British Election Study 2017 Constituency Results Version 1.0.</p>
+    
+
+    <pre class="usage"><span class='no'>bes_2017</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A tibble, containing 632 rows and 123 columns. For full details see the vignette: <a href='http://docs.evanodell.com/parlitools/articles/bes-2017.html'>http://docs.evanodell.com/parlitools/articles/bes-2017.html</a></p>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='http://www.britishelectionstudy.com/data-object/2017-bes-constituency-results-with-census-and-candidate-data/'>http://www.britishelectionstudy.com/data-object/2017-bes-constituency-results-with-census-and-candidate-data/</a></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>A tibble with Great Britain constituencies results from the 2017 general election. This data can be linked to 2011 census information in <code><a href='census_11.html'>census_11</a></code> with the <code>pano</code>, <code>ons_const_id</code> and <code>constituency_name</code> variables.</p>
+<p>Variable names have been converted to snake_case and variables have been converted to appropriate R classes.</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Fieldhouse, E., J. Green., G. Evans., H. Schmitt, C. van der Eijk, J. Mellon &amp; C. Prosser (2017) British Election Study 2017 Constituency Results file, version 1.0.</p>
+    
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#references">References</a></li>
+          </ul>
+
   </div>
 </div>
 

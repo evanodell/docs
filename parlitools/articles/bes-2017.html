@@ -136,15 +136,15 @@
     
     
 <div class="contents">
-<div id="variable-names-in-bes_2015" class="section level1">
+<div id="variable-names-in-bes_2017" class="section level1">
 <h1 class="hasAnchor">
-<a href="#variable-names-in-bes_2015" class="anchor"></a>Variable names in <code>bes_2015</code>
+<a href="#variable-names-in-bes_2017" class="anchor"></a>Variable names in <code>bes_2017</code>
 </h1>
-<p>Due to the 92 variables included in the <code>bes_2015</code> dataset, including information on each variable in the <code>parlitools</code> reference manual is very lengthy and not very user friendly. This vignette reproduces the table including with the British Election Study data, available <a href="http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/">here</a>. The ‘Name’ column refers to the variable name used in the <code>bes_2015</code> dataset, the ‘Label’ is the description of the variable, and the ‘Data Type’ column refers to the R data type.</p>
-<table style="width:75%;" class="table">
+<p>Due to the 123 variables included in the <code>bes_2017</code> dataset, including information on each variable in the <code>parlitools</code> reference manual is very lengthy and not very user friendly. This vignette reproduces the table including with the British Election Study data, available <a href="http://www.britishelectionstudy.com/data-object/2017-bes-constituency-results-with-census-and-candidate-data/">here</a>. The ‘Name’ column refers to the variable name used in the <code>bes_2017</code> dataset, the ‘Label’ is the description of the variable, and the ‘Data Type’ column refers to the R data type.</p>
+<table style="width:71%;" class="table">
 <colgroup>
-<col width="19%">
-<col width="38%">
+<col width="25%">
+<col width="29%">
 <col width="16%">
 </colgroup>
 <thead><tr class="header">
@@ -184,434 +184,589 @@
 <td>factor</td>
 </tr>
 <tr class="odd">
+<td><code>winner_17</code></td>
+<td>2017 Winning party</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td><code>con_17</code></td>
+<td>2017 Conservative vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>lab_17</code></td>
+<td>2017 Labour vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>ld_17</code></td>
+<td>2017 Liberal Democrat vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>snp_17</code></td>
+<td>2017 Scottish National Party (SNP) vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>pc_17</code></td>
+<td>2017 Plaid Cymru vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>ukip_17</code></td>
+<td>2017 United Kingdom Independence Party (UKIP) vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>green_17</code></td>
+<td>2017 Green Party vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>other_17</code></td>
+<td>2017 Combined other vote share</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>majority_17</code></td>
+<td>2017 Majority</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>turnout_17</code></td>
+<td>2017 Turnout</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>con_vote_17</code></td>
+<td>2017 Conservative number of votes</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>lab_vote_17</code></td>
+<td>2017 Labour number of votes</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>ld_vote_17</code></td>
+<td>2017 Liberal Democrat number of votes</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>snp_vote_17</code></td>
+<td>2017 Scottish National Party (SNP) number of votes</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>pc_vote_17</code></td>
+<td>2017 Plaid Cymru number of votes</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>ukip_vote_17</code></td>
+<td>2017 United Kingdom Independence Party (UKIP) number of votes</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>green_vote_17</code></td>
+<td>2017 Green Party number of votes</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>total_vote_17</code></td>
+<td>2017 Total number of votes cast</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>rejected_vote_17</code></td>
+<td>2017 Number of rejected ballots</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>electorate_17</code></td>
+<td>2017 Size of electorate</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>seat_change_1517</code></td>
+<td>2017 winning party gain from 2015 winning party</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>con_1517</code></td>
+<td>2015-17 Conservative vote share change</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>lab_1517</code></td>
+<td>2015-17 Labour vote share change</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>ld_1517</code></td>
+<td>2015-17 Liberal Democrat vote share change</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>snp_1517</code></td>
+<td>2015-17 Scottish National Party (SNP) vote share change</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>pc_1517</code></td>
+<td>2015-17 Plaid Cymru vote share change</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>ukip_1517</code></td>
+<td>2015-17 United Kingdom Independence Party (UKIP) vote share change</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>green_1517</code></td>
+<td>2015-17 Green Party vote share change</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
 <td><code>winner_15</code></td>
 <td>2015 Winning party</td>
 <td>factor</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>con_15</code></td>
 <td>2015 Conservative vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lab_15</code></td>
 <td>2015 Labour vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>ld_15</code></td>
 <td>2015 Liberal Democrat vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>snp_15</code></td>
 <td>2015 Scottish National Party (SNP) vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>pc_15</code></td>
 <td>2015 Plaid Cymru vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>ukip_15</code></td>
 <td>2015 United Kingdom Independence Party (UKIP) vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>green_15</code></td>
 <td>2015 Green Party vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>other_15</code></td>
 <td>2015 Combined other vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>majority_15</code></td>
 <td>2015 Majority</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>turnout_15</code></td>
 <td>2015 Turnout</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>con_vote_15</code></td>
 <td>2015 Conservative number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lab_vote_15</code></td>
 <td>2015 Labour number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>ld_vote_15</code></td>
 <td>2015 Liberal Democrat number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>snp_vote_15</code></td>
 <td>2015 Scottish National Party (SNP) number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>pc_vote_15</code></td>
 <td>2015 Plaid Cymru number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>ukip_vote_15</code></td>
 <td>2015 United Kingdom Independence Party (UKIP) number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>green_vote_15</code></td>
 <td>2015 Green Party number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>bnp_vote_15</code></td>
 <td>2015 British National Party (BNP) number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>total_vote_15</code></td>
 <td>2015 Total number of votes cast</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>rejected_vote_15</code></td>
 <td>2015 Number of rejected ballots</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>electorate_15</code></td>
 <td>2015 Size of electorate</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>seat_change_1015</code></td>
 <td>2015 winning party gain from 2010 winning party</td>
 <td>factor</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>con_1015</code></td>
 <td>2010-15 Conservative vote share change</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lab_1015</code></td>
 <td>2010-15 Labour vote share change</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>ld_1015</code></td>
 <td>2010-15 Liberal Democrat vote share change</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>snp_1015</code></td>
 <td>2010-15 Scottish National Party (SNP) vote share change</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>pc_1015</code></td>
 <td>2010-15 Plaid Cymru vote share change</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>ukip_1015</code></td>
 <td>2010-15 United Kingdom Independence Party (UKIP) vote share change</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>green_1015</code></td>
 <td>2010-15 Green Party vote share change</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>winner_10</code></td>
 <td>2010 Winning party</td>
 <td>factor</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>con_10</code></td>
 <td>2010 Conservative vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lab_10</code></td>
 <td>2010 Labour vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>ld_10</code></td>
 <td>2010 Liberal Democrat vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>snp_10</code></td>
 <td>2010 Scottish National Party (SNP) vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>pc_10</code></td>
 <td>2010 Plaid Cymru vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>ukip_10</code></td>
 <td>2010 United Kingdom Independence Party (UKIP) vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>green_10</code></td>
 <td>2010 Green Party vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>bnp_10</code></td>
 <td>2010 British National Party (BNP) vote share</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>majority_10</code></td>
 <td>2010 Majority</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>turn_10</code></td>
 <td>2010 Turnout</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>con_vote_10</code></td>
 <td>2010 Conservative number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lab_vote_10</code></td>
 <td>2010 Labour number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>ld_vote_10</code></td>
 <td>2010 Liberal Democrat number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>snp_vote_10</code></td>
 <td>2010 Scottish National Party (SNP) number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>pc_vote_10</code></td>
 <td>2010 Plaid Cymru number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>ukip_vote_10</code></td>
 <td>2010 United Kingdom Independence Party (UKIP) number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>green_vote_10</code></td>
 <td>2010 Green Party number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>bnp_vote_10</code></td>
 <td>2010 British National Party (BNP) number of votes</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>total_vote_10</code></td>
 <td>2010 Total number of votes cast</td>
 <td>numeric</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>electorate_10</code></td>
 <td>2010 Size of electorate</td>
 <td>numeric</td>
 </tr>
-<tr class="even">
-<td><code>con_ppc</code></td>
-<td>Conservative candidate name</td>
-<td>factor</td>
-</tr>
 <tr class="odd">
-<td><code>con_ppcsex</code></td>
-<td>Conservative candidate sex</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>con_ppcrace</code></td>
-<td>Conservative candidate race</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>lab_ppc</code></td>
-<td>Labour Candidate name</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>lab_ppcsex</code></td>
-<td>Labour Candidate sex</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>lab_ppcrace</code></td>
-<td>Labour Candidate race</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>ldppc</code></td>
-<td>Liberal Democrat candidate name</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>ldppcsex</code></td>
-<td>Liberal Democrat candidate sex</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>ldppcrace</code></td>
-<td>Liberal Democrat candidate race</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>ukipppc</code></td>
-<td>UKIP candidate name</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>ukipppcsex</code></td>
-<td>UKIP candidate sex</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>ukipppcrace</code></td>
-<td>UKIP candidate race</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>snpppc</code></td>
-<td>SNP candidate name</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>snpppcsex</code></td>
-<td>SNP candidate sex</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>snpppcrace</code></td>
-<td>SNP candidate race</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>pcppc</code></td>
-<td>Plaid Cymru candidate name</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>pcppcsex</code></td>
-<td>Plaid Cymru candidate sex</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>pcppcrace</code></td>
-<td>Plaid Cymru candidate race</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>green_ppc</code></td>
-<td>Green Party candidate name</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>green_ppcsex</code></td>
-<td>Green Party candidate sex</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td><code>green_ppcrace</code></td>
-<td>Green Party candidate race</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td><code>con_long_spend_percent</code></td>
-<td>Conservative Candidate Long Campaign Spending as % of Long Limit</td>
+<td><code>leave_hanretty</code></td>
+<td>Hanretty (2017) Estimate of EU Referendum Leave %</td>
 <td>numeric</td>
 </tr>
 <tr class="even">
-<td><code>con_short_spend_percent</code></td>
-<td>Conservative Candidate Short Campaign Spending as % of Short Limit</td>
+<td><code>remain_hanretty</code></td>
+<td>Hanretty (2017) Estimate of EU Referendum Remain %</td>
 <td>numeric</td>
 </tr>
 <tr class="odd">
-<td><code>lab_long_spend_percent</code></td>
-<td>Labour Candidate Long Campaign Spending as % of Long Limit</td>
-<td>numeric</td>
+<td><code>con_ppc_17</code></td>
+<td>Conservative 2017 candidate name</td>
+<td>character</td>
 </tr>
 <tr class="even">
-<td><code>lab_short_spend_percent</code></td>
-<td>Labour Candidate Short Campaign Spending as % of Short Limit</td>
-<td>numeric</td>
+<td><code>con_ppc_sex_17</code></td>
+<td>Conservative 2017 candidate sex</td>
+<td>factor</td>
 </tr>
 <tr class="odd">
-<td><code>ldlong_spend_percent</code></td>
-<td>Liberal Democrat Candidate Long Campaign Spending as % of Long Limit</td>
-<td>numeric</td>
+<td><code>lab_ppc_17</code></td>
+<td>Labour 2017 candidate name</td>
+<td>character</td>
 </tr>
 <tr class="even">
-<td><code>ldshort_spend_percent</code></td>
-<td>Liberal Democrat Candidate Short Campaign Spending as % of Short Limit</td>
-<td>numeric</td>
+<td><code>lab_ppc_sex_17</code></td>
+<td>Labour 2017 candidate sex</td>
+<td>factor</td>
 </tr>
 <tr class="odd">
-<td><code>snplong_spend_percent</code></td>
-<td>SNP Candidate Long Campaign Spending as % of Long Limit</td>
-<td>numeric</td>
+<td><code>ld_ppc_17</code></td>
+<td>Liberal Democrat 2017 candidate name</td>
+<td>character</td>
 </tr>
 <tr class="even">
-<td><code>snpshort_spend_percent</code></td>
-<td>SNP Candidate Short Campaign Spending as % of Short Limit</td>
-<td>numeric</td>
+<td><code>ld_ppc_sex_17</code></td>
+<td>Liberal Democrat 2017 candidate sex</td>
+<td>factor</td>
 </tr>
 <tr class="odd">
-<td><code>pclong_spend_percent</code></td>
-<td>Plaid Cymru Candidate Long Campaign Spending as % of Long Limit</td>
-<td>numeric</td>
+<td><code>snp_ppc_17</code></td>
+<td>SNP 2017 candidate name</td>
+<td>character</td>
 </tr>
 <tr class="even">
-<td><code>pcshort_spend_percent</code></td>
-<td>Plaid Cymru Candidate Short Campaign Spending as % of Short Limit</td>
-<td>numeric</td>
+<td><code>snp_ppc_sex_17</code></td>
+<td>SNP 2017 candidate sex</td>
+<td>factor</td>
 </tr>
 <tr class="odd">
-<td><code>ukiplong_spend_percent</code></td>
-<td>UKIP Candidate Long Campaign Spending as % of Long Limit</td>
-<td>numeric</td>
+<td><code>pc_ppc_17</code></td>
+<td>Plaid Cymru 2017 candidate name</td>
+<td>character</td>
 </tr>
 <tr class="even">
-<td><code>ukipshort_spend_percent</code></td>
-<td>UKIP Candidate Short Campaign Spending as % of Short Limit</td>
-<td>numeric</td>
+<td><code>pc_ppc_sex_17</code></td>
+<td>Plaid Cymru 2017 candidate sex</td>
+<td>factor</td>
 </tr>
 <tr class="odd">
-<td><code>green_long_spend_percent</code></td>
-<td>Green Party Candidate Long Campaign Spending as % of Long Limit</td>
-<td>numeric</td>
+<td><code>ukip_ppc_17</code></td>
+<td>UKIP 2017 candidate name</td>
+<td>character</td>
 </tr>
 <tr class="even">
-<td><code>green_short_spend_percent</code></td>
-<td>Green Party Candidate Short Campaign Spending as % of Short Limit</td>
-<td>numeric</td>
+<td><code>ukip_ppc_sex_17</code></td>
+<td>UKIP 2017 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>green_ppc_17</code></td>
+<td>Green Party 2017 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="even">
+<td><code>green_ppc_sex_17</code></td>
+<td>Green Party 2017 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>con_ppc_15</code></td>
+<td>Conservative 2015 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="even">
+<td><code>con_ppc_sex_15</code></td>
+<td>Conservative 2015 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>con_ppc_race_15</code></td>
+<td>Conservative 2015 candidate race</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td><code>lab_ppc_15</code></td>
+<td>Labour 2015 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="odd">
+<td><code>lab_ppc_sex_15</code></td>
+<td>Labour 2015 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td><code>lab_ppc_race_15</code></td>
+<td>Labour 2015 candidate race</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>ld_ppc_15</code></td>
+<td>Liberal Democrat 2015 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="even">
+<td><code>ld_ppc_sex_15</code></td>
+<td>Liberal Democrat 2015 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>ld_ppc_race_15</code></td>
+<td>Liberal Democrat 2015 candidate race</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td><code>snp_ppc_15</code></td>
+<td>SNP 2015 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="odd">
+<td><code>snp_ppc_sex_15</code></td>
+<td>SNP 2015 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td><code>snp_ppc_race_15</code></td>
+<td>SNP 2015 candidate race</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>pc_ppc_15</code></td>
+<td>Plaid Cymru 2015 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="even">
+<td><code>pc_ppc_sex_15</code></td>
+<td>Plaid Cymru 2015 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>pc_ppc_race_15</code></td>
+<td>Plaid Cymru 2015 candidate race</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td><code>ukip_ppc_15</code></td>
+<td>UKIP 2015 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="odd">
+<td><code>ukip_ppc_sex_15</code></td>
+<td>UKIP 2015 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td><code>ukip_ppc_race_15</code></td>
+<td>UKIP 2015 candidate race</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>green_ppc_15</code></td>
+<td>Green Party 2015 candidate name</td>
+<td>character</td>
+</tr>
+<tr class="even">
+<td><code>green_ppc_sex_15</code></td>
+<td>Green Party 2015 candidate sex</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td><code>green_ppc_race_15</code></td>
+<td>Green Party 2015 candidate race</td>
+<td>factor</td>
 </tr>
 </tbody>
 </table>
@@ -624,7 +779,7 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#variable-names-in-bes_2015">Variable names in <code>bes_2015</code></a></li>
+<li><a href="#variable-names-in-bes_2017">Variable names in <code>bes_2017</code></a></li>
       </ul>
 </div>
       </div>

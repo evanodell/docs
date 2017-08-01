@@ -92,7 +92,13 @@
       <a href="../articles/mapping-local-authorities.html">Mapping Local Government</a>
     </li>
     <li>
-      <a href="../articles/bes-2015.html">British Election Study</a>
+      <a href="../articles/bes-2015.html">British Election Study 2015</a>
+    </li>
+    <li>
+      <a href="../articles/bes-2017.html">British Election Study 2017</a>
+    </li>
+    <li>
+      <a href="../articles/census-11.html">Constituency Level Census Data</a>
     </li>
   </ul>
 </li>
@@ -152,14 +158,29 @@
     </div>
 
     <div class="contents">
+    <div id="parlitools-0-2-0" class="section level1">
+<h1 class="hasAnchor">
+<a href="#parlitools-0-2-0" class="anchor"></a>parlitools 0.2.0</h1>
+<div id="data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#data" class="anchor"></a>Data</h2>
+<p>New <code>bes_2017</code> dataset, with results of 2017 General Election, taken from the 2017 British Election Study. This dataset replaces the <code>ge_2017</code> dataset. It also replicates some of the data in the <code>bes_2015</code> dataset.</p>
+<p>Census data from the British Election Study has been moved to its own seperate file, named <code>census11</code>.</p>
+</div>
+<div id="fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#fixes" class="anchor"></a>Fixes</h2>
+<p>Naming conventions for variables now places an underscore between each distinct word (eg <code>onsconst_id</code> is now <code>ons_const_id</code>)</p>
+</div>
+</div>
     <div id="parlitools-0-1-0" class="section level1">
 <h1 class="hasAnchor">
 <a href="#parlitools-0-1-0" class="anchor"></a>parlitools 0.1.0</h1>
 <p>Changes to vignettes to comply with CRAN policies and to reduce the time needed to check the package.</p>
 <p>Reduction in the number of similar vignette examples to reduce build time.</p>
-<div id="data" class="section level2">
+<div id="data-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#data" class="anchor"></a>Data</h2>
+<a href="#data-1" class="anchor"></a>Data</h2>
 <p>Updating of <code>council_data</code> dataset to be accurate as of 2017-07-14.</p>
 <p>New <code>ge_2017</code> dataset, with results of 2017 General Election, linked with constituency data from <code>bes_2015</code>.</p>
 </div>
@@ -245,9 +266,9 @@
 <h2 class="hasAnchor">
 <a href="#introducing-parlitools" class="anchor"></a>Introducing parlitools</h2>
 <p>Introducing <code>parlitools</code>, a package for retrieving and analysing UK political data. The package includes datasets from the British Election Study, a hexagonal map of all UK constituencies, and party colour hex codes.</p>
-<div id="data-1" class="section level3">
+<div id="data-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#data-1" class="anchor"></a>Data</h3>
+<a href="#data-2" class="anchor"></a>Data</h3>
 <p>The package includes a dataset with 2015 General Election results and census information for each constituency in Scotland, Wales and England, taken from the British Election Study.</p>
 <p>The package also includes a dataset (<code>party_colours</code>) with the hex code for the official colours of UK political parties.</p>
 </div>
@@ -270,6 +291,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#parlitools-0-2-0">0.2.0</a></li>
         <li><a href="#parlitools-0-1-0">0.1.0</a></li>
         <li><a href="#parlitools-0-0-7">0.0.7</a></li>
         <li><a href="#parlitools-0-0-6">0.0.6</a></li>

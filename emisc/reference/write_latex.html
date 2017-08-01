@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Write R data to a LaTeX file � write_latex • emisc</title>
+<title>Write R data to a LaTeX file — write_latex • emisc</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -23,7 +23,8 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -160,11 +161,10 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>write_latex</span>(<span class='no'>iris</span>, <span class='no'>Species</span>, <span class='no'>Petal.Width</span>, <span class='kw'>file_name</span> <span class='kw'>=</span> <span class='st'>"iris.tex"</span>)
 
-  <span class='fu'>write_latex</span>(<span class='no'>iris</span>, <span class='no'>Species</span>, <span class='no'>Petal.Width</span>, <span class='kw'>file_name</span> <span class='kw'>=</span> <span class='st'>"iris.tex"</span>)
-
-})</div></pre>
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
