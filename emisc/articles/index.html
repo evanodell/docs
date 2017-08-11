@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A function to make the results of calls to the API easier to work with. — hansard_tidy • hansard</title>
+<title>Articles • emisc</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-vignette-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -59,7 +59,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">hansard</a>
+      <a class="navbar-brand" href="../index.html">emisc</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -107,7 +107,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/EvanOdell/hansard">
+  <a href="https://github.com/EvanOdell/emisc">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -126,45 +126,20 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header">
-    <h1>A function to make the results of calls to the API easier to work with.</h1>
+      <div class="page-header">
+  <h1>Articles <small>version&nbsp;0.0.4</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-9">
+    <div class="section ">
+      <h3>All vignettes</h3>
+      <p class="section-desc"></p>
+
+      <ul>
+        <li><a href="introduction.html">The emisc package</a></li>
+      </ul>
     </div>
-
-    
-    <p>A function to make the results of calls to the API easier to work with, mostly though fixing variable names, which by default contain non alpha-numeric characters and appear to use an inconsistent/idiosyncratic naming convention, at least by the standards of the various naming conventions used in R. Dates and datetimes are converted to POSIXct class. Some extra URL data included in the API is also stripped out.</p>
-    
-
-    <pre class="usage"><span class='fu'>hansard_tidy</span>(<span class='no'>df</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"snake_case"</span>, <span class='st'>"camelCase"</span>, <span class='st'>"period.case"</span>))</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>df</th>
-      <td><p>The tibble to tidy.</p></td>
-    </tr>
-    <tr>
-      <th>tidy_style</th>
-      <td><p>The style to tidy variable names to.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A tidied tibble</p>
-    
-
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-          </ul>
-
   </div>
 </div>
 
