@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A series of basic function for the API lookup. Each function accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned. — mnis_additional • mnis</title>
+<title>A series of basic function for the API lookup. Each of these functions accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned. — mnis_additional • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -64,10 +64,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="http://evanodell.com">evanodell.com</a>
-</li>
-<li>
-  <a href="http://docs.evanodell.com">docs.evanodell.com</a>
+  <a href="http://docs.evanodell.com">Docs Home</a>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -129,11 +126,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A series of basic function for the API lookup. Each function accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned.</h1>
+    <h1>A series of basic function for the API lookup. Each of these functions accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned.</h1>
     </div>
 
     
-    <p>A series of basic function for the API lookup. Each function accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned.</p>
+    <p>A series of basic function for the API lookup. Each of these functions accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_additional</span>()
@@ -223,41 +220,17 @@
 
     <p>A tibble with the data corresponding to the particular function called.</p>
     
-    <h2 class="hasAnchor" id="-mnis-additional-functions"><a class="anchor" href="#-mnis-additional-functions"></a>`mnis_additional` functions</h2>
-
-    
-    <dl class='dl-horizontal'>
-<dt>`mnis_basic_details()`</dt><dd><p>Basic biographical details of a member.</p></dd>
-<dt>`mnis_biography_entries()`</dt><dd><p>Member biographical information (e.g. countries of interest, policy expertise etc...)</p></dd>
-<dt>`mnis_committees()`</dt><dd><p>Committees a Member sits or has sat on as well details on committee chairing.</p></dd>
-<dt>`mnis_addresses()`</dt><dd><p>Member address information (e.g. website, twitter, consituency address etc...)</p></dd>
-<dt>`mnis_constituencies()`</dt><dd><p>Constituencies a Member has represented.</p></dd>
-<dt>`mnis_elections_contested()`</dt><dd><p>Elections a Member has contested but not won.</p></dd>
-<dt>`mnis_experiences()`</dt><dd><p>Non-parliamentary experience of a Member.</p></dd>
-<dt>`mnis_government_posts()`</dt><dd><p>Government posts a Member currently holds.</p></dd>
-<dt>`mnis_honours()`</dt><dd><p>Honours (e.g. MBE, OBE etc...) held by a Member.</p></dd>
-<dt>`mnis_house_memberships()`</dt><dd><p>House membership list of a Member.</p></dd>
-<dt>`mnis_interests()`</dt><dd><p>Registered interests (financial) of a Member.</p></dd>
-<dt>`mnis_known_as()`</dt><dd><p>Details of names a Member has chosen to be known as instead of their full title (House of Lords members only).</p></dd>
-<dt>`mnis_maiden_speeches()`</dt><dd><p>Maiden speech dates for a Member.</p></dd>
-<dt>`mnis_opposition_posts()`</dt><dd><p>Opposition posts a Member has held.</p></dd>
-<dt>`mnis_other_parliaments()`</dt><dd><p>Other Parliaments that a Member has held a membership of.</p></dd>
-<dt>`mnis_parliamentary_posts()`</dt><dd><p>Parliamentary posts a Member has held.</p></dd>
-<dt>`mnis_parties()`</dt><dd><p>Party affiliations of a Member.</p></dd>
-<dt>`mnis_preferred_names()`</dt><dd><p>Full set of data about a Members' name (e.g. surname, forename, Honorary prefixes, full details of HoL title and rank etc...).</p></dd>
-<dt>`mnis_statuses()`</dt><dd><p>Status history (e.g. suspensions and disqualifications) for a Member.</p></dd>
-<dt>`mnis_staff()`</dt><dd><p>The staff employed by a Member.</p></dd>
-</dl>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='mnis_full_biog.html'>mnis_full_biog</a></code>
-    <code><a href='mnis_extra.html'>mnis_extra</a></code></p>
+    <p><code><a href='mnis_full_biog.html'>mnis_full_biog</a></code> <code><a href='mnis_extra.html'>mnis_extra</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_basic_details</span>(<span class='fl'>172</span>)
+
+<span class='co'># }</span><span class='co'># NOT RUN {</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_additional</span>()
 
 <span class='co'># }</span></pre>
   </div>
@@ -267,8 +240,6 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#-mnis-additional-functions">`mnis_additional` functions</a></li>
 
       <li><a href="#see-also">See also</a></li>
       

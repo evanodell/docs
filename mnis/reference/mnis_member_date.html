@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns a tibble with a member's status on a given date. — mnis_member_date • mnis</title>
+<title>Member status on given date — mnis_member_date • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -64,10 +64,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="http://evanodell.com">evanodell.com</a>
-</li>
-<li>
-  <a href="http://docs.evanodell.com">docs.evanodell.com</a>
+  <a href="http://docs.evanodell.com">Docs Home</a>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -129,7 +126,7 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns a tibble with a member's status on a given date.</h1>
+    <h1>Member status on given date</h1>
     </div>
 
     
@@ -144,11 +141,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>ID</th>
-      <td><p>The ID of the member. Currently this only accepts IDs from the default membership ID scheme. If empty, the function stops and no data is returned.</p></td>
+      <td><p>The ID of the member, or a vector with the IDs of multiple MPs. If given multiple IDs, the results are combined into a single tibble. Currently only accepts IDs from the default membership ID scheme. If empty, the function stops and no data is returned.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>Accepts character values in "YYYY-MM-DD" format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. Return details on the requested member's status on that date. Defaults to the current system date.</p></td>
+      <td><p>Accepts character values in 'YYYY-MM-DD' format, and objects of class Date, POSIXt, POSIXct, POSIXlt or anything else than can be coerced to a date with <code>as.Date()</code>. Return details on the requested member's status on that date. Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
@@ -156,7 +153,7 @@
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case"</p></td>
+      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of 'snake_case', 'camelCase' and 'period.case'. Defaults to 'snake_case'.</p></td>
     </tr>
     </table>
     

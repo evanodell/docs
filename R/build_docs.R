@@ -20,7 +20,7 @@ build_docs <- function(){
 ### Build `parlitools`
   pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/parlitools", path= "/Users/evanodell/Documents/GitHub/docs/parlitools", preview = FALSE)
   
-  ### Build `emisc`
+### Build `emisc`
   pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/emisc", path= "/Users/evanodell/Documents/GitHub/docs/emisc", preview = FALSE)
 
   pkgdown::build_site(path=".", preview = FALSE)

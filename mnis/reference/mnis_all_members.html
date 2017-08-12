@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns a tibble with information on al members of both houses or a given house. — mnis_all_members • mnis</title>
+<title>mnis_all_members — mnis_all_members • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -64,10 +64,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="http://evanodell.com">evanodell.com</a>
-</li>
-<li>
-  <a href="http://docs.evanodell.com">docs.evanodell.com</a>
+  <a href="http://docs.evanodell.com">Docs Home</a>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -129,11 +126,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Returns a tibble with information on al members of both houses or a given house.</h1>
+    <h1>mnis_all_members</h1>
     </div>
 
     
-    <p>Returns a tibble with information on al members of both houses or a given house.</p>
+    <p>mnis_all_members</p>
     
 
     <pre class="usage"><span class='fu'>mnis_all_members</span>(<span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>party</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -144,11 +141,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>house</th>
-      <td><p>The house to which the member belongs. Accepts one of 'all', 'lords' and 'commons', defaults to 'all'. This parameter is not case sensitive, so using 'commons', 'Commons' or 'cOmMOnS' will result in the same data being returned.</p></td>
+      <td><p>The house to which the member belongs. Accepts one of 'all', 'lords' and 'commons', defaults to 'all'. This parameter is not case sensitive, so 'commons', 'Commons' and 'cOmMOnS' will all return the same data.</p></td>
     </tr>
     <tr>
       <th>party</th>
-      <td><p>The party to which a member belongs. Defaults to NULL, in which case all members are returned, subject to other parameters. The party names are not case sensitive, but must be the complete string of the party name, searching and wildcard options are not accepted by the API, e.g. 'green party'.</p></td>
+      <td><p>The party to which a member belongs. Defaults to NULL, in which case all members are returned, subject to other parameters.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
