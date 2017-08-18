@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>House of Lords written questions � lords_written_questions • hansard</title>
+<title>House of Lords written questions — lords_written_questions • hansard</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -146,7 +146,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>peer_id</th>
-      <td><p>Acceots a member ID or array of IDs, and returns a tibble with all written questions asked by that member. If <code>NULL</code>, peer_id is not included in the query to the API. Defaults to <code>NULL</code>.</p></td>
+      <td><p>Accepts a member ID or array of IDs, and returns a tibble with all written questions asked by that member. If <code>NULL</code>, peer_id is not included in the query to the API. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>answering_department</th>
@@ -197,7 +197,8 @@
 <span class='co'># Returns all written questions ever</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>lords_written_questions</span>()
 
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>lords_written_questions</span>(<span class='kw'>peer_id</span> <span class='kw'>=</span> <span class='fl'>3526</span>, <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='st'>'cabinet'</span>)
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>lords_written_questions</span>(<span class='kw'>peer_id</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>3526</span>,<span class='fl'>4176</span>),
+                             <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'cabinet'</span>, <span class='st'>'Transport'</span>))
 
 <span class='co'># }</span></pre>
   </div>
