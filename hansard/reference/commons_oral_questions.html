@@ -130,7 +130,7 @@
     </div>
 
     
-    <p>Imports data on House of Commons oral questions, based on the asking MP, the answering department and the date.</p>
+    <p>Imports data on House of Commons oral questions, based on the asking MP, the answering department and the date. The <code>mp_id</code> and <code>answering_department</code> parameters accept a single ID or department names, or a vector of IDs or department names, respectively.</p>
     
 
     <pre class="usage"><span class='fu'>commons_oral_questions</span>(<span class='kw'>mp_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
@@ -146,15 +146,15 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>mp_id</th>
-      <td><p>The ID of a given MP asking an oral question, or an array of MP Ids. Defaults to <code>NULL</code>.</p></td>
+      <td><p>The ID of a given MP asking an oral question, or a vector of MP Ids. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>answering_department</th>
-      <td><p>The name of a department, or an array of departments.</p></td>
+      <td><p>The name of a department, or a vector of departments. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>start_date</th>
-      <td><p>The earliest date to include in the tibble. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The earliest date to include in the tibble. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to <code>'1900-01-01'</code>.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
@@ -198,7 +198,6 @@
 
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_oral_questions</span>(<span class='kw'>mp_id</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>4019</span>,<span class='fl'>4051</span>,<span class='fl'>4588</span>),
                             <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'education'</span>, <span class='st'>'health'</span>))
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -130,7 +130,7 @@
     </div>
 
     
-    <p>Imports data on House of Commons and House of Lords bills</p>
+    <p>Imports data on House of Commons and House of Lords bills.</p>
     
 
     <pre class="usage"><span class='fu'>bills</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>amendments</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>,
@@ -154,11 +154,11 @@
     </tr>
     <tr>
       <th>start_date</th>
-      <td><p>The earliest date to include in the tibble. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The earliest date to include in the tibble. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to <code>'1900-01-01'</code>.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>The latest date to include in the tibble. Defaults to current system date. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The latest date to include in the tibble. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>extra_args</th>
@@ -196,7 +196,6 @@
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>bills</span>(<span class='fl'>1719</span>)
 
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>bills</span>(<span class='kw'>start_date</span> <span class='kw'>=</span><span class='st'>'2016-01-01'</span>)
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

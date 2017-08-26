@@ -156,11 +156,11 @@
     </tr>
     <tr>
       <th>start_date</th>
-      <td><p>The earliest date to include in the tibble. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The earliest date to include in the tibble. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to <code>'1900-01-01'</code>.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>The latest date to include in the tibble. Defaults to current system date. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The latest date to include in the tibble. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>signatures</th>
@@ -198,7 +198,6 @@
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>early_day_motions</span>(<span class='kw'>edm_id</span> <span class='kw'>=</span> <span class='fl'>1073</span>)
 
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>early_day_motions</span>(<span class='kw'>edm_id</span> <span class='kw'>=</span> <span class='fl'>1073</span>, <span class='kw'>session</span><span class='kw'>=</span><span class='st'>'2015/16'</span>)
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

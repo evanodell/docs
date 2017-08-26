@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Early Day Motions by MP — mp_edms • hansard</title>
+<title>Early Day Motions by MP or Peer — mp_edms • hansard</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,11 +126,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Early Day Motions by MP</h1>
+    <h1>Early Day Motions by MP or Peer</h1>
     </div>
 
     
-    <p>Imports data on early day motions signed, sponsored or primarily sponsored by a given MP.</p>
+    <p>Imports data on early day motions signed, sponsored or primarily sponsored by a given MP or Peer.</p>
     
 
     <pre class="usage"><span class='fu'>mp_edms</span>(<span class='kw'>mp_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>primary_sponsor</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>sponsor</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -148,7 +148,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>mp_id</th>
-      <td><p>The ID number of an MP. Required parameter, Defaults to <code>NULL</code>. Accepts single IDs in numerical or character format, or a list, data.frame column, etc. If given multiple IDs, the results are combined into a single tibble.</p></td>
+      <td><p>The ID number of an MP or Peer. Required parameter, Defaults to <code>NULL</code>. Accepts single IDs in numerical or character format, or a list, data.frame column, etc. If given multiple IDs, the results are combined into a single tibble.</p></td>
     </tr>
     <tr>
       <th>primary_sponsor</th>
@@ -168,11 +168,11 @@
     </tr>
     <tr>
       <th>start_date</th>
-      <td><p>The earliest date to include in the tibble, based on the date the MP signed the EDM. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The earliest date to include in the tibble, based on the date the MP signed the EDM. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to <code>'1900-01-01'</code>.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>The latest date to include in the tibble, based on the date the MP signed the EDM. Defaults to current system date. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The latest date to include in the tibble, based on the date the MP signed the EDM. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>extra_args</th>
@@ -206,7 +206,6 @@
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mp_edms</span>(<span class='kw'>mp_id</span><span class='kw'>=</span><span class='fl'>3967</span>, <span class='kw'>primary_sponsor</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>sponsor</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>signatory</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
 
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mp_edms</span>(<span class='kw'>mp_id</span><span class='kw'>=</span><span class='fl'>3967</span>, <span class='kw'>primary_sponsor</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>sponsor</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>signatory</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>full_data</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

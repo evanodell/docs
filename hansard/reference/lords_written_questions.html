@@ -146,19 +146,19 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>peer_id</th>
-      <td><p>Accepts a member ID or array of IDs, and returns a tibble with all written questions asked by that member. If <code>NULL</code>, peer_id is not included in the query to the API. Defaults to <code>NULL</code>.</p></td>
+      <td><p>Accepts a member ID or vector of IDs, and returns a tibble with all written questions asked by that member or members. If <code>NULL</code>, peer_id is not included in the query to the API and so all written questions are returned subject to other function parameters. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>answering_department</th>
-      <td><p>Accepts a string with a department name or partial name or an array of departmental names, and returns all written questions by that department. The query acts as a search, so entering <code>'health'</code> will return all questions answered by the Department of Health. If <code>NULL</code>, answering_department is not included as a query parameter. Defaults to <code>NULL</code>.</p></td>
+      <td><p>Accepts a string with a department name or partial name or a vector of departmental names, and returns all written questions by that department. The query acts as a search, so entering <code>'health'</code> will return all questions answered by the Department of Health. If <code>NULL</code>, answering_department is not included as a query parameter. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>start_date</th>
-      <td><p>The earliest date to include in the tibble. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The earliest date to include in the tibble. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to <code>'1900-01-01'</code>.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>The latest date to include in the tibble. Defaults to current system date. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>.</p></td>
+      <td><p>The latest date to include in the tibble. Defaults to <code>'1900-01-01'</code>. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>extra_args</th>
