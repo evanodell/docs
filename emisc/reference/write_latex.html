@@ -130,12 +130,12 @@
     </div>
 
     
-    <p>Write R data to a LaTeX file. Similar functions, such as <code>latex</code> in <code>Hmisc</code>, write data to a LaTeX table, but there may be instances where you don't want data in a table, hence this function. Columns will printed in the order specified. The function adds a newline between each item printed.</p>
+    <p>Write R data to a LaTeX file as individual lines. Similar functions, such as <code>latex</code> in <code>Hmisc</code>, write data to a LaTeX table, but there may be instances where you don't want data in a table, hence this function. Columns will printed in the order specified. The function adds a newline between each item printed.</p>
     
 
-    <pre class="usage"><span class='fu'>write_latex</span>(<span class='no'>df</span>, <span class='no'>...</span>, <span class='no'>file_name</span>)
+    <pre class="usage"><span class='fu'>write_latex</span>(<span class='no'>df</span>, <span class='no'>file_name</span>, <span class='no'>...</span>)
 
-<span class='fu'>write_latex_lines</span>(<span class='no'>df</span>, <span class='no'>...</span>, <span class='no'>file_name</span>)</pre>
+<span class='fu'>write_latex_lines</span>(<span class='no'>df</span>, <span class='no'>file_name</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -145,12 +145,12 @@
       <td><p>The dataframe, data.table, tibble, etc, containing the data to write to LaTeX.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>One or more unquoted, comma separated, variable names to write to LaTeX. If blank, all variables will be written to LaTeX.</p></td>
-    </tr>
-    <tr>
       <th>file_name</th>
       <td><p>File name to write to.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>One or more unquoted, comma separated, variable names to write to LaTeX. If blank, all variables will be written to LaTeX.</p></td>
     </tr>
     </table>
     
