@@ -130,7 +130,7 @@
     </div>
 
     
-    <p>This data is useful for providing parameters for other function calls. The functions do not accept any arguments aside from the 'tidy' argument, which defaults to TRUE.</p>
+    <p>Reference data on various aspects of parliament. This data is useful for providing parameters for other function calls. The functions do not accept any arguments aside from the <code>tidy</code> and <code>tidy_style</code> parameters, which default to <code>TRUE</code> and <code>'snake_case'</code>, respectively. To return all a list with tibbles of all reference data, see <code><a href='mnis_all_reference.html'>mnis_all_reference</a></code>.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_reference</span>()
@@ -218,11 +218,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to TRUE.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of 'snake_case', 'camelCase' and 'period.case'. Defaults to 'snake_case'</p></td>
+      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
@@ -230,45 +230,45 @@
 
     
     <dl class='dl-horizontal'>
-<dt>`ref_address_types``</dt><dd><p>The types of addresses available in member's contact details. Includes websites and social media, as well as physical addresses.</p></dd>
-<dt>`ref_answering_bodies`</dt><dd><p>The bodies that members' can address questions to.</p></dd>
-<dt>`ref_areas`</dt><dd><p>Geographic areas.</p></dd>
-<dt>`ref_area_types`</dt><dd><p>Identifiers for grouping areas (e.g. borough constituencies).</p></dd>
-<dt>`ref_biography_categories`</dt><dd><p>Member biography categories.</p></dd>
-<dt>`ref_cabinets`</dt><dd><p>Connections that a member has to the cabinet or shadow cabinet.</p></dd>
-<dt>`ref_committees`</dt><dd><p>Identifier for parliamentary committees.</p></dd>
-<dt>`ref_committee_types`</dt><dd><p>Types of parliamentary committees.</p></dd>
-<dt>`ref_constituencies()`</dt><dd><p>All constituencies.</p></dd>
-<dt>`ref_constituency_areas()`</dt><dd><p>The links between constituencies and constituency areas.</p></dd>
-<dt>`ref_constituency_types()`</dt><dd><p>Constituency categories.</p></dd>
-<dt>`ref_countries()`</dt><dd><p>List of countries that could be listed as members' birthplace.</p></dd>
-<dt>`ref_departments()`</dt><dd><p>Government and opposition departments.</p></dd>
-<dt>`ref_disqualification_types()`</dt><dd><p>Types of ways members can be disqualified from sitting in the House.</p></dd>
-<dt>`ref_elections()`</dt><dd><p>Codes of general and by-elections.</p></dd>
-<dt>`ref_election_types()`</dt><dd><p>Election categories.</p></dd>
-<dt>`ref_end_reasons()`</dt><dd><p>Reasons a member may leave the House of Lords or the House of Commons.</p></dd>
-<dt>`ref_experience_types()`</dt><dd><p>Types of non-parliamentary experience members can list.</p></dd>
-<dt>`ref_government_post_departments()`</dt><dd><p>All deparments that can contain government posts.</p></dd>
-<dt>`ref_government_posts()`</dt><dd><p>All government posts.</p></dd>
-<dt>`ref_government_ranks()`</dt><dd><p>All government post ranks.</p></dd>
-<dt>`ref_honourary_prefixes()`</dt><dd><p>The types of honourary prefixes for members.</p></dd>
-<dt>`ref_honour_lists()`</dt><dd><p>The types of honour lists that a member may be honoured in.</p></dd>
-<dt>`ref_honours()`</dt><dd><p>The different honours available to members.</p></dd>
-<dt>`ref_interest_categories()`</dt><dd><p>The categories available for reporting financial interests.</p></dd>
-<dt>`ref_lords_membership_types()`</dt><dd><p>Different types of membership of the House of Lords.</p></dd>
-<dt>`ref_lords_ranks()`</dt><dd><p>Ranks that peers may hold.</p></dd>
-<dt>`ref_opposition_post_departments()`</dt><dd><p>The link between opposition posts and the government department they shadow.</p></dd>
-<dt>`ref_opposition_posts()`</dt><dd><p>Opposition posts.</p></dd>
-<dt>`ref_opposition_ranks()`</dt><dd><p>How opposition posts are ranked.</p></dd>
-<dt>`ref_other_parliaments()`</dt><dd><p>Other parliaments that a member may have sat in.</p></dd>
-<dt>`ref_parliamentary_posts()`</dt><dd><p>The different parliamentary posts available.</p></dd>
-<dt>`ref_parliamentary_ranks()`</dt><dd><p>How those parliamentary posts are ranked.</p></dd>
-<dt>`ref_parliament_types()`</dt><dd><p>Types of parliaments that parliamentary data may link to.</p></dd>
-<dt>`ref_parties()`</dt><dd><p>All parties that members can be affiliated with.</p></dd>
-<dt>`ref_party_sub_types()`</dt><dd><p>Sub-types of parties.</p></dd>
-<dt>`ref_photo_outputs()`</dt><dd><p>Outputs that a photo of a member may be linked to.</p></dd>
-<dt>`ref_statuses()`</dt><dd><p>A member's possible current status in the House.</p></dd>
-<dt>`ref_titles()`</dt><dd><p>Salutory titles.</p></dd>
+<dt><code>ref_address_types</code></dt><dd><p>The types of addresses available in member's contact details. Includes websites and social media, as well as physical addresses</p></dd>
+<dt><code>ref_answering_bodies</code></dt><dd><p>The bodies that members' can address questions to</p></dd>
+<dt><code>ref_areas</code></dt><dd><p>Geographic areas</p></dd>
+<dt><code>ref_area_types</code></dt><dd><p>Identifiers for grouping areas (e.g. borough constituencies)</p></dd>
+<dt><code>ref_biography_categories</code></dt><dd><p>Member biography categories</p></dd>
+<dt><code>ref_cabinets</code></dt><dd><p>Connections that a member has to the cabinet or shadow cabinet</p></dd>
+<dt><code>ref_committees</code></dt><dd><p>Identifier for parliamentary committees</p></dd>
+<dt><code>ref_committee_types</code></dt><dd><p>Types of parliamentary committees</p></dd>
+<dt><code>ref_constituencies()</code></dt><dd><p>All constituencies</p></dd>
+<dt><code>ref_constituency_areas()</code></dt><dd><p>The links between constituencies and constituency areas</p></dd>
+<dt><code>ref_constituency_types()</code></dt><dd><p>Constituency categories</p></dd>
+<dt><code>ref_countries()</code></dt><dd><p>List of countries that could be listed as members' birthplace</p></dd>
+<dt><code>ref_departments()</code></dt><dd><p>Government and opposition departments</p></dd>
+<dt><code>ref_disqualification_types()</code></dt><dd><p>Types of ways members can be disqualified from sitting in the House</p></dd>
+<dt><code>ref_elections()</code></dt><dd><p>Codes of general and by-elections</p></dd>
+<dt><code>ref_election_types()</code></dt><dd><p>Election categories</p></dd>
+<dt><code>ref_end_reasons()</code></dt><dd><p>Reasons a member may leave the House of Lords or the House of Commons</p></dd>
+<dt><code>ref_experience_types()</code></dt><dd><p>Types of non-parliamentary experience members can list</p></dd>
+<dt><code>ref_government_post_departments()</code></dt><dd><p>All deparments that can contain government posts</p></dd>
+<dt><code>ref_government_posts()</code></dt><dd><p>All government posts</p></dd>
+<dt><code>ref_government_ranks()</code></dt><dd><p>All government post ranks</p></dd>
+<dt><code>ref_honourary_prefixes()</code></dt><dd><p>The types of honourary prefixes for members</p></dd>
+<dt><code>ref_honour_lists()</code></dt><dd><p>The types of honour lists that a member may be honoured in</p></dd>
+<dt><code>ref_honours()</code></dt><dd><p>The different honours available to members</p></dd>
+<dt><code>ref_interest_categories()</code></dt><dd><p>The categories available for reporting financial interests</p></dd>
+<dt><code>ref_lords_membership_types()</code></dt><dd><p>Different types of membership of the House of Lords</p></dd>
+<dt><code>ref_lords_ranks()</code></dt><dd><p>Ranks that peers may hold</p></dd>
+<dt><code>ref_opposition_post_departments()</code></dt><dd><p>The link between opposition posts and the government department they shadow</p></dd>
+<dt><code>ref_opposition_posts()</code></dt><dd><p>Opposition posts</p></dd>
+<dt><code>ref_opposition_ranks()</code></dt><dd><p>How opposition posts are ranked</p></dd>
+<dt><code>ref_other_parliaments()</code></dt><dd><p>Other parliaments that a member may have sat in</p></dd>
+<dt><code>ref_parliamentary_posts()</code></dt><dd><p>The different parliamentary posts available</p></dd>
+<dt><code>ref_parliamentary_ranks()</code></dt><dd><p>How those parliamentary posts are ranked</p></dd>
+<dt><code>ref_parliament_types()</code></dt><dd><p>Types of parliaments that parliamentary data may link to</p></dd>
+<dt><code>ref_parties()</code></dt><dd><p>All parties that members can be affiliated with</p></dd>
+<dt><code>ref_party_sub_types()</code></dt><dd><p>Sub-types of parties</p></dd>
+<dt><code>ref_photo_outputs()</code></dt><dd><p>Outputs that a photo of a member may be linked to</p></dd>
+<dt><code>ref_statuses()</code></dt><dd><p>A member's possible current status in the House</p></dd>
+<dt><code>ref_titles()</code></dt><dd><p>Salutory titles</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>

@@ -21,7 +21,7 @@ Online documentation for my R packages.
 [![](https://cranlogs.r-pkg.org/badges/grand-total/hansard)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/72111315.svg)](https://zenodo.org/badge/latestdoi/72111315)
 
-An ironically named R package to automatically fetch data from the UK Parliament API. Available on [CRAN](https://cran.r-project.org/package=hansard) and [GitHub](https://github.com/EvanOdell/hansard).
+An ironically named R package to automatically fetch data from the UK Parliament API. Available on [CRAN](https://cran.r-project.org/package=hansard) and [GitHub](https://github.com/EvanOdell/hansard). `hansard` is part of the [rOpenGov](https://ropengov.github.io/) project and its documentation is mirrored on the [rOpenGov website](https://ropengov.github.io/hansard/).
 
 ### [`mnis`](https://docs.evanodell.com/mnis)
 

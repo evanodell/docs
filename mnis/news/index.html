@@ -137,7 +137,7 @@
 <div id="new-features" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-features" class="anchor"></a>New Features</h2>
-<p><code><a href="../reference/mnis_additional.html">mnis_additional()</a></code> functions and <code><a href="../reference/mnis_member_date.html">mnis_member_date()</a></code> now accept arrays of member IDs.</p>
+<p><code><a href="../reference/mnis_member_date.html">mnis_member_date()</a></code> and <code><a href="../reference/mnis_full_biog.html">mnis_full_biog()</a></code> now accept vectors of member IDs.</p>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
@@ -147,10 +147,11 @@
 <div id="bug-fixes-and-improvements" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bug-fixes-and-improvements" class="anchor"></a>Bug Fixes and Improvements</h2>
-<p><code>constituency_results_tidy()</code> not within the <code>mnis_tidy()</code> function group.</p>
+<p><code>mnis_tidy()</code> and related functions are no longer exported.</p>
 <p>Fixed test error for <code><a href="../reference/mnis_eligible.html">mnis_eligible()</a></code>, as the data returned by this function is too dynamic for some of the previously used tests to be effective.</p>
-<p><code><a href="../reference/mnis_department.html">mnis_department()</a></code> parameter <code>bench</code> is no longer case sensititve.</p>
+<p>Case sensitivity has been removed from all parameters that were previously case sensitive.</p>
 <p>Variable styles now apply to dataframe names in <code><a href="../reference/mnis_all_reference.html">mnis_all_reference()</a></code>, and the function has been sped up slightly.</p>
+<p>Calls to the API using <code>httr</code> and <code>jsonlite</code> have been moved to generic or class-specific helper functions to reduce the total amount of code, make multi-function files easier to navigate and make any changes to the API easier to adjust to.</p>
 </div>
 </div>
     <div id="mnis-0-2-7" class="section level1">

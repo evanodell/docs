@@ -141,7 +141,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>constituency_id</th>
-      <td><p>The ID of the constituency to return the data for. This parameter cannot be empty.</p></td>
+      <td><p>The ID of the constituency to return the data for. If <code>NULL</code>, no data is returned. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>election_id</th>
@@ -149,23 +149,22 @@
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If TRUE, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to TRUE.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
+      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list with details of the constituency, labelled 'details' and a tibble with election results, labelled 'results'. The list and tibble are stored in a single object.</p>
+    <p>A list with details of the constituency, labelled <code>'details'</code> and a tibble with election results, labelled <code>'results'</code>. The list and tibble are stored in a single object.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_constituency_results</span>(<span class='kw'>constituency_id</span> <span class='kw'>=</span> <span class='fl'>3709</span>, <span class='kw'>election_id</span> <span class='kw'>=</span> <span class='fl'>0</span>)
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

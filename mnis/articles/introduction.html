@@ -103,7 +103,7 @@
       <h1>Introduction to mnis</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2017-09-01</h4>
+            <h4 class="date">2017-10-11</h4>
           </div>
 
     
@@ -112,9 +112,8 @@
 <p><code>mnis</code> is an R package to pull data from the UK parliament through the Members’ Name Information Service API, with the ability to tidy that data into object classes that are easy to work with in R. It emphasises simplicity and ease of use, so that users unfamiliar with APIs can easily retrieve large volumes of high quality data. The Members’ Name Information Service API does not require registration or a token, and is very generous with the number of requests allowed (it is unclear what limits are applied to the API, but I have yet to hit the limit, aside from custom requests using <code><a href="../reference/mnis_base.html">mnis_base()</a></code>.)</p>
 <p><code>mnis</code> is for researchers, journalists and developers who follow the UK parliament for work, pleasure or some combination thereof. It has a sister package called <a href="https://cran.r-project.org/package=hansard"><code>hansard</code></a> that retrieves data from a different API, and while there is some overlap in function between the two packages, <code>mnis</code> is focused on retrieving data on individual MPs and Peers, government departments, cabinet and shadow cabinet positions, other parliamentary and political roles, and parliamentary reference data.</p>
 <p>All functions requests data in JSON format and parse it to a tibble, except for <code><a href="../reference/mnis_constituency_results.html">mnis_constituency_results()</a></code> which returns a list (with constituency details) and a tibble (with constituency election results).</p>
-<p>Functions are divided into four main types:</p>
+<p>Functions are divided into three main types:</p>
 <ul>
-<li><p>General Functions</p></li>
 <li><p>Reference Functions</p></li>
 <li><p>Additional Information Functions</p></li>
 <li><p>Fixed Scope Functions</p></li>
@@ -132,8 +131,8 @@
 <div id="from-github-development-version" class="section level3">
 <h3 class="hasAnchor">
 <a href="#from-github-development-version" class="anchor"></a>From GitHub (Development Version)</h3>
-<pre><code>install.packages("devtools")
-devtools::install_github("EvanOdell/mnis")</code></pre>
+<pre><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">#install.packages("devtools")
+devtools::install_github("EvanOdell/mnis")</a></code></pre>
 </div>
 <div id="load-mnis" class="section level3">
 <h3 class="hasAnchor">
@@ -153,7 +152,7 @@ devtools::install_github("EvanOdell/mnis")</code></pre>
 </ul>
 <div id="mnis_base-function" class="section level3">
 <h3 class="hasAnchor">
-<a href="#mnis_base-function" class="anchor"></a>mnis_base function</h3>
+<a href="#mnis_base-function" class="anchor"></a><code>mnis_base</code> function</h3>
 <p>The <code><a href="../reference/mnis_base.html">mnis_base()</a></code> function accepts requests to the mnis API. The full list of request options is available on the mnis website: <a href="http://data.parliament.uk/membersdataplatform/memberquery.aspx" class="uri">http://data.parliament.uk/membersdataplatform/memberquery.aspx</a></p>
 </div>
 <div id="reference-functions" class="section level3">
@@ -203,18 +202,18 @@ devtools::install_github("EvanOdell/mnis")</code></pre>
 x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_reference.html">ref_titles</a></span>(<span class="dt">tidy =</span> <span class="ot">FALSE</span>)
 x</code></pre></div>
 <pre><code>## # A tibble: 22 x 2
-##    Title.Title_Id Title.Name
-##  *          &lt;chr&gt;      &lt;chr&gt;
-##  1             22      Canon
-##  2              1       Dame
-##  3              2         Dr
-##  4              3        Hon
-##  5              4       Lady
-##  6              5       Lord
-##  7              6     Lt Col
-##  8             21     Lt Gen
-##  9              7       Miss
-## 10              8         Mr
+##    Title_Id   Name
+##  *    &lt;chr&gt;  &lt;chr&gt;
+##  1       22  Canon
+##  2        1   Dame
+##  3        2     Dr
+##  4        3    Hon
+##  5        4   Lady
+##  6        5   Lord
+##  7        6 Lt Col
+##  8       21 Lt Gen
+##  9        7   Miss
+## 10        8     Mr
 ## # ... with 12 more rows</code></pre>
 <p>With the <code>tidy</code> parameter</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mnis)
@@ -238,7 +237,7 @@ x</code></pre></div>
 <div id="additional-information-functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#additional-information-functions" class="anchor"></a>Additional Information Functions</h3>
-<p><code><a href="../reference/mnis_additional.html">mnis_additional()</a></code></p>
+<p>The following functions are part of the <code>mnis_additional</code> family. The <code><a href="../reference/mnis_full_biog.html">mnis_full_biog()</a></code> function returns all available information for a given MP, <code><a href="../reference/mnis_extra.html">mnis_extra()</a></code> returns data from some or all of the <code>mnis_additional</code> functions, based on the parameters it receives.</p>
 <p><code><a href="../reference/mnis_additional.html">mnis_addresses()</a></code></p>
 <p><code><a href="../reference/mnis_additional.html">mnis_basic_details()</a></code></p>
 <p><code><a href="../reference/mnis_additional.html">mnis_biography_entries()</a></code></p>
@@ -261,9 +260,71 @@ x</code></pre></div>
 <p><code><a href="../reference/mnis_additional.html">mnis_staff()</a></code></p>
 <p><code><a href="../reference/mnis_additional.html">mnis_statuses()</a></code></p>
 <p><code><a href="../reference/mnis_peers_on_date.html">mnis_peers_on_date()</a></code></p>
+</div>
+<div id="mnis_additional-examples" class="section level3">
+<h3 class="hasAnchor">
+<a href="#mnis_additional-examples" class="anchor"></a><code>mnis_additional</code> examples</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mnis)
+x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_full_biog.html">mnis_full_biog</a></span>(<span class="dv">172</span>)
+x</code></pre></div>
+<pre><code>## # A tibble: 1 x 393
+##   member_id dods_id pims_id      display_as          list_as
+## *    &lt;fctr&gt;  &lt;fctr&gt;  &lt;fctr&gt;          &lt;fctr&gt;           &lt;fctr&gt;
+## 1       172   25790    3572 Ms Diane Abbott Abbott, Ms Diane
+## # ... with 388 more variables: full_title &lt;fctr&gt;, date_of_birth &lt;dttm&gt;,
+## #   date_of_death_nil &lt;dttm&gt;, date_of_death_label &lt;dttm&gt;, gender &lt;fctr&gt;,
+## #   party_id &lt;fctr&gt;, party_text &lt;fctr&gt;, house &lt;fctr&gt;, member_from &lt;fctr&gt;,
+## #   house_start_date &lt;dttm&gt;, house_end_date_nil &lt;dttm&gt;,
+## #   house_end_date_label &lt;dttm&gt;, current_status_id &lt;fctr&gt;,
+## #   current_status_is_active &lt;fctr&gt;, current_status_name &lt;fctr&gt;,
+## #   current_status_start_date &lt;dttm&gt;, given_surname &lt;fctr&gt;,
+## #   given_middle_names &lt;fctr&gt;, given_forename &lt;fctr&gt;,
+## #   town_of_birth &lt;fctr&gt;, country_of_birth &lt;fctr&gt;, gender &lt;fctr&gt;,
+## #   date_of_birth_nil &lt;dttm&gt;, date_of_birth_label &lt;dttm&gt;,
+## #   date_of_retirement_nil &lt;dttm&gt;, date_of_retirement_label &lt;dttm&gt;,
+## #   date_of_death_nil &lt;dttm&gt;, date_of_death_label &lt;dttm&gt;,
+## #   preferred_name_title1 &lt;fctr&gt;, preferred_name_title2 &lt;fctr&gt;,
+## #   preferred_name_surname1 &lt;fctr&gt;, preferred_name_surname2 &lt;fctr&gt;,
+## #   preferred_name_middle_names1 &lt;fctr&gt;,
+## #   preferred_name_middle_names2 &lt;fctr&gt;, preferred_name_forename1 &lt;fctr&gt;,
+## #   preferred_name_forename2 &lt;fctr&gt;, preferred_name_suffix1 &lt;fctr&gt;,
+## #   preferred_name_suffix2 &lt;fctr&gt;, preferred_name_address_as1 &lt;fctr&gt;,
+## #   preferred_name_address_as2 &lt;fctr&gt;, preferred_name_note1 &lt;fctr&gt;,
+## #   preferred_name_note2 &lt;fctr&gt;, preferred_name_start_date1 &lt;dttm&gt;,
+## #   preferred_name_start_date2 &lt;dttm&gt;, preferred_name_end_date_nil &lt;dttm&gt;,
+## #   preferred_name_end_date_label &lt;dttm&gt;, preferred_name_end_date &lt;dttm&gt;,
+## #   preferred_name_list_as1 &lt;fctr&gt;, preferred_name_list_as2 &lt;fctr&gt;,
+## #   preferred_name_display_as1 &lt;fctr&gt;, preferred_name_display_as2 &lt;fctr&gt;,
+## #   preferred_name_full_title1 &lt;fctr&gt;, preferred_name_full_title2 &lt;fctr&gt;,
+## #   preferred_name_honourary_prefixes_honourary_prefix_name1 &lt;fctr&gt;,
+## #   preferred_name_honourary_prefixes_honourary_prefix_name2 &lt;fctr&gt;,
+## #   house_membership_house &lt;fctr&gt;, house_membership_start_date &lt;dttm&gt;,
+## #   house_membership_end_date_nil &lt;dttm&gt;,
+## #   house_membership_end_date_label &lt;dttm&gt;, constituency_id1 &lt;fctr&gt;,
+## #   constituency_id2 &lt;fctr&gt;, constituency_id3 &lt;fctr&gt;,
+## #   constituency_id4 &lt;fctr&gt;, constituency_id5 &lt;fctr&gt;,
+## #   constituency_id6 &lt;fctr&gt;, constituency_id7 &lt;fctr&gt;,
+## #   constituency_id8 &lt;fctr&gt;, constituency_name1 &lt;fctr&gt;,
+## #   constituency_name2 &lt;fctr&gt;, constituency_name3 &lt;fctr&gt;,
+## #   constituency_name4 &lt;fctr&gt;, constituency_name5 &lt;fctr&gt;,
+## #   constituency_name6 &lt;fctr&gt;, constituency_name7 &lt;fctr&gt;,
+## #   constituency_name8 &lt;fctr&gt;, constituency_start_date1 &lt;dttm&gt;,
+## #   constituency_start_date2 &lt;dttm&gt;, constituency_start_date3 &lt;dttm&gt;,
+## #   constituency_start_date4 &lt;dttm&gt;, constituency_start_date5 &lt;dttm&gt;,
+## #   constituency_start_date6 &lt;dttm&gt;, constituency_start_date7 &lt;dttm&gt;,
+## #   constituency_start_date8 &lt;dttm&gt;, constituency_end_date_nil &lt;dttm&gt;,
+## #   constituency_end_date_label &lt;dttm&gt;, constituency_end_date3 &lt;dttm&gt;,
+## #   constituency_end_date4 &lt;dttm&gt;, constituency_end_date5 &lt;dttm&gt;,
+## #   constituency_end_date6 &lt;dttm&gt;, constituency_end_date7 &lt;dttm&gt;,
+## #   constituency_end_date8 &lt;dttm&gt;, constituency_end_date9 &lt;dttm&gt;,
+## #   constituency_end_reason1 &lt;fctr&gt;, constituency_end_reason2 &lt;fctr&gt;,
+## #   constituency_end_reason3 &lt;fctr&gt;, constituency_end_reason4 &lt;fctr&gt;,
+## #   constituency_end_reason5 &lt;fctr&gt;, constituency_end_reason6 &lt;fctr&gt;,
+## #   constituency_end_reason7 &lt;fctr&gt;, constituency_end_reason8 &lt;fctr&gt;, ...</code></pre>
 <div id="mnis_extra" class="section level4">
 <h4 class="hasAnchor">
-<a href="#mnis_extra" class="anchor"></a>mnis_extra()</h4>
+<a href="#mnis_extra" class="anchor"></a><code><a href="../reference/mnis_extra.html">mnis_extra()</a></code>
+</h4>
 <p>The <code><a href="../reference/mnis_extra.html">mnis_extra()</a></code> function acts as a wrapper to the additional information functions. By default it calls all functions, which is equivalent to <code><a href="../reference/mnis_full_biog.html">mnis_full_biog()</a></code>.</p>
 </div>
 </div>
@@ -288,11 +349,11 @@ x</code></pre></div>
 <pre><code>## # A tibble: 14 x 5
 ##       id                        name male_count female_count total_count
 ##  * &lt;chr&gt;                       &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;
-##  1     4                Conservative        191           63         254
-##  2    15                      Labour        136           64         200
-##  3     6                  Crossbench        135           41         176
-##  4    17            Liberal Democrat         67           34         101
-##  5    49              Non-affiliated         27            4          31
+##  1     4                Conservative        190           62         252
+##  2    15                      Labour        135           64         199
+##  3     6                  Crossbench        138           41         179
+##  4    17            Liberal Democrat         66           34         100
+##  5    49              Non-affiliated         26            4          30
 ##  6     3                     Bishops         22            2          24
 ##  7     7   Democratic Unionist Party          3            1           4
 ##  8    35       UK Independence Party          3            0           3

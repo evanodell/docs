@@ -141,31 +141,32 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>ID</th>
-      <td><p>The ID number of the member, using the default MNIS scheme. If <code>ref_dods</code> is TRUE, accepts the Dods monitoring scheme instead. If left empty, returns the same data as <code><a href='mnis_all_members.html'>mnis_all_members</a></code> with default parameters.</p></td>
+      <td><p>The ID number of the member, using the default MNIS scheme. If <code>ref_dods=TRUE</code>, accepts the Dods monitoring scheme instead. If <code>NULL</code>, returns the same data as <code><a href='mnis_all_members.html'>mnis_all_members</a></code> with default parameters. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>ref_dods</th>
-      <td><p>Request based on the Dods monitoring member ID scheme. Defaults to FALSE. If FALSE, requests using the default MNIS identification scheme.</p></td>
+      <td><p>Request based on the Dods monitoring member ID scheme. If <code>FALSE</code>, requests using the default MNIS identification scheme. Defaults to <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert variable names to a consistent style. Defaults to TRUE.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
+      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='mnis_additional.html'>mnis_basic_details</a></code> <code><a href='mnis_additional.html'>mnis_additional</a></code> <code><a href='mnis_extra.html'>mnis_extra</a></code></p>
+    <p><code><a href='mnis_additional.html'>mnis_basic_details</a></code>
+    <code><a href='mnis_additional.html'>mnis_additional</a></code>
+    <code><a href='mnis_extra.html'>mnis_extra</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_full_biog</span>(<span class='fl'>172</span>)
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

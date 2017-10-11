@@ -155,12 +155,35 @@
     </div>
 
     <div class="contents">
-    <div id="parlitools-0-2-0" class="section level1">
+    <div id="parlitools-0-2-1" class="section level1">
 <h1 class="hasAnchor">
-<a href="#parlitools-0-2-0" class="anchor"></a>parlitools 0.2.0</h1>
+<a href="#parlitools-0-2-1" class="anchor"></a>parlitools 0.2.1</h1>
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h2>
+<p>Updating of <code>council_data</code> dataset to be accurate as of 2017-09-13.</p>
+<p>Added <code>combined_leave_vote</code> column to <code>leave_votes_west</code> dataset with the actual leave vote if known and the Chris Hanretty estimate if not known.</p>
+<p>Vote percentages in <code>leave_votes_west</code> are now all numeric class.</p>
+</div>
+<div id="dependency-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#dependency-changes" class="anchor"></a>Dependency changes</h2>
+<p>Removed reliance on now-hidden functions from <code>mnis</code> and <code>hansard</code> packages.</p>
+</div>
+<div id="general-improvements" class="section level2">
+<h2 class="hasAnchor">
+<a href="#general-improvements" class="anchor"></a>General improvements</h2>
+<p>Improvements to documentation to improve clarity and readability.</p>
+<p>Better example plots in introductory vignette.</p>
+<p>The tidying functions are now all internal to the package and not exported.</p>
+</div>
+</div>
+    <div id="parlitools-0-2-0" class="section level1">
+<h1 class="hasAnchor">
+<a href="#parlitools-0-2-0" class="anchor"></a>parlitools 0.2.0</h1>
+<div id="data-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#data-1" class="anchor"></a>Data</h2>
 <p>New <code>bes_2017</code> dataset, with results of 2017 General Election, taken from the 2017 British Election Study. This dataset replaces the <code>ge_2017</code> dataset. It also replicates some of the data in the <code>bes_2015</code> dataset.</p>
 <p>Census data from the British Election Study has been moved to its own seperate file, named <code>census11</code>.</p>
 </div>
@@ -175,9 +198,9 @@
 <a href="#parlitools-0-1-0" class="anchor"></a>parlitools 0.1.0</h1>
 <p>Changes to vignettes to comply with CRAN policies and to reduce the time needed to check the package.</p>
 <p>Reduction in the number of similar vignette examples to reduce build time.</p>
-<div id="data-1" class="section level2">
+<div id="data-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#data-1" class="anchor"></a>Data</h2>
+<a href="#data-2" class="anchor"></a>Data</h2>
 <p>Updating of <code>council_data</code> dataset to be accurate as of 2017-07-14.</p>
 <p>New <code>ge_2017</code> dataset, with results of 2017 General Election, linked with constituency data from <code>bes_2015</code>.</p>
 </div>
@@ -263,9 +286,9 @@
 <h2 class="hasAnchor">
 <a href="#introducing-parlitools" class="anchor"></a>Introducing parlitools</h2>
 <p>Introducing <code>parlitools</code>, a package for retrieving and analysing UK political data. The package includes datasets from the British Election Study, a hexagonal map of all UK constituencies, and party colour hex codes.</p>
-<div id="data-2" class="section level3">
+<div id="data-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#data-2" class="anchor"></a>Data</h3>
+<a href="#data-3" class="anchor"></a>Data</h3>
 <p>The package includes a dataset with 2015 General Election results and census information for each constituency in Scotland, Wales and England, taken from the British Election Study.</p>
 <p>The package also includes a dataset (<code>party_colours</code>) with the hex code for the official colours of UK political parties.</p>
 </div>
@@ -288,6 +311,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#parlitools-0-2-1">0.2.1</a></li>
         <li><a href="#parlitools-0-2-0">0.2.0</a></li>
         <li><a href="#parlitools-0-1-0">0.1.0</a></li>
         <li><a href="#parlitools-0-0-7">0.0.7</a></li>

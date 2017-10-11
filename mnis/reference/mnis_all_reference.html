@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>All reference datasets — mnis_all_reference • mnis</title>
+<title>All reference tables in a list — mnis_all_reference • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,11 +126,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>All reference datasets</h1>
+    <h1>All reference tables in a list</h1>
     </div>
 
     
-    <p>Returns a list of 39 tibbles, with the name and data returned from each respective reference function.</p>
+    <p>All 39 reference functions, presented as a list of tibbles.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_all_reference</span>(<span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
@@ -140,11 +140,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>tidy</th>
-      <td><p>Fix the variable names in each tibble to remove special characters and superfluous text, and convert all the variable names to snake_case. Defaults to TRUE.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in each reference tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Also applies a consistent style to each tibble name in the list. If <code>FALSE</code>, tibble names will be in <code>snake_case</code> style, and the variable names in each tibble will not be altered. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
+      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
@@ -160,7 +160,6 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_all_reference</span>()
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

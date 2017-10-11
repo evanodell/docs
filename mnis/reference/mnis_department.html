@@ -141,23 +141,23 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>department_id</th>
-      <td><p>The department look up. 0 returns the cabinet/shadow cabinet, -1 returns a list of all ministers. Defaults to 0.</p></td>
+      <td><p>The department to look up. <code>0</code> returns the cabinet/shadow cabinet, <code>-1</code> returns a list of all ministers. For departmental IDs, see the <code>ref_departments</code> function in <code><a href='mnis_reference.html'>mnis_reference</a></code>. Defaults to <code>0</code>.</p></td>
     </tr>
     <tr>
       <th>bench</th>
-      <td><p>Flag to return either Government or Opposition information. Defaults to 'Government'. The API is case sensitive on this parameter, so 'Government' or 'Opposition' will work, but 'government' and 'opposition' will not.</p></td>
+      <td><p>Flag to return either Government or Opposition information. This parameter is case insensitive, so both <code>'Opposition'</code> and <code>'opposition'</code> will return the same data. Defaults to <code>'Government'</code>.</p></td>
     </tr>
     <tr>
       <th>former</th>
-      <td><p>Flag to include both current and former ministers/shadow ministers. Defaults to TRUE. If FALSE, only includes current ministers/shadow ministers.</p></td>
+      <td><p>Logical parameter to include both current and former ministers/shadow ministers. If <code>FALSE</code>, only includes current ministers/shadow ministers. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If TRUE, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to TRUE.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
+      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
@@ -173,9 +173,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_department</span>(<span class='kw'>departmentId</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>bench</span> <span class='kw'>=</span> <span class='st'>'Government'</span>, <span class='kw'>former</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
-
-<span class='co'># }</span><div class='input'>
-</div></pre>
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

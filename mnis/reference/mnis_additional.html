@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A series of basic function for the API lookup. Each of these functions accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned. — mnis_additional • mnis</title>
+<title>Additional member information — mnis_additional • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,7 +126,7 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A series of basic function for the API lookup. Each of these functions accepts a member's ID and returns information; if no ID is given basic information on all members of both houses is returned.</h1>
+    <h1>Additional member information</h1>
     </div>
 
     
@@ -200,19 +200,19 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>ID</th>
-      <td><p>The member ID value. If empty, function calls <code><a href='mnis_all_members.html'>mnis_all_members</a></code> and returns basic information on all members of both houses.</p></td>
+      <td><p>The member ID. If <code>NULL</code>, function calls <code><a href='mnis_all_members.html'>mnis_all_members</a></code> and returns basic information on all members of both houses. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>ref_dods</th>
-      <td><p>Request based on the DODS membership ID scheme. Defaults to FALSE, where it requests data based on the default membership ID scheme.</p></td>
+      <td><p>If <code>TRUE</code>, Request based on the DODS membership ID scheme. If <code>FALSE</code>, requests data based on the default membership ID scheme. Defaults to <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If TRUE, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to TRUE.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if tidy=TRUE. Accepts one of "snake_case", "camelCase" and "period.case". Defaults to "snake_case".</p></td>
+      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
@@ -220,18 +220,46 @@
 
     <p>A tibble with the data corresponding to the particular function called.</p>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>All functions return basic details about the member (name, date of birth, gender, constituency, party, IDs, current status, etc.), as well as any available additional information requested by the specific function.</p>
+    
+    <h2 class="hasAnchor" id="-code-mnis-additional-code-functions"><a class="anchor" href="#-code-mnis-additional-code-functions"></a>&lt;code&gt;mnis_additional&lt;/code&gt; functions</h2>
+
+    
+    <dl class='dl-horizontal'>
+<dt><code>mnis_additional</code></dt><dd><p>Returns a character vector listing all function options for <code>mnis_additional</code></p></dd>
+<dt><code>mnis_basic_details</code></dt><dd><p>Basic biographical details on a given Member</p></dd>
+<dt><code>mnis_biography_entries</code></dt><dd><p>Member biographical information (e.g. countries of interest, policy expertise etc...)</p></dd>
+<dt><code>mnis_committees</code></dt><dd><p>Committees a Member sits or has sat on as well details on committee chairing</p></dd>
+<dt><code>mnis_addresses</code></dt><dd><p>Member address information (e.g. website, twitter, consituency address etc...)</p></dd>
+<dt><code>mnis_constituencies</code></dt><dd><p>Constituencies a Member has represented</p></dd>
+<dt><code>mnis_elections_contested</code></dt><dd><p>Elections a Member has contested but not won</p></dd>
+<dt><code>mnis_experiences</code></dt><dd><p>Non-parliamentary experience of a Member</p></dd>
+<dt><code>mnis_government_posts</code></dt><dd><p>Government posts a Member has held</p></dd>
+<dt><code>mnis_honours</code></dt><dd><p>Honours (e.g. MBE, OBE etc...) held by a Member</p></dd>
+<dt><code>mnis_house_memberships</code></dt><dd><p>House membership list of a Member</p></dd>
+<dt><code>mnis_statuses</code></dt><dd><p>Status history (e.g. suspensions and disqualifications) for a Member</p></dd>
+<dt><code>mnis_staff</code></dt><dd><p>The staff employed by a Member</p></dd>
+<dt><code>mnis_interests</code></dt><dd><p>Registered (financial) interests of a Member</p></dd>
+<dt><code>mnis_known_as</code></dt><dd><p>Details of names a Member has chosen to be known as instead of their full title, only applicable to members of the House of Lords</p></dd>
+<dt><code>mnis_maiden_speeches</code></dt><dd><p>Maiden speech dates for a Member</p></dd>
+<dt><code>mnis_opposition_posts</code></dt><dd><p>Opposition posts a Member has held</p></dd>
+<dt><code>mnis_other_parliaments</code></dt><dd><p>Other Parliaments that a Member has held a membership of</p></dd>
+<dt><code>mnis_parliamentary_posts</code></dt><dd><p>Parliamentary posts a Member has held</p></dd>
+<dt><code>mnis_parties</code></dt><dd><p>Party affiliations of a Member</p></dd>
+<dt><code>mnis_preferred_names</code></dt><dd><p>Full set of data about a Members' name (e.g. surname, forename, Honorary prefixes, full details of House of Lords title and rank if applicable, etc...)</p></dd>
+</dl>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='mnis_full_biog.html'>mnis_full_biog</a></code> <code><a href='mnis_extra.html'>mnis_extra</a></code></p>
+    <p><code><a href='mnis_full_biog.html'>mnis_full_biog</a></code>
+    <code><a href='mnis_extra.html'>mnis_extra</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_basic_details</span>(<span class='fl'>172</span>)
-
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_additional</span>()
-
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -240,6 +268,10 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#-code-mnis-additional-code-functions">&lt;code&gt;mnis_additional&lt;/code&gt; functions</a></li>
 
       <li><a href="#see-also">See also</a></li>
       
