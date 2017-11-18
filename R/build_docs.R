@@ -33,7 +33,7 @@ build_docs <- function(){
   message("Building `hansard-ropengov`")
   
 ### Build `hansard-ropengov` -----------------
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", path= "/Users/evanodell/Documents/GitHub/hansard/docs", preview = FALSE)
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", path= "/Users/evanodell/Documents/GitHub/hansard-rOpenGov/docs", preview = FALSE)
 
   message("Building `mnis`")
   

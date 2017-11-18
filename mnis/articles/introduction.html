@@ -103,7 +103,7 @@
       <h1>Introduction to mnis</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2017-10-11</h4>
+            <h4 class="date">2017-11-18</h4>
           </div>
 
     
@@ -119,45 +119,27 @@
 <li><p>Fixed Scope Functions</p></li>
 </ul>
 <p>There is also the <code><a href="../reference/mnis_base.html">mnis_base()</a></code> function that allows for fully flexibility in all API requests, by allowing you to fully specify the URL you want to call data from.</p>
-<div id="installing-mnis" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installing-mnis" class="anchor"></a>Installing <code>mnis</code>
+<section id="installing-mnis" class="level2"><h2>Installing <code>mnis</code>
 </h2>
-<div id="from-cran" class="section level3">
-<h3 class="hasAnchor">
-<a href="#from-cran" class="anchor"></a>From CRAN</h3>
+<section id="from-cran" class="level3"><h3>From CRAN</h3>
 <pre><code>install.packages("mnis")</code></pre>
-</div>
-<div id="from-github-development-version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#from-github-development-version" class="anchor"></a>From GitHub (Development Version)</h3>
+</section><section id="from-github-development-version" class="level3"><h3>From GitHub (Development Version)</h3>
 <pre><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">#install.packages("devtools")
 devtools::install_github("EvanOdell/mnis")</a></code></pre>
-</div>
-<div id="load-mnis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#load-mnis" class="anchor"></a>Load <code>mnis</code>
+</section><section id="load-mnis" class="level3"><h3>Load <code>mnis</code>
 </h3>
 <pre><code>library(mnis)</code></pre>
-</div>
-</div>
-<div id="using-mnis" class="section level2">
-<h2 class="hasAnchor">
-<a href="#using-mnis" class="anchor"></a>Using <code>mnis</code>
+</section></section><section id="using-mnis" class="level2"><h2>Using <code>mnis</code>
 </h2>
 <p>All <code>mnis</code> functions contain two parameters, <code>tidy</code> and <code>tidy_style</code>:</p>
 <ul>
 <li><p><code>tidy</code> is a logical parameter accepting either TRUE or FALSE, defaulting to TRUE. If TRUE, <code>mnis</code> will fix variable names, which by default contain non alpha-numeric characters and appear to use an inconsistent/idiosyncratic naming convention, at least by the standards of the various naming conventions used in R. Dates and datetimes are converted to POSIXct class. The default variable names are unnecessarily lengthy and repeat the same piece of information several times in a row and contain non-alphanumeric characters. <code>tidy</code> fixes this, and defaults to TRUE, so you won’t have to deal with the clunky and over-complicated default variable names unless you really want to. It transforms names like <code>"Members.Member.BasicDetails.Gender"</code> into <code>"gender"</code>.</p></li>
 <li><p>The naming convention for variables used if <code>tidy</code>==TRUE is indicated by <code>tidy_style</code>. <code>tidy_style</code> accepts one of <code>"snake_case"</code>, <code>"camelCase"</code> and <code>"period.case"</code>, defaulting to <code>"snake_case"</code>. All variable names will be converted to match the given naming convention.</p></li>
 </ul>
-<div id="mnis_base-function" class="section level3">
-<h3 class="hasAnchor">
-<a href="#mnis_base-function" class="anchor"></a><code>mnis_base</code> function</h3>
+<section id="mnis_base-function" class="level3"><h3>
+<code>mnis_base</code> function</h3>
 <p>The <code><a href="../reference/mnis_base.html">mnis_base()</a></code> function accepts requests to the mnis API. The full list of request options is available on the mnis website: <a href="http://data.parliament.uk/membersdataplatform/memberquery.aspx" class="uri">http://data.parliament.uk/membersdataplatform/memberquery.aspx</a></p>
-</div>
-<div id="reference-functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#reference-functions" class="anchor"></a>Reference Functions</h3>
+</section><section id="reference-functions" class="level3"><h3>Reference Functions</h3>
 <p>A series of functions to return reference data. This data is useful for providing parameters for other function calls. These functions do not accept any arguments.</p>
 <p><code><a href="../reference/mnis_reference.html">ref_address_types()</a></code></p>
 <p><code><a href="../reference/mnis_reference.html">ref_answering_bodies()</a></code></p>
@@ -198,9 +180,10 @@ devtools::install_github("EvanOdell/mnis")</a></code></pre>
 <p><code><a href="../reference/mnis_reference.html">ref_photo_outputs()</a></code></p>
 <p><code><a href="../reference/mnis_reference.html">ref_statuses()</a></code></p>
 <p><code><a href="../reference/mnis_reference.html">ref_titles()</a></code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mnis)
-x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_reference.html">ref_titles</a></span>(<span class="dt">tidy =</span> <span class="ot">FALSE</span>)
-x</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<span class="kw">library</span>(mnis)</div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_reference.html">ref_titles</a></span>(<span class="dt">tidy =</span> <span class="ot">FALSE</span>)</div>
+<div class="sourceLine" id="3" href="#3" data-line-number="3">x</div></code></pre>
 <pre><code>## # A tibble: 22 x 2
 ##    Title_Id   Name
 ##  *    &lt;chr&gt;  &lt;chr&gt;
@@ -216,9 +199,10 @@ x</code></pre></div>
 ## 10        8     Mr
 ## # ... with 12 more rows</code></pre>
 <p>With the <code>tidy</code> parameter</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mnis)
-x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_reference.html">ref_titles</a></span>(<span class="dt">tidy =</span> <span class="ot">TRUE</span>)
-x</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<span class="kw">library</span>(mnis)</div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_reference.html">ref_titles</a></span>(<span class="dt">tidy =</span> <span class="ot">TRUE</span>)</div>
+<div class="sourceLine" id="3" href="#3" data-line-number="3">x</div></code></pre>
 <pre><code>## # A tibble: 22 x 2
 ##    title_id   name
 ##  *    &lt;chr&gt;  &lt;chr&gt;
@@ -233,10 +217,7 @@ x</code></pre></div>
 ##  9        7   Miss
 ## 10        8     Mr
 ## # ... with 12 more rows</code></pre>
-</div>
-<div id="additional-information-functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#additional-information-functions" class="anchor"></a>Additional Information Functions</h3>
+</section><section id="additional-information-functions" class="level3"><h3>Additional Information Functions</h3>
 <p>The following functions are part of the <code>mnis_additional</code> family. The <code><a href="../reference/mnis_full_biog.html">mnis_full_biog()</a></code> function returns all available information for a given MP, <code><a href="../reference/mnis_extra.html">mnis_extra()</a></code> returns data from some or all of the <code>mnis_additional</code> functions, based on the parameters it receives.</p>
 <p><code><a href="../reference/mnis_additional.html">mnis_addresses()</a></code></p>
 <p><code><a href="../reference/mnis_additional.html">mnis_basic_details()</a></code></p>
@@ -260,13 +241,12 @@ x</code></pre></div>
 <p><code><a href="../reference/mnis_additional.html">mnis_staff()</a></code></p>
 <p><code><a href="../reference/mnis_additional.html">mnis_statuses()</a></code></p>
 <p><code><a href="../reference/mnis_peers_on_date.html">mnis_peers_on_date()</a></code></p>
-</div>
-<div id="mnis_additional-examples" class="section level3">
-<h3 class="hasAnchor">
-<a href="#mnis_additional-examples" class="anchor"></a><code>mnis_additional</code> examples</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mnis)
-x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_full_biog.html">mnis_full_biog</a></span>(<span class="dv">172</span>)
-x</code></pre></div>
+</section><section id="mnis_additional-examples" class="level3"><h3>
+<code>mnis_additional</code> examples</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<span class="kw">library</span>(mnis)</div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_full_biog.html">mnis_full_biog</a></span>(<span class="dv">172</span>)</div>
+<div class="sourceLine" id="3" href="#3" data-line-number="3">x</div></code></pre>
 <pre><code>## # A tibble: 1 x 393
 ##   member_id dods_id pims_id      display_as          list_as
 ## *    &lt;fctr&gt;  &lt;fctr&gt;  &lt;fctr&gt;          &lt;fctr&gt;           &lt;fctr&gt;
@@ -321,16 +301,9 @@ x</code></pre></div>
 ## #   constituency_end_reason3 &lt;fctr&gt;, constituency_end_reason4 &lt;fctr&gt;,
 ## #   constituency_end_reason5 &lt;fctr&gt;, constituency_end_reason6 &lt;fctr&gt;,
 ## #   constituency_end_reason7 &lt;fctr&gt;, constituency_end_reason8 &lt;fctr&gt;, ...</code></pre>
-<div id="mnis_extra" class="section level4">
-<h4 class="hasAnchor">
-<a href="#mnis_extra" class="anchor"></a><code><a href="../reference/mnis_extra.html">mnis_extra()</a></code>
-</h4>
+<section id="mnis_extra" class="level4"><h4><code><a href="../reference/mnis_extra.html">mnis_extra()</a></code></h4>
 <p>The <code><a href="../reference/mnis_extra.html">mnis_extra()</a></code> function acts as a wrapper to the additional information functions. By default it calls all functions, which is equivalent to <code><a href="../reference/mnis_full_biog.html">mnis_full_biog()</a></code>.</p>
-</div>
-</div>
-<div id="fixed-scope-functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#fixed-scope-functions" class="anchor"></a>Fixed Scope Functions</h3>
+</section></section><section id="fixed-scope-functions" class="level3"><h3>Fixed Scope Functions</h3>
 <p>There are seven fixed scope functions that return ready-made datasets. They are:</p>
 <p><code><a href="../reference/mnis_party_state.html">mnis_party_state()</a></code></p>
 <p><code><a href="../reference/mnis_constituency_results.html">mnis_constituency_results()</a></code></p>
@@ -339,23 +312,22 @@ x</code></pre></div>
 <p><code><a href="../reference/mnis_lords_type.html">mnis_lords_type()</a></code></p>
 <p><code><a href="../reference/mnis_member_date.html">mnis_member_date()</a></code></p>
 <p><code><a href="../reference/mnis_party_state.html">mnis_party_state()</a></code></p>
-<div id="fixed-scope-example" class="section level4">
-<h4 class="hasAnchor">
-<a href="#fixed-scope-example" class="anchor"></a>Fixed Scope Example</h4>
+<section id="fixed-scope-example" class="level4"><h4>Fixed Scope Example</h4>
 <p>Fixed scope example, returning the state of all parties in the House of Commons, as reported on 2017-04-04.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mnis)
-x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_party_state.html">mnis_party_state</a></span>(<span class="st">"2017-04-04"</span>)
-x</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<span class="kw">library</span>(mnis)</div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_party_state.html">mnis_party_state</a></span>(<span class="st">"2017-04-04"</span>)</div>
+<div class="sourceLine" id="3" href="#3" data-line-number="3">x</div></code></pre>
 <pre><code>## # A tibble: 14 x 5
 ##       id                        name male_count female_count total_count
 ##  * &lt;chr&gt;                       &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;
-##  1     4                Conservative        190           62         252
+##  1     4                Conservative        188           62         250
 ##  2    15                      Labour        135           64         199
-##  3     6                  Crossbench        138           41         179
+##  3     6                  Crossbench        143           41         184
 ##  4    17            Liberal Democrat         66           34         100
-##  5    49              Non-affiliated         26            4          30
+##  5    49              Non-affiliated         24            4          28
 ##  6     3                     Bishops         22            2          24
-##  7     7   Democratic Unionist Party          3            1           4
+##  7     7   Democratic Unionist Party          3            0           3
 ##  8    35       UK Independence Party          3            0           3
 ##  9    10          Independent Labour          2            0           2
 ## 10    38       Ulster Unionist Party          2            0           2
@@ -364,8 +336,8 @@ x</code></pre></div>
 ## 13    52 Independent Ulster Unionist          1            0           1
 ## 14    22                 Plaid Cymru          1            0           1</code></pre>
 <p>The same fixed scope function, returning the state of all parties in the House of Lords, as reported on 2017-04-04.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_party_state.html">mnis_party_state</a></span>(<span class="st">"Lords"</span>, <span class="st">"2017-04-04"</span>)
- y</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1"> y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_party_state.html">mnis_party_state</a></span>(<span class="st">"Lords"</span>, <span class="st">"2017-04-04"</span>)</div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2"> y</div></code></pre>
 <pre><code>## # A tibble: 14 x 5
 ##       id                        name male_count female_count total_count
 ##  * &lt;chr&gt;                       &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;
@@ -383,9 +355,7 @@ x</code></pre></div>
 ## 12    53 Independent Social Democrat          1            0           1
 ## 13    52 Independent Ulster Unionist          1            0           1
 ## 14    22                 Plaid Cymru          1            0           1</code></pre>
-</div>
-</div>
-</div>
+</section></section></section>
 </div>
   </div>
 
