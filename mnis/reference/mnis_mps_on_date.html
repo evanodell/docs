@@ -130,7 +130,11 @@
     </div>
 
     
-    <p>Requests data on all MPs who were members of the House of Commons on the date specified, (if only <code>date1</code> is included as a parameter), or on or between the two dates if both <code>date1</code> and <code>date2</code> are specified. Either <code>date1</code> or <code>date2</code> can be the latter of the two dates.</p>
+    <p>Requests data on all MPs who were members of the House of Commons on the
+date specified, (if only <code>date1</code> is included as a parameter), or
+on or between the two dates if both <code>date1</code> and <code>date2</code> are
+specified. Either <code>date1</code> or <code>date2</code> can be the latter of
+the two dates.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_mps_on_date</span>(<span class='kw'>date1</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>date2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -141,25 +145,40 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>date1</th>
-      <td><p>The date to return the list of mps from. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to current system date.</p></td>
+      <td><p>The date to return the list of mps from. Accepts character
+values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>,
+<code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can
+be coerced to a date with <code>as.Date()</code>. Defaults to current system date.</p></td>
     </tr>
     <tr>
       <th>date2</th>
-      <td><p>An optional query parameter. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. If not <code>NULL</code>, the function returns a list of all MPs who were members between <code>date1</code> and <code>date2</code>. Defaults to <code>NULL</code>.</p></td>
+      <td><p>An optional query parameter. Accepts character values in
+<code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>,
+<code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date
+with <code>as.Date()</code>. If not <code>NULL</code>, the function returns a list of
+all MPs who were members between <code>date1</code> and <code>date2</code>.
+Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to
+remove non-alphanumeric characters and superfluous text, and convert to
+a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <td><p>The style to convert variable names to, if
+<code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with information on all MPs who were members of the House of Commons on the date specificed (if only <code>date1</code> is included as a parameter), or on or between the two dates if both <code>date1</code> and <code>date2</code> are specified.</p>
+    <p>A tibble with information on all MPs who were members of the
+House of Commons on the date specificed (if only <code>date1</code> is included
+as a parameter), or on or between the two dates if both <code>date1</code> and
+<code>date2</code> are specified.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

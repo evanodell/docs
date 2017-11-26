@@ -130,7 +130,9 @@
     </div>
 
     
-    <p>Request the holders of posts in specific departments by department ID (see <code><a href='mnis_reference.html'>mnis_reference</a></code>), or all current and former minister/shadow minister positions.</p>
+    <p>Request the holders of posts in specific departments by department ID
+(see <code><a href='mnis_reference.html'>mnis_reference</a></code>), or all current and former
+minister/shadow minister positions.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_department</span>(<span class='kw'>department_id</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>bench</span> <span class='kw'>=</span> <span class='st'>"Government"</span>, <span class='kw'>former</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -141,29 +143,43 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>department_id</th>
-      <td><p>The department to look up. <code>0</code> returns the cabinet/shadow cabinet, <code>-1</code> returns a list of all ministers. For departmental IDs, see the <code>ref_departments</code> function in <code><a href='mnis_reference.html'>mnis_reference</a></code>. Defaults to <code>0</code>.</p></td>
+      <td><p>The department to look up. <code>0</code> returns the
+cabinet/shadow cabinet, <code>-1</code> returns a list of all ministers.
+For departmental IDs, see the <code>ref_departments</code> function in
+<code><a href='mnis_reference.html'>mnis_reference</a></code>.
+Defaults to <code>0</code>.</p></td>
     </tr>
     <tr>
       <th>bench</th>
-      <td><p>Flag to return either Government or Opposition information. This parameter is case insensitive, so both <code>'Opposition'</code> and <code>'opposition'</code> will return the same data. Defaults to <code>'Government'</code>.</p></td>
+      <td><p>Flag to return either Government or Opposition information.
+This parameter is case insensitive, so both <code>'Opposition'</code> and
+<code>'opposition'</code> will return the same data.
+Defaults to <code>'Government'</code>.</p></td>
     </tr>
     <tr>
       <th>former</th>
-      <td><p>Logical parameter to include both current and former ministers/shadow ministers. If <code>FALSE</code>, only includes current ministers/shadow ministers. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>Logical parameter to include both current and
+former ministers/shadow ministers. If <code>FALSE</code>, only includes
+current ministers/shadow ministers. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to
+remove non-alphanumeric characters and superfluous text, and convert to
+a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <td><p>The style to convert variable names to, if
+<code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with information on departments and ministers/shadow ministers.</p>
+    <p>A tibble with information on departments and
+ministers/shadow ministers.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

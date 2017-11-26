@@ -130,7 +130,9 @@
     </div>
 
     
-    <p>Calls the API to return a tibble with details on the number of Lords and their party affiliations. Defaults to the current date, but can also return the number of Lords and their affiliations on a given date.</p>
+    <p>Calls the API to return a tibble with details on the number of Lords
+and their party affiliations. Defaults to the current date, but can
+also return the number of Lords and their affiliations on a given date.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_lords_type</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
@@ -140,21 +142,30 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>date</th>
-      <td><p>Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. The API will return data on the state of the House of Lords on that date. Defaults to the current system date.</p></td>
+      <td><p>Accepts character values in <code>'YYYY-MM-DD'</code> format,
+and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>,
+<code>POSIXlt</code> or anything else than can be coerced to a date with
+<code>as.Date()</code>. The API will return data on the state of the
+House of Lords on that date. Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to
+remove non-alphanumeric characters and superfluous text, and convert to
+a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <td><p>The style to convert variable names to, if
+<code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with information on the numbers of different types of Lords on a given date.</p>
+    <p>A tibble with information on the numbers of different types
+of Lords on a given date.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

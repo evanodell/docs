@@ -130,15 +130,27 @@
     </div>
 
     
-    <p>An API package for the Members' Name Information Service operated by the UK parliament. The package is intended to simplify pulling data from an API for users unfamiliar with APIs. Documentation for the API itself can be found here: http://data.parliament.uk/membersdataplatform/default.aspx.</p>
+    <p>An API package for the Members' Name Information Service operated by the UK
+Parliament. The package is intended to simplify pulling data from an API for
+users unfamiliar with APIs. Documentation for the API itself can be found
+here: <a href='http://data.parliament.uk/membersdataplatform/default.aspx'>http://data.parliament.uk/membersdataplatform/default.aspx</a>.</p>
     
 
         
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The package includes a built in function to remove a byte-order mark from the API data, and a parameter <code>tidy</code> with each function that converts variable names into an R friendly style, removing non-alphanumeric characters and converting to snake_case when equal to TRUE, its default value.</p>
-<p>All functions requests data in JSON format and parse it to a tibble. The exception is <code><a href='mnis_constituency_results.html'>mnis_constituency_results</a></code> which returns a single object containing a list (with constituency details) and a tibble (with election results).</p>
-<p>None of the functions included in this package appear to run into the API rate limit, although there may be restrictions to custom requests, which allow a maximum of three parameters.</p>
+    <p>The package includes a built in function to remove a byte-order mark from
+the API data, and a parameter <code>tidy</code> with each function that converts
+variable names into an R friendly style, removing non-alphanumeric
+characters and converting to snake_case when equal to <code>TRUE</code>,
+its default value.</p>
+<p>All functions requests data in JSON format and parse it to a tibble. The
+exception is <code><a href='mnis_constituency_results.html'>mnis_constituency_results</a></code> which returns a
+single object containing a list (with constituency details) and a
+tibble (with election results).</p>
+<p>None of the functions included in this package appear to run into the
+API rate limit, although there may be restrictions to custom requests,
+which allow a maximum of three parameters.</p>
     
 
   </div>

@@ -103,7 +103,7 @@
       <h1>Introduction to hansard</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2017-11-18</h4>
+            <h4 class="date">2017-11-26</h4>
           </div>
 
     
@@ -134,12 +134,12 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <p>Almost all <code>hansard</code> functions (the exceptions being the functions that retrieve more reference style data: <code><a href="../reference/bill_stage_types.html">bill_stage_types()</a></code>, <code><a href="../reference/commons_division_date.html">commons_division_date()</a></code>, <code><a href="../reference/commons_terms.html">commons_terms()</a></code> <code><a href="../reference/constituencies.html">constituencies()</a></code>, <code><a href="../reference/election_candidates.html">election_candidates()</a></code>, <code><a href="../reference/election_results.html">election_results()</a></code>, <code><a href="../reference/members.html">members()</a></code>, <code><a href="../reference/members_search.html">members_search()</a></code>, <code>research_briefings_lists()</code> and <code><a href="../reference/hansard_generic.html">hansard_generic()</a></code>) include a <code>start_date</code> and <code>end_date</code> parameter, which can be used to set the earliest (<code>start_date</code>) and latest (<code>end_date</code>) data to be returned from the API.</p>
 </section><section id="example-using-the-commons_divisions-and-mp_vote_record-functions" class="level3"><h3>Example using the <code><a href="../reference/commons_divisions.html">commons_divisions()</a></code> and <code><a href="../reference/mp_vote_record.html">mp_vote_record()</a></code> functions</h3>
 <p>The <code><a href="../reference/commons_divisions.html">commons_divisions()</a></code> function returns divisions in the House of Commons, including the result of votes and information on what we being voted on. <code><a href="../reference/mp_vote_record.html">mp_vote_record()</a></code> returns a data frame the voting record of a given MP on each division they voted in. The example below returns all Commons Divisions where Diane Abbott voted aye in 2017. To find the parliamentary ID of Diane Abbott (or any other member of the House of Commons or House of Lords), use the <a href="#special-functions"><code><a href="../reference/members_search.html">members_search()</a></code> function described below</a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<pre class="sourceCode r" id="cb4"><code class="sourceCode r"><div class="sourceLine" id="cb4-1" data-line-number="1">
 <span class="kw">library</span>(hansard)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">
+<div class="sourceLine" id="cb4-2" data-line-number="2">
 <span class="kw">library</span>(tibble)##for the `tibble::glimpse()` function</div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">z &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mp_vote_record.html">mp_vote_record</a></span>(<span class="dv">172</span>, <span class="st">"aye"</span>, <span class="dt">start_date =</span> <span class="st">"2017-01-01"</span>, <span class="dt">end_date =</span> <span class="st">"2017-05-03"</span>)</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(z)</div></code></pre>
+<div class="sourceLine" id="cb4-3" data-line-number="3">z &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mp_vote_record.html">mp_vote_record</a></span>(<span class="dv">172</span>, <span class="st">"aye"</span>, <span class="dt">start_date =</span> <span class="st">"2017-01-01"</span>, <span class="dt">end_date =</span> <span class="st">"2017-05-03"</span>)</div>
+<div class="sourceLine" id="cb4-4" data-line-number="4">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(z)</div></code></pre>
 <pre><code>## Observations: 38
 ## Variables: 5
 ## $ about         &lt;chr&gt; "http://data.parliament.uk/resources/722300", "h...
@@ -148,8 +148,8 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 ## $ date_value    &lt;dttm&gt; 2017-04-19, 2017-03-29, 2017-03-29, 2017-03-29,...
 ## $ date_datatype &lt;chr&gt; "POSIXct", "POSIXct", "POSIXct", "POSIXct", "POS...</code></pre>
 <p>Using <code><a href="../reference/commons_divisions.html">commons_divisions()</a></code>, we can see the result of one of those votes, ID 722300, the Early Parliamentary General Election bill that dissolved parliament for the 2017 General Election. The function default is to return a list of every MP and how they voted:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/commons_divisions.html">commons_divisions</a></span>(<span class="dv">722300</span>)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(x)</div></code></pre>
+<pre class="sourceCode r" id="cb6"><code class="sourceCode r"><div class="sourceLine" id="cb6-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/commons_divisions.html">commons_divisions</a></span>(<span class="dv">722300</span>)</div>
+<div class="sourceLine" id="cb6-2" data-line-number="2">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(x)</div></code></pre>
 <pre><code>## Observations: 535
 ## Variables: 7
 ## $ number               &lt;chr&gt; "1", "10", "100", "101", "102", "103", "1...
@@ -160,23 +160,23 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 ## $ about                &lt;chr&gt; "172", "4573", "1579", "4088", "3950", "1...
 ## $ label_value          &lt;chr&gt; "Biography information for Ms Diane Abbot...</code></pre>
 <p>With the <code>summary</code> parameter, we can return a brief summary table of votes:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/commons_divisions.html">commons_divisions</a></span>(<span class="dv">722300</span>, <span class="dt">summary=</span><span class="ot">TRUE</span>)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(y)</div></code></pre>
+<pre class="sourceCode r" id="cb8"><code class="sourceCode r"><div class="sourceLine" id="cb8-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/commons_divisions.html">commons_divisions</a></span>(<span class="dv">722300</span>, <span class="dt">summary=</span><span class="ot">TRUE</span>)</div>
+<div class="sourceLine" id="cb8-2" data-line-number="2">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(y)</div></code></pre>
 <pre><code>## Observations: 1
 ## Variables: 13
-## $ abstain_count                 &lt;chr&gt; "0"
-## $ ayes_count                    &lt;chr&gt; "522"
-## $ noesvotecount                 &lt;chr&gt; "13"
-## $ didnotvotecount               &lt;chr&gt; "0"
-## $ errorvotecount                &lt;chr&gt; "0"
-## $ noneligiblecount              &lt;chr&gt; "0"
-## $ suspendedorexpelledvotescount &lt;chr&gt; "0"
-## $ margin                        &lt;chr&gt; "509"
-## $ date                          &lt;dttm&gt; 2017-04-19
-## $ division_number               &lt;chr&gt; "196"
-## $ session                       &lt;chr&gt; "2016/17"
-## $ title                         &lt;chr&gt; "Early Parliamentary General Ele...
-## $ uin                           &lt;chr&gt; "CD:2017-04-19:264"</code></pre>
+## $ abstain_count                     &lt;chr&gt; "0"
+## $ ayes_count                        &lt;chr&gt; "522"
+## $ noes_vote_count                   &lt;chr&gt; "13"
+## $ did_not_vote_count                &lt;chr&gt; "0"
+## $ error_vote_count                  &lt;chr&gt; "0"
+## $ non_eligible_count                &lt;chr&gt; "0"
+## $ suspended_or_expelled_votes_count &lt;chr&gt; "0"
+## $ margin                            &lt;chr&gt; "509"
+## $ date                              &lt;dttm&gt; 2017-04-19
+## $ division_number                   &lt;chr&gt; "196"
+## $ session                           &lt;chr&gt; "2016/17"
+## $ title                             &lt;chr&gt; "Early Parliamentary General...
+## $ uin                               &lt;chr&gt; "CD:2017-04-19:264"</code></pre>
 <p>The results of votes in the House of Lords can be retrieved with the <code>lords_divisions</code> function. The voting record of individual Lords can be retrieved using the <code>lords_vote_record</code> functions.</p>
 </section><section id="multiple-parameter-functions" class="level3"><h3>Multiple Parameter Functions</h3>
 <p>The following functions accept vectors of member IDs and departmental names for applicable parameters:</p>
@@ -189,11 +189,11 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <li><p><code><a href="../reference/mp_edms.html">mp_edms()</a></code></p></li>
 </ul>
 <p>For example, the following function returns all questions answered by Nichola Blackwood (4019) or Sam Gyimah (3980), asked by Keith Vaz (338) or Diane Abbot (172), and covered by the Department for Health or the Ministry of Justice, between 2016-12-18 and 2017-03-12.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">w &lt;-<span class="st"> </span><span class="kw"><a href="../reference/all_answered_questions.html">hansard_all_answered_questions</a></span>(<span class="dt">mp_id =</span> <span class="kw">c</span>(<span class="dv">4019</span>, <span class="dv">3980</span>), <span class="dt">tabling_mp_id =</span> <span class="kw">c</span>(<span class="dv">338</span>, <span class="dv">172</span>),</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">                                     <span class="dt">answering_body =</span> <span class="kw">c</span>(<span class="st">"health"</span>, <span class="st">"justice"</span>),</div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">                                      <span class="dt">start_date =</span> <span class="st">"2016-12-18"</span>, <span class="dt">end_date =</span> <span class="st">"2017-03-12"</span>)</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4"></div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(w)</div></code></pre>
+<pre class="sourceCode r" id="cb10"><code class="sourceCode r"><div class="sourceLine" id="cb10-1" data-line-number="1">w &lt;-<span class="st"> </span><span class="kw"><a href="../reference/all_answered_questions.html">hansard_all_answered_questions</a></span>(<span class="dt">mp_id =</span> <span class="kw">c</span>(<span class="dv">4019</span>, <span class="dv">3980</span>), <span class="dt">tabling_mp_id =</span> <span class="kw">c</span>(<span class="dv">338</span>, <span class="dv">172</span>),</div>
+<div class="sourceLine" id="cb10-2" data-line-number="2">                                     <span class="dt">answering_body =</span> <span class="kw">c</span>(<span class="st">"health"</span>, <span class="st">"justice"</span>),</div>
+<div class="sourceLine" id="cb10-3" data-line-number="3">                                      <span class="dt">start_date =</span> <span class="st">"2016-12-18"</span>, <span class="dt">end_date =</span> <span class="st">"2017-03-12"</span>)</div>
+<div class="sourceLine" id="cb10-4" data-line-number="4"></div>
+<div class="sourceLine" id="cb10-5" data-line-number="5">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(w)</div></code></pre>
 <pre><code>## Observations: 23
 ## Variables: 32
 ## $ about                               &lt;chr&gt; "http://data.parliament.uk...
@@ -236,51 +236,51 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <li><p><code><a href="../reference/members_search.html">members_search()</a></code> A search function for members of the House of Commons and House of Lords.</p></li>
 </ul></section><section id="the-research_briefings-function" class="level3"><h3>The <code><a href="../reference/research_briefings.html">research_briefings()</a></code> function</h3>
 <p>The <code><a href="../reference/research_briefings.html">research_briefings()</a></code> function includes the feature of requesting data using lists created using the <code>research_briefings_lists</code> functions:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">research_topics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_topics_list</a></span>()</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2"></div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">research_subtopics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_subtopics_list</a></span>()</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4"></div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">research_types_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_types_list</a></span>()</div>
-<div class="sourceLine" id="6" href="#6" data-line-number="6"></div>
-<div class="sourceLine" id="7" href="#7" data-line-number="7">research_topics_list[[<span class="dv">7</span>]]</div></code></pre>
+<pre class="sourceCode r" id="cb12"><code class="sourceCode r"><div class="sourceLine" id="cb12-1" data-line-number="1">research_topics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_topics_list</a></span>()</div>
+<div class="sourceLine" id="cb12-2" data-line-number="2"></div>
+<div class="sourceLine" id="cb12-3" data-line-number="3">research_subtopics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_subtopics_list</a></span>()</div>
+<div class="sourceLine" id="cb12-4" data-line-number="4"></div>
+<div class="sourceLine" id="cb12-5" data-line-number="5">research_types_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_types_list</a></span>()</div>
+<div class="sourceLine" id="cb12-6" data-line-number="6"></div>
+<div class="sourceLine" id="cb12-7" data-line-number="7">research_topics_list[[<span class="dv">7</span>]]</div></code></pre>
 <pre><code>## [1] "Defence"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]</div></code></pre>
+<pre class="sourceCode r" id="cb14"><code class="sourceCode r"><div class="sourceLine" id="cb14-1" data-line-number="1">research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]</div></code></pre>
 <pre><code>## [1] "Falkland Islands"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">research_types_list[[<span class="dv">1</span>]]</div></code></pre>
+<pre class="sourceCode r" id="cb16"><code class="sourceCode r"><div class="sourceLine" id="cb16-1" data-line-number="1">research_types_list[[<span class="dv">1</span>]]</div></code></pre>
 <pre><code>## [1] "Lords Library notes"</code></pre>
 <p>In this case I have given them the same name as their function, but you can assign any name you wish to them.</p>
 <p>Having created the lists, they can be used to specify which topics and subtopics to call, although strings can also be used. In the example below, <code>a</code> and <code>c</code> contain the same data.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]])</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2"></div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">b &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]], <span class="dt">subtopic=</span>research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>])</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4"></div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">c &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> <span class="st">"Defence"</span>)</div></code></pre>
+<pre class="sourceCode r" id="cb18"><code class="sourceCode r"><div class="sourceLine" id="cb18-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]])</div>
+<div class="sourceLine" id="cb18-2" data-line-number="2"></div>
+<div class="sourceLine" id="cb18-3" data-line-number="3">b &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]], <span class="dt">subtopic=</span>research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>])</div>
+<div class="sourceLine" id="cb18-4" data-line-number="4"></div>
+<div class="sourceLine" id="cb18-5" data-line-number="5">c &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> <span class="st">"Defence"</span>)</div></code></pre>
 <p>If a specific subtopic is called, but the topic is not specified, the function will still return all data within that specific subtopic. Note that this is slower than specifying the topic and subtopic.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">research_topics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_topics_list</a></span>()</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2"></div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">research_subtopics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_subtopics_list</a></span>()</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4"></div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">
+<pre class="sourceCode r" id="cb19"><code class="sourceCode r"><div class="sourceLine" id="cb19-1" data-line-number="1">research_topics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_topics_list</a></span>()</div>
+<div class="sourceLine" id="cb19-2" data-line-number="2"></div>
+<div class="sourceLine" id="cb19-3" data-line-number="3">research_subtopics_list &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings_lists.html">research_subtopics_list</a></span>()</div>
+<div class="sourceLine" id="cb19-4" data-line-number="4"></div>
+<div class="sourceLine" id="cb19-5" data-line-number="5">
 <span class="kw">system.time</span>(without_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">subtopic =</span> research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</div></code></pre>
 <pre><code>##    user  system elapsed 
-##   0.411   0.101   8.543</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+##   0.421   0.136  12.449</code></pre>
+<pre class="sourceCode r" id="cb21"><code class="sourceCode r"><div class="sourceLine" id="cb21-1" data-line-number="1">
 <span class="kw">system.time</span>(with_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]], <span class="dt">subtopic=</span>research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</div></code></pre>
 <pre><code>##    user  system elapsed 
-##   0.029   0.003   0.185</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+##   0.026   0.003   0.283</code></pre>
+<pre class="sourceCode r" id="cb23"><code class="sourceCode r"><div class="sourceLine" id="cb23-1" data-line-number="1">
 <span class="kw">identical</span>(with_topic, without_topic)</div></code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>If a specified subtopic is not a subtopic of the specified topic, the function will not return any data.</p>
 </section><section id="the-hansard_generic-function" class="level3"><h3>The <code><a href="../reference/hansard_generic.html">hansard_generic()</a></code> function</h3>
 <p>The <code><a href="../reference/hansard_generic.html">hansard_generic()</a></code> function allows you to put in your own paths to the API. Information on all the paths available in the API can be found on the <a href="http://explore.data.parliament.uk/">DDP Explorer website</a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hansard_generic.html">hansard_generic</a></span>(<span class="st">"commonsansweredquestions.json"</span>)</div></code></pre>
+<pre class="sourceCode r" id="cb25"><code class="sourceCode r"><div class="sourceLine" id="cb25-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hansard_generic.html">hansard_generic</a></span>(<span class="st">"commonsansweredquestions.json"</span>)</div></code></pre>
 <p>Note that the API defaults to returning 10 items per page, but allows up to 500 items per page, the default used by <code>hansard</code>.</p>
 </section><section id="the-members_search-function" class="level3"><h3>The <code><a href="../reference/members_search.html">members_search()</a></code> function</h3>
 <p>Looking up information on an individual MP or Lord through the Parliamentary API requires knowing their parliamentary ID number. This can be hard to find on the web, but luckily you can look it up through the API. We want information on the voting record of the Labour MP for Hackney North and Stoke Newington Diane Abbott, but we don’t know her ID number, so we search for her:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<pre class="sourceCode r" id="cb26"><code class="sourceCode r"><div class="sourceLine" id="cb26-1" data-line-number="1">
 <span class="kw">library</span>(hansard)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">
+<div class="sourceLine" id="cb26-2" data-line-number="2">
 <span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>)</div></code></pre>
 <pre><code>## # A tibble: 4 x 12
 ##   mnis_id                         home_page additional_name_value
@@ -294,9 +294,9 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 ## #   full_name_value &lt;chr&gt;, gender_value &lt;chr&gt;, given_name_value &lt;chr&gt;,
 ## #   label_value &lt;chr&gt;, party_value &lt;chr&gt;, twitter_value &lt;chr&gt;</code></pre>
 <p>The same function, without the use of the tidy parameter, illustrating the differences in the variable names and the presentation of information in the first column:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<pre class="sourceCode r" id="cb28"><code class="sourceCode r"><div class="sourceLine" id="cb28-1" data-line-number="1">
 <span class="kw">library</span>(hansard)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">
+<div class="sourceLine" id="cb28-2" data-line-number="2">
 <span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>, <span class="dt">tidy =</span> <span class="ot">FALSE</span>)</div></code></pre>
 <pre><code>## # A tibble: 4 x 12
 ##                                 `_about`                          homePage
@@ -311,9 +311,9 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 ## #   givenName._value &lt;chr&gt;, label._value &lt;chr&gt;, party._value &lt;chr&gt;,
 ## #   twitter._value &lt;chr&gt;</code></pre>
 <p>The same function as above, but with <code>tidy_style = "period.case"</code>, so it returns variables with a different naming convention.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<pre class="sourceCode r" id="cb30"><code class="sourceCode r"><div class="sourceLine" id="cb30-1" data-line-number="1">
 <span class="kw">library</span>(hansard)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">
+<div class="sourceLine" id="cb30-2" data-line-number="2">
 <span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>, <span class="dt">tidy =</span> <span class="ot">TRUE</span>, <span class="dt">tidy_style =</span> <span class="st">"period.case"</span>)</div></code></pre>
 <pre><code>## # A tibble: 4 x 12
 ##   mnis.id                         home.page additional.name.value
