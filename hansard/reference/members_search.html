@@ -130,7 +130,11 @@
     </div>
 
     
-    <p>Function searches for the string and returns a tibble with all matches from both houses of parliament. Returns all partial matches in the members' names, constituencies, twitter handle and webpage. The default search is NULL, which returns a tibble of all members of both houses, the same result as <code><a href='members.html'>members()</a></code>.</p>
+    <p>Function searches for the string and returns a tibble with all matches from
+both houses of parliament. Returns all partial matches in the members'
+names, constituencies, twitter handle and webpage. The default search is
+<code>NULL</code>, which returns a tibble of all members of both houses, the
+same result as <code><a href='members.html'>members()</a></code>.</p>
     
 
     <pre class="usage"><span class='fu'>members_search</span>(<span class='kw'>search</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>,
@@ -144,19 +148,26 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>search</th>
-      <td><p>Accepts any string. Defaults to <code>NULL</code>. If <code>NULL</code>, returns a tibble with all members of both houses of parliament. Searchs are not case sensitive.</p></td>
+      <td><p>Accepts any string. Defaults to <code>NULL</code>. If <code>NULL</code>,
+returns a tibble with all members of both houses of parliament. Searchs are
+not case sensitive.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Logical parameter. If <code>TRUE</code>, fixes the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>Logical parameter. If <code>TRUE</code>, fixes the variable names
+in the tibble to remove special characters and superfluous text, and
+converts the variable names to a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if <code>tidy = TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <td><p>The style to convert variable names to, if
+<code>tidy = TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
-      <td><p>If <code>TRUE</code>, returns data to console on the progress of the API request. Defaults to <code>FALSE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, returns data to console on the progress
+of the API request. Defaults to <code>FALSE</code>.</p></td>
     </tr>
     </table>
     

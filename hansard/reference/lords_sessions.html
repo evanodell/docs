@@ -130,7 +130,8 @@
     </div>
 
     
-    <p>Returns the session code and other basic details for individual House of Lords sittings.</p>
+    <p>Returns the session code and other basic details for individual
+House of Lords sittings.</p>
     
 
     <pre class="usage"><span class='fu'>lords_sessions</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(),
@@ -144,23 +145,36 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>start_date</th>
-      <td><p>Only includes sessions starting on or after this date. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to <code>'1900-01-01'</code>.</p></td>
+      <td><p>Only includes sessions starting on or after this date.
+Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of
+class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or
+anything else that can be coerced to a date with <code>as.Date()</code>.
+Defaults to <code>'1900-01-01'</code>.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>Only includes sessions ending on or before this date. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to the current system date.</p></td>
+      <td><p>Only includes sessions ending on or before this date.
+Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of
+class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or
+anything else that can be coerced to a date with <code>as.Date()</code>.
+Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>Logical parameter. If <code>TRUE</code>, fixes the variable names in the tibble to remove special characters and superfluous text, and converts the variable names to a consistent style. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>Logical parameter. If <code>TRUE</code>, fixes the variable names
+in the tibble to remove special characters and superfluous text, and
+converts the variable names to a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if <code>tidy = TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <td><p>The style to convert variable names to, if
+<code>tidy = TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
-      <td><p>If <code>TRUE</code>, returns data to console on the progress of the API request. Defaults to <code>FALSE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, returns data to console on the progress
+of the API request. Defaults to <code>FALSE</code>.</p></td>
     </tr>
     </table>
     

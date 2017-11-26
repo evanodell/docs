@@ -130,7 +130,8 @@
     </div>
 
     
-    <p>Returns data on the numbers and gender of MPs, by party, for the given date, in either the House of Commons or the House of Lords.</p>
+    <p>Returns data on the numbers and gender of MPs, by party, for the given
+date, in either the House of Commons or the House of Lords.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_party_state</span>(<span class='kw'>house</span> <span class='kw'>=</span> <span class='st'>"Commons"</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -141,25 +142,37 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>house</th>
-      <td><p>The house of parliament. Accepts either <code>'Lords'</code> or <code>'Commons'</code>. This parameter is not case sensitive, so both <code>'lords'</code> and <code>'Lords'</code> return the same result. Defaults to <code>'Commons'</code>.</p></td>
+      <td><p>The house of parliament. Accepts either <code>'Lords'</code> or
+<code>'Commons'</code>. This parameter is not case sensitive, so both
+<code>'lords'</code> and <code>'Lords'</code> return the same result.
+Defaults to <code>'Commons'</code>.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>The date to query party standing on. Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be coerced to a date with <code>as.Date()</code>. Defaults to the current system date.</p></td>
+      <td><p>The date to query party standing on. Accepts character values
+in <code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>,
+<code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can
+be coerced to a date with <code>as.Date()</code>.
+Defaults to the current system date.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to
+remove non-alphanumeric characters and superfluous text, and convert to
+a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <td><p>The style to convert variable names to, if
+<code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with information on the total numbers and gender of MPs, by party, for the given date and house.</p>
+    <p>A tibble with information on the total numbers and gender of
+MPs, by party, for the given date and house.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

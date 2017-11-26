@@ -130,7 +130,8 @@
     </div>
 
     
-    <p>Returns a list with details of the constituency and a tibble with election results.</p>
+    <p>Returns a list with details of the constituency and a tibble
+ with election results.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_constituency_results</span>(<span class='kw'>constituency_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>election_id</span> <span class='kw'>=</span> <span class='fl'>0</span>,
@@ -141,25 +142,33 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>constituency_id</th>
-      <td><p>The ID of the constituency to return the data for. If <code>NULL</code>, no data is returned. Defaults to <code>NULL</code>.</p></td>
+      <td><p>The ID of the constituency to return the data for.
+If <code>NULL</code>, no data is returned. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>election_id</th>
-      <td><p>The ID of the election to return the data for. Defaults to 0, which returns the result of all elections held in that constituency.</p></td>
+      <td><p>The ID of the election to return the data for. Defaults
+to 0, which returns the result of all elections held in that constituency.</p></td>
     </tr>
     <tr>
       <th>tidy</th>
-      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to remove non-alphanumeric characters and superfluous text, and convert to a consistent style. Defaults to <code>TRUE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to
+remove non-alphanumeric characters and superfluous text, and convert to
+a consistent style. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if <code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code> and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <td><p>The style to convert variable names to, if
+<code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list with details of the constituency, labelled <code>'details'</code> and a tibble with election results, labelled <code>'results'</code>. The list and tibble are stored in a single object.</p>
+    <p>A list with details of the constituency, labelled <code>'details'</code>
+and a tibble with election results, labelled <code>'results'</code>. The list and
+tibble are stored in a single object.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

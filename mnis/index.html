@@ -110,16 +110,16 @@
 
 <p><code>mnis</code> is a package for downloading data from the Members’ Names Information Service API. For information on the API is available here: <a href="http://data.parliament.uk/membersdataplatform/default.aspx" class="uri">http://data.parliament.uk/membersdataplatform/default.aspx</a>.</p>
 <p>The package is available on CRAN. To install from CRAN run:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<pre class="sourceCode r" id="cb1"><code class="sourceCode r"><div class="sourceLine" id="cb1-1" data-line-number="1">
 <span class="kw">install.packages</span>(<span class="st">"mnis"</span>)</div></code></pre>
 <p>Or, if using the <a href="https://CRAN.R-project.org/package=pacman"><code>pacman</code></a> package:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">pacman<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/pacman/topics/p_load">p_load</a></span>(mnis)</div></code></pre>
+<pre class="sourceCode r" id="cb2"><code class="sourceCode r"><div class="sourceLine" id="cb2-1" data-line-number="1">pacman<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/pacman/topics/p_load">p_load</a></span>(mnis)</div></code></pre>
 <p>The most recent version on GitHub can be installed by running:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">
+<pre class="sourceCode r" id="cb3"><code class="sourceCode r"><div class="sourceLine" id="cb3-1" data-line-number="1">
 <span class="kw">install.packages</span>(<span class="st">"devtools"</span>)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"EvanOdell/mnis"</span>)</div></code></pre>
+<div class="sourceLine" id="cb3-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"EvanOdell/mnis"</span>)</div></code></pre>
 <p>The most up to date documentation for the development version will always be available at <a href="https://docs.evanodell.com/mnis/" class="uri">https://docs.evanodell.com/mnis/</a></p>
-<p>For an introduction to <code>mnis</code>, the vignette <code>vignette("introduction", package = "mnis")</code> is the best place to start. If you are unfamiliar with APIs <a href="https://zapier.com/learn/apis/">this tutorial from Zapier</a> is a helpful introduction.</p>
+<p>For an introduction to <code>mnis</code>, the vignette <code><a href="https://cran.rstudio.com/web/packages/mnis/vignettes/introduction.html">vignette("introduction", package = "mnis")</a></code> is the best place to start. If you are unfamiliar with APIs <a href="https://zapier.com/learn/apis/">this tutorial from Zapier</a> is a helpful introduction.</p>
 <section id="future-functions" class="level2"><h2>Future Functions</h2>
 <p>As the Members’ Names Information Service has dozens of different search parameters and hundreds of possible combinations of searches, it is not reasonable to build functions for every possible query to the API. However, I will be rolling out functions for potentially common queries as and when I can. If you have any particular queries you would like functions for please <a href="mailto:evanodell91@gmail.com">let me know</a> and I’ll create it.</p>
 </section></section>
@@ -147,7 +147,7 @@
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/evanodell/mnis/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a></li>
+<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
 <li><a href="https://cran.r-project.org/package=mnis"><img src="https://www.r-pkg.org/badges/version/mnis" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://github.com/evanodell/mnis"><img src="https://img.shields.io/github/tag/evanodell/mnis.svg" alt="GitHub tag"></a></li>
 <li><a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/mnis"></a></li>
