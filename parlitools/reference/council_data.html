@@ -6,12 +6,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A tibble with details on the council make-up of local authorities across the UK. — council_data • parlitools</title>
+<title>A tibble with details on the council make-up of local authorities 
+across the UK. — council_data • parlitools</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -150,11 +151,16 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A tibble with details on the council make-up of local authorities across the UK.</h1>
+    <h1>A tibble with details on the council make-up of local authorities 
+across the UK.</h1>
     </div>
 
     
-    <p>This data is taken from <a href='http://opencouncildata.co.uk/'>http://opencouncildata.co.uk/</a>, run by Jon Lawson. Variable names have been converted to snake_case and variables have been converted to appropriate R classes. ONS local authority codes have been taken from the <code>local_hex_map</code> data, and from the ONS's Open Geography Portal. This data is accurate as of 2017-11-24.</p>
+    <p>This data is taken from <a href='http://opencouncildata.co.uk/'>http://opencouncildata.co.uk/</a>, run by 
+Jon Lawson. Variable names have been converted to snake_case and variables 
+have been converted to appropriate R classes. ONS local authority codes 
+have been taken from the <code>local_hex_map</code> data, and from the ONS's 
+Open Geography Portal. This data is accurate as of 2017-11-24.</p>
     
 
     <pre class="usage"><span class='no'>council_data</span></pre>
@@ -162,12 +168,16 @@
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A tibble, with 418 rows and 20 columns.</p><dl class='dl-horizontal'>
-<dt><code>la_code</code></dt><dd><p>The Local Authority code from the Office for National Statistics</p></dd>
+<dt><code>la_code</code></dt><dd><p>The Local Authority code from the Office for 
+National Statistics</p></dd>
 <dt><code>name</code></dt><dd><p>Local Authority Name</p></dd>
 <dt><code>type</code></dt><dd><p>The type of local authority</p></dd>
-<dt><code>majority_party</code></dt><dd><p>The majority party on the council. The label 'No Overall Control' is used if no single party has a majority.</p></dd>
-<dt><code>majority_party_id</code></dt><dd><p>The ID of the majority party on the council. The label 'noc' is used if no single party has a majority.</p></dd>
-<dt><code>governing_coalition</code></dt><dd><p>The governing coalition of the council (if known)</p></dd>
+<dt><code>majority_party</code></dt><dd><p>The majority party on the council. The 
+label 'No Overall Control' is used if no single party has a majority.</p></dd>
+<dt><code>majority_party_id</code></dt><dd><p>The ID of the majority party on the 
+council. The label 'noc' is used if no single party has a majority.</p></dd>
+<dt><code>governing_coalition</code></dt><dd><p>The governing coalition of the 
+council (if known)</p></dd>
 <dt><code>conservative_councillors</code></dt><dd><p>The number of Conservative councillors</p></dd>
 <dt><code>labour_councillors</code></dt><dd><p>The number of Labour councillors</p></dd>
 <dt><code>lib_dem_councillors</code></dt><dd><p>The number of Liberal Democrat councillors</p></dd>
@@ -205,7 +215,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Evan Odell.</p>
+  <p>Developed by <a href='https://evanodell.com'>Evan Odell</a>.</p>
 </div>
 
 <div class="pkgdown">

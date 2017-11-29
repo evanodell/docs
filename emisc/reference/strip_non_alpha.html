@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Election results by area and date — mnis_general_election_results • mnis</title>
+<title>strip_non_alpha — strip_non_alpha • emisc</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -59,7 +59,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">mnis</a>
+      <a class="navbar-brand" href="../index.html">emisc</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -73,7 +73,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/introduction.html">Articles</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -104,7 +104,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/EvanOdell/mnis">
+  <a href="https://github.com/EvanOdell/emisc">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -126,76 +126,44 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Election results by area and date</h1>
+    <h1>strip_non_alpha</h1>
     </div>
 
     
-    <p>Returns an object containing list with details of the search parameter
-and a tibble with election results.   Accepts queries on location type
-and name, and the start and end date to return general elections between.
-The API does not contain data for Norther Ireland.</p>
+    <p>Strip out most non-alphanumeric characters from variables. Removes all 
+alphanumeric characters except for periods and underscores ('.' and '_'), 
+as these are often used in variable names.</p>
     
 
-    <pre class="usage"><span class='fu'>mnis_general_election_results</span>(<span class='kw'>location_type</span> <span class='kw'>=</span> <span class='st'>"Country"</span>,
-  <span class='kw'>location_name</span> <span class='kw'>=</span> <span class='st'>"Great Britain"</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>,
-  <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
+    <pre class="usage"><span class='fu'>strip_non_alpha</span>(<span class='no'>df</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>location_type</th>
-      <td><p>The type of area to return information for. Accepts
-<code>'Country'</code>, <code>'Region'</code>, <code>'County'</code>, and
-<code>'Constituency'</code>. Defaults to <code>'Country'</code>.</p></td>
-    </tr>
-    <tr>
-      <th>location_name</th>
-      <td><p>The location to return data for. It can be the name
-of any Country, Region, County or Constituency. Defaults to 'Great Britain'.</p></td>
-    </tr>
-    <tr>
-      <th>start_date</th>
-      <td><p>Start date of search. Accepts character values in
-<code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>,
-<code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can be
-coerced to a date with <code>as.Date()</code>. Defaults to <code>'1900-01-01'</code>.</p></td>
-    </tr>
-    <tr>
-      <th>end_date</th>
-      <td><p>End date of search. Accepts character values in
-<code>'YYYY-MM-DD'</code> format, and objects of class <code>Date</code>,
-<code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or anything else than can
-be coerced to a date with <code>as.Date()</code>. Defaults to current system date.</p></td>
-    </tr>
-    <tr>
-      <th>tidy</th>
-      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to
-remove non-alphanumeric characters and superfluous text, and convert to
-a consistent style. Defaults to <code>TRUE</code>.</p></td>
-    </tr>
-    <tr>
-      <th>tidy_style</th>
-      <td><p>The style to convert variable names to, if
-<code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
-and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
+      <th>df</th>
+      <td><p>The dataframe, tibble, etc, with the variables you want to tidy.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns a list with details of the search parameter and
-a tibble with election results.</p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <p><code><a href='mnis_reference.html'>mnis_reference</a></code></p>
+    <p>A dataframe, tibble, etc, with new and consistent cases for 
+variable names.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_general_election_results</span>(<span class='kw'>location_type</span> <span class='kw'>=</span> <span class='st'>'Country'</span>, <span class='kw'>location_name</span> <span class='kw'>=</span> <span class='st'>'England'</span>,
-                                 <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>'2010-01-01'</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='st'>'2016-01-01'</span>)
+<span class='fu'>names</span>(<span class='no'>df</span>)
+<span class='co'>#[1] "name_with_brackets[]"                "$$name_with_dollar_sign"            </span>
+<span class='co'>#[3] "name_&amp;&amp;with&amp;&amp;_ambersand::_and_colon" "name_'with\"_quote" </span>
+
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>strip_non_alpha</span>(<span class='no'>df</span>)
+
+<span class='fu'>names</span>(<span class='no'>df</span>)
+<span class='co'>#[1] "name_with_brackets"             "name_with_dollar_sign"    </span>
+<span class='co'>#[2] "name_with_ambersand_and_colon"  "name_with_quote" </span>
+
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -204,8 +172,6 @@ a tibble with election results.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
