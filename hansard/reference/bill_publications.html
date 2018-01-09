@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>House of Commons Written Questions — commons_written_questions • hansard</title>
+<title>Bill Publications — bill_publications • hansard</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -126,18 +126,19 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>House of Commons Written Questions</h1>
+    <h1>Bill Publications</h1>
     </div>
 
     
-    <p>Imports data in a tibble on House of Commons written questions.</p>
+    <p>Returns details of all publications associated with a specific bill
+or all bills.</p>
     
 
-    <pre class="usage"><span class='fu'>commons_written_questions</span>(<span class='kw'>mp_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>bill_publications</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>publication_type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
-<span class='fu'>hansard_commons_written_questions</span>(<span class='kw'>mp_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answering_department</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+<span class='fu'>hansard_bill_publications</span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>publication_type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"1900-01-01"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
@@ -145,23 +146,22 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>mp_id</th>
-      <td><p>Accepts a member ID or a list of member IDs and returns a
-tibble with all written questions asked by that MP or list of MPs. If
-<code>NULL</code>, mp_id is not included as a query parameter.
+      <th>ID</th>
+      <td><p>The ID of a specific bill to return publications for.
+If <code>NULL</code>, returns all bill publications subject to other parameters.
 Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
-      <th>answering_department</th>
-      <td><p>Accepts a string with a department name or
-partial name, or a list of such strings. The query acts as a search, so
-passing <code>'health'</code> will return all questions answered by the
-Department of Health. If <code>NULL</code>, answering_department is not included
-as a query parameter. Defaults to <code>NULL</code>.</p></td>
+      <th>publication_type</th>
+      <td><p>The type of bill publication to return, in the form
+of a string. For a character vector of bill publication types, see
+<code>bill_publication_types</code>. If <code>NULL</code>, returns all
+publications of all types, subject to other parameters.
+Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>start_date</th>
-      <td><p>Only includes questions tabled on or after this date.
+      <td><p>Only includes bill publications on or after this date.
 Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of
 class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or
 anything else that can be coerced to a date with <code>as.Date()</code>.
@@ -169,7 +169,7 @@ Defaults to <code>'1900-01-01'</code>.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>Only includes questions tabled on or before this date.
+      <td><p>Only includes bill publicationson or before this date.
 Accepts character values in <code>'YYYY-MM-DD'</code> format, and objects of
 class <code>Date</code>, <code>POSIXt</code>, <code>POSIXct</code>, <code>POSIXlt</code> or
 anything else that can be coerced to a date with <code>as.Date()</code>.
@@ -203,18 +203,19 @@ of the API request. Defaults to <code>FALSE</code>.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with details on written questions in the House of Commons.</p>
+    <p>A tibble with details on bill publications.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='bill_stage_types.html'>bill_stage_types</a></code>
+    <code><a href='bills.html'>bills</a></code>
+    <code>bill_publication_types</code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_written_questions</span>(<span class='kw'>mp_id</span><span class='kw'>=</span><span class='fl'>410</span>, <span class='st'>'cabinet office'</span>)
-<span class='co'># Returns a tibble with written questions from Jon Trickett,</span>
-<span class='co'># answered by the Cabinet Office.</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>bill_publications</span>(<span class='kw'>ID</span><span class='kw'>=</span><span class='fl'>752025</span>)
 
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>commons_written_questions</span>(<span class='kw'>mp_id</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>410</span>,<span class='fl'>172</span>), <span class='fu'>c</span>(<span class='st'>'cabinet'</span>,<span class='st'>'home'</span>))
-<span class='co'># Returns a tibble with written questions from Jon Trickett or Diane Abbott,</span>
-<span class='co'># and answered by the Cabinet Office or the Home Office.</span>
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -223,6 +224,8 @@ of the API request. Defaults to <code>FALSE</code>.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

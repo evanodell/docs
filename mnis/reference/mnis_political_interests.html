@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Write R data to a LaTeX file — write_latex • emisc</title>
+<title>Political and Geographical Interests — mnis_political_interests • mnis</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -59,7 +59,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">emisc</a>
+      <a class="navbar-brand" href="../index.html">mnis</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -73,7 +73,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/introduction.html">Articles</a>
+  <a href="../articles/index.html">Articles</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -104,7 +104,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/EvanOdell/emisc">
+  <a href="https://github.com/EvanOdell/mnis">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -126,67 +126,68 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Write R data to a LaTeX file</h1>
+    <h1>Political and Geographical Interests</h1>
     </div>
 
     
-    <p>Write R data to a LaTeX file as individual lines. Similar functions, such 
-as <code>latex</code> in <code>Hmisc</code>, write data to a LaTeX table, but there 
-may be instances where you don't want data in a table, hence this function. 
-Columns will printed in the order specified. The function adds a newline 
-between each item printed.</p>
+    <p>Returns members with the specified interest or interests.</p>
     
 
-    <pre class="usage"><span class='fu'>write_latex</span>(<span class='no'>df</span>, <span class='no'>file_name</span>, <span class='no'>...</span>, <span class='kw'>append</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='fu'>write_latex_lines</span>(<span class='no'>df</span>, <span class='no'>file_name</span>, <span class='no'>...</span>, <span class='kw'>append</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>mnis_political_interests</span>(<span class='no'>interest</span>, <span class='kw'>house</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>current</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>The dataframe, data.table, tibble, etc, containing the data to 
-write to LaTeX.</p></td>
+      <th>interest</th>
+      <td><p>A character or character vector of interests.</p></td>
     </tr>
     <tr>
-      <th>file_name</th>
-      <td><p>File name of the tex file to write to. Overwrites any 
-existing files with the same name. If <code>file_name</code> does not end with 
-".tex" it will be appended to the file name.</p></td>
+      <th>house</th>
+      <td><p>The house the member belongs to. Accepts 'commons', 'lords'
+and <code>NULL</code>. This variable is not case sensitive. If <code>NULL</code>,
+returns members from both houses. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>One or more unquoted, comma separated, variable names to write 
-to LaTeX. If blank, all variables will be written to LaTeX.</p></td>
+      <th>current</th>
+      <td><p>Logical. If <code>TRUE</code>, returns all current and
+former members of both houses. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
-      <th>append</th>
-      <td><p>If <code>TRUE</code>, appends data to existing file of the same 
-name. If <code>FALSE</code>, overwrites any existing file of the same name.</p></td>
+      <th>tidy</th>
+      <td><p>If <code>TRUE</code>, fixes the variable names in the tibble to
+remove non-alphanumeric characters and superfluous text, and convert to
+a consistent style. Defaults to <code>TRUE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_style</th>
+      <td><p>The style to convert variable names to, if
+<code>tidy=TRUE</code>. Accepts one of <code>'snake_case'</code>, <code>'camelCase'</code>
+and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>This function does not add any LaTeX syntax or markup to the data being 
-printed. To add markup prior to printing, use the 
-<code><a href='latex_markup.html'>latex_markup</a></code> function.</p>
+    <p>A data frame of members with given interest(s).</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"># NOT RUN {
-#write_latex(iris, file_name = "iris.tex", Species, Petal.Width)
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_political_interests</span>(<span class='fu'>c</span>(<span class='st'>"Africa"</span>, <span class='st'>"Jamaica"</span>))
 
-# }
-</pre>
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_political_interests</span>(<span class='fu'>c</span>(<span class='st'>"Africa"</span>, <span class='st'>"Europe"</span>))
+
+
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#details">Details</a></li>
+      <li><a href="#value">Value</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
