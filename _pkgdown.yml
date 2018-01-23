@@ -17,6 +17,8 @@ navbar:
       href: https://docs.evanodell.com/mnis
     - text: "parlitools"
       href: https://docs.evanodell.com/parlitools
+    - text: "nomisr"
+      href: https://docs.evanodell.com/nomisr
     - text: "emisc"
       href: https://docs.evanodell.com/emisc
 
