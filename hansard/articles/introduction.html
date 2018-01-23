@@ -70,6 +70,9 @@
       <a href="http://docs.evanodell.com/parlitools">parlitools</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/nomisr">nomisr</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -103,7 +106,7 @@
       <h1>Introduction to hansard</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2018-01-09</h4>
+            <h4 class="date">2018-01-23</h4>
           </div>
 
     
@@ -260,10 +263,10 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <a class="sourceLine" id="cb19-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb19-5" data-line-number="5"><span class="kw">system.time</span>(without_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">subtopic =</span> research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   0.378   0.102   8.365</code></pre>
+##   0.442   0.131   8.108</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">system.time</span>(with_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]], <span class="dt">subtopic=</span>research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   0.029   0.002   0.201</code></pre>
+##   0.037   0.005   1.507</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">identical</span>(with_topic, without_topic)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>If a specified subtopic is not a subtopic of the specified topic, the function will not return any data.</p>
@@ -276,32 +279,41 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">library</span>(hansard)</a>
 <a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 12
-##   mnis_… home… addi… cons… cons… fami… full… gend… give… labe… part… twit…
-##   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
-## 1 172    http… Julie http… Hack… Abbo… Ms D… Fema… Diane Biog… Labo… http…
-## 2 1651   &lt;NA&gt;  Gran… &lt;NA&gt;  &lt;NA&gt;  Hodg… Lord… Male  Robin Biog… &lt;NA&gt;  &lt;NA&gt; 
-## 3 4249   http… &lt;NA&gt;  http… Newt… Morr… Anne… Fema… Anne… Biog… Cons… http…
-## 4 3827   http… &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  Neub… Lord… Male  David Biog… &lt;NA&gt;  &lt;NA&gt;</code></pre>
+##   mnis_id home_page   additional_name_… constituency_abo… constituency_la…
+##   &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;             &lt;chr&gt;             &lt;chr&gt;           
+## 1 172     http://www… Julie             http://data.parl… Hackney North a…
+## 2 1651    &lt;NA&gt;        Granville         &lt;NA&gt;              &lt;NA&gt;            
+## 3 4249    http://www… &lt;NA&gt;              http://data.parl… Newton Abbot    
+## 4 3827    http://www… &lt;NA&gt;              &lt;NA&gt;              &lt;NA&gt;            
+## # ... with 7 more variables: family_name_value &lt;chr&gt;,
+## #   full_name_value &lt;chr&gt;, gender_value &lt;chr&gt;, given_name_value &lt;chr&gt;,
+## #   label_value &lt;chr&gt;, party_value &lt;chr&gt;, twitter_value &lt;chr&gt;</code></pre>
 <p>The same function, without the use of the tidy parameter, illustrating the differences in the variable names and the presentation of information in the first column:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">library</span>(hansard)</a>
 <a class="sourceLine" id="cb28-2" data-line-number="2"><span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>, <span class="dt">tidy =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 12
-##   `_abo… home… addi… cons… cons… fami… full… gend… give… labe… part… twit…
-##   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
-## 1 http:… http… Julie http… Hack… Abbo… Ms D… Fema… Diane Biog… Labo… http…
-## 2 http:… &lt;NA&gt;  Gran… &lt;NA&gt;  &lt;NA&gt;  Hodg… Lord… Male  Robin Biog… &lt;NA&gt;  &lt;NA&gt; 
-## 3 http:… http… &lt;NA&gt;  http… Newt… Morr… Anne… Fema… Anne… Biog… Cons… http…
-## 4 http:… http… &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  Neub… Lord… Male  David Biog… &lt;NA&gt;  &lt;NA&gt;</code></pre>
+##   `_about`   homePage  additionalName.… constituency._ab… constituency.la…
+##   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;             &lt;chr&gt;           
+## 1 http://da… http://w… Julie            http://data.parl… Hackney North a…
+## 2 http://da… &lt;NA&gt;      Granville        &lt;NA&gt;              &lt;NA&gt;            
+## 3 http://da… http://w… &lt;NA&gt;             http://data.parl… Newton Abbot    
+## 4 http://da… http://w… &lt;NA&gt;             &lt;NA&gt;              &lt;NA&gt;            
+## # ... with 7 more variables: familyName._value &lt;chr&gt;,
+## #   fullName._value &lt;chr&gt;, gender._value &lt;chr&gt;, givenName._value &lt;chr&gt;,
+## #   label._value &lt;chr&gt;, party._value &lt;chr&gt;, twitter._value &lt;chr&gt;</code></pre>
 <p>The same function as above, but with <code>tidy_style = "period.case"</code>, so it returns variables with a different naming convention.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">library</span>(hansard)</a>
 <a class="sourceLine" id="cb30-2" data-line-number="2"><span class="kw"><a href="../reference/members_search.html">members_search</a></span>(<span class="st">"abbot"</span>, <span class="dt">tidy =</span> <span class="ot">TRUE</span>, <span class="dt">tidy_style =</span> <span class="st">"period.case"</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 12
-##   mnis.… home… addi… cons… cons… fami… full… gend… give… labe… part… twit…
-##   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
-## 1 172    http… Julie http… Hack… Abbo… Ms D… Fema… Diane Biog… Labo… http…
-## 2 1651   &lt;NA&gt;  Gran… &lt;NA&gt;  &lt;NA&gt;  Hodg… Lord… Male  Robin Biog… &lt;NA&gt;  &lt;NA&gt; 
-## 3 4249   http… &lt;NA&gt;  http… Newt… Morr… Anne… Fema… Anne… Biog… Cons… http…
-## 4 3827   http… &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  Neub… Lord… Male  David Biog… &lt;NA&gt;  &lt;NA&gt;</code></pre>
+##   mnis.id home.page   additional.name.… constituency.abo… constituency.la…
+##   &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;             &lt;chr&gt;             &lt;chr&gt;           
+## 1 172     http://www… Julie             http://data.parl… Hackney North a…
+## 2 1651    &lt;NA&gt;        Granville         &lt;NA&gt;              &lt;NA&gt;            
+## 3 4249    http://www… &lt;NA&gt;              http://data.parl… Newton Abbot    
+## 4 3827    http://www… &lt;NA&gt;              &lt;NA&gt;              &lt;NA&gt;            
+## # ... with 7 more variables: family.name.value &lt;chr&gt;,
+## #   full.name.value &lt;chr&gt;, gender.value &lt;chr&gt;, given.name.value &lt;chr&gt;,
+## #   label.value &lt;chr&gt;, party.value &lt;chr&gt;, twitter.value &lt;chr&gt;</code></pre>
 <p>The search function is not case sensitive, and searchs in the names and constituencies of all MPs and Lords. So even though we spelled her surname incorrectly, we can still find her. This API provides limited biographical details, to retrieve more detailed biographical information, use the <a href="https://cran.r-project.org/package=mnis"><code>mnis</code></a> package to retrive data from the Members’ Names Information Service.</p>
 </section></section>
 </div>
@@ -326,7 +338,7 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

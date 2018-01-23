@@ -1,0 +1,136 @@
+---
+title: "index"
+author: "Evan Odell"
+date: "sys.Date()"
+output:
+  html_document:
+    toc: true
+---
+
+# Documentation
+
+Online documentation for my R packages.
+
+## Packages:
+
+### [`hansard`](https://docs.evanodell.com/hansard)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() 
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard) 
+[![GitHub tag](https://img.shields.io/github/tag/evanodell/hansard.svg)](https://github.com/evanodell/hansard)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/hansard)](https://dgrtwo.shinyapps.io/cranview/)
+[![DOI](https://zenodo.org/badge/72111315.svg)](https://zenodo.org/badge/latestdoi/72111315)
+
+An ironically named R package to automatically fetch data from the UK Parliament API. Available on [CRAN](https://cran.r-project.org/package=hansard) and [GitHub](https://github.com/EvanOdell/hansard). `hansard` is part of the [rOpenGov](https://ropengov.github.io/) project and its documentation is mirrored on the [rOpenGov website](https://ropengov.github.io/hansard/).
+
+### [`mnis`](https://docs.evanodell.com/mnis)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnis/blob/master/LICENSE)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)
+[![GitHub tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://dgrtwo.shinyapps.io/cranview/)
+[![DOI](https://zenodo.org/badge/76553907.svg)](https://zenodo.org/badge/latestdoi/76553907)
+
+An R package for downloading data from the Members' Names Information Service API operated by the UK Parliament. Available on [CRAN](https://cran.r-project.org/package=mnis) and [GitHub](https://github.com/EvanOdell/mnis).
+
+### [`parlitools`](https://docs.evanodell.com/parlitools)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/parlitools/blob/master/LICENSE)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)
+[![GitHub tag](https://img.shields.io/github/tag/evanodell/parlitools.svg)](https://github.com/evanodell/parlitools)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://dgrtwo.shinyapps.io/cranview/)
+[![DOI](https://zenodo.org/badge/86801920.svg)](https://zenodo.org/badge/latestdoi/86801920)
+
+A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools). Use [`parlitools`](https://docs.evanodell.com/parlitools) to create maps like this: 
+
+```{r map, echo=FALSE, fig.height=7, message=FALSE, warning=FALSE}
+library(leaflet)
+library(sf)
+library(htmlwidgets)
+library(dplyr)
+library(hansard)
+library(mnis)
+library(parlitools)
+
+west_hex_map <- parlitools::west_hex_map
+
+party_colour <- parlitools::party_colour
+
+mps <- mps_on_date("2017-06-20")
+
+mps_colours <- left_join(mps, party_colour, by = "party_id") #Join to current MP data
+
+west_hex_map <- left_join(west_hex_map, mps_colours, by = "gss_code") #Join colours to hexagon map
+
+# Creating map labels
+labels <- paste0(
+  "<strong>", west_hex_map$constituency_name, "</strong>", "</br>",
+  "Party: ", west_hex_map$party_name, "</br>",
+  "MP: ", west_hex_map$display_as, "</br>",
+  "Most Recent Result: ", west_hex_map$result_of_election, "</br>",
+  "Current Majority: ", west_hex_map$majority, " votes"
+) %>% lapply(htmltools::HTML)
+
+# Creating the map itself
+leaflet(options=leafletOptions(
+  dragging = FALSE, zoomControl = FALSE, tap = FALSE,
+  minZoom = 6, maxZoom = 6, maxBounds = list(list(2.5,-7.75),list(58.25,50.0)),
+  attributionControl = FALSE),
+  west_hex_map) %>%
+  addPolygons(
+    color = "grey",
+    weight=0.75,
+    opacity = 0.5,
+    fillOpacity = 1,
+    fillColor = ~party_colour,
+    label=labels)  %>% 
+  htmlwidgets::onRender(
+    "function(x, y) {
+        var myMap = this;
+        myMap._container.style['background'] = '#fff';
+    }")
+```
+
+
+### [`emisc`](https://docs.evanodell.com/emisc)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/emisc)](https://cran.r-project.org/package=emisc)
+[![GitHub tag](https://img.shields.io/github/tag/evanodell/emisc.svg)](https://github.com/evanodell/emisc)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/emisc)](https://dgrtwo.shinyapps.io/cranview/)
+[![DOI](https://zenodo.org/badge/96876145.svg)](https://zenodo.org/badge/latestdoi/96876145)
+
+`emisc` is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work.
+
+`emisc` is currently not available on CRAN. You can install `emisc` from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("evanodell/emisc")
+```
+
+
+
+# nomisr
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)
+[![GitHub tag](https://img.shields.io/github/tag/evanodell/nomisr.svg)](https://github.com/evanodell/nomisr)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/nomisr)](https://dgrtwo.shinyapps.io/cranview/)
+[![Travis-CI Build Status](https://travis-ci.org/evanodell/nomisr.svg?branch=master)](https://travis-ci.org/evanodell/nomisr)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/evanodell/nomisr?branch=master&svg=true)](https://ci.appveyor.com/project/evanodell/nomisr)
+[![Coverage Status](https://img.shields.io/codecov/c/github/evanodell/nomisr/master.svg)](https://codecov.io/github/evanodell/nomisr?branch=master)
+[![DOI](https://zenodo.org/badge/118144805.svg)](https://zenodo.org/badge/latestdoi/118144805)
+
+`nomisr` is for accessing [nomis](https://www.nomisweb.co.uk/) data with R. nomis contains labour market statistics, including data on benefits, and census data.
+
+## Installation
+
+You can install nomisr from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("evanodell/nomisr")
+```
+
+

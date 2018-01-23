@@ -96,6 +96,9 @@
       <a href="http://docs.evanodell.com/parlitools">parlitools</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/nomisr">nomisr</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -130,7 +133,7 @@
     </div>
 
     
-    <p>Returns members with the specified interest or interests.</p>
+    <p>Returns a tibble with members with the specified interest or interests.</p>
     
 
     <pre class="usage"><span class='fu'>mnis_political_interests</span>(<span class='no'>interest</span>, <span class='kw'>house</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>current</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -141,7 +144,9 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>interest</th>
-      <td><p>A character or character vector of interests.</p></td>
+      <td><p>A single interest in the form of a string, or a character
+vector of interests. If a vector of multiple interests, returns all members
+who list all of those interests.</p></td>
     </tr>
     <tr>
       <th>house</th>
@@ -179,6 +184,8 @@ and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
 
 <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_political_interests</span>(<span class='fu'>c</span>(<span class='st'>"Africa"</span>, <span class='st'>"Europe"</span>))
 
+<span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>mnis_political_interests</span>(<span class='fu'>c</span>(<span class='st'>"Africa"</span>, <span class='st'>"Education"</span>))
+
 
 <span class='co'># }</span></pre>
   </div>
@@ -201,7 +208,7 @@ and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

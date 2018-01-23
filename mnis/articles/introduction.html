@@ -70,6 +70,9 @@
       <a href="http://docs.evanodell.com/parlitools">parlitools</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/nomisr">nomisr</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -103,7 +106,7 @@
       <h1>Introduction to mnis</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2018-01-09</h4>
+            <h4 class="date">2018-01-23</h4>
           </div>
 
     
@@ -245,58 +248,59 @@ devtools::install_github("EvanOdell/mnis")</a></code></pre>
 <a class="sourceLine" id="cb8-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/mnis_full_biog.html">mnis_full_biog</a></span>(<span class="dv">172</span>)</a>
 <a class="sourceLine" id="cb8-3" data-line-number="3">x</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 393
-##   member… dods_… pims_… display… list_as   full_title  date_of_birth      
-## * &lt;fctr&gt;  &lt;fctr&gt; &lt;fctr&gt; &lt;fctr&gt;   &lt;fctr&gt;    &lt;fctr&gt;      &lt;dttm&gt;             
-## 1 172     25790  3572   Ms Dian… Abbott, … Rt Hon Dia… 1953-09-27 00:00:00
-## # ... with 386 more variables: date_of_death_nil &lt;dttm&gt;,
-## #   date_of_death_label &lt;dttm&gt;, gender &lt;fctr&gt;, party_id &lt;fctr&gt;, party_text
-## #   &lt;fctr&gt;, house &lt;fctr&gt;, member_from &lt;fctr&gt;, house_start_date &lt;dttm&gt;,
-## #   house_end_date_nil &lt;dttm&gt;, house_end_date_label &lt;dttm&gt;,
-## #   current_status_id &lt;fctr&gt;, current_status_is_active &lt;fctr&gt;,
-## #   current_status_name &lt;fctr&gt;, current_status_start_date &lt;dttm&gt;,
-## #   given_surname &lt;fctr&gt;, given_middle_names &lt;fctr&gt;, given_forename
-## #   &lt;fctr&gt;, town_of_birth &lt;fctr&gt;, country_of_birth &lt;fctr&gt;, gender &lt;fctr&gt;,
-## #   date_of_birth_nil &lt;dttm&gt;, date_of_birth_label &lt;dttm&gt;,
-## #   date_of_retirement_nil &lt;dttm&gt;, date_of_retirement_label &lt;dttm&gt;,
-## #   date_of_death_nil &lt;dttm&gt;, date_of_death_label &lt;dttm&gt;,
-## #   preferred_name_title1 &lt;fctr&gt;, preferred_name_title2 &lt;fctr&gt;,
-## #   preferred_name_surname1 &lt;fctr&gt;, preferred_name_surname2 &lt;fctr&gt;,
-## #   preferred_name_middle_names1 &lt;fctr&gt;, preferred_name_middle_names2
-## #   &lt;fctr&gt;, preferred_name_forename1 &lt;fctr&gt;, preferred_name_forename2
-## #   &lt;fctr&gt;, preferred_name_suffix1 &lt;fctr&gt;, preferred_name_suffix2 &lt;fctr&gt;,
-## #   preferred_name_address_as1 &lt;fctr&gt;, preferred_name_address_as2 &lt;fctr&gt;,
-## #   preferred_name_note1 &lt;fctr&gt;, preferred_name_note2 &lt;fctr&gt;,
-## #   preferred_name_start_date1 &lt;dttm&gt;, preferred_name_start_date2 &lt;dttm&gt;,
-## #   preferred_name_end_date_nil &lt;dttm&gt;, preferred_name_end_date_label
-## #   &lt;dttm&gt;, preferred_name_end_date &lt;dttm&gt;, preferred_name_list_as1
-## #   &lt;fctr&gt;, preferred_name_list_as2 &lt;fctr&gt;, preferred_name_display_as1
-## #   &lt;fctr&gt;, preferred_name_display_as2 &lt;fctr&gt;, preferred_name_full_title1
-## #   &lt;fctr&gt;, preferred_name_full_title2 &lt;fctr&gt;,
-## #   preferred_name_honourary_prefixes_honourary_prefix_name1 &lt;fctr&gt;,
-## #   preferred_name_honourary_prefixes_honourary_prefix_name2 &lt;fctr&gt;,
-## #   house_membership_house &lt;fctr&gt;, house_membership_start_date &lt;dttm&gt;,
-## #   house_membership_end_date_nil &lt;dttm&gt;, house_membership_end_date_label
-## #   &lt;dttm&gt;, constituency_id1 &lt;fctr&gt;, constituency_id2 &lt;fctr&gt;,
-## #   constituency_id3 &lt;fctr&gt;, constituency_id4 &lt;fctr&gt;, constituency_id5
-## #   &lt;fctr&gt;, constituency_id6 &lt;fctr&gt;, constituency_id7 &lt;fctr&gt;,
-## #   constituency_id8 &lt;fctr&gt;, constituency_name1 &lt;fctr&gt;, constituency_name2
-## #   &lt;fctr&gt;, constituency_name3 &lt;fctr&gt;, constituency_name4 &lt;fctr&gt;,
-## #   constituency_name5 &lt;fctr&gt;, constituency_name6 &lt;fctr&gt;,
-## #   constituency_name7 &lt;fctr&gt;, constituency_name8 &lt;fctr&gt;,
-## #   constituency_start_date1 &lt;dttm&gt;, constituency_start_date2 &lt;dttm&gt;,
-## #   constituency_start_date3 &lt;dttm&gt;, constituency_start_date4 &lt;dttm&gt;,
-## #   constituency_start_date5 &lt;dttm&gt;, constituency_start_date6 &lt;dttm&gt;,
-## #   constituency_start_date7 &lt;dttm&gt;, constituency_start_date8 &lt;dttm&gt;,
-## #   constituency_end_date_nil &lt;dttm&gt;, constituency_end_date_label &lt;dttm&gt;,
-## #   constituency_end_date3 &lt;dttm&gt;, constituency_end_date4 &lt;dttm&gt;,
-## #   constituency_end_date5 &lt;dttm&gt;, constituency_end_date6 &lt;dttm&gt;,
-## #   constituency_end_date7 &lt;dttm&gt;, constituency_end_date8 &lt;dttm&gt;,
-## #   constituency_end_date9 &lt;dttm&gt;, constituency_end_reason1 &lt;fctr&gt;,
-## #   constituency_end_reason2 &lt;fctr&gt;, constituency_end_reason3 &lt;fctr&gt;,
-## #   constituency_end_reason4 &lt;fctr&gt;, constituency_end_reason5 &lt;fctr&gt;,
-## #   constituency_end_reason6 &lt;fctr&gt;, constituency_end_reason7 &lt;fctr&gt;,
-## #   constituency_end_reason8 &lt;fctr&gt;, constituency_entry_type1 &lt;fctr&gt;,
-## #   constituency_entry_type2 &lt;fctr&gt;, ...</code></pre>
+##   member_id dods_id pims_id display_as     list_as       full_title       
+##   &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;chr&gt;         &lt;chr&gt;            
+## 1 172       25790   3572    Ms Diane Abbo… Abbott, Ms D… Rt Hon Diane Abb…
+## # ... with 387 more variables: date_of_birth &lt;dttm&gt;,
+## #   date_of_death_nil &lt;dttm&gt;, date_of_death_label &lt;dttm&gt;, gender &lt;chr&gt;,
+## #   party_id &lt;chr&gt;, party_text &lt;chr&gt;, house &lt;chr&gt;, member_from &lt;chr&gt;,
+## #   house_start_date &lt;dttm&gt;, house_end_date_nil &lt;dttm&gt;,
+## #   house_end_date_label &lt;dttm&gt;, current_status_id &lt;chr&gt;,
+## #   current_status_is_active &lt;chr&gt;, current_status_name &lt;chr&gt;,
+## #   current_status_start_date &lt;dttm&gt;, given_surname &lt;chr&gt;,
+## #   given_middle_names &lt;chr&gt;, given_forename &lt;chr&gt;, town_of_birth &lt;chr&gt;,
+## #   country_of_birth &lt;chr&gt;, gender &lt;chr&gt;, date_of_birth_nil &lt;dttm&gt;,
+## #   date_of_birth_label &lt;dttm&gt;, date_of_retirement_nil &lt;dttm&gt;,
+## #   date_of_retirement_label &lt;dttm&gt;, date_of_death_nil &lt;dttm&gt;,
+## #   date_of_death_label &lt;dttm&gt;, preferred_name_title1 &lt;chr&gt;,
+## #   preferred_name_title2 &lt;chr&gt;, preferred_name_surname1 &lt;chr&gt;,
+## #   preferred_name_surname2 &lt;chr&gt;, preferred_name_middle_names1 &lt;chr&gt;,
+## #   preferred_name_middle_names2 &lt;chr&gt;, preferred_name_forename1 &lt;chr&gt;,
+## #   preferred_name_forename2 &lt;chr&gt;, preferred_name_suffix1 &lt;chr&gt;,
+## #   preferred_name_suffix2 &lt;chr&gt;, preferred_name_address_as1 &lt;chr&gt;,
+## #   preferred_name_address_as2 &lt;chr&gt;, preferred_name_note1 &lt;chr&gt;,
+## #   preferred_name_note2 &lt;chr&gt;, preferred_name_start_date1 &lt;dttm&gt;,
+## #   preferred_name_start_date2 &lt;dttm&gt;, preferred_name_end_date_nil &lt;dttm&gt;,
+## #   preferred_name_end_date_label &lt;dttm&gt;, preferred_name_end_date &lt;dttm&gt;,
+## #   preferred_name_list_as1 &lt;chr&gt;, preferred_name_list_as2 &lt;chr&gt;,
+## #   preferred_name_display_as1 &lt;chr&gt;, preferred_name_display_as2 &lt;chr&gt;,
+## #   preferred_name_full_title1 &lt;chr&gt;, preferred_name_full_title2 &lt;chr&gt;,
+## #   preferred_name_honourary_prefixes_honourary_prefix_name1 &lt;chr&gt;,
+## #   preferred_name_honourary_prefixes_honourary_prefix_name2 &lt;chr&gt;,
+## #   house_membership_house &lt;chr&gt;, house_membership_start_date &lt;dttm&gt;,
+## #   house_membership_end_date_nil &lt;dttm&gt;,
+## #   house_membership_end_date_label &lt;dttm&gt;, constituency_id1 &lt;chr&gt;,
+## #   constituency_id2 &lt;chr&gt;, constituency_id3 &lt;chr&gt;,
+## #   constituency_id4 &lt;chr&gt;, constituency_id5 &lt;chr&gt;,
+## #   constituency_id6 &lt;chr&gt;, constituency_id7 &lt;chr&gt;,
+## #   constituency_id8 &lt;chr&gt;, constituency_name1 &lt;chr&gt;,
+## #   constituency_name2 &lt;chr&gt;, constituency_name3 &lt;chr&gt;,
+## #   constituency_name4 &lt;chr&gt;, constituency_name5 &lt;chr&gt;,
+## #   constituency_name6 &lt;chr&gt;, constituency_name7 &lt;chr&gt;,
+## #   constituency_name8 &lt;chr&gt;, constituency_start_date1 &lt;dttm&gt;,
+## #   constituency_start_date2 &lt;dttm&gt;, constituency_start_date3 &lt;dttm&gt;,
+## #   constituency_start_date4 &lt;dttm&gt;, constituency_start_date5 &lt;dttm&gt;,
+## #   constituency_start_date6 &lt;dttm&gt;, constituency_start_date7 &lt;dttm&gt;,
+## #   constituency_start_date8 &lt;dttm&gt;, constituency_end_date_nil &lt;dttm&gt;,
+## #   constituency_end_date_label &lt;dttm&gt;, constituency_end_date3 &lt;dttm&gt;,
+## #   constituency_end_date4 &lt;dttm&gt;, constituency_end_date5 &lt;dttm&gt;,
+## #   constituency_end_date6 &lt;dttm&gt;, constituency_end_date7 &lt;dttm&gt;,
+## #   constituency_end_date8 &lt;dttm&gt;, constituency_end_date9 &lt;dttm&gt;,
+## #   constituency_end_reason1 &lt;chr&gt;, constituency_end_reason2 &lt;chr&gt;,
+## #   constituency_end_reason3 &lt;chr&gt;, constituency_end_reason4 &lt;chr&gt;,
+## #   constituency_end_reason5 &lt;chr&gt;, constituency_end_reason6 &lt;chr&gt;,
+## #   constituency_end_reason7 &lt;chr&gt;, constituency_end_reason8 &lt;chr&gt;,
+## #   constituency_entry_type1 &lt;chr&gt;, …</code></pre>
 <section id="mnis_extra" class="level4"><h4><code><a href="../reference/mnis_extra.html">mnis_extra()</a></code></h4>
 <p>The <code><a href="../reference/mnis_extra.html">mnis_extra()</a></code> function acts as a wrapper to the additional information functions. By default it calls all functions, which is equivalent to <code><a href="../reference/mnis_full_biog.html">mnis_full_biog()</a></code>.</p>
 </section></section><section id="fixed-scope-functions" class="level3"><h3>Fixed Scope Functions</h3>
@@ -317,11 +321,11 @@ devtools::install_github("EvanOdell/mnis")</a></code></pre>
 ##    id    name                        male_count female_count total_count
 ##  * &lt;chr&gt; &lt;chr&gt;                       &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;      
 ##  1 4     Conservative                187        61           248        
-##  2 15    Labour                      134        64           198        
-##  3 6     Crossbench                  141        41           182        
+##  2 15    Labour                      134        63           197        
+##  3 6     Crossbench                  142        41           183        
 ##  4 17    Liberal Democrat            66         34           100        
-##  5 49    Non-affiliated              24         4            28         
-##  6 3     Bishops                     22         2            24         
+##  5 49    Non-affiliated              23         4            27         
+##  6 3     Bishops                     23         2            25         
 ##  7 7     Democratic Unionist Party   3          0            3          
 ##  8 35    UK Independence Party       3          0            3          
 ##  9 10    Independent Labour          2          0            2          
@@ -373,7 +377,7 @@ devtools::install_github("EvanOdell/mnis")</a></code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

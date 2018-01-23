@@ -49,6 +49,10 @@ build_docs <- function(){
   
 ### Build `emisc`  -----------------
   pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/emisc", path= "/Users/evanodell/Documents/GitHub/docs/emisc", preview = FALSE)
+  
+  
+### Build `nomisr`  -----------------
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/nomisr", path= "/Users/evanodell/Documents/GitHub/docs/nomisr", preview = FALSE)
 
   pkgdown::build_site(path=".", preview = FALSE)
 
