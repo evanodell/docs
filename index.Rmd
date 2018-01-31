@@ -122,7 +122,7 @@ devtools::install_github("evanodell/emisc")
 [![Coverage Status](https://img.shields.io/codecov/c/github/evanodell/nomisr/master.svg)](https://codecov.io/github/evanodell/nomisr?branch=master)
 [![DOI](https://zenodo.org/badge/118144805.svg)](https://zenodo.org/badge/latestdoi/118144805)
 
-`nomisr` is for accessing [nomis](https://www.nomisweb.co.uk/) data with R. nomis contains labour market statistics, including data on benefits, and census data.
+`nomisr` is for accessing [Nomis](https://www.nomisweb.co.uk/) data -- UK labour market statistics, census data and other populatlion data -- with R.
 
 ## Installation
 

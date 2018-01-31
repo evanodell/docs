@@ -134,12 +134,13 @@
 
     
     <p>Retrieves specific datasets from nomis, based on their ID. To find dataset 
-IDs, use <code><a href='nomis_data_info.html'>nomis_data_info</a></code>. Datasets are retrived in csv format 
-and parsed with the <code>read_csv</code> function from the <code>readr</code> package.</p>
+IDs, use `<a href='nomis_data_info.html'>nomis_data_info</a>`. Datasets are retrived in csv format 
+and parsed with the `read_csv` function from the `readr` package.</p>
     
 
-    <pre class="usage"><span class='fu'>nomis_get_data</span>(<span class='no'>id</span>, <span class='kw'>time</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>geography</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>measures</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>sex</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>exclude_missing</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>additional_queries</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>nomis_get_data</span>(<span class='no'>id</span>, <span class='kw'>time</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>geography</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>measures</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sex</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>exclude_missing</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>additional_queries</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -150,44 +151,67 @@ and parsed with the <code>read_csv</code> function from the <code>readr</code> p
     </tr>
     <tr>
       <th>time</th>
-      <td><p>Parameter for selecting common dates. Accepts one of 
-<code>NULL</code> (returns all data),  <code>"latest"</code> (returns the latest 
-available data), <code>"previous"</code> (the date prior to <code>"latest"</code>), 
-<code>"prevyear"</code> (the date one year prior to <code>"latest"</code>) or 
-<code>"first"</code> (the oldest available data for the dataset). 
-Defaults to <code>NULL</code>.</p></td>
+      <td><p>Parameter for selecting dates and date ranges. There are two 
+styles of values that can be used to query time.</p>
+<p>The first is one or more of `"latest"` (returns the latest available data), 
+`"previous"` (the date prior to `"latest"`), `"prevyear"` (the date one 
+year prior to `"latest"`) or `"first"` (the oldest available data for the 
+dataset).</p>
+<p>The second style is to use or a specific date or multiple dates, in the 
+style of the time variable codelist, which can be found using the 
+`<a href='nomis_codes.html'>nomis_codes</a>` function.</p>
+<p>Values for the `time` and `date` parameters should not be used at the 
+same time. If they are, the function will retrieve data based on the 
+the `date` parameter.</p>
+<p>Defaults to `NULL`.</p></td>
+    </tr>
+    <tr>
+      <th>date</th>
+      <td><p>Parameter for selecting specific dates. There are two styles 
+of values that can be used to query time.</p>
+<p>The first is one or more of `"latest"` (returns the latest available data), 
+`"previous"` (the date prior to `"latest"`), `"prevyear"` (the date one 
+year prior to `"latest"`) or `"first"` (the oldest available data for the 
+dataset).</p>
+<p>The second style is to use or a specific date or multiple dates, in the 
+style of the time variable codelist, which can be found using the 
+`<a href='nomis_codes.html'>nomis_codes</a>` function.</p>
+<p>Values for the `time` and `date` parameters should not be used at the 
+same time. If they are, the function will retrieve data based on the 
+the `date` parameter.</p>
+<p>Defaults to `NULL`.</p></td>
     </tr>
     <tr>
       <th>geography</th>
       <td><p>The code of the geographic area to return data for. If 
-<code>NULL</code>, returns data for all available geographic areas, subject to 
-other parameters. Defaults to <code>NULL</code>.</p></td>
+`NULL`, returns data for all available geographic areas, subject to 
+other parameters. Defaults to `NULL`.</p></td>
     </tr>
     <tr>
       <th>measures</th>
       <td><p>The code for the statistical measure(s) to include in the 
 data. Accepts a single string or number, or a list of strings or numbers. 
-If <code>NULL</code>, returns data for all available statistical measures subject 
-to other parameters. Defaults to <code>NULL</code>.</p></td>
+If `NULL`, returns data for all available statistical measures subject 
+to other parameters. Defaults to `NULL`.</p></td>
     </tr>
     <tr>
       <th>sex</th>
       <td><p>The code for sexes included in the dataset. Accepts a string or 
-number, or a vector of strings or numbers. <code>7</code> will return results for 
-males and females, <code>6</code> only females and <code>5</code> only males. 
-Defaults to <code>NULL</code>, equivalent to <code>c(5,6,7)</code> for datasets where 
+number, or a vector of strings or numbers. `7` will return results for 
+males and females, `6` only females and `5` only males. 
+Defaults to `NULL`, equivalent to `c(5,6,7)` for datasets where 
 sex is an option.</p></td>
     </tr>
     <tr>
       <th>exclude_missing</th>
-      <td><p>If <code>TRUE</code>, excludes all missing values. 
-Defaults to <code>FALSE</code>.</p></td>
+      <td><p>If `TRUE`, excludes all missing values. 
+Defaults to `FALSE`.</p></td>
     </tr>
     <tr>
       <th>additional_queries</th>
       <td><p>Any other additional queries to pass to the API.
 See <a href='https://www.nomisweb.co.uk/api/v01/help'>https://www.nomisweb.co.uk/api/v01/help</a> for instructions on 
-query structure. Defaults to <code>NULL</code>.</p></td>
+query structure. Defaults to `NULL`.</p></td>
     </tr>
     </table>
     
@@ -197,8 +221,21 @@ query structure. Defaults to <code>NULL</code>.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>To find the code options for a given dataset, use <code><a href='nomis_codes.html'>nomis_codes</a></code>.</p>
+    <p>To find the code options for a given dataset, use `<a href='nomis_codes.html'>nomis_codes</a>`.</p>
 <p>This can be a very slow process if calling significant amounts of data.</p>
+<p>Note the difference between the `time` and `date` parameters. The `time` 
+and `date` parameters should not be used at the same time. If they are, 
+the function will retrieve data based on the the `date` parameter. If given
+more than one query, `time` will return all data available between those 
+queries, inclusively, while `date` will only return data for the exact 
+queries specified. So `time=c("first","latest")` will return all data,
+while `date=c("first","latest")` will return only the first and latest
+data published.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p>nomis_data_info</p>
+<p>nomis_codes</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -207,7 +244,12 @@ query structure. Defaults to <code>NULL</code>.</p></td>
 
 <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_get_data</span>(<span class='kw'>id</span><span class='kw'>=</span><span class='st'>"NM_1_1"</span>, <span class='kw'>time</span><span class='kw'>=</span><span class='st'>"latest"</span>)
 
+<span class='co'># Return data for each country</span>
 <span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_get_data</span>(<span class='kw'>id</span><span class='kw'>=</span><span class='st'>"NM_1_1"</span>, <span class='kw'>time</span><span class='kw'>=</span><span class='st'>"latest"</span>, <span class='kw'>geography</span><span class='kw'>=</span><span class='st'>"TYPE499"</span>,
+                    <span class='kw'>measures</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>20100</span>, <span class='fl'>20201</span>), <span class='kw'>sex</span><span class='kw'>=</span><span class='fl'>5</span>)
+
+<span class='co'># Return data for Wigan</span>
+<span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_get_data</span>(<span class='kw'>id</span><span class='kw'>=</span><span class='st'>"NM_1_1"</span>, <span class='kw'>time</span><span class='kw'>=</span><span class='st'>"latest"</span>, <span class='kw'>geography</span><span class='kw'>=</span><span class='st'>"1879048226"</span>,
                     <span class='kw'>measures</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>20100</span>, <span class='fl'>20201</span>), <span class='kw'>sex</span><span class='kw'>=</span><span class='fl'>5</span>)
 
 <span class='co'># }</span></pre>
@@ -220,6 +262,8 @@ query structure. Defaults to <code>NULL</code>.</p></td>
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
