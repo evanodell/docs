@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Search Nomis datasets — nomis_search • nomisr</title>
+<title>nomisr: Access Nomis UK Labour Market Data with R — nomisr • nomisr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,10 +27,12 @@
 <script src="../pkgdown.js"></script>
   
   
-<meta property="og:title" content="Search Nomis datasets — nomis_search" />
+<meta property="og:title" content="nomisr: Access Nomis UK Labour Market Data with R — nomisr" />
 
-<meta property="og:description" content="A function to search for datasets on given topics. The search string by
-default looks in the names and descriptions of datasets." />
+<meta property="og:description" content="Access UK official statistics from the Nomis database through R. Nomis
+includes data from the Census, the Labour Force Survey, DWP benefit
+statistics and other economic and demographic data from the Office for
+National Statistics." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -136,51 +138,33 @@ default looks in the names and descriptions of datasets." />
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Search Nomis datasets</h1>
+    <h1>nomisr: Access Nomis UK Labour Market Data with R</h1>
     </div>
 
     
-    <p>A function to search for datasets on given topics. The search string by
-default looks in the names and descriptions of datasets.</p>
+    <p>Access UK official statistics from the Nomis database through R. Nomis
+includes data from the Census, the Labour Force Survey, DWP benefit
+statistics and other economic and demographic data from the Office for
+National Statistics.</p>
     
 
-    <pre class="usage"><span class='fu'>nomis_search</span>(<span class='no'>search</span>, <span class='kw'>keywords</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>search</th>
-      <td><p>A string to search for in the name and description of
-datasets.</p></td>
-    </tr>
-    <tr>
-      <th>keywords</th>
-      <td><p>If <code>TRUE</code>, searches in dataset keywords instead of
-names and descriptions. Defaults to <code>FALSE</code>.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+        
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>A tibble with details on all datasets matching the search query.</p>
+    <p>The package provides functions to find what data is available, the
+variables and query options for different datasets and a function for
+downloading data.</p>
+<p>The full API documentation is available at
+<a href='https://www.nomisweb.co.uk/api/v01/help'>https://www.nomisweb.co.uk/api/v01/help</a></p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_search</span>(<span class='st'>'seekers'</span>)
-
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_search</span>(<span class='st'>'Claimants'</span>, <span class='kw'>keywords</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

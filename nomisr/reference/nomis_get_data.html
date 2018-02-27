@@ -32,7 +32,21 @@
 <meta property="og:description" content="Retrieves specific datasets from nomis, based on their ID. To find dataset
 IDs, use nomis_data_info. Datasets are retrived in csv format
 and parsed with the read_csv function from the readr package
-into a tibble, with all columns parsed as character columns." />
+into a tibble, with all columns parsed as character columns.
+To find the code options for a given dataset, use nomis_codes.
+This can be a slow process if querying significant amounts of data. Guest 
+users are limited to 25,000 rows per query, although nomisr identifies
+queries that will return more than 25,000 rows, sending individual queries
+and combining the results of those queries into a single tibble.
+Note the difference between the time and date parameters.
+The time and date parameters should not be used at the same
+time. If they are, the function will retrieve data based on the the
+date parameter. If given more than one query, time will
+return all data available between those queries, inclusively, while
+date will only return data for the exact queries specified. So
+time=c("first", "latest") will return all data, while
+date=c("first", "latest") will return only the first and latest
+data published." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -146,6 +160,20 @@ into a tibble, with all columns parsed as character columns." />
 IDs, use <code><a href='nomis_data_info.html'>nomis_data_info</a></code>. Datasets are retrived in csv format
 and parsed with the <code>read_csv</code> function from the <code>readr</code> package
 into a tibble, with all columns parsed as character columns.</p>
+<p>To find the code options for a given dataset, use <code><a href='nomis_codes.html'>nomis_codes</a></code>.</p>
+<p>This can be a slow process if querying significant amounts of data. Guest 
+users are limited to 25,000 rows per query, although <code>nomisr</code> identifies
+queries that will return more than 25,000 rows, sending individual queries
+and combining the results of those queries into a single tibble.</p>
+<p>Note the difference between the <code>time</code> and <code>date</code> parameters.
+The <code>time</code> and <code>date</code> parameters should not be used at the same
+time. If they are, the function will retrieve data based on the the
+<code>date</code> parameter. If given more than one query, <code>time</code> will
+return all data available between those queries, inclusively, while
+<code>date</code> will only return data for the exact queries specified. So
+<code>time=c("first", "latest")</code> will return all data, while
+<code>date=c("first", "latest")</code> will return only the first and latest
+data published.</p>
     
 
     <pre class="usage"><span class='fu'>nomis_get_data</span>(<span class='no'>id</span>, <span class='kw'>time</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>geography</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
@@ -238,27 +266,10 @@ Defaults to <code>FALSE</code>.</p></td>
     <p>A tibble containing the selected dataset.
 By default, all tibble columns are parsed as characters.</p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>To find the code options for a given dataset, use <code><a href='nomis_codes.html'>nomis_codes</a></code>.</p>
-<p>This can be a slow process if querying significant amounts of data. Guest 
-users are limited to 25,000 rows per query, although <code>nomisr</code> identifies
-queries that will return more than 25,000 rows, sending individual queries
-and combining the results of those queries into a single tibble.</p>
-<p>Note the difference between the <code>time</code> and <code>date</code> parameters.
-The <code>time</code> and <code>date</code> parameters should not be used at the same
-time. If they are, the function will retrieve data based on the the
-<code>date</code> parameter. If given more than one query, <code>time</code> will
-return all data available between those queries, inclusively, while
-<code>date</code> will only return data for the exact queries specified. So
-<code>time=c("first", "latest")</code> will return all data, while
-<code>date=c("first", "latest")</code> will return only the first and latest
-data published.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>nomis_data_info</p>
-<p>nomis_codes</p>
+    <p><code><a href='nomis_data_info.html'>nomis_data_info</a></code>
+    <code><a href='nomis_codes.html'>nomis_codes</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -351,8 +362,6 @@ data published.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
       
