@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,11 @@
 <script src="../pkgdown.js"></script>
   
   
+<meta property="og:title" content="Search nomis datasets — nomis_search" />
+
+<meta property="og:description" content="A function to search for datasets on given topics. The search string by
+default looks in the names and descriptions of datasets." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -133,7 +140,7 @@
     </div>
 
     
-    <p>A function to search for datasets on given topics. The search string by 
+    <p>A function to search for datasets on given topics. The search string by
 default looks in the names and descriptions of datasets.</p>
     
 
@@ -144,13 +151,13 @@ default looks in the names and descriptions of datasets.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>search</th>
-      <td><p>A string to search for in the name and description of 
+      <td><p>A string to search for in the name and description of
 datasets.</p></td>
     </tr>
     <tr>
       <th>keywords</th>
-      <td><p>If `TRUE`, searches in dataset keywords instead of 
-names and descriptions. Defaults to `FALSE`.</p></td>
+      <td><p>If <code>TRUE</code>, searches in dataset keywords instead of
+names and descriptions. Defaults to <code>FALSE</code>.</p></td>
     </tr>
     </table>
     
@@ -160,12 +167,10 @@ names and descriptions. Defaults to `FALSE`.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_search</span>(<span class='st'>"seekers"</span>)
+    <pre class="examples"><div class='input'>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_search</span>(<span class='st'>'seekers'</span>)
 
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_search</span>(<span class='st'>"Claimants"</span>, <span class='kw'>keywords</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
-
-<span class='co'># }</span></pre>
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_search</span>(<span class='st'>'Claimants'</span>, <span class='kw'>keywords</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

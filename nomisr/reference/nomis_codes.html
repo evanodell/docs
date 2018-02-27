@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,12 @@
 <script src="../pkgdown.js"></script>
   
   
+<meta property="og:title" content="Variable codes — nomis_codes" />
+
+<meta property="og:description" content="Retrieve all code options of all Nomis datasets, code options for a given
+dataset, or the all the options for a given code variable from a
+particular dataset." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -133,8 +141,8 @@
     </div>
 
     
-    <p>Retrieve all code options of all datasets, code options for a given 
-dataset, or the all the options for a given code variable from a 
+    <p>Retrieve all code options of all Nomis datasets, code options for a given
+dataset, or the all the options for a given code variable from a
 particular dataset.</p>
     
 
@@ -145,19 +153,18 @@ particular dataset.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>id</th>
-      <td><p>The ID of the particular dataset. If both `id` and 
-`code` are left empty, returns all available codes for all datasets.</p></td>
+      <td><p>The ID of the particular dataset. Returns no data if not specified.</p></td>
     </tr>
     <tr>
       <th>code</th>
-      <td><p>A string with the variable code to return options for. If left 
-empty, returns all the variables for the dataset specified by `id`. 
-Codes are not case sensitive. Defaults to `null`.</p></td>
+      <td><p>A string with the variable code to return options for. If left
+empty, returns all the variables for the dataset specified by <code>id</code>.
+Codes are not case sensitive. Defaults to <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>type</th>
-      <td><p>A string with options for a particular code value, to return 
-types of variables available for a given code. Defaults to `null`.</p></td>
+      <td><p>A string with options for a particular code value, to return
+types of variables available for a given code. Defaults to <code>NULL</code>.</p></td>
     </tr>
     </table>
     
@@ -167,22 +174,20 @@ types of variables available for a given code. Defaults to `null`.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Specifying `code` will return all the options for a given variable.</p>
+    <p>Specifying <code>code</code> will return all the options for a given variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>"NM_1_1"</span>)
+    <pre class="examples"><div class='input'>
+<span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>'NM_1_1'</span>)
 
-<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>"NM_1_1"</span>, <span class='st'>"geography"</span>)
+<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>'NM_1_1'</span>, <span class='st'>'geography'</span>)
 
-<span class='no'>c</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>"NM_1_1"</span>, <span class='st'>"geography"</span>, <span class='st'>"TYPE"</span>)
+<span class='no'>c</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>'NM_1_1'</span>, <span class='st'>'geography'</span>, <span class='st'>'TYPE'</span>)
 <span class='co'>#returns all types of geography</span>
 
-<span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>"NM_1_1"</span>, <span class='st'>"geography"</span>, <span class='st'>"1879048226"</span>)
-<span class='co'># returns geography types available within Wigan</span>
-
-<span class='co'># }</span><div class='input'>
+<span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codes</span>(<span class='st'>'NM_1_1'</span>, <span class='st'>'geography'</span>, <span class='st'>'1879048226'</span>)
+<span class='co'># returns geography types available within Wigan</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
