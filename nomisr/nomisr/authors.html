@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nomis data availability — nomis_data_info • nomisr</title>
+<title>Citation and Authors • nomisr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -22,16 +22,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
-<script src="../pkgdown.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="jquery.sticky-kit.min.js"></script>
+<script src="pkgdown.js"></script>
   
   
-<meta property="og:title" content="Nomis data availability — nomis_data_info" />
-
-<meta property="og:description" content="Retrieve metadata for all available data sets or the information available 
-in a specific dataset based on its ID." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Citation and Authors" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -56,7 +52,7 @@ in a specific dataset based on its ID." />
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-citation-authors">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -66,7 +62,7 @@ in a specific dataset based on its ID." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">nomisr</a>
+      <a class="navbar-brand" href="index.html">nomisr</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -74,13 +70,13 @@ in a specific dataset based on its ID." />
   <a href="http://docs.evanodell.com">Docs Home</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="news/index.html">News</a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="articles/index.html">Articles</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -134,58 +130,39 @@ in a specific dataset based on its ID." />
       </header>
 
       <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
+
     <div class="page-header">
-    <h1>Nomis data availability</h1>
+      <h1>Citation</h1>
     </div>
 
-    
-    <p>Retrieve metadata for all available data sets or the information available 
-in a specific dataset based on its ID.</p>
-    
+    <p>Odell E (2018).
+<em>nomisr: Access Nomis UK labour market data on with R</em>.
+doi: <a href="http://doi.org/10.5281/zenodo.1157908">10.5281/zenodo.1157908</a>, R package version 0.0.2.9000, <a href="https://docs.evanodell.com/nomisr">https://docs.evanodell.com/nomisr</a>. 
+</p>
+    <pre>@Manual{,
+  title = {{nomisr}: Access Nomis UK labour market data on with R},
+  author = {Evan Odell},
+  year = {2018},
+  note = {R package version 0.0.2.9000},
+  doi = {10.5281/zenodo.1157908},
+  url = {https://docs.evanodell.com/nomisr},
+}</pre>
+    <div class="page-header">
+      <h1>Authors</h1>
+    </div>
 
-    <pre class="usage"><span class='fu'>nomis_data_info</span>(<span class='no'>id</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>id</th>
-      <td><p>Dataset ID. If empty, returns data on all available datasets.
-If the ID of a dataset, returns metadata for that particular dataset.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A tibble with all available datasets and their metadata.</p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <p><code><a href='nomis_get_data.html'>nomis_get_data</a></code>
-    <code><a href='nomis_get_metadata.html'>nomis_get_metadata</a></code></p>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_data_info</span>()
-
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_data_info</span>(<span class='st'>'NM_1658_1'</span>)</div></pre>
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
+    <ul class="list-unstyled">
+      <li>
+        <p><strong><a href='https://evanodell.com'>Evan Odell</a></strong>. Author, maintainer. <a href='https://orcid.org/0000-0003-1845-808X' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid'></a>
+        </p>
+      </li>
     </ul>
 
   </div>
+
 </div>
+
 
       <footer>
       <div class="copyright">

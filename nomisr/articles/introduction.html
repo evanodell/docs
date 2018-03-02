@@ -109,147 +109,255 @@
       <h1>Introduction to nomisr</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2018-02-27</h4>
+            <h4 class="date">2018-03-02</h4>
           </div>
 
     
     
 <div class="contents">
-<section id="introduction-to-the-nomis-api" class="level1"><h1>Introduction to the Nomis API</h1>
+<div id="introduction-to-the-nomis-api" class="section level1">
+<h1 class="hasAnchor">
+<a href="#introduction-to-the-nomis-api" class="anchor"></a>Introduction to the Nomis API</h1>
 <p>Nomis provides free access to up-to-date official statistics from the Office for National Statistics (ONS), and is operated by the University of Durham.</p>
 <p>There is a lot of data available through Nomis, and there are some limits to the amount of data that can be retrieved within a certain period of time, although those are not published. For more details, see the <a href="https://www.nomisweb.co.uk/api/v01/help">full API documentation</a> from Nomis.</p>
 <p>Nomis data is based around administrative and statistical geographies, and a particular geography should be specified when downloading data.</p>
-</section><section id="accessing-nomis-data" class="level1"><h1>Accessing Nomis data</h1>
-<p><code>nomisr</code> is designed around a pipeline of three key functions: <code><a href="../reference/nomis_data_info.html">nomis_data_info()</a></code>, <code><a href="../reference/nomis_codes.html">nomis_codes()</a></code> and <code><a href="../reference/nomis_get_data.html">nomis_get_data()</a></code>.</p>
-<section id="querying-data-availability" class="level2"><h2>Querying data availability</h2>
+</div>
+<div id="accessing-nomis-data" class="section level1">
+<h1 class="hasAnchor">
+<a href="#accessing-nomis-data" class="anchor"></a>Accessing Nomis data</h1>
+<p><code>nomisr</code> is designed around a pipeline of three key functions: <code><a href="../reference/nomis_data_info.html">nomis_data_info()</a></code>, <code>nomis_codes()</code> and <code><a href="../reference/nomis_get_data.html">nomis_get_data()</a></code>.</p>
+<div id="querying-data-availability" class="section level2">
+<h2 class="hasAnchor">
+<a href="#querying-data-availability" class="anchor"></a>Querying data availability</h2>
 <p>Use the <code><a href="../reference/nomis_data_info.html">nomis_data_info()</a></code> function without any parameters to get a tibble with metadata for all available datasets:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(nomisr)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_data_info.html">nomis_data_info</a></span>()</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">head</span>(x)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; # A tibble: 6 x 14</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt;   agencyid id     uri    version annotations.annotati… components.attribu…</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;list&gt;                &lt;list&gt;             </span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; 1 NOMIS    NM_1_1 Nm-1d1      1. &lt;data.frame [10 × 2]&gt; &lt;data.frame [7 × 4…</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; 2 NOMIS    NM_2_1 Nm-2d1      1. &lt;data.frame [6 × 2]&gt;  &lt;data.frame [7 × 4…</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; 3 NOMIS    NM_4_1 Nm-4d1      1. &lt;data.frame [8 × 2]&gt;  &lt;data.frame [7 × 4…</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt; 4 NOMIS    NM_5_1 Nm-5d1      1. &lt;data.frame [5 × 2]&gt;  &lt;data.frame [7 × 4…</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt; 5 NOMIS    NM_6_1 Nm-6d1      1. &lt;data.frame [6 × 2]&gt;  &lt;data.frame [7 × 4…</span></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt; 6 NOMIS    NM_7_1 Nm-7d1      1. &lt;data.frame [6 × 2]&gt;  &lt;data.frame [7 × 4…</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt; # ... with 8 more variables: components.dimension &lt;list&gt;,</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt; #   components.primarymeasure.conceptref &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt; #   components.timedimension.codelist &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; #   components.timedimension.conceptref &lt;chr&gt;, description.value &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; #   description.lang &lt;chr&gt;, name.value &lt;chr&gt;, name.lang &lt;chr&gt;</span></a></code></pre></div>
-<p><code><a href="../reference/nomis_data_info.html">nomis_data_info()</a></code> can also be used to query metadata from a specific dataset, using its ID. The example below uses the “LC4408EW - Tenure by number of persons per bedroom in household by household type” dataset from the 2011 census, including the 3 nested data frames including metadata important to making specific queries.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(dplyr, <span class="dt">warn.conflicts =</span> F)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_data_info.html">nomis_data_info</a></span>(<span class="st">"NM_893_1"</span>)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">y<span class="op">$</span>annotations.annotation <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; [1] "list"</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; [1] "list"</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">y<span class="op">$</span>annotations.annotation[[<span class="dv">1</span>]] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; [1] "data.frame"</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; [1] "data.frame"</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; [1] "list"</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; [1] "list"</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation)<span class="op">%&gt;%</span><span class="st"> </span>.[[<span class="dv">1</span>]] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; [1] "data.frame"</span></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; [1] "data.frame"</span></a>
-<a class="sourceLine" id="cb2-16" data-line-number="16">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/purrr/topics/pluck">pluck</a></span>(<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [1] "data.frame"</span></a>
-<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt; [1] "data.frame"</span></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/purrr/topics/map">map</a></span>(<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a>
-<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt; [1] "list"</span></a>
-<a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt; [1] "list"</span></a>
-<a class="sourceLine" id="cb2-22" data-line-number="22">y <span class="op">%&gt;%</span><span class="st"> </span>tidyr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidyr/topics/unnest">unnest</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>()</a>
-<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="co">#&gt; Observations: 14</span></a>
-<a class="sourceLine" id="cb2-24" data-line-number="24"><span class="co">#&gt; Variables: 11</span></a>
-<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="co">#&gt; $ agencyid                             &lt;chr&gt; "NOMIS", "NOMIS", "NOMIS"...</span></a>
-<a class="sourceLine" id="cb2-26" data-line-number="26"><span class="co">#&gt; $ id                                   &lt;chr&gt; "NM_893_1", "NM_893_1", "...</span></a>
-<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; $ uri                                  &lt;chr&gt; "Nm-893d1", "Nm-893d1", "...</span></a>
-<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">#&gt; $ version                              &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1...</span></a>
-<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">#&gt; $ components.primarymeasure.conceptref &lt;chr&gt; "OBS_VALUE", "OBS_VALUE",...</span></a>
-<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="co">#&gt; $ components.timedimension.codelist    &lt;chr&gt; "CL_893_1_TIME", "CL_893_...</span></a>
-<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="co">#&gt; $ components.timedimension.conceptref  &lt;chr&gt; "TIME", "TIME", "TIME", "...</span></a>
-<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co">#&gt; $ name.value                           &lt;chr&gt; "LC4408EW - Tenure by num...</span></a>
-<a class="sourceLine" id="cb2-33" data-line-number="33"><span class="co">#&gt; $ name.lang                            &lt;chr&gt; "en", "en", "en", "en", "...</span></a>
-<a class="sourceLine" id="cb2-34" data-line-number="34"><span class="co">#&gt; $ annotationtext                       &lt;chr&gt; "Current (being actively ...</span></a>
-<a class="sourceLine" id="cb2-35" data-line-number="35"><span class="co">#&gt; $ annotationtitle                      &lt;chr&gt; "Status", "Keywords", "Un...</span></a></code></pre></div>
-<p>When a tibble with metadata for all datasets or a specific dataset is returned, three of the columns: <code>annotations.annotation</code>, <code>components.attribute</code> and <code>components.dimension</code> are lists of nested data frames. <code>annotations.annotation</code> contains metadata on the dataset, including units and current status. <code>components.attribute</code> contains more detailed status metadata. <code>components.dimension</code> contains the grouping and summary variables available in the dataset, which vary between different datasets.</p>
-<section id="searching-for-data" class="level3"><h3>Searching for data</h3>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">head</span>(x)</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 14
+##   agencyid id     uri    version annotations.annotati… components.attribu…
+##   &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;list&gt;                &lt;list&gt;             
+## 1 NOMIS    NM_1_1 Nm-1d1      1. &lt;data.frame [10 × 2]&gt; &lt;data.frame [7 × 4…
+## 2 NOMIS    NM_2_1 Nm-2d1      1. &lt;data.frame [6 × 2]&gt;  &lt;data.frame [7 × 4…
+## 3 NOMIS    NM_4_1 Nm-4d1      1. &lt;data.frame [8 × 2]&gt;  &lt;data.frame [7 × 4…
+## 4 NOMIS    NM_5_1 Nm-5d1      1. &lt;data.frame [5 × 2]&gt;  &lt;data.frame [7 × 4…
+## 5 NOMIS    NM_6_1 Nm-6d1      1. &lt;data.frame [6 × 2]&gt;  &lt;data.frame [7 × 4…
+## 6 NOMIS    NM_7_1 Nm-7d1      1. &lt;data.frame [6 × 2]&gt;  &lt;data.frame [7 × 4…
+## # ... with 8 more variables: components.dimension &lt;list&gt;,
+## #   components.primarymeasure.conceptref &lt;chr&gt;,
+## #   components.timedimension.codelist &lt;chr&gt;,
+## #   components.timedimension.conceptref &lt;chr&gt;, description.value &lt;chr&gt;,
+## #   description.lang &lt;chr&gt;, name.value &lt;chr&gt;, name.lang &lt;chr&gt;</code></pre>
+<p><code><a href="../reference/nomis_data_info.html">nomis_data_info()</a></code> can also be used to query metadata from a specific dataset, using its ID. The example below uses the “LC4408EW - Tenure by number of persons per bedroom in household by household type” dataset from the 2011 census, which has the ID “NM_893_1”. The <code>annotations.annotation</code> list-column includes metadata important to making specific queries for additional metadata and the data itself.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(dplyr, <span class="dt">warn.conflicts =</span> F)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_data_info.html">nomis_data_info</a></span>(<span class="st">"NM_893_1"</span>)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">y<span class="op">$</span>annotations.annotation <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a></code></pre></div>
+<pre><code>## [1] "list"</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">y<span class="op">$</span>annotations.annotation[[<span class="dv">1</span>]] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a></code></pre></div>
+<pre><code>## [1] "data.frame"</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a></code></pre></div>
+<pre><code>## [1] "list"</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation)<span class="op">%&gt;%</span><span class="st"> </span>.[[<span class="dv">1</span>]] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a></code></pre></div>
+<pre><code>## [1] "data.frame"</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/purrr/topics/pluck">pluck</a></span>(<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a></code></pre></div>
+<pre><code>## [1] "data.frame"</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/purrr/topics/map">map</a></span>(<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">class</span>()</a></code></pre></div>
+<pre><code>## [1] "list"</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span>tidyr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidyr/topics/unnest">unnest</a></span>(annotations.annotation) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>()</a></code></pre></div>
+<pre><code>## Observations: 14
+## Variables: 11
+## $ agencyid                             &lt;chr&gt; "NOMIS", "NOMIS", "NOMIS"...
+## $ id                                   &lt;chr&gt; "NM_893_1", "NM_893_1", "...
+## $ uri                                  &lt;chr&gt; "Nm-893d1", "Nm-893d1", "...
+## $ version                              &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ components.primarymeasure.conceptref &lt;chr&gt; "OBS_VALUE", "OBS_VALUE",...
+## $ components.timedimension.codelist    &lt;chr&gt; "CL_893_1_TIME", "CL_893_...
+## $ components.timedimension.conceptref  &lt;chr&gt; "TIME", "TIME", "TIME", "...
+## $ name.value                           &lt;chr&gt; "LC4408EW - Tenure by num...
+## $ name.lang                            &lt;chr&gt; "en", "en", "en", "en", "...
+## $ annotationtext                       &lt;chr&gt; "Current (being actively ...
+## $ annotationtitle                      &lt;chr&gt; "Status", "Keywords", "Un...</code></pre>
+<p>When a tibble with metadata for all datasets or a specific dataset is returned, three of the columns: <code>annotations.annotation</code>, <code>components.attribute</code> and <code>components.dimension</code> are list-columns of data frames. <code>annotations.annotation</code> contains metadata on the dataset, including units and current status. <code>components.attribute</code> contains more detailed status metadata. <code>components.dimension</code> contains the grouping and summary variables available in the dataset, which vary between different datasets.</p>
+<div id="searching-for-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#searching-for-data" class="anchor"></a>Searching for data</h3>
 <p><code>nomisr</code> also contains the <code><a href="../reference/nomis_search.html">nomis_search()</a></code> function to search for datasets on particular topics. By default, it searches for a given string in the names and descriptions of available datasets.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_search.html">nomis_search</a></span>(<span class="st">'claimants'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_search.html">nomis_search</a></span>(<span class="st">'*claimants*'</span>)</a></code></pre></div>
 <p>Nomis datasets also contain keywords, which <code><a href="../reference/nomis_search.html">nomis_search()</a></code> will return metadata for if <code>keywords = TRUE</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">b &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_search.html">nomis_search</a></span>(<span class="st">'Claimants'</span>, <span class="dt">keywords =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-</section></section><section id="querying-data-variables" class="level2"><h2>Querying data variables</h2>
-<p>Vast amounts of data are available through Nomis and so to avoid overwhelming the API, it is good practice to query what variables are available, using <code><a href="../reference/nomis_codes.html">nomis_codes()</a></code>. This queries the different kinds of geography codes available through the API for the “LC4408EW - Tenure bynumber of persons per bedroom in household by household type” dataset.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">  a &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_codes.html">nomis_codes</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">code =</span> <span class="st">"geography"</span>, <span class="dt">type =</span> <span class="st">"type"</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="kw">print</span>(a)</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; # A tibble: 22 x 2</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt;    description                                        value  </span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;                                              &lt;chr&gt;  </span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;  1 NHS area teams                                     TYPE265</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;  2 clinical commissioning groups                      TYPE266</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;  3 built-up areas including subdivisions              TYPE267</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;  4 built-up areas                                     TYPE269</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;  5 national assembly for wales electoral regions 2010 TYPE273</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;  6 postcode areas                                     TYPE274</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  7 postcode districts                                 TYPE275</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;  8 postcode sectors                                   TYPE276</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt;  9 national assembly for wales constituencies 2010    TYPE277</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 10 parishes 2011                                      TYPE279</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; # ... with 12 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">b &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_search.html">nomis_search</a></span>(<span class="dt">keywords =</span> <span class="st">'Claimants'</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="querying-data-variables" class="section level2">
+<h2 class="hasAnchor">
+<a href="#querying-data-variables" class="anchor"></a>Querying data variables</h2>
+<p>Vast amounts of data are available through Nomis and so to avoid overwhelming the API, it is good practice to query what concepts are available, using <code><a href="../reference/nomis_get_metadata.html">nomis_get_metadata()</a></code>.</p>
+<p>The example below queries some of the metadata available through the API for the “LC4408EW - Tenure bynumber of persons per bedroom in household by household type” dataset.</p>
+<div id="getting-concepts" class="section level3">
+<h3 class="hasAnchor">
+<a href="#getting-concepts" class="anchor"></a>Getting concepts</h3>
+<p>If provided with just a dataset ID, <code><a href="../reference/nomis_get_metadata.html">nomis_get_metadata()</a></code> will return the concepts available for the given dataset.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">  a &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>)</a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">  <span class="kw">print</span>(a)</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   codelist                conceptref     isfrequencydimension
+## * &lt;chr&gt;                   &lt;chr&gt;          &lt;chr&gt;               
+## 1 CL_893_1_GEOGRAPHY      GEOGRAPHY      false               
+## 2 CL_893_1_C_TENHUK11     C_TENHUK11     false               
+## 3 CL_893_1_C_PPBROOMHEW11 C_PPBROOMHEW11 false               
+## 4 CL_893_1_C_AHTHUK11     C_AHTHUK11     false               
+## 5 CL_893_1_MEASURES       MEASURES       false               
+## 6 CL_893_1_FREQ           FREQ           true</code></pre>
+</div>
+<div id="concept-values" class="section level3">
+<h3 class="hasAnchor">
+<a href="#concept-values" class="anchor"></a>Concept Values</h3>
+<p>If provided with a concept name it returns the available values for that concept. However, in some cases, espescially with the geography concept, there are multiple options available, which Nomis labels types. In that case <code><a href="../reference/nomis_get_metadata.html">nomis_get_metadata()</a></code> returns the values of the lowest indexed type available.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">  b &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">concept =</span> <span class="st">"GEOGRAPHY"</span>)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">  <span class="kw">print</span>(b)</a></code></pre></div>
+<pre><code>## # A tibble: 3 x 2
+##   description            value
+##   &lt;chr&gt;                  &lt;int&gt;
+## 1 England and Wales 2092957703
+## 2 England           2092957699
+## 3 Wales             2092957700</code></pre>
+<p>We can now pass a generic “type” string to the <code>type</code> parameter in <code><a href="../reference/nomis_get_metadata.html">nomis_get_metadata()</a></code>, which returns all available geography types for dataset “NM_893_1”.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">  c &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">concept =</span> <span class="st">"geography"</span>, <span class="dt">type =</span> <span class="st">"type"</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">  <span class="kw">print</span>(c)</a></code></pre></div>
+<pre><code>## # A tibble: 22 x 2
+##    description                                        value  
+##    &lt;chr&gt;                                              &lt;chr&gt;  
+##  1 NHS area teams                                     TYPE265
+##  2 clinical commissioning groups                      TYPE266
+##  3 built-up areas including subdivisions              TYPE267
+##  4 built-up areas                                     TYPE269
+##  5 national assembly for wales electoral regions 2010 TYPE273
+##  6 postcode areas                                     TYPE274
+##  7 postcode districts                                 TYPE275
+##  8 postcode sectors                                   TYPE276
+##  9 national assembly for wales constituencies 2010    TYPE277
+## 10 parishes 2011                                      TYPE279
+## # ... with 12 more rows</code></pre>
+<p>Passing a specific type to the <code>type</code> parameter, in this case “TYPE460” for all post-2010 parliamentary constituencies, returns a tibble with geographic codes for those specific constituencies, which can be used to filter queries.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">  d &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">concept =</span> <span class="st">"geography"</span>, <span class="dt">type =</span> <span class="st">"TYPE460"</span>)</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">  <span class="kw">print</span>(d)</a></code></pre></div>
+<pre><code>## # A tibble: 573 x 2
+##    description             value
+##    &lt;chr&gt;                   &lt;int&gt;
+##  1 Berwick-upon-Tweed 1929379865
+##  2 Bishop Auckland    1929379880
+##  3 Blaydon            1929379885
+##  4 Blyth Valley       1929379886
+##  5 City of Durham     1929379952
+##  6 Darlington         1929379969
+##  7 Easington          1929379988
+##  8 Gateshead          1929380020
+##  9 Hartlepool         1929380044
+## 10 Hexham             1929380057
+## # ... with 563 more rows</code></pre>
 <p>The vast majority (98% as of February 2018) of Nomis datasets include a geographic variable.</p>
-</section><section id="downloading-data" class="level2"><h2>Downloading data</h2>
+</div>
+</div>
+<div id="downloading-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#downloading-data" class="anchor"></a>Downloading data</h2>
 <p>Using the information above, we can now query the latest data on bedroom occupancy per household type in different NHS clinical commissioning groups.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"> z &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">time =</span> <span class="st">"latest"</span>, <span class="dt">geography =</span> <span class="st">"TYPE266"</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; Retrieving additional pages 1 of 1</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"> tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(z)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; Observations: 44,310</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; Variables: 40</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; $ DATE                     &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; $ DATE_NAME                &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt; $ DATE_CODE                &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...</span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt; $ DATE_TYPE                &lt;chr&gt; "date", "date", "date", "date", "date...</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt; $ DATE_TYPECODE            &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt; $ DATE_SORTORDER           &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt; $ GEOGRAPHY                &lt;chr&gt; "1115684920", "1115684920", "11156849...</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt; $ GEOGRAPHY_NAME           &lt;chr&gt; "NHS Eastern Cheshire", "NHS Eastern ...</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt; $ GEOGRAPHY_CODE           &lt;chr&gt; "E38000056", "E38000056", "E38000056"...</span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt; $ GEOGRAPHY_TYPE           &lt;chr&gt; "clinical commissioning groups", "cli...</span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt; $ GEOGRAPHY_TYPECODE       &lt;chr&gt; "266", "266", "266", "266", "266", "2...</span></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; $ GEOGRAPHY_SORTORDER      &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...</span></a>
-<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt; $ C_TENHUK11               &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...</span></a>
-<a class="sourceLine" id="cb6-19" data-line-number="19"><span class="co">#&gt; $ C_TENHUK11_NAME          &lt;chr&gt; "All categories: Tenure", "All catego...</span></a>
-<a class="sourceLine" id="cb6-20" data-line-number="20"><span class="co">#&gt; $ C_TENHUK11_CODE          &lt;chr&gt; "C_TENHUK11_Tmp4ZBJ0", "C_TENHUK11_Tm...</span></a>
-<a class="sourceLine" id="cb6-21" data-line-number="21"><span class="co">#&gt; $ C_TENHUK11_TYPE          &lt;chr&gt; "Tenure", "Tenure", "Tenure", "Tenure...</span></a>
-<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="co">#&gt; $ C_TENHUK11_TYPECODE      &lt;chr&gt; "1000000", "1000000", "1000000", "100...</span></a>
-<a class="sourceLine" id="cb6-23" data-line-number="23"><span class="co">#&gt; $ C_TENHUK11_SORTORDER     &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...</span></a>
-<a class="sourceLine" id="cb6-24" data-line-number="24"><span class="co">#&gt; $ C_PPBROOMHEW11           &lt;chr&gt; "0", "0", "0", "0", "0", "0", "1", "1...</span></a>
-<a class="sourceLine" id="cb6-25" data-line-number="25"><span class="co">#&gt; $ C_PPBROOMHEW11_NAME      &lt;chr&gt; "All categories: Number of persons pe...</span></a>
-<a class="sourceLine" id="cb6-26" data-line-number="26"><span class="co">#&gt; $ C_PPBROOMHEW11_CODE      &lt;chr&gt; "C_PPBROOMHEW11_QsehsrgQ", "C_PPBROOM...</span></a>
-<a class="sourceLine" id="cb6-27" data-line-number="27"><span class="co">#&gt; $ C_PPBROOMHEW11_TYPE      &lt;chr&gt; "Persons per bedroom", "Persons per b...</span></a>
-<a class="sourceLine" id="cb6-28" data-line-number="28"><span class="co">#&gt; $ C_PPBROOMHEW11_TYPECODE  &lt;chr&gt; "1000000", "1000000", "1000000", "100...</span></a>
-<a class="sourceLine" id="cb6-29" data-line-number="29"><span class="co">#&gt; $ C_PPBROOMHEW11_SORTORDER &lt;chr&gt; "0", "0", "0", "0", "0", "0", "1", "1...</span></a>
-<a class="sourceLine" id="cb6-30" data-line-number="30"><span class="co">#&gt; $ C_AHTHUK11               &lt;chr&gt; "0", "1", "2", "3", "4", "5", "0", "1...</span></a>
-<a class="sourceLine" id="cb6-31" data-line-number="31"><span class="co">#&gt; $ C_AHTHUK11_NAME          &lt;chr&gt; "All categories: Household type", "On...</span></a>
-<a class="sourceLine" id="cb6-32" data-line-number="32"><span class="co">#&gt; $ C_AHTHUK11_CODE          &lt;chr&gt; "C_AHTHUK11_Szp6SRFd", "C_AHTHUK11_10...</span></a>
-<a class="sourceLine" id="cb6-33" data-line-number="33"><span class="co">#&gt; $ C_AHTHUK11_TYPE          &lt;chr&gt; "Household Type", "Household Type", "...</span></a>
-<a class="sourceLine" id="cb6-34" data-line-number="34"><span class="co">#&gt; $ C_AHTHUK11_TYPECODE      &lt;chr&gt; "1000000", "1000000", "1000000", "100...</span></a>
-<a class="sourceLine" id="cb6-35" data-line-number="35"><span class="co">#&gt; $ C_AHTHUK11_SORTORDER     &lt;chr&gt; "0", "1", "2", "3", "4", "5", "0", "1...</span></a>
-<a class="sourceLine" id="cb6-36" data-line-number="36"><span class="co">#&gt; $ MEASURES                 &lt;chr&gt; "20100", "20100", "20100", "20100", "...</span></a>
-<a class="sourceLine" id="cb6-37" data-line-number="37"><span class="co">#&gt; $ MEASURES_NAME            &lt;chr&gt; "Value", "Value", "Value", "Value", "...</span></a>
-<a class="sourceLine" id="cb6-38" data-line-number="38"><span class="co">#&gt; $ OBS_VALUE                &lt;chr&gt; "84996", "25955", "41745", "8260", "7...</span></a>
-<a class="sourceLine" id="cb6-39" data-line-number="39"><span class="co">#&gt; $ OBS_STATUS               &lt;chr&gt; "A", "A", "A", "A", "A", "A", "A", "A...</span></a>
-<a class="sourceLine" id="cb6-40" data-line-number="40"><span class="co">#&gt; $ OBS_STATUS_NAME          &lt;chr&gt; "Normal Value", "Normal Value", "Norm...</span></a>
-<a class="sourceLine" id="cb6-41" data-line-number="41"><span class="co">#&gt; $ OBS_CONF                 &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F...</span></a>
-<a class="sourceLine" id="cb6-42" data-line-number="42"><span class="co">#&gt; $ OBS_CONF_NAME            &lt;chr&gt; "Free (free for publication)", "Free ...</span></a>
-<a class="sourceLine" id="cb6-43" data-line-number="43"><span class="co">#&gt; $ URN                      &lt;chr&gt; "Nm-893d1d32176e0d1115684920d0d0d0d20...</span></a>
-<a class="sourceLine" id="cb6-44" data-line-number="44"><span class="co">#&gt; $ RECORD_OFFSET            &lt;chr&gt; "0", "1", "2", "3", "4", "5", "6", "7...</span></a>
-<a class="sourceLine" id="cb6-45" data-line-number="45"><span class="co">#&gt; $ RECORD_COUNT             &lt;chr&gt; "44310", "44310", "44310", "44310", "...</span></a></code></pre></div>
-</section></section>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"> z &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">time =</span> <span class="st">"latest"</span>, <span class="dt">geography =</span> <span class="st">"TYPE266"</span>)</a></code></pre></div>
+<pre><code>## Retrieving additional pages 1 of 1</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"> tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(z)</a></code></pre></div>
+<pre><code>## Observations: 44,310
+## Variables: 40
+## $ DATE                     &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...
+## $ DATE_NAME                &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...
+## $ DATE_CODE                &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...
+## $ DATE_TYPE                &lt;chr&gt; "date", "date", "date", "date", "date...
+## $ DATE_TYPECODE            &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ DATE_SORTORDER           &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ GEOGRAPHY                &lt;chr&gt; "1115684920", "1115684920", "11156849...
+## $ GEOGRAPHY_NAME           &lt;chr&gt; "NHS Eastern Cheshire", "NHS Eastern ...
+## $ GEOGRAPHY_CODE           &lt;chr&gt; "E38000056", "E38000056", "E38000056"...
+## $ GEOGRAPHY_TYPE           &lt;chr&gt; "clinical commissioning groups", "cli...
+## $ GEOGRAPHY_TYPECODE       &lt;chr&gt; "266", "266", "266", "266", "266", "2...
+## $ GEOGRAPHY_SORTORDER      &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ C_TENHUK11               &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ C_TENHUK11_NAME          &lt;chr&gt; "All categories: Tenure", "All catego...
+## $ C_TENHUK11_CODE          &lt;chr&gt; "C_TENHUK11_Tmp4ZBJ0", "C_TENHUK11_Tm...
+## $ C_TENHUK11_TYPE          &lt;chr&gt; "Tenure", "Tenure", "Tenure", "Tenure...
+## $ C_TENHUK11_TYPECODE      &lt;chr&gt; "1000000", "1000000", "1000000", "100...
+## $ C_TENHUK11_SORTORDER     &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ C_PPBROOMHEW11           &lt;chr&gt; "0", "0", "0", "0", "0", "0", "1", "1...
+## $ C_PPBROOMHEW11_NAME      &lt;chr&gt; "All categories: Number of persons pe...
+## $ C_PPBROOMHEW11_CODE      &lt;chr&gt; "C_PPBROOMHEW11_QsehsrgQ", "C_PPBROOM...
+## $ C_PPBROOMHEW11_TYPE      &lt;chr&gt; "Persons per bedroom", "Persons per b...
+## $ C_PPBROOMHEW11_TYPECODE  &lt;chr&gt; "1000000", "1000000", "1000000", "100...
+## $ C_PPBROOMHEW11_SORTORDER &lt;chr&gt; "0", "0", "0", "0", "0", "0", "1", "1...
+## $ C_AHTHUK11               &lt;chr&gt; "0", "1", "2", "3", "4", "5", "0", "1...
+## $ C_AHTHUK11_NAME          &lt;chr&gt; "All categories: Household type", "On...
+## $ C_AHTHUK11_CODE          &lt;chr&gt; "C_AHTHUK11_Szp6SRFd", "C_AHTHUK11_10...
+## $ C_AHTHUK11_TYPE          &lt;chr&gt; "Household Type", "Household Type", "...
+## $ C_AHTHUK11_TYPECODE      &lt;chr&gt; "1000000", "1000000", "1000000", "100...
+## $ C_AHTHUK11_SORTORDER     &lt;chr&gt; "0", "1", "2", "3", "4", "5", "0", "1...
+## $ MEASURES                 &lt;chr&gt; "20100", "20100", "20100", "20100", "...
+## $ MEASURES_NAME            &lt;chr&gt; "Value", "Value", "Value", "Value", "...
+## $ OBS_VALUE                &lt;chr&gt; "84996", "25955", "41745", "8260", "7...
+## $ OBS_STATUS               &lt;chr&gt; "A", "A", "A", "A", "A", "A", "A", "A...
+## $ OBS_STATUS_NAME          &lt;chr&gt; "Normal Value", "Normal Value", "Norm...
+## $ OBS_CONF                 &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F...
+## $ OBS_CONF_NAME            &lt;chr&gt; "Free (free for publication)", "Free ...
+## $ URN                      &lt;chr&gt; "Nm-893d1d32176e0d1115684920d0d0d0d20...
+## $ RECORD_OFFSET            &lt;chr&gt; "0", "1", "2", "3", "4", "5", "6", "7...
+## $ RECORD_COUNT             &lt;chr&gt; "44310", "44310", "44310", "44310", "...</code></pre>
+<p>We can also query bedroom occupancy per household type in the Manchester, Gorton and Manchester, Withington parliamentary constituencies.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"> x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">time =</span> <span class="st">"latest"</span>, <span class="dt">geography =</span> <span class="kw">c</span>(<span class="st">"1929380119"</span>, <span class="st">"1929380120"</span>))</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"> </a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(x)</a></code></pre></div>
+<pre><code>## Observations: 420
+## Variables: 40
+## $ DATE                     &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...
+## $ DATE_NAME                &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...
+## $ DATE_CODE                &lt;chr&gt; "2011", "2011", "2011", "2011", "2011...
+## $ DATE_TYPE                &lt;chr&gt; "date", "date", "date", "date", "date...
+## $ DATE_TYPECODE            &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ DATE_SORTORDER           &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ GEOGRAPHY                &lt;chr&gt; "1929380119", "1929380119", "19293801...
+## $ GEOGRAPHY_NAME           &lt;chr&gt; "Manchester, Gorton", "Manchester, Go...
+## $ GEOGRAPHY_CODE           &lt;chr&gt; "E14000808", "E14000808", "E14000808"...
+## $ GEOGRAPHY_TYPE           &lt;chr&gt; "parliamentary constituencies 2010", ...
+## $ GEOGRAPHY_TYPECODE       &lt;chr&gt; "460", "460", "460", "460", "460", "4...
+## $ GEOGRAPHY_SORTORDER      &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ C_TENHUK11               &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ C_TENHUK11_NAME          &lt;chr&gt; "All categories: Tenure", "All catego...
+## $ C_TENHUK11_CODE          &lt;chr&gt; "C_TENHUK11_Tmp4ZBJ0", "C_TENHUK11_Tm...
+## $ C_TENHUK11_TYPE          &lt;chr&gt; "Tenure", "Tenure", "Tenure", "Tenure...
+## $ C_TENHUK11_TYPECODE      &lt;chr&gt; "1000000", "1000000", "1000000", "100...
+## $ C_TENHUK11_SORTORDER     &lt;chr&gt; "0", "0", "0", "0", "0", "0", "0", "0...
+## $ C_PPBROOMHEW11           &lt;chr&gt; "0", "0", "0", "0", "0", "0", "1", "1...
+## $ C_PPBROOMHEW11_NAME      &lt;chr&gt; "All categories: Number of persons pe...
+## $ C_PPBROOMHEW11_CODE      &lt;chr&gt; "C_PPBROOMHEW11_QsehsrgQ", "C_PPBROOM...
+## $ C_PPBROOMHEW11_TYPE      &lt;chr&gt; "Persons per bedroom", "Persons per b...
+## $ C_PPBROOMHEW11_TYPECODE  &lt;chr&gt; "1000000", "1000000", "1000000", "100...
+## $ C_PPBROOMHEW11_SORTORDER &lt;chr&gt; "0", "0", "0", "0", "0", "0", "1", "1...
+## $ C_AHTHUK11               &lt;chr&gt; "0", "1", "2", "3", "4", "5", "0", "1...
+## $ C_AHTHUK11_NAME          &lt;chr&gt; "All categories: Household type", "On...
+## $ C_AHTHUK11_CODE          &lt;chr&gt; "C_AHTHUK11_Szp6SRFd", "C_AHTHUK11_10...
+## $ C_AHTHUK11_TYPE          &lt;chr&gt; "Household Type", "Household Type", "...
+## $ C_AHTHUK11_TYPECODE      &lt;chr&gt; "1000000", "1000000", "1000000", "100...
+## $ C_AHTHUK11_SORTORDER     &lt;chr&gt; "0", "1", "2", "3", "4", "5", "0", "1...
+## $ MEASURES                 &lt;chr&gt; "20100", "20100", "20100", "20100", "...
+## $ MEASURES_NAME            &lt;chr&gt; "Value", "Value", "Value", "Value", "...
+## $ OBS_VALUE                &lt;chr&gt; "40300", "13253", "12120", "3957", "6...
+## $ OBS_STATUS               &lt;chr&gt; "A", "A", "A", "A", "A", "A", "A", "A...
+## $ OBS_STATUS_NAME          &lt;chr&gt; "Normal Value", "Normal Value", "Norm...
+## $ OBS_CONF                 &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F...
+## $ OBS_CONF_NAME            &lt;chr&gt; "Free (free for publication)", "Free ...
+## $ URN                      &lt;chr&gt; "Nm-893d1d32176e0d1929380119d0d0d0d20...
+## $ RECORD_OFFSET            &lt;chr&gt; "0", "1", "2", "3", "4", "5", "6", "7...
+## $ RECORD_COUNT             &lt;chr&gt; "420", "420", "420", "420", "420", "4...</code></pre>
+</div>
+</div>
 </div>
   </div>
 

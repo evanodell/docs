@@ -8,9 +8,13 @@ build_docs <- function(){
   message("Building `hansard`")
   
 ### Build `hansard`  -----------------
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard", path= "/Users/evanodell/Documents/GitHub/docs/hansard", preview = FALSE)
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard", 
+                      path= "/Users/evanodell/Documents/GitHub/docs/hansard", preview = FALSE)
   
-  list_of_files <- list.files("/Users/evanodell/Documents/GitHub/hansard", all.files = TRUE, full.names = TRUE, recursive = FALSE, ignore.case = TRUE, include.dirs = FALSE, no.. = TRUE)
+  list_of_files <- list.files("/Users/evanodell/Documents/GitHub/hansard", 
+                              all.files = TRUE, full.names = TRUE, 
+                              recursive = FALSE, ignore.case = TRUE, 
+                              include.dirs = FALSE, no.. = TRUE)
   
   list_of_files <- list_of_files[ !grepl("_pkgdown.yml", list_of_files)]
                                   
@@ -18,41 +22,62 @@ build_docs <- function(){
   
   list_of_files <- list_of_files[ !grepl("hansard.Rproj", list_of_files) ]
   
-  file.copy(list_of_files, "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", overwrite = TRUE)
+  file.copy(list_of_files, "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+            overwrite = TRUE)
   
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/tests", "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", overwrite = TRUE, recursive = TRUE)
+  file.copy("/Users/evanodell/Documents/GitHub/hansard/tests", 
+            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+            overwrite = TRUE, recursive = TRUE)
   
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/R/", "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", overwrite = TRUE, recursive = TRUE)
+  file.copy("/Users/evanodell/Documents/GitHub/hansard/R/", 
+            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+            overwrite = TRUE, recursive = TRUE)
   
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/man", "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", overwrite = TRUE, recursive = TRUE)
+  file.copy("/Users/evanodell/Documents/GitHub/hansard/man", 
+            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+            overwrite = TRUE, recursive = TRUE)
   
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/inst", "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", overwrite = TRUE, recursive = TRUE)
+  file.copy("/Users/evanodell/Documents/GitHub/hansard/inst", 
+            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+            overwrite = TRUE, recursive = TRUE)
   
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/vignettes", "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", overwrite = TRUE, recursive = TRUE)
+  file.copy("/Users/evanodell/Documents/GitHub/hansard/vignettes",
+            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+            overwrite = TRUE, recursive = TRUE)
   
   message("Building `hansard-ropengov`")
   
 ### Build `hansard-ropengov` -----------------
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", path= "/Users/evanodell/Documents/GitHub/hansard-rOpenGov/docs", preview = FALSE)
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+                      path= "/Users/evanodell/Documents/GitHub/hansard-rOpenGov/docs", 
+                      preview = FALSE)
 
   message("Building `mnis`")
   
 ### Build `mnis` -----------------
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/mnis", path= "/Users/evanodell/Documents/GitHub/docs/mnis", preview = FALSE)
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/mnis", 
+                      path= "/Users/evanodell/Documents/GitHub/docs/mnis", 
+                      preview = FALSE)
 
   message("Building `parlitools`")
   
 ### Build `parlitools` -----------------
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/parlitools", path= "/Users/evanodell/Documents/GitHub/docs/parlitools", preview = FALSE)
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/parlitools", 
+                      path= "/Users/evanodell/Documents/GitHub/docs/parlitools", 
+                      preview = FALSE)
   
   message("Building `emisc`")
   
 ### Build `emisc`  -----------------
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/emisc", path= "/Users/evanodell/Documents/GitHub/docs/emisc", preview = FALSE)
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/emisc", 
+                      path= "/Users/evanodell/Documents/GitHub/docs/emisc", 
+                      preview = FALSE)
   
   
 ### Build `nomisr`  -----------------
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/nomisr", path= "/Users/evanodell/Documents/GitHub/docs/nomisr", preview = FALSE)
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/nomisr", 
+                      path= "/Users/evanodell/Documents/GitHub/docs/nomisr", 
+                      preview = FALSE)
 
   pkgdown::build_site(path=".", preview = FALSE)
 

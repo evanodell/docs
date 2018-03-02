@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>nomisr: Access Nomis UK Labour Market Data with R — nmisr • nomisr</title>
+<title>Nomis dataset content types — nomis_content_type • nomisr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,12 +27,14 @@
 <script src="../pkgdown.js"></script>
   
   
-<meta property="og:title" content="nomisr: Access Nomis UK Labour Market Data with R — nmisr" />
+<meta property="og:title" content="Nomis dataset content types — nomis_content_type" />
 
-<meta property="og:description" content="Access UK official statistics from the Nomis database through R. Nomis
-includes data from the Census, the Labour Force Survey, DWP benefit
-statistics and other economic and demographic data from the Office for
-National Statistics." />
+<meta property="og:description" content="Nomis content type metadata is included in annotation tags, in the form of 
+contenttype/&lt;contenttype&gt; in the annotationtitle column in 
+the annotations.annotation list-column returned from 
+nomis_data_info. For example, the content types returned from 
+dataset "NM_1658_1", using nomis_data_info("NM_1658_1"), are 
+"geoglevel", "2001census" and "sources"." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -138,33 +140,60 @@ National Statistics." />
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>nomisr: Access Nomis UK Labour Market Data with R</h1>
+    <h1>Nomis dataset content types</h1>
     </div>
 
     
-    <p>Access UK official statistics from the Nomis database through R. Nomis
-includes data from the Census, the Labour Force Survey, DWP benefit
-statistics and other economic and demographic data from the Office for
-National Statistics.</p>
+    <p>Nomis content type metadata is included in annotation tags, in the form of 
+<code>contenttype/&lt;contenttype&gt;</code> in the <code>annotationtitle</code> column in 
+the <code>annotations.annotation</code> list-column returned from 
+<code><a href='nomis_data_info.html'>nomis_data_info</a></code>. For example, the content types returned from 
+dataset "NM_1658_1", using <code><a href='nomis_data_info.html'>nomis_data_info("NM_1658_1")</a></code>, are 
+"geoglevel", "2001census" and "sources".</p>
     
 
-        
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <pre class="usage"><span class='fu'>nomis_content_type</span>(<span class='no'>content_type</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>content_type</th>
+      <td><p>A string with the content type to return metadata on.</p></td>
+    </tr>
+    <tr>
+      <th>id</th>
+      <td><p>A string with an optional <code>content_type</code> id.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The package provides functions to find what data is available, the
-variables and query options for different datasets and a function for
-downloading data.</p>
-<p>The full API documentation is available at
-<a href='https://www.nomisweb.co.uk/api/v01/help'>https://www.nomisweb.co.uk/api/v01/help</a></p>
+    <p>A tibble with metadata on a given content type.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='nomis_search.html'>nomis_search</a></code>
+    <code><a href='nomis_data_info.html'>nomis_data_info</a></code></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_content_type</span>(<span class='st'>"sources"</span>)
+
+<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_content_type</span>(<span class='st'>"sources"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"census"</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#details">Details</a></li>
-          </ul>
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
