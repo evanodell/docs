@@ -1,8 +1,0 @@
-pandoc: 2.1.1
-pkgdown: 0.1.0.9000
-pkgdown_sha: 516865e0fb793975fe92ccaee154bb7db3b877b4
-articles: {}
-urls:
-  reference: https://docs.evanodell.com/reference
-  article: https://docs.evanodell.com/articles
-

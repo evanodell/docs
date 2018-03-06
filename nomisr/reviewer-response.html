@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>reviewer-response.md • nomisr</title>
+<title>/Users/evanodell/Documents/GitHub/nomisr/reviewer-response.md • nomisr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
 <script src="pkgdown.js"></script>
   
   
-<meta property="og:title" content="reviewer-response.md" />
+<meta property="og:title" content="/Users/evanodell/Documents/GitHub/nomisr/reviewer-response.md" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -132,7 +132,7 @@
       <div class="row">
   <div class="contents col-md-12">
     <div class="page-header">
-      <h1>reviewer-response.md</h1>
+      <h1>/Users/evanodell/Documents/GitHub/nomisr/reviewer-response.md</h1>
     </div>
 
 
@@ -161,7 +161,7 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 #&gt; $ name.lang <chr> “en”, “en”, “en”, “en”, “…
 #&gt; $ annotationtext <chr> “Current (being actively …
 <p>#&gt; $ annotationtitle <chr> “Status”, “Keywords”, “Un…</chr></p>
-<p><strong>Response:</strong> I’ve added this to the vignette in [e98982950b44bb03218a41937985445d27eacc60]</p>
+<p><strong>Response:</strong> I’ve added a similar example to the vignette, which is similar enough to your example that I feel I should cite you as a contributor if that is okay.</p>
 <p>Following are my review comments, for improvement: About Community Guidelines</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">There is no contribution guidelines <span class="cf">in</span> the README or other CONTRIBUTING.md.</a></code></pre></div>
 <p><strong>Response:</strong> Added in [ede35580b8369aba016b8375f0d6569b58063e9c]</p>
@@ -252,7 +252,7 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 <h1>Timeout was reached: Resolving timed out after 10000 milliseconds</h1>
 <p>You could use some tryCatch mechanism (some useful info in Advanced R).</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">[thoughts] You may need more control on the request mechanism to deal with timeout. First, it seems <span class="cf">for</span> the website one need to contact NOMIS help<span class="op">-</span>desk to know more about limitation. Then , your are relying on readr connection mechanism, and may need to use httr, crul or curl to better handle request to API with the specificity of NOMIS</a></code></pre></div>
-<p><strong>Response:</strong> The user feedback I’ve gotten from previous API packages I’ve made was to avoid interactive messages, but I do agree that such a warning could be useful.</p>
+<p><strong>Response:</strong> The user feedback I’ve gotten from previous API packages I’ve made was to avoid interactive messages, but I do agree that such a warning could be useful. I’ve added a warning and a yes/no option for requests over 350,000 cells</p>
 <p>About SMDX format on NOMIS</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">Do you know about the rsdmx package ? it is on github and CRAN, there is WIKI. I did not find NOMIS <span class="cf">in</span> their listing, so I did not know <span class="cf">if</span> it works <span class="cf">for</span> you and how it could overlap with your package.</a>
 <a class="sourceLine" id="cb18-2" data-line-number="2">rsdmx is definitely more a generic package than yours. I just wanted to point it to you <span class="cf">in</span> case you did not know.</a></code></pre></div>
@@ -327,7 +327,7 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 <a class="sourceLine" id="cb24-7" data-line-number="7"><span class="st">The more information in the documentation and vignettes, the better for the user, especially if they do</span></a>
 <a class="sourceLine" id="cb24-8" data-line-number="8"><span class="st">not have prior experience with Nomis data.</span></a>
 <a class="sourceLine" id="cb24-9" data-line-number="9"><span class="st">'</span>Nomis<span class="st">' in the title for nomis_search() should be capitalized to be consistent with the rest of the package.</span></a></code></pre></div>
-<p><strong>Response:</strong></p>
+<p><strong>Response:</strong> I’ve expanded the documentation and used roxygen tags to improve organisation. I’ve also added an expanded explanation to the package vignette.</p>
 <p>Examples</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">The example <span class="cf">for</span> nomis_get_data failed due to lack of data. I recommend finding a specific</a>
 <a class="sourceLine" id="cb25-2" data-line-number="2">date range that will return results and then hard<span class="op">-</span>code that into the example.</a>
@@ -344,6 +344,7 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 <a class="sourceLine" id="cb25-13" data-line-number="13">it might be a nice enhancement to add a little extra code to glimpse the data <span class="cf">for</span> the users to get</a>
 <a class="sourceLine" id="cb25-14" data-line-number="14">a better feel <span class="cf">for</span> what they are getting out of the API call. This is especially helpful since</a>
 <a class="sourceLine" id="cb25-15" data-line-number="15">the data that is returned can differ greatly depending on what args are passed.</a></code></pre></div>
+<p><strong>Response:</strong> I’ve added glimpsing to the examples in different functions.</p>
 <p>Vignettes</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">I like the <span class="cf">switch</span> to echo =<span class="st"> </span><span class="ot">TRUE</span> <span class="cf">for</span> vignette code chunks. This is the user<span class="st">'s opportunity</span></a>
 <a class="sourceLine" id="cb26-2" data-line-number="2"><span class="st">to see the code in action for the first time. Including the code used to generate the results can</span></a>
@@ -356,6 +357,7 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 <a class="sourceLine" id="cb26-9" data-line-number="9"><span class="st">It looks like the vignette might still be a little incomplete. I see that the final paragraph of</span></a>
 <a class="sourceLine" id="cb26-10" data-line-number="10"><span class="st">Querying data variables is not finished.</span></a>
 <a class="sourceLine" id="cb26-11" data-line-number="11"><span class="st">It'</span>s unnecessary to hard<span class="op">-</span>code the results <span class="cf">in</span> code chunks. The results will be output when the vignette is knit.</a></code></pre></div>
+<p><strong>Response:</strong> I’ve now pre-built the vignette.</p>
 <p>Functionality</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw"><a href="reference/nomis_search.html">nomis_search</a></span>()</a>
 <a class="sourceLine" id="cb27-2" data-line-number="2">    [suggestion] Currently, users can either search based on generic search terms or search <span class="cf">for</span> specific keywords.</a>
@@ -372,7 +374,7 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 <a class="sourceLine" id="cb27-13" data-line-number="13">    [suggestion] The <span class="cf">function</span> could potentially accept character vectors from each of the <span class="kw">categories</span> (as well as</a>
 <a class="sourceLine" id="cb27-14" data-line-number="14">    a generic search term field) and then the appropriate search string could be created.</a>
 <a class="sourceLine" id="cb27-15" data-line-number="15">    </a></code></pre></div>
-<p><strong>Response:</strong> I have re-written nomis_search in keeping with your suggestions. It now accepts five parameters - name, description, keywords, content_type, units - and can search in any or all of them at the same time, with or without wildcards. I’ve also added a nomis_content_type() function to assist in looking up specific content types, which may be used in nomis_search.</p>
+<p><strong>Response:</strong> I have re-written nomis_search in keeping with your suggestions. It now accepts five parameters - name, description, keywords, content_type, units - and can search in any or all of them at the same time, with or without wildcards. I’ve also added a nomis_content_type() function to assist in looking up specific content types, which may be used with nomis_search().</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">nomis_codes</span>()</a>
 <a class="sourceLine" id="cb28-2" data-line-number="2">    Generally, it is helpful to mirror the language of the source material when possible.</a>
 <a class="sourceLine" id="cb28-3" data-line-number="3">    The <span class="kw">nomis_codes</span>() <span class="cf">function</span> accepts a <span class="kw">dimension</span> (concept) and the <span class="cf">function</span> returns codes <span class="cf">for</span> that dimension.</a>
@@ -393,11 +395,11 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 <a class="sourceLine" id="cb28-18" data-line-number="18"><span class="st">nomis_data_info()</span></a>
 <a class="sourceLine" id="cb28-19" data-line-number="19"><span class="st">    The documentation could be more explicit in telling the user that the data returned by this function is metadata.</span></a>
 <a class="sourceLine" id="cb28-20" data-line-number="20"><span class="st">    </span></a></code></pre></div>
-<p><strong>Response:</strong> I’ve updated the documentation to be more explicit about what the function actually does, and improved the code readability. I changed the code parameter to concept, as you suggested, to be more in keeping with the syntax used in the original API.</p>
+<p><strong>Response:</strong> I’ve updated the documentation to be more explicit about what the function actually does, and improved the code readability. I changed the <code>code</code> parameter to <code>concept</code>, as you suggested, to be more in keeping with the syntax used in the original API. I’ve also added a specific <code>search</code> parameter, and a generic <code>additional_queries</code> parameter, as used in <code><a href="reference/nomis_get_data.html">nomis_get_data()</a></code></p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">    [suggestion] Relating to the comment above, it may be a little clearer to rename the <span class="cf">function</span> something to the effect of <span class="kw"><a href="reference/nomis_get_metadata.html">nomis_get_metadata</a></span>().</a>
 <a class="sourceLine" id="cb29-2" data-line-number="2">    This naming scheme is more <span class="cf">in</span> line with the pattern set forth by nomis_get_data naming scheme.</a>
 <a class="sourceLine" id="cb29-3" data-line-number="3"><span class="kw"><a href="reference/nomis_get_data.html">nomis_get_data</a></span>()</a></code></pre></div>
-<p><strong>Response:</strong> I’ve renamed the nomis_codes() function to nomis_get_metadata(), which I agree is more descriptive of what the function actually does.</p>
+<p><strong>Response:</strong> I’ve renamed the nomis_codes() function to nomis_get_metadata(), which I agree is more descriptive of what the function actually does. I’ve also added the nomis_overview() function, which returns a more general overview of all available metadata, without the flexibility and specificity offered by nomis_get_metadata().</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">    I see that the API documentation states, <span class="st">"you have a 25000 cell limit on the number of data values downloaded in these formats."</span></a>
 <a class="sourceLine" id="cb30-2" data-line-number="2">    It appears that the code currently breaks the fetch into multiple steps <span class="cf">if</span> the record count is greater than or equal to 25k records.</a>
 <a class="sourceLine" id="cb30-3" data-line-number="3">    I am curious <span class="cf">if</span> this might be an oversight. It might be useful to test the edge case where the query returns more than 25k cells but</a>
@@ -435,3 +437,4 @@ library(nomisr) library(dplyr, warn.conflicts = F) y &lt;- nomis_data_info(“NM
 
   </body>
 </html>
+

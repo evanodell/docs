@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,15 @@
 <script src="../pkgdown.js"></script>
   
   
+<meta property="og:title" content="Reference data — mnis_reference" />
+
+<meta property="og:description" content="Reference data on various aspects of parliament. This data is useful for
+providing parameters for other function calls. The functions do not accept
+any arguments aside from the tidy and tidy_style parameters,
+which default to TRUE and 'snake_case', respectively. To
+return all a list with tibbles of all reference data,
+see mnis_all_reference." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -238,7 +249,7 @@ and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="-code-mnis-reference-code-functions"><a class="anchor" href="#-code-mnis-reference-code-functions"></a>&lt;code&gt;mnis_reference&lt;/code&gt; functions</h2>
+    <h2 class="hasAnchor" id="mnis-reference-functions"><a class="anchor" href="#mnis-reference-functions"></a><code>mnis_reference</code> functions</h2>
 
     
     <dl class='dl-horizontal'>
@@ -288,16 +299,20 @@ of the House of Lords</p></dd>
 posts and the government department they shadow</p></dd>
 <dt><code>ref_opposition_posts()</code></dt><dd><p>Opposition posts</p></dd>
 <dt><code>ref_opposition_ranks()</code></dt><dd><p>How opposition posts are ranked</p></dd>
-<dt><code>ref_other_parliaments()</code></dt><dd><p>Other parliaments that a member may have sat in</p></dd>
-<dt><code>ref_parliamentary_posts()</code></dt><dd><p>The different parliamentary posts available</p></dd>
-<dt><code>ref_parliamentary_ranks()</code></dt><dd><p>How those parliamentary posts are ranked</p></dd>
+<dt><code>ref_other_parliaments()</code></dt><dd><p>Other parliaments that a member
+may have sat in</p></dd>
+<dt><code>ref_parliamentary_posts()</code></dt><dd><p>The different parliamentary posts
+available</p></dd>
+<dt><code>ref_parliamentary_ranks()</code></dt><dd><p>How those parliamentary posts are
+ranked</p></dd>
 <dt><code>ref_parliament_types()</code></dt><dd><p>Types of parliaments that
 parliamentary data may link to</p></dd>
 <dt><code>ref_parties()</code></dt><dd><p>All parties that members can be affiliated with</p></dd>
 <dt><code>ref_party_sub_types()</code></dt><dd><p>Sub-types of parties</p></dd>
 <dt><code>ref_photo_outputs()</code></dt><dd><p>Outputs that a photo of a member
 may be linked to</p></dd>
-<dt><code>ref_statuses()</code></dt><dd><p>A member's possible current status in the House</p></dd>
+<dt><code>ref_statuses()</code></dt><dd><p>A member's possible current status in the
+House</p></dd>
 <dt><code>ref_titles()</code></dt><dd><p>Salutory titles</p></dd>
 </dl>
     
@@ -312,7 +327,7 @@ may be linked to</p></dd>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#-code-mnis-reference-code-functions">&lt;code&gt;mnis_reference&lt;/code&gt; functions</a></li>
+      <li><a href="#mnis-reference-functions"><code>mnis_reference</code> functions</a></li>
 
       <li><a href="#see-also">See also</a></li>
           </ul>
@@ -334,3 +349,4 @@ may be linked to</p></dd>
 
   </body>
 </html>
+

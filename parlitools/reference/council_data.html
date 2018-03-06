@@ -19,6 +19,8 @@ across the UK. — council_data • parlitools</title>
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -26,6 +28,15 @@ across the UK. — council_data • parlitools</title>
 <script src="../pkgdown.js"></script>
   
   
+<meta property="og:title" content="A tibble with details on the council make-up of local authorities 
+across the UK. — council_data" />
+
+<meta property="og:description" content="This data is taken from http://opencouncildata.co.uk/, run by 
+Jon Lawson. Variable names have been converted to snake_case and variables 
+have been converted to appropriate R classes. ONS local authority codes 
+have been taken from the local_hex_map data, and from the ONS's 
+Open Geography Portal. This data is accurate as of 2017-11-24." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -108,7 +119,7 @@ across the UK. — council_data • parlitools</title>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="http://docs.evanodell.com">Documentation</a>
+      <a href="http://docs.evanodell.com">Documentation Home</a>
     </li>
     <li class="divider"></li>
     <li>
@@ -119,6 +130,9 @@ across the UK. — council_data • parlitools</title>
     </li>
     <li>
       <a href="http://docs.evanodell.com/parlitools">parlitools</a>
+    </li>
+    <li>
+      <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
@@ -219,7 +233,7 @@ council (if known)</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
@@ -227,3 +241,4 @@ council (if known)</p></dd>
 
   </body>
 </html>
+

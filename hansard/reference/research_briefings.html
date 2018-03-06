@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,15 @@
 <script src="../pkgdown.js"></script>
   
   
+<meta property="og:title" content="Parliamentary Research Briefings — research_briefings" />
+
+<meta property="og:description" content="Imports data on  Parliamentary Research Briefings. To see a list of possible
+topics call research_topics_list or
+research_subtopics_list for both topics and subtopics. To
+see a list of briefing types, call research_types_list. This
+function can return results with newlines in the text of the abstract or
+description of the research briefing, represented as '\n'." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -143,11 +154,11 @@ description of the research briefing, represented as <code>'\n'</code>.</p>
 
     <pre class="usage"><span class='fu'>research_briefings</span>(<span class='kw'>topic</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>subtopic</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='fu'>hansard_research_briefings</span>(<span class='kw'>topic</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>subtopic</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>extra_args</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -188,7 +199,7 @@ and <code>'period.case'</code>. Defaults to <code>'snake_case'</code>.</p></td>
     <tr>
       <th>verbose</th>
       <td><p>If <code>TRUE</code>, returns data to console on the progress
-of the API request. Defaults to <code>FALSE</code>.</p></td>
+of the API request. Defaults to <code>TRUE</code>.</p></td>
     </tr>
     </table>
     
@@ -256,3 +267,4 @@ the given topic.</p>
 
   </body>
 </html>
+

@@ -29,11 +29,11 @@
   
 <meta property="og:title" content="Nomis dataset content types — nomis_content_type" />
 
-<meta property="og:description" content="Nomis content type metadata is included in annotation tags, in the form of 
-contenttype/&lt;contenttype&gt; in the annotationtitle column in 
-the annotations.annotation list-column returned from 
-nomis_data_info. For example, the content types returned from 
-dataset "NM_1658_1", using nomis_data_info("NM_1658_1"), are 
+<meta property="og:description" content="Nomis content type metadata is included in annotation tags, in the form of
+contenttype/&lt;contenttype&gt; in the annotationtitle column in
+the annotations.annotation list-column returned from
+nomis_data_info. For example, the content types returned from
+dataset "NM_1658_1", using nomis_data_info("NM_1658_1"), are
 "geoglevel", "2001census" and "sources"." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
@@ -144,11 +144,11 @@ dataset "NM_1658_1", using nomis_data_info("NM_1658_1"), are
     </div>
 
     
-    <p>Nomis content type metadata is included in annotation tags, in the form of 
-<code>contenttype/&lt;contenttype&gt;</code> in the <code>annotationtitle</code> column in 
-the <code>annotations.annotation</code> list-column returned from 
-<code><a href='nomis_data_info.html'>nomis_data_info</a></code>. For example, the content types returned from 
-dataset "NM_1658_1", using <code><a href='nomis_data_info.html'>nomis_data_info("NM_1658_1")</a></code>, are 
+    <p>Nomis content type metadata is included in annotation tags, in the form of
+<code>contenttype/&lt;contenttype&gt;</code> in the <code>annotationtitle</code> column in
+the <code>annotations.annotation</code> list-column returned from
+<code><a href='nomis_data_info.html'>nomis_data_info</a></code>. For example, the content types returned from
+dataset "NM_1658_1", using <code><a href='nomis_data_info.html'>nomis_data_info("NM_1658_1")</a></code>, are
 "geoglevel", "2001census" and "sources".</p>
     
 
@@ -181,7 +181,28 @@ dataset "NM_1658_1", using <code><a href='nomis_data_info.html'>nomis_data_info(
     <pre class="examples"><div class='input'>
 <span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_content_type</span>(<span class='st'>"sources"</span>)
 
-<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_content_type</span>(<span class='st'>"sources"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"census"</span>)</div></pre>
+<span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tibble/topics/glimpse'>glimpse</a></span>(<span class='no'>a</span>)</div><div class='output co'>#&gt; Observations: 16
+#&gt; Variables: 6
+#&gt; $ description &lt;chr&gt; "A count of home Civil Service employees. It excludes t...
+#&gt; $ id          &lt;chr&gt; "acses", "aps", "ashe", "bres", "census", "cc", "dwp", ...
+#&gt; $ name        &lt;chr&gt; "Annual Civil Service Employment Survey", "Annual Popul...
+#&gt; $ type        &lt;chr&gt; "DataSource", "DataSource", "DataSource", "DataSource",...
+#&gt; $ item        &lt;list&gt; [NULL, NULL, NULL, &lt;c("NA", "NA"), c("bres_curr", "bre...
+#&gt; $ status      &lt;chr&gt; NA, NA, NA, NA, NA, NA, "archived", "archived", NA, NA,...</div><div class='input'>
+<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_content_type</span>(<span class='st'>"sources"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"census"</span>)
+
+<span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tibble/topics/glimpse'>glimpse</a></span>(<span class='no'>b</span>)</div><div class='output co'>#&gt; Observations: 4
+#&gt; Variables: 9
+#&gt; $ description      &lt;fct&gt; Census data from the 1981, 1991, 2001 and 2011 Cen...
+#&gt; $ id               &lt;fct&gt; census, census, census, census
+#&gt; $ item.description &lt;chr&gt; "The 2011 Census was taken on 27th March 2011. The...
+#&gt; $ item.id          &lt;chr&gt; "census_2011", "census_2001", "census_1991", "cens...
+#&gt; $ item.item        &lt;list&gt; [&lt;c("The Key Statistics series provides summary f...
+#&gt; $ item.name        &lt;chr&gt; "2011 Census", "2001 Census", "1991 Census", "1981...
+#&gt; $ item.type        &lt;chr&gt; "DataSourceSubGroup", "DataSourceSubGroup", "DataS...
+#&gt; $ name             &lt;fct&gt; Census of Population, Census of Population, Census...
+#&gt; $ type             &lt;fct&gt; DataSource, DataSource, DataSource, DataSource</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -212,3 +233,4 @@ dataset "NM_1658_1", using <code><a href='nomis_data_info.html'>nomis_data_info(
 
   </body>
 </html>
+

@@ -104,8 +104,6 @@ leaflet(options=leafletOptions(
 
 `nomisr` is for accessing [Nomis](https://www.nomisweb.co.uk/) data -- UK labour market statistics, census data and other populatlion data -- with R.
 
-## Installation
-
 You can install nomisr from github with:
 
 ```{r, eval = FALSE}
