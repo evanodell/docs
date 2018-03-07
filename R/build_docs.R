@@ -212,16 +212,16 @@ build_docs <- function(){
   
   do.call(file.remove, nomisr_dupes)
 
-  pkgdown::build_site(path= "/", preview = FALSE)
-  
-  doc_files <- list.files("docs", all.files = TRUE, 
-                          full.names = TRUE, recursive = F, 
-                          ignore.case = TRUE, include.dirs = TRUE,
-                          no.. = TRUE)
-  
-  file.copy(doc_files, 
-            ".", 
-            recursive = TRUE)
+  # pkgdown::build_site(path= "/", preview = FALSE)
+  # 
+  # doc_files <- list.files("docs", all.files = TRUE, 
+  #                         full.names = TRUE, recursive = F, 
+  #                         ignore.case = TRUE, include.dirs = TRUE,
+  #                         no.. = TRUE)
+  # 
+  # file.copy("/Users/evanodell/Documents/GitHub/docs/docs", 
+  #           "/Users/evanodell/Documents/GitHub/docs", 
+  #           recursive = TRUE, overwrite = TRUE)
 
 }
 
