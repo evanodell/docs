@@ -79,7 +79,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/introduction.html">Introduction</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -210,10 +210,16 @@ to be selected too)</p></dd>
     <pre class="examples"><div class='input'>
 <span class='no'>q</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_overview</span>(<span class='st'>"NM_1650_1"</span>)
 
-<span class='no'>q</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; <span class='error'>Error in glimpse(.): could not find function "glimpse"</span></div><div class='input'>
+<span class='no'>q</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; Observations: 20
+#&gt; Variables: 2
+#&gt; $ value &lt;list&gt; [[&lt;c("1", "4", "5"), c("NM_1650_1", "NM_1650_4", "NM_1650_5"...
+#&gt; $ name  &lt;chr&gt; "analyses", "analysisname", "analysisnumber", "contact", "con...</div><div class='input'>
 <span class='no'>s</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_overview</span>(<span class='st'>"NM_1650_1"</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Units"</span>, <span class='st'>"Keywords"</span>))
 
-<span class='no'>s</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; <span class='error'>Error in glimpse(.): could not find function "glimpse"</span></div><div class='input'>
+<span class='no'>s</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; Observations: 3
+#&gt; Variables: 2
+#&gt; $ value &lt;list&gt; ["NM_1650_1", "Year last worked", [["Persons"]]]
+#&gt; $ name  &lt;chr&gt; "id", "keywords", "units"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
