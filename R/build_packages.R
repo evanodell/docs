@@ -7,7 +7,7 @@ build_nomisr <- function(){
   
   nomisr_doc_files <- list.files(
     "/Users/evanodell/Documents/GitHub/nomisr/docs",
-    all.files = TRUE, full.names = TRUE, recursive = TRUE, 
+    all.files = TRUE, full.names = TRUE, recursive = FALSE, 
     ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE)
   
   unlink("nomisr", recursive = TRUE)
@@ -35,7 +35,7 @@ build_hansard <- function(){
   hansard_doc_files <- list.files(
     "/Users/evanodell/Documents/GitHub/hansard/docs", 
     all.files = TRUE, full.names = TRUE, 
-    recursive = F, ignore.case = TRUE, 
+    recursive = FALSE, ignore.case = TRUE, 
     include.dirs = TRUE, no.. = TRUE)
   
   file.copy(hansard_doc_files, "hansard", recursive = TRUE)

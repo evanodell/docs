@@ -8,4 +8,5 @@ Maintainer: Evan Odell <evanodell91@gmail.com>
 License: MIT
 LazyData: TRUE
 Depends: R(>= 3.4.0)
+imports: clisymbols
 RoxygenNote: 6.0.1

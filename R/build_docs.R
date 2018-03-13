@@ -29,21 +29,14 @@ build_docs <- function(){
 ### Build `nomisr`  -----------------
   
   docs::build_nomisr()
-
-  # pkgdown::build_site(path= "/", preview = FALSE)
-  # 
-  # doc_files <- list.files("docs", all.files = TRUE, 
-  #                         full.names = TRUE, recursive = F, 
-  #                         ignore.case = TRUE, include.dirs = TRUE,
-  #                         no.. = TRUE)
-  # 
-  # file.copy("/Users/evanodell/Documents/GitHub/docs/docs", 
-  #           "/Users/evanodell/Documents/GitHub/docs", 
-  #           recursive = TRUE, overwrite = TRUE)
   
 ### Building homepage -----------
   
   docs::build_docs_home()
+  
+  message(paste(strrep(clisymbols::symbol$star, 5), 
+                "DOC BUILDING COMPLETE", 
+                strrep(clisymbols::symbol$star, 5)))
 
 }
 
