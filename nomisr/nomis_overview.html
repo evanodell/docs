@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nomis data structures — nomis_data_info • nomisr</title>
+<title>Nomis dataset overview — nomis_overview • nomisr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,10 +27,9 @@
 <script src="../pkgdown.js"></script>
   
   
-<meta property="og:title" content="Nomis data structures — nomis_data_info" />
+<meta property="og:title" content="Nomis dataset overview — nomis_overview" />
 
-<meta property="og:description" content="Retrieve metadata on the structure and available variables for all available
-data sets or the information available in a specific dataset based on its ID." />
+<meta property="og:description" content="Returns an overview of available metadata for a given dataset." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -136,75 +135,91 @@ data sets or the information available in a specific dataset based on its ID." /
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Nomis data structures</h1>
+    <h1>Nomis dataset overview</h1>
     </div>
 
     
-    <p>Retrieve metadata on the structure and available variables for all available
-data sets or the information available in a specific dataset based on its ID.</p>
+    <p>Returns an overview of available metadata for a given dataset.</p>
     
 
-    <pre class="usage"><span class='fu'>nomis_data_info</span>(<span class='no'>id</span>)</pre>
+    <pre class="usage"><span class='fu'>nomis_overview</span>(<span class='no'>id</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>id</th>
-      <td><p>Dataset ID. If empty, returns data on all available datasets.
-If the ID of a dataset, returns metadata for that particular dataset.</p></td>
+      <td><p>The ID of the particular dataset. Returns no data if not specified.</p></td>
+    </tr>
+    <tr>
+      <th>select</th>
+      <td><p>A string or character vector of one or more overview parts to
+select, excluding all others. <code>select</code> is not case sensitive. The
+options for <code>select</code> are described below, and are taken from the
+<a href='https://www.nomisweb.co.uk/api/v01/help'>Nomis API help page</a>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with all available datasets and their metadata.</p>
+    <p>A tibble with two columns, one a character vector with the name of
+the metadata category, and the other a list column of values for each
+category.</p>
+    
+    <h2 class="hasAnchor" id="overview-part-options"><a class="anchor" href="#overview-part-options"></a>Overview part options</h2>
+
+    
+    <dl class='dl-horizontal'>
+<dt>DatasetInfo</dt><dd><p>General dataset information such as name, description,
+sub-description, mnemonic, restricted access and status</p></dd>
+<dt>Coverage</dt><dd><p>Shows the geographic coverage of the main geography
+dimension in this dataset (e.g. United Kingdom, England and Wales etc.)</p></dd>
+<dt>Keywords</dt><dd><p>The keywords allocated to the dataset</p></dd>
+<dt>Units</dt><dd><p>The units of measure supported by the dataset</p></dd>
+<dt>ContentTypes</dt><dd><p>The classifications allocated to this dataset</p></dd>
+<dt>DateMetadata</dt><dd><p>Information about the first release, last update and
+next update</p></dd>
+<dt>Contact</dt><dd><p>Details for the point of contact for this dataset</p></dd>
+<dt>Analyses</dt><dd><p>Show the available analysis breakdowns of this dataset</p></dd>
+<dt>Dimensions</dt><dd><p>Individual dimension information (e.g. sex, geography,
+date, etc.)</p></dd>
+<dt>Dimension-concept</dt><dd><p>Allows a specific dimension to be selected (e.g.
+dimension-geography would allow information about geography dimension). This
+is not used if "Dimensions" is specified too.</p></dd>
+<dt>Codes</dt><dd><p>Full list of selectable codes, excluding Geography, which as a
+list of Types instead. (Requires "Dimensions" to be selected too)</p></dd>
+<dt>Codes-concept</dt><dd><p>Full list of selectable codes for a specific dimension,
+excluding Geography, which as a list of Types instead. This is not used if
+"Codes" is specified too (Requires "Dimensions" or equivalent to be
+selected too)</p></dd>
+<dt>DimensionMetadata</dt><dd><p>Any available metadata attached at the dimensional
+level (Requires "Dimensions" or equivalent to be selected too)</p></dd>
+<dt>Make</dt><dd><p>Information about whether user defined codes can be created with
+the MAKE parameter when querying data (Requires "Dimensions" or equivalent
+to be selected too)</p></dd>
+<dt>DatasetMetadata</dt><dd><p>Metadata attached at the dataset level</p></dd>
+</dl>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='nomis_get_data.html'>nomis_get_data</a></code>
-    <code><a href='nomis_get_metadata.html'>nomis_get_metadata</a></code>
-    <code><a href='nomis_overview.html'>nomis_overview</a></code></p>
+    <p><code><a href='nomis_data_info.html'>nomis_data_info</a></code>
+    <code><a href='nomis_get_metadata.html'>nomis_get_metadata</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># Get info on all datasets</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_data_info</span>()
+<span class='no'>q</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_overview</span>(<span class='st'>"NM_1650_1"</span>)
 
-<span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tibble/topics/glimpse'>glimpse</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; Observations: 1,230
-#&gt; Variables: 14
-#&gt; $ agencyid                             &lt;chr&gt; "NOMIS", "NOMIS", "NOMIS", "NO...
-#&gt; $ id                                   &lt;chr&gt; "NM_1_1", "NM_2_1", "NM_4_1", ...
-#&gt; $ uri                                  &lt;chr&gt; "Nm-1d1", "Nm-2d1", "Nm-4d1", ...
-#&gt; $ version                              &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
-#&gt; $ annotations.annotation               &lt;list&gt; [&lt;c("Current (being actively ...
-#&gt; $ components.attribute                 &lt;list&gt; [&lt;c("Mandatory", "Conditional...
-#&gt; $ components.dimension                 &lt;list&gt; [&lt;c("CL_1_1_GEOGRAPHY", "CL_1...
-#&gt; $ components.primarymeasure.conceptref &lt;chr&gt; "OBS_VALUE", "OBS_VALUE", "OBS...
-#&gt; $ components.timedimension.codelist    &lt;chr&gt; "CL_1_1_TIME", "CL_2_1_TIME", ...
-#&gt; $ components.timedimension.conceptref  &lt;chr&gt; "TIME", "TIME", "TIME", "TIME"...
-#&gt; $ description.value                    &lt;chr&gt; "Records the number of people ...
-#&gt; $ description.lang                     &lt;chr&gt; "en", "en", "en", "en", "en", ...
-#&gt; $ name.value                           &lt;chr&gt; "Jobseeker's Allowance with ra...
-#&gt; $ name.lang                            &lt;chr&gt; "en", "en", "en", "en", "en", ...</div><div class='input'>
-<span class='co'># Get info on a particular dataset</span>
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_data_info</span>(<span class='st'>'NM_1658_1'</span>)
+<span class='no'>q</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; Observations: 20
+#&gt; Variables: 2
+#&gt; $ value &lt;list&gt; [[&lt;c("1", "4", "5"), c("NM_1650_1", "NM_1650_4", "NM_1650_5"...
+#&gt; $ name  &lt;chr&gt; "analyses", "analysisname", "analysisnumber", "contact", "con...</div><div class='input'>
+<span class='no'>s</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_overview</span>(<span class='st'>"NM_1650_1"</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Units"</span>, <span class='st'>"Keywords"</span>))
 
-<span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tibble/topics/glimpse'>glimpse</a></span>(<span class='no'>y</span>)</div><div class='output co'>#&gt; Observations: 1
-#&gt; Variables: 12
-#&gt; $ agencyid                             &lt;chr&gt; "NOMIS"
-#&gt; $ id                                   &lt;chr&gt; "NM_1658_1"
-#&gt; $ uri                                  &lt;chr&gt; "Nm-1658d1"
-#&gt; $ version                              &lt;dbl&gt; 1
-#&gt; $ annotations.annotation               &lt;list&gt; [&lt;c("Historical (not actively...
-#&gt; $ components.attribute                 &lt;list&gt; [&lt;c("Mandatory", "Conditional...
-#&gt; $ components.dimension                 &lt;list&gt; [&lt;c("CL_1658_1_GEOGRAPHY", "C...
-#&gt; $ components.primarymeasure.conceptref &lt;chr&gt; "OBS_VALUE"
-#&gt; $ components.timedimension.codelist    &lt;chr&gt; "CL_1658_1_TIME"
-#&gt; $ components.timedimension.conceptref  &lt;chr&gt; "TIME"
-#&gt; $ name.value                           &lt;chr&gt; "UV035 - Distance travelled to...
-#&gt; $ name.lang                            &lt;chr&gt; "en"</div><div class='input'>
+<span class='no'>s</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; Observations: 3
+#&gt; Variables: 2
+#&gt; $ value &lt;list&gt; ["NM_1650_1", "Year last worked", [["Persons"]]]
+#&gt; $ name  &lt;chr&gt; "id", "keywords", "units"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -213,6 +228,8 @@ If the ID of a dataset, returns metadata for that particular dataset.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#overview-part-options">Overview part options</a></li>
 
       <li><a href="#see-also">See also</a></li>
       
