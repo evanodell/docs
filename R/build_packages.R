@@ -25,7 +25,6 @@ build_hansard <- function(){
   message("Building `hansard`")
   
   pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard", 
-                      path = "/Users/evanodell/Documents/GitHub/docs/hansard",
                       preview = FALSE)
   
   unlink("hansard", recursive = TRUE)
@@ -83,7 +82,6 @@ build_hansard_opengov <- function(){
   
   
   pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-                      path = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov/docs", 
                       preview = FALSE)
   
 }
@@ -120,7 +118,6 @@ build_emisc <- function(){
   message("Building `emisc`")
   
   pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/emisc", 
-                      path = "/Users/evanodell/Documents/GitHub/docs/emisc", 
                       preview = FALSE)
   
   emisc_doc_files <- list.files(
