@@ -25,14 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="A generic function for the MNIS API — mnis_base" />
 
 <meta property="og:description" content="The function requests data in JSON format, but the type of object,
 and all URLs, paths and parameters are user-defined. mnis_base
 does not include the option to tidy variable names and data types." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -67,8 +67,12 @@ does not include the option to tidy variable names and data types." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">mnis</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">mnis</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -138,6 +142,7 @@ does not include the option to tidy variable names and data types." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>A generic function for the MNIS API</h1>
+    
     </div>
 
     
@@ -148,7 +153,7 @@ does not include the option to tidy variable names and data types.</p>
 
     <pre class="usage"><span class='fu'>mnis_base</span>(<span class='no'>request</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -159,9 +164,9 @@ does not include the option to tidy variable names and data types.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>See the
-<a href='http://data.parliament.uk/membersdataplatform/
-memberquery.aspx'>API documentation</a> for details and limits on requests made to MNIS.</p>
+    <p>See the API documentation at
+<a href='http://data.parliament.uk/membersdataplatform/memberquery.aspx'>http://data.parliament.uk/membersdataplatform/memberquery.aspx</a> for
+details and limits on requests made to MNIS.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

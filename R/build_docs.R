@@ -19,7 +19,6 @@ build_docs <- function(){
   
 ### Build `parlitools` -----------------  
   
-  
   docs::build_parlitools()
   
 ### Build `emisc`  -----------------

@@ -25,13 +25,13 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Constituency election results — mnis_constituency_results" />
 
 <meta property="og:description" content="Returns a list with details of the constituency and a tibble
  with election results." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -66,8 +66,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">mnis</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">mnis</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -137,6 +141,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Constituency election results</h1>
+    
     </div>
 
     
@@ -147,7 +152,7 @@
     <pre class="usage"><span class='fu'>mnis_constituency_results</span>(<span class='kw'>constituency_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>election_id</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>

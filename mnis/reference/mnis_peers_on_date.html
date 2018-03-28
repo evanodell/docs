@@ -25,8 +25,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="All peers between two dates — mnis_peers_on_date" />
 
 <meta property="og:description" content="Requests data on all peers who were members of the House of Lords on the
@@ -35,6 +33,8 @@ or between the two dates if both date1 and date2 are
 specified. Either date1 or date2 can be the latter of the
 two dates." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -69,8 +69,12 @@ two dates." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">mnis</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">mnis</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -140,6 +144,7 @@ two dates." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>All peers between two dates</h1>
+    
     </div>
 
     
@@ -153,7 +158,7 @@ two dates.</p>
     <pre class="usage"><span class='fu'>mnis_peers_on_date</span>(<span class='kw'>date1</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>date2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -195,8 +200,8 @@ and <code>date2</code> are specified.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='mnis_party_state.html'>mnis_party_state</a></code>
-    <code>mnis_peers_on_date</code></p>
+    <p><code><a href='mnis_party_state.html'>mnis_party_state</a></code></p>
+<p><code>mnis_peers_on_date</code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
