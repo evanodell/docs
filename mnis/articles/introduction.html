@@ -27,7 +27,7 @@
 </script>
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -80,6 +80,9 @@
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -108,12 +111,12 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Introduction to mnis</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2018-03-28</h4>
+            <h4 class="date">2018-04-03</h4>
       
       
 
@@ -121,7 +124,6 @@
 
     
     
-<div class="contents">
 <p><code>mnis</code> is an R package to pull data from the UK parliament through the Members’ Name Information Service API, with the ability to tidy that data into object classes that are easy to work with in R. It emphasises simplicity and ease of use, so that users unfamiliar with APIs can easily retrieve large volumes of high quality data. The Members’ Name Information Service API does not require registration or a token, and is very generous with the number of requests allowed (it is unclear what limits are applied to the API, but I have yet to hit the limit, aside from custom requests using <code><a href="../reference/mnis_base.html">mnis_base()</a></code>.)</p>
 <p><code>mnis</code> is for researchers, journalists and developers who follow the UK parliament for work, pleasure or some combination thereof. It has a sister package called <a href="https://cran.r-project.org/package=hansard"><code>hansard</code></a> that retrieves data from a different API, and while there is some overlap in function between the two packages, <code>mnis</code> is focused on retrieving data on individual MPs and Peers, government departments, cabinet and shadow cabinet positions, other parliamentary and political roles, and parliamentary reference data.</p>
 <p>All functions requests data in JSON format and parse it to a tibble, except for <code><a href="../reference/mnis_constituency_results.html">mnis_constituency_results()</a></code> which returns a list (with constituency details) and a tibble (with constituency election results).</p>
@@ -362,9 +364,9 @@ devtools::install_github("EvanOdell/mnis")</a></code></pre>
 <pre><code>## # A tibble: 15 x 5
 ##    id    name                        male_count female_count total_count
 ##  * &lt;chr&gt; &lt;chr&gt;                       &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;      
-##  1 4     Conservative                186        60           246        
-##  2 15    Labour                      131        61           192        
-##  3 6     Crossbench                  141        41           182        
+##  1 4     Conservative                185        60           245        
+##  2 15    Labour                      131        60           191        
+##  3 6     Crossbench                  140        41           181        
 ##  4 17    Liberal Democrat            64         34           98         
 ##  5 49    Non-affiliated              24         5            29         
 ##  6 3     Bishops                     23         2            25         
@@ -401,7 +403,6 @@ devtools::install_github("EvanOdell/mnis")</a></code></pre>
 </div>
 </div>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -428,6 +429,8 @@ devtools::install_github("EvanOdell/mnis")</a></code></pre>
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

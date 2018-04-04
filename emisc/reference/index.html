@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Function reference" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -49,6 +49,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -62,8 +64,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">emisc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">emisc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.7</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -102,6 +108,9 @@
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -122,6 +131,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -129,83 +139,78 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9">
+<div class="row">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.0.7</small>
-      </h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <colgroup>
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="case_styles.html">snake_case</a></code> <code><a href="case_styles.html">period.case</a></code> <code><a href="case_styles.html">camelCase</a></code> </p>
-          </td>
-          <td><p>Convert variable names into one of three styles.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="change_case.html">change_case</a></code> </p>
-          </td>
-          <td><p>Changing variable cases.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dateable.html">dateable</a></code> </p>
-          </td>
-          <td><p>A function that locates all variables with "date" in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="emisc.html">emisc</a></code> </p>
-          </td>
-          <td><p>emisc: Evan Odell's various functions</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="latex_markup.html">latex_markup</a></code> </p>
-          </td>
-          <td><p>Add LaTeX markup to R data.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="strip_bom.html">strip_bom</a></code> </p>
-          </td>
-          <td><p>A function to strip Byte Order Marks (BOM) out of JSON data that is 
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="case_styles.html">snake_case()</a></code> <code><a href="case_styles.html">period.case()</a></code> <code><a href="case_styles.html">camelCase()</a></code> </p>
+        </td>
+        <td><p>Convert variable names into one of three styles.</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="change_case.html">change_case()</a></code> </p>
+        </td>
+        <td><p>Changing variable cases.</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dateable.html">dateable()</a></code> </p>
+        </td>
+        <td><p>A function that locates all variables with "date" in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="emisc.html">emisc</a></code> </p>
+        </td>
+        <td><p>emisc: Evan Odell's various functions</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="latex_markup.html">latex_markup()</a></code> </p>
+        </td>
+        <td><p>Add LaTeX markup to R data.</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="strip_bom.html">strip_bom()</a></code> </p>
+        </td>
+        <td><p>A function to strip Byte Order Marks (BOM) out of JSON data that is 
 returned from some online API calls.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="strip_non_alpha.html">strip_non_alpha</a></code> </p>
-          </td>
-          <td><p>strip_non_alpha</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="write_latex.html">write_latex</a></code> <code><a href="write_latex.html">write_latex_lines</a></code> </p>
-          </td>
-          <td><p>Write R data to a LaTeX file</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="strip_non_alpha.html">strip_non_alpha()</a></code> </p>
+        </td>
+        <td><p>strip_non_alpha</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="write_latex.html">write_latex()</a></code> <code><a href="write_latex.html">write_latex_lines()</a></code> </p>
+        </td>
+        <td><p>Write R data to a LaTeX file</p></td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -227,6 +232,8 @@ returned from some online API calls.</p></td>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

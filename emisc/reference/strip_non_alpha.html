@@ -25,14 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="strip_non_alpha — strip_non_alpha" />
 
 <meta property="og:description" content="Strip out most non-alphanumeric characters from variables. Removes all 
 alphanumeric characters except for periods and underscores ('.' and '_'), 
 as these are often used in variable names." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -54,6 +54,8 @@ as these are often used in variable names." />
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -67,8 +69,12 @@ as these are often used in variable names." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">emisc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">emisc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.7</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -107,6 +113,9 @@ as these are often used in variable names." />
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -127,6 +136,7 @@ as these are often used in variable names." />
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -134,10 +144,11 @@ as these are often used in variable names." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>strip_non_alpha</h1>
+    <small>Source: <a href='https://github.com/EvanOdell/emisc/ https://docs.evanodell.com/emisc/blob/master/R/strip_non_alpha.R'><code>R/strip_non_alpha.R</code></a></small>
     </div>
 
     
@@ -148,7 +159,7 @@ as these are often used in variable names.</p>
 
     <pre class="usage"><span class='fu'>strip_non_alpha</span>(<span class='no'>df</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -201,6 +212,8 @@ variable names.</p>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

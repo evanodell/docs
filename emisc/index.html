@@ -31,7 +31,7 @@
 </script>
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -40,8 +40,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">emisc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="index.html">emisc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.7</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -81,6 +85,9 @@
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -109,12 +116,11 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     
 
     
     
-<div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="emisc" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
@@ -130,13 +136,13 @@
 <h2 class="hasAnchor">
 <a href="#functions" class="anchor"></a>Functions</h2>
 <p><a href="https://docs.evanodell.com/emisc/reference/case_styles.html"><code>case_styles()</code></a> - Convert variable names into one of three styles.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/change_case.html"><code><a href="reference/change_case.html">change_case()</a></code></a> - Changing variable cases.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/dateable.html"><code><a href="reference/dateable.html">dateable()</a></code></a> - A function that locates all variables with “date” in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/latex_markup.html"><code><a href="reference/latex_markup.html">latex_markup()</a></code></a> - Add LaTeX markup to variables.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/strip_bom.html"><code><a href="reference/strip_bom.html">strip_bom()</a></code></a> - A function to strip Byte Order Marks (BOM) out of JSON data that is returned from some online API calls.</p>
+<p><a href="https://docs.evanodell.com/emisc/reference/change_case.html"><code>change_case()</code></a> - Changing variable cases.</p>
+<p><a href="https://docs.evanodell.com/emisc/reference/dateable.html"><code>dateable()</code></a> - A function that locates all variables with “date” in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</p>
+<p><a href="https://docs.evanodell.com/emisc/reference/latex_markup.html"><code>latex_markup()</code></a> - Add LaTeX markup to variables.</p>
+<p><a href="https://docs.evanodell.com/emisc/reference/strip_bom.html"><code>strip_bom()</code></a> - A function to strip Byte Order Marks (BOM) out of JSON data that is returned from some online API calls.</p>
 <p><a href="https://docs.evanodell.com/emisc/reference/tidy_bom.html"><code>tidy_bom()</code></a> - Internal Byte Order Mark stripper for <code>strip_bom</code></p>
 <p><a href="https://docs.evanodell.com/emisc/reference/tidy_variables.html"><code>tidy_variables()</code></a> - Strip out most non-alphanumeric characters from variables</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/write_latex.html"><code><a href="reference/write_latex.html">write_latex()</a></code></a> - Write variables to a LaTeX file in rows.</p>
+<p><a href="https://docs.evanodell.com/emisc/reference/write_latex.html"><code>write_latex()</code></a> - Write variables to a LaTeX file in rows.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -146,29 +152,41 @@
 <a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"evanodell/emisc"</span>)</a></code></pre></div>
 </div>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2 class="hasAnchor">
-<a href="#sidebar" class="anchor"></a>Links</h2>
+    <div class="links">
+<h2>Links</h2>
 <ul class="list-unstyled">
 <li>Browse source code at <br><a href="https://github.com/EvanOdell/emisc/%20https://docs.evanodell.com/emisc">https://​github.com/​EvanOdell/​emisc/​ https://​docs.evanodell.com/​emisc</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/EvanOdell/emisc/issues">https://​github.com/​EvanOdell/​emisc/​issues</a>
 </li>
 </ul>
+</div>
+<div class="license">
 <h2>License</h2>
-<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE.html">LICENSE</a></p>
+<ul class="list-unstyled">
+<li>
+<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+</li>
+</ul>
+</div>
+<div class="citation">
 <h2>Citation</h2>
 <ul class="list-unstyled">
 <li><a href="authors.html">Citing emisc</a></li>
 </ul>
+</div>
+<div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://evanodell.com">Evan Odell</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid"></a> </li>
+<a href="https://evanodell.com">Evan Odell</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" height="16"></a> </li>
 </ul>
+</div>
+
+      <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
@@ -180,6 +198,7 @@
 <li><a href="https://codecov.io/github/evanodell/emisc?branch=master"><img src="https://img.shields.io/codecov/c/github/evanodell/emisc/master.svg" alt="Coverage Status"></a></li>
 <li><a href="https://zenodo.org/badge/latestdoi/96876145"><img src="https://zenodo.org/badge/96876145.svg" alt="DOI"></a></li>
 </ul>
+</div>
 </div>
 
 </div>
@@ -195,6 +214,8 @@
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

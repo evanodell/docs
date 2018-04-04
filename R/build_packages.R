@@ -155,3 +155,26 @@ build_mnis <- function(){
             recursive = TRUE)
   
 }
+
+
+#' @export
+build_fixerapi <- function(){
+  
+  message("Building `fixerapi`")
+  
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/fixerapi", 
+                      preview = FALSE)
+  
+  fixerapi_doc_files <- list.files("/Users/evanodell/Documents/GitHub/fixerapi/docs", 
+                                   all.files = TRUE, full.names = TRUE, 
+                                   recursive = FALSE, ignore.case = TRUE, 
+                                   include.dirs = TRUE, no.. = TRUE)
+  
+  unlink("fixerapi", recursive = TRUE)
+  dir.create("fixerapi")
+  
+  file.copy(fixerapi_doc_files, 
+            "/Users/evanodell/Documents/GitHub/docs/fixerapi", 
+            recursive = TRUE)
+  
+}

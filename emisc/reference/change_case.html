@@ -25,13 +25,13 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Changing variable cases. — change_case" />
 
 <meta property="og:description" content="A wrapper for the snake_case(), camelCase(), and
 period.case() functions." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -53,6 +53,8 @@ period.case() functions." />
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -66,8 +68,12 @@ period.case() functions." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">emisc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">emisc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.7</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -106,6 +112,9 @@ period.case() functions." />
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -126,6 +135,7 @@ period.case() functions." />
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -133,20 +143,21 @@ period.case() functions." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Changing variable cases.</h1>
+    <small>Source: <a href='https://github.com/EvanOdell/emisc/ https://docs.evanodell.com/emisc/blob/master/R/case.R'><code>R/case.R</code></a></small>
     </div>
 
     
-    <p>A wrapper for the <code><a href='case_styles.html'>snake_case()</a></code>, <code><a href='case_styles.html'>camelCase()</a></code>, and
-<code><a href='case_styles.html'>period.case()</a></code> functions.</p>
+    <p>A wrapper for the <code>snake_case()</code>, <code>camelCase()</code>, and
+<code>period.case()</code> functions.</p>
     
 
     <pre class="usage"><span class='fu'>change_case</span>(<span class='no'>df</span>, <span class='kw'>case_style</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"snake_case"</span>, <span class='st'>"camelCase"</span>, <span class='st'>"period.case"</span>))</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -198,6 +209,8 @@ for variable names.</p>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

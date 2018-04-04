@@ -31,7 +31,7 @@
 </script>
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -58,7 +58,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="articles/introduction.html">Introduction</a>
+  <a href="articles/index.html">Articles</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -113,19 +113,18 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     
 
     
     
-<div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="nomisr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#nomisr" class="anchor"></a>nomisr</h1></div>
 
-<p><code>nomisr</code> is for accessing Access UK official statistics from the <a href="https://www.nomisweb.co.uk/">Nomis</a> database through R. Nomis contains data from the Census, the Labour Force Survey, DWP benefit statistics and other economic and demographic data, and is maintained on behalf of the Office for National Statistics by the University of Durham.</p>
-<p>The <code>nomisr</code> package provides functions to find what data is available, the variables and query options for different datasets and a function for downloading data. <code>nomisr</code> returns data in <a href="https://cran.r-project.org/package=tibble"><code>tibble</code></a> format. Most of the data available through <code>nomisr</code> is based around statistical geographies, with a handful of exceptions.</p>
+<p><code>nomisr</code> is for accessing <a href="https://www.nomisweb.co.uk/">Nomis</a> data with R. Nomis contains data from the Census, the Labour Force Survey, DWP benefit statistics and other economic and demographic data, and is maintained on behalf of the Office for National Statistics by the University of Durham.</p>
+<p>The <code>nomisr</code> package provides functions to find what data is available, the variables and query options for different datasets and a function for downloading data. <code>nomisr</code> returns data in <a href="https://cran.r-project.org/package=tibble">tibble</a> format. Most of the data available through <code>nomisr</code> is based around statistical geographies, with a handful of exceptions.</p>
 <p>The package is for demographers, economists, geographers, public health researchers and any other researchers who are interested in geographic factors. The package aims to aid reproducibility, reduce the need to manually download area profiles, and allow easy linking of different datasets covering the same geographic area.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -138,7 +137,7 @@
 <h2 class="hasAnchor">
 <a href="#using-nomisr" class="anchor"></a>Using <code>nomisr</code>
 </h2>
-<p><code>nomisr</code> contains functions to search for datasets, identify the query options for different datasets and retrieve data from queries, all done with <a href="http://tibble.tidyverse.org/"><code>tibbles</code></a>, to take advantage of how <code>tibble</code> manages list-columns. The use of metadata queries, rather than simply downloading all available data, is useful to avoid overwhelming the rate limits of the API. For full details on all available functions and demonstrations of their use, please see the package <a href="https://docs.evanodell.com/nomisr/articles/introduction.html">vignette</a>.</p>
+<p><code>nomisr</code> contains functions to search for datasets, identify the query options for different datasets and retrieve data from queries, all done with <code>[tibbles](http://tibble.tidyverse.org/)</code>, to take advantage of how <code>tibble</code> manages list-columns. The use of metadata queries, rather than simply downloading all available data, is useful to avoid overwhelming the rate limits of the API. For full details on all available functions and demonstrations of their use, please see the package <a href="https://docs.evanodell.com/nomisr/articles/introduction.html">vignette</a>.</p>
 <p>The example below gets the latest data on Jobseeker’s Allowance with rates and proportions, on a national level, with all male claimants and workforce.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"> <span class="kw">library</span>(nomisr)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"> jobseekers_search &lt;-<span class="st"> </span><span class="kw"><a href="reference/nomis_search.html">nomis_search</a></span>(<span class="dt">name =</span> <span class="st">"*Jobseeker*"</span>)</a>
@@ -235,11 +234,10 @@
 <div id="meta" class="section level2">
 <h2 class="hasAnchor">
 <a href="#meta" class="anchor"></a>Meta</h2>
-<p>Bug reports, suggestions, and code contributions are all welcome. Please see <a href="%5BCONTRIBUTING.md%5D">CONTRIBUTING.md</a> for details.</p>
 <p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 <p>Please note that this project is not affiliated with the Office for National Statistics or the University of Durham.</p>
 <p>Get citation information for <code>nomisr</code> in R with <code>citation(package = 'nomisr')</code></p>
-<p>Odell E (2018). <em>nomisr: Access Nomis UK labour market data on with R</em>. doi: 10.5281/zenodo.1157908, R package version 0.0.2.9000, &lt;URL: <a href="https://docs.evanodell.com/nomisr" class="uri">https://docs.evanodell.com/nomisr</a>&gt;.</p>
+<p>Odell E (2018). <em>nomisr: Access Nomis UK labour market data on with R</em>. doi: 10.5281/zenodo.1157908 (URL: <a href="http://doi.org/10.5281/zenodo.1157908" class="uri">http://doi.org/10.5281/zenodo.1157908</a>), R package version 0.0.2.9000, &lt;URL: <a href="https://docs.evanodell.com/nomisr" class="uri">https://docs.evanodell.com/nomisr</a>&gt;.</p>
 <p>A BibTeX entry for LaTeX users is</p>
 <pre><code>  @Manual{,
     title = {{nomisr}: Access Nomis UK labour market data on with R},
@@ -249,8 +247,7 @@
     doi = {10.5281/zenodo.1157908},
     url = {https://docs.evanodell.com/nomisr},
   }</code></pre>
-<p>License: <a href="LICENSE.html">MIT</a></p>
-</div>
+<p>License: MIT</p>
 </div>
 </div>
   </div>
@@ -314,6 +311,8 @@
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

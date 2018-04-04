@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>All news • emisc</title>
+<title>Changelog • emisc</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
-<meta property="og:title" content="All news" />
+<meta property="og:title" content="Changelog" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -49,6 +49,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -62,8 +64,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">emisc</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">emisc</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.7</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -102,6 +108,9 @@
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -122,6 +131,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -129,76 +139,86 @@
       
       </header>
 
-      <div class="row">
-
-  <div class="col-md-9">
+<div class="row">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Change log <small>All releases</small></h1>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/EvanOdell/emisc/ https://docs.evanodell.com/emisc/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="contents">
-    <div class="section level1">
-<h1>emisc 0.0.7</h1>
+    <div id="emisc-0-0-7" class="section level1">
+<h1 class="page-header">
+<a href="#emisc-0-0-7" class="anchor"></a>emisc 0.0.7</h1>
 <p>Dropping <code>vector_stri_replace_all_fixed()</code> because it doesn’t add anything (turns out stringi already does what this function was meant to do)</p>
 <p>Fixed a bug with some functions still calling the deprecated <code>tidy_variables()</code></p>
 </div>
-    <div class="section level1">
-<h1>emisc 0.0.6</h1>
-<div class="section level2">
-<h2>New function</h2>
+    <div id="emisc-0-0-6" class="section level1">
+<h1 class="page-header">
+<a href="#emisc-0-0-6" class="anchor"></a>emisc 0.0.6</h1>
+<div id="new-function" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-function" class="anchor"></a>New function</h2>
 <p>Introducing <code>vector_stri_replace_all_fixed()</code>, a wrapper for <code>stri_replace_all_fixed</code> in the <code>stringi</code> package.</p>
 </div>
 </div>
-    <div class="section level1">
-<h1>emisc 0.0.5</h1>
-<div class="section level2">
-<h2>Function changes</h2>
-<p><code>tidy_variables()</code> is deprecated in favour of <code><a href="../reference/strip_non_alpha.html">strip_non_alpha()</a></code>. <code><a href="../reference/strip_non_alpha.html">strip_non_alpha()</a></code> uses <code>stringi</code> for its internals, which is faster than the base R functions used in <code>tidy_variables()</code>.</p>
-<p>Added option to append data to <code><a href="../reference/write_latex.html">write_latex()</a></code>, rather than only being able to overwrite existing files.</p>
+    <div id="emisc-0-0-5" class="section level1">
+<h1 class="page-header">
+<a href="#emisc-0-0-5" class="anchor"></a>emisc 0.0.5</h1>
+<div id="function-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#function-changes" class="anchor"></a>Function changes</h2>
+<p><code>tidy_variables()</code> is deprecated in favour of <code>strip_non_alpha()</code>. <code>strip_non_alpha()</code> uses <code>stringi</code> for its internals, which is faster than the base R functions used in <code>tidy_variables()</code>.</p>
+<p>Added option to append data to <code>write_latex()</code>, rather than only being able to overwrite existing files.</p>
 </div>
 </div>
-    <div class="section level1">
-<h1>emisc 0.0.4</h1>
-<div class="section level2">
-<h2>Function Wrapper</h2>
-<p><code><a href="../reference/write_latex.html">write_latex()</a></code> now has a <code><a href="../reference/write_latex.html">write_latex_lines()</a></code> wrapper to make it more clear what the function does.</p>
-<p>Rearranged the order of parameters in <code><a href="../reference/write_latex.html">write_latex()</a></code> from <code>(df, ..., file_name)</code> to <code>(df, file_name, ...)</code></p>
+    <div id="emisc-0-0-4" class="section level1">
+<h1 class="page-header">
+<a href="#emisc-0-0-4" class="anchor"></a>emisc 0.0.4</h1>
+<div id="function-wrapper" class="section level2">
+<h2 class="hasAnchor">
+<a href="#function-wrapper" class="anchor"></a>Function Wrapper</h2>
+<p><code>write_latex()</code> now has a <code>write_latex_lines()</code> wrapper to make it more clear what the function does.</p>
+<p>Rearranged the order of parameters in <code>write_latex()</code> from <code>(df, ..., file_name)</code> to <code>(df, file_name, ...)</code></p>
 </div>
 </div>
-    <div class="section level1">
-<h1>emisc 0.0.3</h1>
-<div class="section level2">
-<h2>New Functions</h2>
-<p>Added the <code><a href="../reference/write_latex.html">write_latex()</a></code> and <code><a href="../reference/latex_markup.html">latex_markup()</a></code> functions.</p>
-<p><code><a href="../reference/write_latex.html">write_latex()</a></code> saves all or selected dataframe columns to a LaTeX file in rows, rather than as a table.</p>
-<p><code><a href="../reference/latex_markup.html">latex_markup()</a></code> adds LaTeX markup (e.g. section tags) to selected columns to assist with printing.</p>
+    <div id="emisc-0-0-3" class="section level1">
+<h1 class="page-header">
+<a href="#emisc-0-0-3" class="anchor"></a>emisc 0.0.3</h1>
+<div id="new-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-functions" class="anchor"></a>New Functions</h2>
+<p>Added the <code>write_latex()</code> and <code>latex_markup()</code> functions.</p>
+<p><code>write_latex()</code> saves all or selected dataframe columns to a LaTeX file in rows, rather than as a table.</p>
+<p><code>latex_markup()</code> adds LaTeX markup (e.g. section tags) to selected columns to assist with printing.</p>
 </div>
 </div>
-    <div class="section level1">
-<h1>emisc 0.0.2</h1>
-<div class="section level2">
-<h2>Bug Fixes</h2>
+    <div id="emisc-0-0-2" class="section level1">
+<h1 class="page-header">
+<a href="#emisc-0-0-2" class="anchor"></a>emisc 0.0.2</h1>
+<div id="bug-fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bug-fixes" class="anchor"></a>Bug Fixes</h2>
 <p>Fixed compilation errors on macos.</p>
 </div>
 </div>
-    <div class="section level1">
-<h1>emisc 0.0.1</h1>
+    <div id="emisc-0-0-1" class="section level1">
+<h1 class="page-header">
+<a href="#emisc-0-0-1" class="anchor"></a>emisc 0.0.1</h1>
 <p>Announcing the creation of the <code>emisc</code> package.</p>
 </div>
-    </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#NA">0.0.7</a></li>
-        <li><a href="#NA">0.0.6</a></li>
-        <li><a href="#NA">0.0.5</a></li>
-        <li><a href="#NA">0.0.4</a></li>
-        <li><a href="#NA">0.0.3</a></li>
-        <li><a href="#NA">0.0.2</a></li>
-        <li><a href="#NA">0.0.1</a></li>
+        <li><a href="#emisc-0-0-7">0.0.7</a></li>
+        <li><a href="#emisc-0-0-6">0.0.6</a></li>
+        <li><a href="#emisc-0-0-5">0.0.5</a></li>
+        <li><a href="#emisc-0-0-4">0.0.4</a></li>
+        <li><a href="#emisc-0-0-3">0.0.3</a></li>
+        <li><a href="#emisc-0-0-2">0.0.2</a></li>
+        <li><a href="#emisc-0-0-1">0.0.1</a></li>
       </ul>
     </div>
   </div>
@@ -216,6 +236,8 @@
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

@@ -29,6 +29,11 @@ build_docs <- function(){
   
   docs::build_nomisr()
   
+
+  ### Build `fixerapi`  -----------------
+  
+  docs::build_fixerapi()
+  
 ### Building homepage -----------
   
   docs::build_docs_home()

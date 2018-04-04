@@ -27,7 +27,7 @@
 </script>
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -80,6 +80,9 @@
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -108,12 +111,12 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Introduction to hansard</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2018-03-28</h4>
+            <h4 class="date">2018-04-03</h4>
       
       
 
@@ -121,7 +124,6 @@
 
     
     
-<div class="contents">
 <p><code>hansard</code> is an R package to pull data from the UK parliament through the <a href="http://www.data.parliament.uk/" class="uri">http://www.data.parliament.uk/</a> API. It emphasises simplicity and ease of use, so that users unfamiliar with APIs can easily retrieve large volumes of high quality data. Each function accepts a single argument at a time, and functions that require additional information to retrieve the data you requested will ask for it after you execute the function. Functions retrieve data in json format and convert it to a tibble. The <code>hansard_generic</code> function supports the building of API requests for XML, csv or HTML formats if required. Note that the API is rate limited to returning 5500 rows per request in some circumstances.</p>
 <div id="installing-hansard" class="section level2">
 <h2 class="hasAnchor">
@@ -351,12 +353,12 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <pre><code>## Connecting to API</code></pre>
 <pre><code>## Retrieving page 1 of 1</code></pre>
 <pre><code>##    user  system elapsed 
-##   0.462   0.138   6.299</code></pre>
+##   0.431   0.132   7.995</code></pre>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">system.time</span>(with_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]], <span class="dt">subtopic=</span>research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</a></code></pre></div>
 <pre><code>## Connecting to API
 ## Retrieving page 1 of 1</code></pre>
 <pre><code>##    user  system elapsed 
-##   0.026   0.003   0.154</code></pre>
+##   0.026   0.004   0.160</code></pre>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">identical</span>(with_topic, without_topic)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>If a specified subtopic is not a subtopic of the specified topic, the function will not return any data.</p>
@@ -419,7 +421,6 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 <p>The search function is not case sensitive, and searchs in the names and constituencies of all MPs and Lords. So even though we spelled her surname incorrectly, we can still find her. This API provides limited biographical details, to retrieve more detailed biographical information, use the <a href="https://cran.r-project.org/package=mnis"><code>mnis</code></a> package to retrive data from the Members’ Names Information Service.</p>
 </div>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -446,6 +447,8 @@ devtools::install_github("EvanOdell/hansard")</code></pre>
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>
