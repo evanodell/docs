@@ -2,10 +2,11 @@ Package: docs
 Type: Package
 Title: docs | docs.evanodell.com
 Description: An internal package to build docs with pkgdown.
-Authors@R: person("Evan Odell", email="evanodell91@gmail.com", role=c("aut", "cre"))
-Version: 0.1.0
+Authors@R: person("Evan Odell", email="evanodell91@gmail.com", 
+    role=c("aut", "cre"),  comment = c(ORCID = '0000-0003-1845-808X'))
+Version: 0.1.1
 Maintainer: Evan Odell <evanodell91@gmail.com>
-License: MIT
+License: MIT + file LICENSE
 LazyData: TRUE
 Depends: R(>= 3.4.0)
 imports: clisymbols
