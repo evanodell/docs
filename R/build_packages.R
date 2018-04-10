@@ -17,6 +17,8 @@ build_nomisr <- function(){
             "/Users/evanodell/Documents/GitHub/docs/nomisr", 
             recursive = TRUE)
   
+  emo::ji("map")
+  
 }
 
 #' @export
@@ -38,6 +40,8 @@ build_hansard <- function(){
     include.dirs = TRUE, no.. = TRUE)
   
   file.copy(hansard_doc_files, "hansard", recursive = TRUE)
+  
+  emo::ji("document")
   
 }
 
@@ -84,6 +88,8 @@ build_hansard_opengov <- function(){
   pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
                       preview = FALSE)
   
+  emo::ji("document")
+  
 }
 
 
@@ -108,6 +114,7 @@ build_parlitools <- function(){
             "/Users/evanodell/Documents/GitHub/docs/parlitools", 
             recursive = TRUE)
   
+  emo::ji("election")
   
 }
 
@@ -132,6 +139,8 @@ build_emisc <- function(){
             "/Users/evanodell/Documents/GitHub/docs/emisc", 
             recursive = TRUE)
   
+  emo::ji("owl")
+  
 }
 
 #' @export
@@ -153,6 +162,8 @@ build_mnis <- function(){
   file.copy(mnis_doc_files, 
             "/Users/evanodell/Documents/GitHub/docs/mnis", 
             recursive = TRUE)
+  
+  emo::ji("british")
   
 }
 
@@ -176,5 +187,7 @@ build_fixerapi <- function(){
   file.copy(fixerapi_doc_files, 
             "/Users/evanodell/Documents/GitHub/docs/fixerapi", 
             recursive = TRUE)
+  
+  emo::ji("currency")
   
 }

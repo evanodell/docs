@@ -51,14 +51,12 @@ build_docs <- function(){
 #' Function to build documentation for other R packages not listed in 
 #' \code{\link{build_docs}}.
 #' @param pkg Location of files for input
-#' @param path Output location, defaults to this folder.
 #' @param other The name of another R packages to build documentation for.
 #' @export
-other_docs <- function(pkg="/Users/evanodell/Documents/GitHub/", 
-                       path="/Users/evanodell/Documents/GitHub/docs/", 
-                       other=NULL){
+other_docs <- function(pkg = "/Users/evanodell/Documents/GitHub/", 
+                       other = NULL){
   
-    pkgdown::build_site(pkg = paste0(pkg, other), path = paste0(path, other))
+    pkgdown::build_site(pkg = paste0(pkg, other))
   
 }
 
@@ -70,7 +68,7 @@ other_docs <- function(pkg="/Users/evanodell/Documents/GitHub/",
 #'
 #' @export
 build_docs_home <- function(){
-  pkgdown::build_site(path=".", preview = FALSE)
+  pkgdown::build_site(preview = FALSE)
   
   doc_files <- list.files("docs", 
                                all.files = TRUE, full.names = TRUE, 

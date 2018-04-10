@@ -125,14 +125,7 @@ devtools::install_github("evanodell/nomisr")
 [![DOI](https://zenodo.org/badge/127822432.svg)](https://zenodo.org/badge/latestdoi/127822432)
 
 
-`fixerapi` is an R client for the [fixer.io](https://fixer.io) currency exchange rate API.
-
-You can install `fixerapi` from github with:
-
-```{r, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("evanodell/fixerapi")
-```
+`fixerapi` is an R client for the [fixer.io](https://fixer.io) currency exchange rate API. Available on [CRAN](https://cran.r-project.org/package=fixerapi) and [GitHub](https://github.com/EvanOdell/fixerapi).
 
 
 ### [`emisc`](https://docs.evanodell.com/emisc)

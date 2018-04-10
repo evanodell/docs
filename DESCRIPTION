@@ -10,3 +10,7 @@ LazyData: TRUE
 Depends: R(>= 3.4.0)
 imports: clisymbols
 RoxygenNote: 6.0.1
+Imports: 
+    emo,
+    clisymbols
+Remotes: hadley/emo
