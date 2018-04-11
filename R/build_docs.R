@@ -79,6 +79,8 @@ build_docs_home <- function(){
             ".", 
             recursive = TRUE)
   
+  emo::ji("graph")
+  
 }
 
 

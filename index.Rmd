@@ -41,72 +41,21 @@ An R package for downloading data from the Members' Names Information Service AP
 [![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/86801920.svg)](https://zenodo.org/badge/latestdoi/86801920)
 
-A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools). <!--Use [`parlitools`](https://docs.evanodell.com/parlitools) to create maps like this: 
+A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools).
 
-```{r map, echo=FALSE, fig.height=6, message=FALSE, warning=FALSE}
-library(leaflet)
-library(sf)
-library(htmlwidgets)
-library(dplyr)
-library(hansard)
-library(mnis)
-library(parlitools)
-
-west_hex_map <- parlitools::west_hex_map
-
-party_colour <- parlitools::party_colour
-
-mps <- mps_on_date()
-
-mps_colours <- left_join(mps, party_colour, by = "party_id") #Join to current MP data
-
-west_hex_map <- left_join(west_hex_map, mps_colours, by = "gss_code") #Join colours to hexagon map
-
-# Creating map labels
-labels <- paste0(
-  "<strong>", west_hex_map$constituency_name, "</strong>", "</br>",
-  "Party: ", west_hex_map$party_name, "</br>",
-  "MP: ", west_hex_map$display_as, "</br>",
-  "Most Recent Result: ", west_hex_map$result_of_election, "</br>",
-  "Current Majority: ", west_hex_map$majority, " votes"
-) %>% lapply(htmltools::HTML)
-
-# Creating the map itself
-leaflet(options=leafletOptions(
-  dragging = FALSE, zoomControl = FALSE, tap = FALSE,
-  minZoom = 6, maxZoom = 6, maxBounds = list(list(2.5,-7.75),list(58.25,50.0)),
-  attributionControl = FALSE),
-  west_hex_map) %>%
-  addPolygons(
-    color = "grey",
-    weight=0.75,
-    opacity = 0.5,
-    fillOpacity = 1,
-    fillColor = ~party_colour,
-    label=labels)  %>% 
-  htmlwidgets::onRender(
-    "function(x, y) {
-        var myMap = this;
-        myMap._container.style['background'] = '#fff';
-    }")
-```
---->
 ### [`nomisr`](https://docs.evanodell.com/nomisr)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)
 [![GitHub tag](https://img.shields.io/github/tag/evanodell/nomisr.svg)](https://github.com/evanodell/nomisr)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/nomisr)](https://dgrtwo.shinyapps.io/cranview/)
-<!--[![Travis-CI Build Status](https://travis-ci.org/evanodell/nomisr.svg?branch=master)](https://travis-ci.org/evanodell/nomisr)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/evanodell/nomisr?branch=master&svg=true)](https://ci.appveyor.com/project/evanodell/nomisr)
-[![Coverage Status](https://img.shields.io/codecov/c/github/evanodell/nomisr/master.svg)](https://codecov.io/github/evanodell/nomisr?branch=master)-->
 [![DOI](https://zenodo.org/badge/118144805.svg)](https://zenodo.org/badge/latestdoi/118144805)
 
 `nomisr` is for accessing [Nomis](https://www.nomisweb.co.uk/) data -- UK labour market statistics, census data and other populatlion data -- with R.
 
 You can install `nomisr` from github with:
 
-```{r, eval = FALSE}
+```
 # install.packages("devtools")
 devtools::install_github("evanodell/nomisr")
 ```
@@ -119,9 +68,6 @@ devtools::install_github("evanodell/nomisr")
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)
 [![GitHub tag](https://img.shields.io/github/tag/evanodell/fixerapi.svg)](https://github.com/evanodell/fixerapi)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/fixerapi)](https://dgrtwo.shinyapps.io/cranview/)
-<!--[![Travis-CI Build Status](https://travis-ci.org/evanodell/fixerapi.svg?branch=master)](https://travis-ci.org/evanodell/fixerapi)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/evanodell/fixerapi?branch=master&svg=true)](https://ci.appveyor.com/project/evanodell/fixerapi)
-[![Coverage Status](https://img.shields.io/codecov/c/github/evanodell/fixerapi/master.svg)](https://codecov.io/github/evanodell/fixerapi?branch=master) -->
 [![DOI](https://zenodo.org/badge/127822432.svg)](https://zenodo.org/badge/latestdoi/127822432)
 
 
@@ -140,12 +86,7 @@ devtools::install_github("evanodell/nomisr")
 
 `emisc` is currently not available on CRAN. You can install `emisc` from github with:
 
-```{r, eval = FALSE}
+```
 # install.packages("devtools")
 devtools::install_github("evanodell/emisc")
 ```
-
-
-
-
-
