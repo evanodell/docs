@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nomisr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.2.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/introduction.html">Introduction</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -109,6 +109,9 @@
     </li>
     <li>
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
+    </li>
+    <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
     </li>
     <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
@@ -143,7 +146,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Nomis dataset overview</h1>
-    <small>Source: <a href='https://github.com/EvanOdell/nomisr/blob/master/R/overview.R'><code>R/overview.R</code></a></small>
+    <small>Source: <a href='https://github.com/ropensci/nomisr/blob/master/R/overview.R'><code>R/overview.R</code></a></small>
     </div>
 
     
@@ -216,15 +219,23 @@ to be selected too)</p></dd>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:testthat’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    matches</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'>
 <span class='no'>q</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_overview</span>(<span class='st'>"NM_1650_1"</span>)
 
-<span class='no'>q</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; Observations: 20
+<span class='no'>q</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/reexports.html'>glimpse</a></span>()</div><div class='output co'>#&gt; Observations: 20
 #&gt; Variables: 2
 #&gt; $ value &lt;list&gt; [[&lt;c("1", "4", "5"), c("NM_1650_1", "NM_1650_4", "NM_1650_5"...
 #&gt; $ name  &lt;chr&gt; "analyses", "analysisname", "analysisnumber", "contact", "con...</div><div class='input'>
 <span class='no'>s</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_overview</span>(<span class='st'>"NM_1650_1"</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Units"</span>, <span class='st'>"Keywords"</span>))
 
-<span class='no'>s</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; Observations: 3
+<span class='no'>s</span> <span class='kw'>%&gt;%</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/unnest'>unnest</a></span>(<span class='no'>name</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/reexports.html'>glimpse</a></span>()</div><div class='output co'>#&gt; Observations: 3
 #&gt; Variables: 2
 #&gt; $ value &lt;list&gt; ["NM_1650_1", "Year last worked", [["Persons"]]]
 #&gt; $ name  &lt;chr&gt; "id", "keywords", "units"</div><div class='input'>

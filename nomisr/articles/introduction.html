@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nomisr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.2.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
       </span>
     </div>
 
@@ -54,7 +54,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/introduction.html">Introduction</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -78,6 +78,9 @@
     </li>
     <li>
       <a href="http://docs.evanodell.com/nomisr">nomisr</a>
+    </li>
+    <li>
+      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
     </li>
     <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
@@ -113,9 +116,9 @@
       <h1>Introduction to nomisr</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2018-04-03</h4>
+            <h4 class="date">2018-04-16</h4>
       
-      <small>Source: <a href="https://github.com/EvanOdell/nomisr/blob/master/../docs/vignettes/introduction.Rmd"><code>../docs/vignettes/introduction.Rmd</code></a></small>
+      <small>Source: <a href="https://github.com/ropensci/nomisr/blob/master/../docs/vignettes/introduction.Rmd"><code>../docs/vignettes/introduction.Rmd</code></a></small>
 
     </div>
 
@@ -202,7 +205,7 @@
 <div id="searching-for-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#searching-for-data" class="anchor"></a>Searching for data</h3>
-<p><code>nomisr</code> also contains the <code><a href="../reference/nomis_search.html">nomis_search()</a></code> function to search for datasets on particular topics. <code><a href="../reference/nomis_search.html">nomis_search()</a></code> can be used to search in one or more of dataset names, descriptions, keywords, content type and units. If using multiple parameters, <code><a href="../reference/nomis_search.html">nomis_search()</a></code> will return information on all datasets that match one or more parameters. Character vectors of strings can be used in searches, and likewise <code><a href="../reference/nomis_search.html">nomis_search()</a></code> will return information on datasets that match one or more queries. The * is used as a wildcard symbol. <code><a href="../reference/nomis_search.html">nomis_search()</a></code> returns metadata in the same format at <code><a href="../reference/nomis_data_info.html">nomis_data_info()</a></code>, including using list-columns. The <code><a href="../reference/nomis_content_type.html">nomis_content_type()</a></code> function can assist in identifying content type IDs for <code><a href="../reference/nomis_search.html">nomis_search()</a></code>.</p>
+<p><code>nomisr</code> also contains the <code><a href="../reference/nomis_search.html">nomis_search()</a></code> function to search for datasets on particular topics. <code><a href="../reference/nomis_search.html">nomis_search()</a></code> can be used to search in one or more of dataset names, descriptions, keywords, content type and units. If using multiple parameters, <code><a href="../reference/nomis_search.html">nomis_search()</a></code> will return information on all datasets that match one or more parameters. Character vectors of strings can be used in searches, and likewise <code><a href="../reference/nomis_search.html">nomis_search()</a></code> will return information on datasets that match one or more queries. The * is used as a wildcard symbol. <code><a href="../reference/nomis_search.html">nomis_search()</a></code> returns metadata in the same format as <code><a href="../reference/nomis_data_info.html">nomis_data_info()</a></code>, including using list-columns. The <code><a href="../reference/nomis_content_type.html">nomis_content_type()</a></code> function can assist in identifying content type IDs for <code><a href="../reference/nomis_search.html">nomis_search()</a></code>.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_search.html">nomis_search</a></span>(<span class="dt">name =</span> <span class="st">'*jobseekers*'</span>, <span class="dt">keywords =</span> <span class="st">'Claimants'</span>)</a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb19-3" data-line-number="3">tibble<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/glimpse">glimpse</a></span>(a)</a></code></pre></div>
@@ -377,9 +380,9 @@
 <h2 class="hasAnchor">
 <a href="#downloading-data" class="anchor"></a>Downloading data</h2>
 <p>Using the information above, we can now query the latest data on bedroom occupancy per household type in different NHS clinical commissioning groups.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"> z &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">time =</span> <span class="st">"latest"</span>, <span class="dt">geography =</span> <span class="st">"TYPE266"</span>)</a></code></pre></div>
-<pre><code>## Retrieving additional pages 1 of 1</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">print</span>(z)</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"> z &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">time =</span> <span class="st">"latest"</span>, <span class="dt">geography =</span> <span class="st">"TYPE266"</span>)</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb39-3" data-line-number="3"><span class="kw">print</span>(z)</a></code></pre></div>
 <pre><code>## # A tibble: 44,310 x 40
 ##    DATE  DATE_NAME DATE_CODE DATE_TYPE DATE_TYPECODE DATE_SORTORDER
 ##    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         
@@ -408,9 +411,9 @@
 ## #   OBS_CONF &lt;chr&gt;, OBS_CONF_NAME &lt;chr&gt;, URN &lt;chr&gt;, RECORD_OFFSET &lt;chr&gt;,
 ## #   RECORD_COUNT &lt;chr&gt;</code></pre>
 <p>We can also query bedroom occupancy per household type in the Manchester, Gorton and Manchester, Withington parliamentary constituencies.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"> x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">time =</span> <span class="st">"latest"</span>, <span class="dt">geography =</span> <span class="kw">c</span>(<span class="st">"1929380119"</span>, <span class="st">"1929380120"</span>))</a>
-<a class="sourceLine" id="cb43-2" data-line-number="2"> </a>
-<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="kw">print</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"> x &lt;-<span class="st"> </span><span class="kw"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="dt">id =</span> <span class="st">"NM_893_1"</span>, <span class="dt">time =</span> <span class="st">"latest"</span>, <span class="dt">geography =</span> <span class="kw">c</span>(<span class="st">"1929380119"</span>, <span class="st">"1929380120"</span>))</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"> </a>
+<a class="sourceLine" id="cb41-3" data-line-number="3"><span class="kw">print</span>(x)</a></code></pre></div>
 <pre><code>## # A tibble: 420 x 40
 ##    DATE  DATE_NAME DATE_CODE DATE_TYPE DATE_TYPECODE DATE_SORTORDER
 ##    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;         
