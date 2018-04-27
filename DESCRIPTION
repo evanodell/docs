@@ -12,4 +12,6 @@ RoxygenNote: 6.0.1
 Imports: 
     emo,
     clisymbols
-Remotes: hadley/emo
+Remotes: 
+  hadley/emo,
+  r-lib/pkgdown

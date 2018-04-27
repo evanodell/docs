@@ -33,6 +33,10 @@ build_docs <- function(){
   ### Build `fixerapi`  -----------------
   
   docs::build_fixerapi()
+
+  ### Build `refuge`  -----------------
+    
+  docs::build_refuge()
   
 ### Building homepage -----------
   

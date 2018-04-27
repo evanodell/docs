@@ -114,7 +114,7 @@ build_parlitools <- function(){
             "/Users/evanodell/Documents/GitHub/docs/parlitools", 
             recursive = TRUE)
   
-  emo::ji("election")
+  emo::ji("map")
   
 }
 
@@ -189,5 +189,30 @@ build_fixerapi <- function(){
             recursive = TRUE)
   
   emo::ji("currency")
+  
+}
+
+
+#' @export
+build_refuge <- function(){
+  
+  message("Building `refuge`")
+  
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/refuge", 
+                      preview = FALSE)
+  
+  refuge_doc_files <- list.files("/Users/evanodell/Documents/GitHub/refuge/docs", 
+                                 all.files = TRUE, full.names = TRUE, 
+                                 recursive = FALSE, ignore.case = TRUE, 
+                                 include.dirs = TRUE, no.. = TRUE)
+  
+  unlink("refuge", recursive = TRUE)
+  dir.create("refuge")
+  
+  file.copy(refuge_doc_files, 
+            "/Users/evanodell/Documents/GitHub/docs/refuge", 
+            recursive = TRUE)
+  
+  emo::ji("toilet")
   
 }
