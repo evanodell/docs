@@ -45,53 +45,53 @@ build_hansard <- function(){
   
 }
 
-#' @export
-build_hansard_opengov <- function(){
-  
-  message("Building `hansard-ropengov`")
-  
-  ropengov_doc_files <- list.files("/Users/evanodell/Documents/GitHub/hansard", 
-                                   all.files = TRUE, full.names = TRUE, 
-                                   recursive = FALSE, ignore.case = TRUE, 
-                                   include.dirs = FALSE, no.. = TRUE)
-  
-  ropengov_doc_files <- ropengov_doc_files[ !grepl("_pkgdown.yml", ropengov_doc_files)]
-  
-  ropengov_doc_files <- ropengov_doc_files[ !grepl(".DS_Store", ropengov_doc_files) ]
-  
-  ropengov_doc_files <- ropengov_doc_files[ !grepl("hansard.Rproj", ropengov_doc_files) ]
-  
-  file.copy(ropengov_doc_files, "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-            overwrite = TRUE)
-  
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/tests", 
-            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-            overwrite = TRUE, recursive = TRUE)
-  
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/R/", 
-            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-            overwrite = TRUE, recursive = TRUE)
-  
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/man", 
-            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-            overwrite = TRUE, recursive = TRUE)
-  
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/inst", 
-            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-            overwrite = TRUE, recursive = TRUE)
-  
-  file.copy("/Users/evanodell/Documents/GitHub/hansard/vignettes",
-            "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-            overwrite = TRUE, recursive = TRUE)
-  
-  
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
-                      preview = FALSE)
-  
-  emo::ji("document")
-  
-}
-
+# # @export
+# build_hansard_opengov <- function(){
+#    
+#    message("Building `hansard-ropengov`")
+#    
+#    ropengov_doc_files <- list.files("/Users/evanodell/Documents/GitHub/hansard", 
+#                                     all.files = TRUE, full.names = TRUE, 
+#                                     recursive = FALSE, ignore.case = TRUE, 
+#                                     include.dirs = FALSE, no.. = TRUE)
+#    
+#    ropengov_doc_files <- ropengov_doc_files[ !grepl("_pkgdown.yml", ropengov_doc_files)]
+#    
+#    ropengov_doc_files <- ropengov_doc_files[ !grepl(".DS_Store", ropengov_doc_files) ]
+#    
+#    ropengov_doc_files <- ropengov_doc_files[ !grepl("hansard.Rproj", ropengov_doc_files) ]
+#    
+#    file.copy(ropengov_doc_files, "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#              overwrite = TRUE)
+#    
+#    file.copy("/Users/evanodell/Documents/GitHub/hansard/tests", 
+#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#              overwrite = TRUE, recursive = TRUE)
+#    
+#    file.copy("/Users/evanodell/Documents/GitHub/hansard/R/", 
+#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#              overwrite = TRUE, recursive = TRUE)
+#    
+#    file.copy("/Users/evanodell/Documents/GitHub/hansard/man", 
+#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#              overwrite = TRUE, recursive = TRUE)
+#    
+#    file.copy("/Users/evanodell/Documents/GitHub/hansard/inst", 
+#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#              overwrite = TRUE, recursive = TRUE)
+#    
+#    file.copy("/Users/evanodell/Documents/GitHub/hansard/vignettes",
+#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#              overwrite = TRUE, recursive = TRUE)
+#    
+#    
+#    pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#                        preview = FALSE)
+#    
+#    emo::ji("document")
+#    
+#' }
+#' 
 
 #' @export
 build_parlitools <- function(){

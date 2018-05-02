@@ -11,7 +11,7 @@ build_docs <- function(){
   
 ### Build `hansard-ropengov` -----------------
   
-  docs::build_hansard_opengov()
+  #docs::build_hansard_opengov()
   
 ### Build `mnis` -----------------
   
