@@ -53,7 +53,7 @@ A collection of tools, datasets and maps for analysing UK politics. Available on
 [![](https://cranlogs.r-pkg.org/badges/grand-total/nomisr)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/118144805.svg)](https://zenodo.org/badge/latestdoi/118144805)
 
-`nomisr` is for accessing [Nomis](https://www.nomisweb.co.uk/) data -- UK labour market statistics, census data and other populatlion data -- with R. Available on [CRAN](https://cran.r-project.org/package=nomisr) and [GitHub](https://github.com/ropensci/nomisr).
+`nomisr` is for accessing [Nomis](https://www.nomisweb.co.uk/) data -- UK labour market statistics, census data and other populatlion data -- with R. Available on [CRAN](https://cran.r-project.org/package=nomisr) and [GitHub](https://github.com/ropensci/nomisr). Part of the rOpenSci community.
 
 
 ### [`fixerapi`](https://docs.evanodell.com/fixerapi)
