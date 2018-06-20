@@ -2,11 +2,11 @@
 #' @export
 build_nomisr <- function(){
   
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/nomisr", 
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/nomisr", 
                       preview = FALSE)
   
   nomisr_doc_files <- list.files(
-    "/Users/evanodell/Documents/GitHub/nomisr/docs",
+    "/Users/evanodell/Documents/GitHub/packages/nomisr/docs",
     all.files = TRUE, full.names = TRUE, recursive = FALSE, 
     ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE)
   
@@ -14,7 +14,7 @@ build_nomisr <- function(){
   dir.create("nomisr")
   
   file.copy(nomisr_doc_files, 
-            "/Users/evanodell/Documents/GitHub/docs/nomisr", 
+            "/Users/evanodell/Documents/GitHub/packages/docs/nomisr", 
             recursive = TRUE)
   
   emo::ji("map")
@@ -26,7 +26,7 @@ build_hansard <- function(){
   
   message("Building `hansard`")
   
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard", 
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/hansard", 
                       preview = FALSE)
   
   unlink("hansard", recursive = TRUE)
@@ -34,7 +34,7 @@ build_hansard <- function(){
   dir.create("hansard")
   
   hansard_doc_files <- list.files(
-    "/Users/evanodell/Documents/GitHub/hansard/docs", 
+    "/Users/evanodell/Documents/GitHub/packages/hansard/docs", 
     all.files = TRUE, full.names = TRUE, 
     recursive = FALSE, ignore.case = TRUE, 
     include.dirs = TRUE, no.. = TRUE)
@@ -50,7 +50,7 @@ build_hansard <- function(){
 #    
 #    message("Building `hansard-ropengov`")
 #    
-#    ropengov_doc_files <- list.files("/Users/evanodell/Documents/GitHub/hansard", 
+#    ropengov_doc_files <- list.files("/Users/evanodell/Documents/GitHub/packages/hansard", 
 #                                     all.files = TRUE, full.names = TRUE, 
 #                                     recursive = FALSE, ignore.case = TRUE, 
 #                                     include.dirs = FALSE, no.. = TRUE)
@@ -61,31 +61,31 @@ build_hansard <- function(){
 #    
 #    ropengov_doc_files <- ropengov_doc_files[ !grepl("hansard.Rproj", ropengov_doc_files) ]
 #    
-#    file.copy(ropengov_doc_files, "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#    file.copy(ropengov_doc_files, "/Users/evanodell/Documents/GitHub/packages/hansard-rOpenGov", 
 #              overwrite = TRUE)
 #    
-#    file.copy("/Users/evanodell/Documents/GitHub/hansard/tests", 
-#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#    file.copy("/Users/evanodell/Documents/GitHub/packages/hansard/tests", 
+#              "/Users/evanodell/Documents/GitHub/packages/hansard-rOpenGov", 
 #              overwrite = TRUE, recursive = TRUE)
 #    
-#    file.copy("/Users/evanodell/Documents/GitHub/hansard/R/", 
-#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#    file.copy("/Users/evanodell/Documents/GitHub/packages/hansard/R/", 
+#              "/Users/evanodell/Documents/GitHub/packages/hansard-rOpenGov", 
 #              overwrite = TRUE, recursive = TRUE)
 #    
-#    file.copy("/Users/evanodell/Documents/GitHub/hansard/man", 
-#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#    file.copy("/Users/evanodell/Documents/GitHub/packages/hansard/man", 
+#              "/Users/evanodell/Documents/GitHub/packages/hansard-rOpenGov", 
 #              overwrite = TRUE, recursive = TRUE)
 #    
-#    file.copy("/Users/evanodell/Documents/GitHub/hansard/inst", 
-#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#    file.copy("/Users/evanodell/Documents/GitHub/packages/hansard/inst", 
+#              "/Users/evanodell/Documents/GitHub/packages/hansard-rOpenGov", 
 #              overwrite = TRUE, recursive = TRUE)
 #    
-#    file.copy("/Users/evanodell/Documents/GitHub/hansard/vignettes",
-#              "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#    file.copy("/Users/evanodell/Documents/GitHub/packages/hansard/vignettes",
+#              "/Users/evanodell/Documents/GitHub/packages/hansard-rOpenGov", 
 #              overwrite = TRUE, recursive = TRUE)
 #    
 #    
-#    pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/hansard-rOpenGov", 
+#    pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/hansard-rOpenGov", 
 #                        preview = FALSE)
 #    
 #    emo::ji("document")
@@ -98,11 +98,11 @@ build_parlitools <- function(){
   
   message("Building `parlitools`")
   
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/parlitools", 
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/parlitools", 
                       preview = FALSE)
   
   parlitools_doc_files <- list.files(
-    "/Users/evanodell/Documents/GitHub/parlitools/docs", 
+    "/Users/evanodell/Documents/GitHub/packages/parlitools/docs", 
     all.files = TRUE, full.names = TRUE, 
     recursive = FALSE, ignore.case = TRUE, 
     include.dirs = TRUE, no.. = TRUE)
@@ -111,7 +111,7 @@ build_parlitools <- function(){
   dir.create("parlitools")
   
   file.copy(parlitools_doc_files, 
-            "/Users/evanodell/Documents/GitHub/docs/parlitools", 
+            "/Users/evanodell/Documents/GitHub/packages/docs/parlitools", 
             recursive = TRUE)
   
   emo::ji("map")
@@ -124,11 +124,11 @@ build_emisc <- function(){
   
   message("Building `emisc`")
   
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/emisc", 
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/emisc", 
                       preview = FALSE)
   
   emisc_doc_files <- list.files(
-    "/Users/evanodell/Documents/GitHub/emisc/docs",
+    "/Users/evanodell/Documents/GitHub/packages/emisc/docs",
     all.files = TRUE, full.names = TRUE, recursive = FALSE, 
     ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE)
   
@@ -136,7 +136,7 @@ build_emisc <- function(){
   dir.create("emisc")
   
   file.copy(emisc_doc_files, 
-            "/Users/evanodell/Documents/GitHub/docs/emisc", 
+            "/Users/evanodell/Documents/GitHub/packages/docs/emisc", 
             recursive = TRUE)
   
   emo::ji("owl")
@@ -148,10 +148,10 @@ build_mnis <- function(){
   
   message("Building `mnis`")
   
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/mnis", 
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/mnis", 
                       preview = FALSE)
   
-  mnis_doc_files <- list.files("/Users/evanodell/Documents/GitHub/mnis/docs", 
+  mnis_doc_files <- list.files("/Users/evanodell/Documents/GitHub/packages/mnis/docs", 
                                all.files = TRUE, full.names = TRUE, 
                                recursive = FALSE, ignore.case = TRUE, 
                                include.dirs = TRUE, no.. = TRUE)
@@ -160,7 +160,7 @@ build_mnis <- function(){
   dir.create("mnis")
   
   file.copy(mnis_doc_files, 
-            "/Users/evanodell/Documents/GitHub/docs/mnis", 
+            "/Users/evanodell/Documents/GitHub/packages/docs/mnis", 
             recursive = TRUE)
   
   emo::ji("british")
@@ -173,10 +173,10 @@ build_fixerapi <- function(){
   
   message("Building `fixerapi`")
   
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/fixerapi", 
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/fixerapi", 
                       preview = FALSE)
   
-  fixerapi_doc_files <- list.files("/Users/evanodell/Documents/GitHub/fixerapi/docs", 
+  fixerapi_doc_files <- list.files("/Users/evanodell/Documents/GitHub/packages/fixerapi/docs", 
                                    all.files = TRUE, full.names = TRUE, 
                                    recursive = FALSE, ignore.case = TRUE, 
                                    include.dirs = TRUE, no.. = TRUE)
@@ -185,7 +185,7 @@ build_fixerapi <- function(){
   dir.create("fixerapi")
   
   file.copy(fixerapi_doc_files, 
-            "/Users/evanodell/Documents/GitHub/docs/fixerapi", 
+            "/Users/evanodell/Documents/GitHub/packages/docs/fixerapi", 
             recursive = TRUE)
   
   emo::ji("currency")
@@ -198,10 +198,10 @@ build_refuge <- function(){
   
   message("Building `refuge`")
   
-  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/refuge", 
+  pkgdown::build_site(pkg = "/Users/evanodell/Documents/GitHub/packages/refuge", 
                       preview = FALSE)
   
-  refuge_doc_files <- list.files("/Users/evanodell/Documents/GitHub/refuge/docs", 
+  refuge_doc_files <- list.files("/Users/evanodell/Documents/GitHub/packages/refuge/docs", 
                                  all.files = TRUE, full.names = TRUE, 
                                  recursive = FALSE, ignore.case = TRUE, 
                                  include.dirs = TRUE, no.. = TRUE)
@@ -210,7 +210,7 @@ build_refuge <- function(){
   dir.create("refuge")
   
   file.copy(refuge_doc_files, 
-            "/Users/evanodell/Documents/GitHub/docs/refuge", 
+            "/Users/evanodell/Documents/GitHub/packages/docs/refuge", 
             recursive = TRUE)
   
   emo::ji("toilet")
