@@ -12,6 +12,6 @@ other_docs(pkg = "/Users/evanodell/Documents/GitHub/", other = NULL)
 \item{other}{The name of another R packages to build documentation for.}
 }
 \description{
-Function to build documentation for other R packages not listed in 
+Function to build documentation for other R packages not listed in
 \code{\link{build_docs}}.
 }
