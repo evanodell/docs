@@ -11,7 +11,7 @@ Depends: R(>= 3.4.0)
 RoxygenNote: 6.0.1
 Imports: 
     emo,
-    clisymbols
+    clisymbols,
+    pkgdown
 Remotes: 
-  hadley/emo,
-  r-lib/pkgdown
+  hadley/emo
