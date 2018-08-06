@@ -8,10 +8,11 @@ Version: 1.0
 License: MIT + file LICENSE
 LazyData: TRUE
 Depends: R(>= 3.4.0)
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Imports: 
     emo,
     clisymbols,
     pkgdown
 Remotes: 
   hadley/emo
+Encoding: UTF-8
