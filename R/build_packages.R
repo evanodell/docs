@@ -1,50 +1,46 @@
 
 #' @export
 build_nomisr <- function() {
-  
-  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
     if (file.exists("C:\\Users\\eodell\\Documents\\Code\\nomisr")) {
       pkgdown::build_site(
         pkg = "C:\\Users\\eodell\\Documents\\Code\\nomisr",
         preview = FALSE
       )
-      
+
       nomisr_doc_files <- list.files(
         "C:\\Users\\eodell\\Documents\\Code\\nomisr\\docs",
         all.files = TRUE, full.names = TRUE, recursive = FALSE,
         ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
-        )
-      
+      )
+
       unlink("nomisr", recursive = TRUE)
       dir.create("nomisr")
-      
+
       file.copy(nomisr_doc_files,
-                "C:\\Users\\eodell\\Documents\\Code\\docs\\nomisr",
-                recursive = TRUE
-                )  
-      
+        "C:\\Users\\eodell\\Documents\\Code\\docs\\nomisr",
+        recursive = TRUE
+      )
     }
   } else {
-    
-  pkgdown::build_site(
-    pkg = "/Users/evanodell/Documents/Code/packages/nomisr",
-    preview = FALSE
-  )
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/nomisr",
+      preview = FALSE
+    )
 
-  nomisr_doc_files <- list.files(
-    "/Users/evanodell/Documents/Code/packages/nomisr/docs",
-    all.files = TRUE, full.names = TRUE, recursive = FALSE,
-    ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
-  )
+    nomisr_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/nomisr/docs",
+      all.files = TRUE, full.names = TRUE, recursive = FALSE,
+      ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+    )
 
-  unlink("nomisr", recursive = TRUE)
-  dir.create("nomisr")
+    unlink("nomisr", recursive = TRUE)
+    dir.create("nomisr")
 
-  file.copy(nomisr_doc_files,
-    "/Users/evanodell/Documents/Code/packages/docs/nomisr",
-    recursive = TRUE
-  )
-  
+    file.copy(nomisr_doc_files,
+      "/Users/evanodell/Documents/Code/packages/docs/nomisr",
+      recursive = TRUE
+    )
   }
 
   emo::ji("map")
@@ -53,49 +49,46 @@ build_nomisr <- function() {
 #' @export
 build_hansard <- function() {
   message("Building `hansard`")
-  
-  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
     if (file.exists("C:\\Users\\eodell\\Documents\\Code\\hansard")) {
       pkgdown::build_site(
         pkg = "C:\\Users\\eodell\\Documents\\Code\\hansard",
         preview = FALSE
       )
-      
+
       hansard_doc_files <- list.files(
         "C:\\Users\\eodell\\Documents\\Code\\hansard\\docs",
         all.files = TRUE, full.names = TRUE, recursive = FALSE,
         ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
       )
-      
+
       unlink("hansard", recursive = TRUE)
       dir.create("hansard")
-      
+
       file.copy(parlitools_doc_files,
-                "C:\\Users\\eodell\\Documents\\Code\\docs\\hansard",
-                recursive = TRUE
-      )  
-      
+        "C:\\Users\\eodell\\Documents\\Code\\docs\\hansard",
+        recursive = TRUE
+      )
     }
   } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/hansard",
+      preview = FALSE
+    )
 
-  pkgdown::build_site(
-    pkg = "/Users/evanodell/Documents/Code/packages/hansard",
-    preview = FALSE
-  )
+    unlink("hansard", recursive = TRUE)
 
-  unlink("hansard", recursive = TRUE)
+    dir.create("hansard")
 
-  dir.create("hansard")
+    hansard_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/hansard/docs",
+      all.files = TRUE, full.names = TRUE,
+      recursive = FALSE, ignore.case = TRUE,
+      include.dirs = TRUE, no.. = TRUE
+    )
 
-  hansard_doc_files <- list.files(
-    "/Users/evanodell/Documents/Code/packages/hansard/docs",
-    all.files = TRUE, full.names = TRUE,
-    recursive = FALSE, ignore.case = TRUE,
-    include.dirs = TRUE, no.. = TRUE
-  )
-
-  file.copy(hansard_doc_files, "hansard", recursive = TRUE)
-  
+    file.copy(hansard_doc_files, "hansard", recursive = TRUE)
   }
 
   emo::ji("document")
@@ -105,53 +98,50 @@ build_hansard <- function() {
 #' @export
 build_parlitools <- function() {
   message("Building `parlitools`")
-  
-  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
     if (file.exists("C:\\Users\\eodell\\Documents\\Code\\parlitools")) {
       pkgdown::build_site(
         pkg = "C:\\Users\\eodell\\Documents\\Code\\parlitools",
         preview = FALSE
       )
-      
+
       parlitools_doc_files <- list.files(
         "C:\\Users\\eodell\\Documents\\Code\\parlitools\\docs",
         all.files = TRUE, full.names = TRUE, recursive = FALSE,
         ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
       )
-      
+
       unlink("parlitools", recursive = TRUE)
       dir.create("parlitools")
-      
+
       file.copy(parlitools_doc_files,
-                "C:\\Users\\eodell\\Documents\\Code\\docs\\parlitools",
-                recursive = TRUE
-      )  
-      
+        "C:\\Users\\eodell\\Documents\\Code\\docs\\parlitools",
+        recursive = TRUE
+      )
     }
   } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/parlitools",
+      preview = FALSE
+    )
 
-  pkgdown::build_site(
-    pkg = "/Users/evanodell/Documents/Code/packages/parlitools",
-    preview = FALSE
-  )
+    parlitools_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/parlitools/docs",
+      all.files = TRUE, full.names = TRUE,
+      recursive = FALSE, ignore.case = TRUE,
+      include.dirs = TRUE, no.. = TRUE
+    )
 
-  parlitools_doc_files <- list.files(
-    "/Users/evanodell/Documents/Code/packages/parlitools/docs",
-    all.files = TRUE, full.names = TRUE,
-    recursive = FALSE, ignore.case = TRUE,
-    include.dirs = TRUE, no.. = TRUE
-  )
+    unlink("parlitools", recursive = TRUE)
+    dir.create("parlitools")
 
-  unlink("parlitools", recursive = TRUE)
-  dir.create("parlitools")
-
-  file.copy(parlitools_doc_files,
-    "/Users/evanodell/Documents/Code/packages/docs/parlitools",
-    recursive = TRUE
-  )
-
+    file.copy(parlitools_doc_files,
+      "/Users/evanodell/Documents/Code/packages/docs/parlitools",
+      recursive = TRUE
+    )
   }
-  
+
   emo::ji("map")
 }
 
@@ -159,105 +149,99 @@ build_parlitools <- function() {
 #' @export
 build_emisc <- function() {
   message("Building `emisc`")
-  
-  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
     if (file.exists("C:\\Users\\eodell\\Documents\\Code\\emisc")) {
       pkgdown::build_site(
         pkg = "C:\\Users\\eodell\\Documents\\Code\\emisc",
         preview = FALSE
       )
-      
+
       emisc_doc_files <- list.files(
         "C:\\Users\\eodell\\Documents\\Code\\emisc\\docs",
         all.files = TRUE, full.names = TRUE, recursive = FALSE,
         ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
       )
-      
+
       unlink("emisc", recursive = TRUE)
       dir.create("emisc")
-      
+
       file.copy(emisc_doc_files,
-                "C:\\Users\\eodell\\Documents\\Code\\docs\\emisc",
-                recursive = TRUE
-      )  
-      
+        "C:\\Users\\eodell\\Documents\\Code\\docs\\emisc",
+        recursive = TRUE
+      )
     }
   } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/emisc",
+      preview = FALSE
+    )
 
-  pkgdown::build_site(
-    pkg = "/Users/evanodell/Documents/Code/packages/emisc",
-    preview = FALSE
-  )
+    emisc_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/emisc/docs",
+      all.files = TRUE, full.names = TRUE, recursive = FALSE,
+      ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+    )
 
-  emisc_doc_files <- list.files(
-    "/Users/evanodell/Documents/Code/packages/emisc/docs",
-    all.files = TRUE, full.names = TRUE, recursive = FALSE,
-    ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
-  )
+    unlink("emisc", recursive = TRUE)
+    dir.create("emisc")
 
-  unlink("emisc", recursive = TRUE)
-  dir.create("emisc")
-
-  file.copy(emisc_doc_files,
-    "/Users/evanodell/Documents/Code/packages/docs/emisc",
-    recursive = TRUE
-  )
-
+    file.copy(emisc_doc_files,
+      "/Users/evanodell/Documents/Code/packages/docs/emisc",
+      recursive = TRUE
+    )
   }
-  
+
   emo::ji("owl")
 }
 
 #' @export
 build_mnis <- function() {
   message("Building `mnis`")
-  
-  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
     if (file.exists("C:\\Users\\eodell\\Documents\\Code\\mnis")) {
       pkgdown::build_site(
         pkg = "C:\\Users\\eodell\\Documents\\Code\\mnis",
         preview = FALSE
       )
-      
+
       mnis_doc_files <- list.files(
         "C:\\Users\\eodell\\Documents\\Code\\mnis\\docs",
         all.files = TRUE, full.names = TRUE, recursive = FALSE,
         ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
       )
-      
+
       unlink("mnis", recursive = TRUE)
       dir.create("mnis")
-      
+
       file.copy(emisc_doc_files,
-                "C:\\Users\\eodell\\Documents\\Code\\docs\\mnis",
-                recursive = TRUE
-      )  
-      
+        "C:\\Users\\eodell\\Documents\\Code\\docs\\mnis",
+        recursive = TRUE
+      )
     }
   } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/mnis",
+      preview = FALSE
+    )
 
-  pkgdown::build_site(
-    pkg = "/Users/evanodell/Documents/Code/packages/mnis",
-    preview = FALSE
-  )
+    mnis_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/mnis/docs",
+      all.files = TRUE, full.names = TRUE,
+      recursive = FALSE, ignore.case = TRUE,
+      include.dirs = TRUE, no.. = TRUE
+    )
 
-  mnis_doc_files <- list.files(
-    "/Users/evanodell/Documents/Code/packages/mnis/docs",
-    all.files = TRUE, full.names = TRUE,
-    recursive = FALSE, ignore.case = TRUE,
-    include.dirs = TRUE, no.. = TRUE
-  )
+    unlink("mnis", recursive = TRUE)
+    dir.create("mnis")
 
-  unlink("mnis", recursive = TRUE)
-  dir.create("mnis")
-
-  file.copy(mnis_doc_files,
-    "/Users/evanodell/Documents/Code/packages/docs/mnis",
-    recursive = TRUE
-  )
-
+    file.copy(mnis_doc_files,
+      "/Users/evanodell/Documents/Code/packages/docs/mnis",
+      recursive = TRUE
+    )
   }
-  
+
   emo::ji("british")
 }
 
@@ -265,50 +249,48 @@ build_mnis <- function() {
 #' @export
 build_fixerapi <- function() {
   message("Building `fixerapi`")
-  
-  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
     if (file.exists("C:\\Users\\eodell\\Documents\\Code\\fixerapi")) {
       pkgdown::build_site(
         pkg = "C:\\Users\\eodell\\Documents\\Code\\fixerapi",
         preview = FALSE
       )
-      
+
       fixerapi_doc_files <- list.files(
         "C:\\Users\\eodell\\Documents\\Code\\fixerapi\\docs",
         all.files = TRUE, full.names = TRUE, recursive = FALSE,
         ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
       )
-      
+
       unlink("fixerapi", recursive = TRUE)
       dir.create("fixerapi")
-      
+
       file.copy(fixerapi_doc_files,
-                "C:\\Users\\eodell\\Documents\\Code\\docs\\fixerapi",
-                recursive = TRUE
-      )  
-      
+        "C:\\Users\\eodell\\Documents\\Code\\docs\\fixerapi",
+        recursive = TRUE
+      )
     }
   } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/fixerapi",
+      preview = FALSE
+    )
 
-  pkgdown::build_site(
-    pkg = "/Users/evanodell/Documents/Code/packages/fixerapi",
-    preview = FALSE
-  )
+    fixerapi_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/fixerapi/docs",
+      all.files = TRUE, full.names = TRUE,
+      recursive = FALSE, ignore.case = TRUE,
+      include.dirs = TRUE, no.. = TRUE
+    )
 
-  fixerapi_doc_files <- list.files(
-    "/Users/evanodell/Documents/Code/packages/fixerapi/docs",
-    all.files = TRUE, full.names = TRUE,
-    recursive = FALSE, ignore.case = TRUE,
-    include.dirs = TRUE, no.. = TRUE
-  )
+    unlink("fixerapi", recursive = TRUE)
+    dir.create("fixerapi")
 
-  unlink("fixerapi", recursive = TRUE)
-  dir.create("fixerapi")
-
-  file.copy(fixerapi_doc_files,
-    "/Users/evanodell/Documents/Code/packages/docs/fixerapi",
-    recursive = TRUE
-  )
+    file.copy(fixerapi_doc_files,
+      "/Users/evanodell/Documents/Code/packages/docs/fixerapi",
+      recursive = TRUE
+    )
   }
   emo::ji("currency")
 }
@@ -317,50 +299,48 @@ build_fixerapi <- function() {
 #' @export
 build_refuge <- function() {
   message("Building `refuge`")
-  
-  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
     if (file.exists("C:\\Users\\eodell\\Documents\\Code\\refuge")) {
       pkgdown::build_site(
         pkg = "C:\\Users\\eodell\\Documents\\Code\\refuge",
         preview = FALSE
       )
-      
+
       refuge_doc_files <- list.files(
         "C:\\Users\\eodell\\Documents\\Code\\refuge\\docs",
         all.files = TRUE, full.names = TRUE, recursive = FALSE,
         ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
       )
-      
+
       unlink("refuge", recursive = TRUE)
       dir.create("refuge")
-      
+
       file.copy(refuge_doc_files,
-                "C:\\Users\\eodell\\Documents\\Code\\docs\\refuge",
-                recursive = TRUE
-      )  
-      
+        "C:\\Users\\eodell\\Documents\\Code\\docs\\refuge",
+        recursive = TRUE
+      )
     }
   } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/refuge",
+      preview = FALSE
+    )
 
-  pkgdown::build_site(
-    pkg = "/Users/evanodell/Documents/Code/packages/refuge",
-    preview = FALSE
-  )
+    refuge_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/refuge/docs",
+      all.files = TRUE, full.names = TRUE,
+      recursive = FALSE, ignore.case = TRUE,
+      include.dirs = TRUE, no.. = TRUE
+    )
 
-  refuge_doc_files <- list.files(
-    "/Users/evanodell/Documents/Code/packages/refuge/docs",
-    all.files = TRUE, full.names = TRUE,
-    recursive = FALSE, ignore.case = TRUE,
-    include.dirs = TRUE, no.. = TRUE
-  )
+    unlink("refuge", recursive = TRUE)
+    dir.create("refuge")
 
-  unlink("refuge", recursive = TRUE)
-  dir.create("refuge")
-
-  file.copy(refuge_doc_files,
-    "/Users/evanodell/Documents/Code/packages/docs/refuge",
-    recursive = TRUE
-  )
+    file.copy(refuge_doc_files,
+      "/Users/evanodell/Documents/Code/packages/docs/refuge",
+      recursive = TRUE
+    )
   }
   emo::ji("toilet")
 }
