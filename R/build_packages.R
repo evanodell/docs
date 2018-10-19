@@ -1,6 +1,31 @@
 
 #' @export
 build_nomisr <- function() {
+  
+  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\nomisr")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\nomisr",
+        preview = FALSE
+      )
+      
+      nomisr_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\nomisr\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+        )
+      
+      unlink("nomisr", recursive = TRUE)
+      dir.create("nomisr")
+      
+      file.copy(nomisr_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\nomisr",
+                recursive = TRUE
+                )  
+      
+    }
+  } else {
+    
   pkgdown::build_site(
     pkg = "/Users/evanodell/Documents/Code/packages/nomisr",
     preview = FALSE
@@ -19,6 +44,8 @@ build_nomisr <- function() {
     "/Users/evanodell/Documents/Code/packages/docs/nomisr",
     recursive = TRUE
   )
+  
+  }
 
   emo::ji("map")
 }
@@ -26,6 +53,30 @@ build_nomisr <- function() {
 #' @export
 build_hansard <- function() {
   message("Building `hansard`")
+  
+  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\hansard")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\hansard",
+        preview = FALSE
+      )
+      
+      hansard_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\hansard\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("hansard", recursive = TRUE)
+      dir.create("hansard")
+      
+      file.copy(parlitools_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\hansard",
+                recursive = TRUE
+      )  
+      
+    }
+  } else {
 
   pkgdown::build_site(
     pkg = "/Users/evanodell/Documents/Code/packages/hansard",
@@ -44,61 +95,40 @@ build_hansard <- function() {
   )
 
   file.copy(hansard_doc_files, "hansard", recursive = TRUE)
+  
+  }
 
   emo::ji("document")
 }
 
-# # @export
-# build_hansard_opengov <- function(){
-#
-#    message("Building `hansard-ropengov`")
-#
-#    ropengov_doc_files <- list.files("/Users/evanodell/Documents/Code/packages/hansard",
-#                                     all.files = TRUE, full.names = TRUE,
-#                                     recursive = FALSE, ignore.case = TRUE,
-#                                     include.dirs = FALSE, no.. = TRUE)
-#
-#    ropengov_doc_files <- ropengov_doc_files[ !grepl("_pkgdown.yml", ropengov_doc_files)]
-#
-#    ropengov_doc_files <- ropengov_doc_files[ !grepl(".DS_Store", ropengov_doc_files) ]
-#
-#    ropengov_doc_files <- ropengov_doc_files[ !grepl("hansard.Rproj", ropengov_doc_files) ]
-#
-#    file.copy(ropengov_doc_files, "/Users/evanodell/Documents/Code/packages/hansard-rOpenGov",
-#              overwrite = TRUE)
-#
-#    file.copy("/Users/evanodell/Documents/Code/packages/hansard/tests",
-#              "/Users/evanodell/Documents/Code/packages/hansard-rOpenGov",
-#              overwrite = TRUE, recursive = TRUE)
-#
-#    file.copy("/Users/evanodell/Documents/Code/packages/hansard/R/",
-#              "/Users/evanodell/Documents/Code/packages/hansard-rOpenGov",
-#              overwrite = TRUE, recursive = TRUE)
-#
-#    file.copy("/Users/evanodell/Documents/Code/packages/hansard/man",
-#              "/Users/evanodell/Documents/Code/packages/hansard-rOpenGov",
-#              overwrite = TRUE, recursive = TRUE)
-#
-#    file.copy("/Users/evanodell/Documents/Code/packages/hansard/inst",
-#              "/Users/evanodell/Documents/Code/packages/hansard-rOpenGov",
-#              overwrite = TRUE, recursive = TRUE)
-#
-#    file.copy("/Users/evanodell/Documents/Code/packages/hansard/vignettes",
-#              "/Users/evanodell/Documents/Code/packages/hansard-rOpenGov",
-#              overwrite = TRUE, recursive = TRUE)
-#
-#
-#    pkgdown::build_site(pkg = "/Users/evanodell/Documents/Code/packages/hansard-rOpenGov",
-#                        preview = FALSE)
-#
-#    emo::ji("document")
-#
-#' }
-#'
 
 #' @export
 build_parlitools <- function() {
   message("Building `parlitools`")
+  
+  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\parlitools")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\parlitools",
+        preview = FALSE
+      )
+      
+      parlitools_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\parlitools\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("parlitools", recursive = TRUE)
+      dir.create("parlitools")
+      
+      file.copy(parlitools_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\parlitools",
+                recursive = TRUE
+      )  
+      
+    }
+  } else {
 
   pkgdown::build_site(
     pkg = "/Users/evanodell/Documents/Code/packages/parlitools",
@@ -120,6 +150,8 @@ build_parlitools <- function() {
     recursive = TRUE
   )
 
+  }
+  
   emo::ji("map")
 }
 
@@ -127,6 +159,30 @@ build_parlitools <- function() {
 #' @export
 build_emisc <- function() {
   message("Building `emisc`")
+  
+  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\emisc")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\emisc",
+        preview = FALSE
+      )
+      
+      emisc_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\emisc\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("emisc", recursive = TRUE)
+      dir.create("emisc")
+      
+      file.copy(emisc_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\emisc",
+                recursive = TRUE
+      )  
+      
+    }
+  } else {
 
   pkgdown::build_site(
     pkg = "/Users/evanodell/Documents/Code/packages/emisc",
@@ -147,12 +203,38 @@ build_emisc <- function() {
     recursive = TRUE
   )
 
+  }
+  
   emo::ji("owl")
 }
 
 #' @export
 build_mnis <- function() {
   message("Building `mnis`")
+  
+  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\mnis")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\mnis",
+        preview = FALSE
+      )
+      
+      mnis_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\mnis\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("mnis", recursive = TRUE)
+      dir.create("mnis")
+      
+      file.copy(emisc_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\mnis",
+                recursive = TRUE
+      )  
+      
+    }
+  } else {
 
   pkgdown::build_site(
     pkg = "/Users/evanodell/Documents/Code/packages/mnis",
@@ -174,6 +256,8 @@ build_mnis <- function() {
     recursive = TRUE
   )
 
+  }
+  
   emo::ji("british")
 }
 
@@ -181,6 +265,30 @@ build_mnis <- function() {
 #' @export
 build_fixerapi <- function() {
   message("Building `fixerapi`")
+  
+  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\fixerapi")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\fixerapi",
+        preview = FALSE
+      )
+      
+      fixerapi_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\fixerapi\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("fixerapi", recursive = TRUE)
+      dir.create("fixerapi")
+      
+      file.copy(fixerapi_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\fixerapi",
+                recursive = TRUE
+      )  
+      
+    }
+  } else {
 
   pkgdown::build_site(
     pkg = "/Users/evanodell/Documents/Code/packages/fixerapi",
@@ -201,7 +309,7 @@ build_fixerapi <- function() {
     "/Users/evanodell/Documents/Code/packages/docs/fixerapi",
     recursive = TRUE
   )
-
+  }
   emo::ji("currency")
 }
 
@@ -209,6 +317,30 @@ build_fixerapi <- function() {
 #' @export
 build_refuge <- function() {
   message("Building `refuge`")
+  
+  if (Sys.info()[[4]]=="DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\refuge")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\refuge",
+        preview = FALSE
+      )
+      
+      refuge_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\refuge\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("refuge", recursive = TRUE)
+      dir.create("refuge")
+      
+      file.copy(refuge_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\refuge",
+                recursive = TRUE
+      )  
+      
+    }
+  } else {
 
   pkgdown::build_site(
     pkg = "/Users/evanodell/Documents/Code/packages/refuge",
@@ -229,6 +361,6 @@ build_refuge <- function() {
     "/Users/evanodell/Documents/Code/packages/docs/refuge",
     recursive = TRUE
   )
-
+  }
   emo::ji("toilet")
 }
