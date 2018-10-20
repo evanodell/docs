@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nomisr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0</span>
       </span>
     </div>
 
@@ -136,13 +136,13 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">"nomisr"</span>)</a></code></pre></div>
 <p>You can install the development version <code>nomisr</code> from github with:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"ropensci/nomisr"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"ropensci/nomisr"</span>)</a></code></pre></div>
 </div>
 <div id="using-nomisr" class="section level2">
 <h2 class="hasAnchor">
 <a href="#using-nomisr" class="anchor"></a>Using <code>nomisr</code>
 </h2>
-<p><code>nomisr</code> contains functions to search for datasets, identify the query options for different datasets and retrieve data from queries, all done with <a href="http://tibble.tidyverse.org/"><code>tibbles</code></a>, to take advantage of how <code>tibble</code> manages list-columns. The use of metadata queries, rather than simply downloading all available data, is useful to avoid overwhelming the rate limits of the API. For full details on all available functions and demonstrations of their use, please see the package <a href="https://docs.evanodell.com/nomisr/articles/introduction.html">vignette</a>.</p>
+<p><code>nomisr</code> contains functions to search for datasets, identify the query options for different datasets and retrieve data from queries, all done with <a href="https://tibble.tidyverse.org/"><code>tibbles</code></a>, to take advantage of how <code>tibble</code> manages list-columns. The use of metadata queries, rather than simply downloading all available data, is useful to avoid overwhelming the rate limits of the API. For full details on all available functions and demonstrations of their use, please see the package <a href="https://docs.evanodell.com/nomisr/articles/introduction.html">vignette</a>.</p>
 <p>The example below gets the latest data on Jobseeker’s Allowance with rates and proportions, on a national level, with all male claimants and workforce.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"> <span class="kw">library</span>(nomisr)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"> jobseekers_search &lt;-<span class="st"> </span><span class="kw"><a href="reference/nomis_search.html">nomis_search</a></span>(<span class="dt">name =</span> <span class="st">"*Jobseeker*"</span>)</a>
@@ -180,11 +180,11 @@
 <a class="sourceLine" id="cb3-34" data-line-number="34"><span class="co">#&gt; # A tibble: 6 x 3</span></a>
 <a class="sourceLine" id="cb3-35" data-line-number="35"><span class="co">#&gt;   id      label.en                       description.en                   </span></a>
 <a class="sourceLine" id="cb3-36" data-line-number="36"><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;                          &lt;chr&gt;                            </span></a>
-<a class="sourceLine" id="cb3-37" data-line-number="37"><span class="co">#&gt; 1 TYPE490 government office regions tec~ government office regions tec / ~</span></a>
-<a class="sourceLine" id="cb3-38" data-line-number="38"><span class="co">#&gt; 2 TYPE491 government office regions (fo~ government office regions (forme~</span></a>
+<a class="sourceLine" id="cb3-37" data-line-number="37"><span class="co">#&gt; 1 TYPE490 government office regions tec… government office regions tec / …</span></a>
+<a class="sourceLine" id="cb3-38" data-line-number="38"><span class="co">#&gt; 2 TYPE491 government office regions (fo… government office regions (forme…</span></a>
 <a class="sourceLine" id="cb3-39" data-line-number="39"><span class="co">#&gt; 3 TYPE492 standard statistical regions   standard statistical regions     </span></a>
-<a class="sourceLine" id="cb3-40" data-line-number="40"><span class="co">#&gt; 4 TYPE496 pre-1996 local authority dist~ pre-1996 local authority distric~</span></a>
-<a class="sourceLine" id="cb3-41" data-line-number="41"><span class="co">#&gt; 5 TYPE498 pre-1996 counties / scottish ~ pre-1996 counties / scottish reg~</span></a>
+<a class="sourceLine" id="cb3-40" data-line-number="40"><span class="co">#&gt; 4 TYPE496 pre-1996 local authority dist… pre-1996 local authority distric…</span></a>
+<a class="sourceLine" id="cb3-41" data-line-number="41"><span class="co">#&gt; 5 TYPE498 pre-1996 counties / scottish … pre-1996 counties / scottish reg…</span></a>
 <a class="sourceLine" id="cb3-42" data-line-number="42"><span class="co">#&gt; 6 TYPE499 countries                      countries</span></a>
 <a class="sourceLine" id="cb3-43" data-line-number="43"> </a>
 <a class="sourceLine" id="cb3-44" data-line-number="44"> jobseekers_sex &lt;-<span class="st"> </span><span class="kw"><a href="reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="st">"NM_1_1"</span>, <span class="st">"sex"</span>, <span class="st">"TYPE"</span>)</a>
@@ -314,7 +314,7 @@
 <li><a href="https://codecov.io/github/ropensci/nomisr?branch=master"><img src="https://img.shields.io/codecov/c/github/ropensci/nomisr/master.svg" alt="Coverage Status"></a></li>
 <li><a href="https://github.com/ropensci/onboarding/issues/190"><img src="https://badges.ropensci.org/190_status.svg" alt="ropensci"></a></li>
 <li><a href="https://doi.org/10.5281/zenodo.1246845"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1246845.svg" alt="DOI"></a></li>
-<li><a href="https://doi.org/10.21105/joss.00859"><img src="http://joss.theoj.org/papers/10.21105/joss.00859/status.svg" alt="DOI"></a></li>
+<li><a href="https://doi.org/10.21105/joss.00859"><img src="https://joss.theoj.org/papers/10.21105/joss.00859/status.svg" alt="DOI"></a></li>
 </ul>
 </div>
 </div>
