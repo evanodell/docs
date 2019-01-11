@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A tibble with the ID, name and hex code for the official colour of a
-variety of political parties. — party_colour • parlitools</title>
+<title>2015 General Election Results — bes_2015 • parlitools</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -31,12 +30,17 @@ variety of political parties. — party_colour • parlitools</title>
 
 
 
-<meta property="og:title" content="A tibble with the ID, name and hex code for the official colour of a
-variety of political parties. — party_colour" />
+<meta property="og:title" content="2015 General Election Results — bes_2015" />
 
-<meta property="og:description" content="Includes all political parties with MPs and a number without MPs. It
-also contains a 'No Overall Control' party for local government. Hex
-codes are taken from Wikipedia." />
+<meta property="og:description" content="A tibble with the British Election Study
+2015 Constituency Results Version 2.21.
+A tibble with the British Election Study 2017
+Constituency Results Version 1.0.
+A tibble with demographic information on each constituency, taken from
+the 2011 census data included in the British Election Study. Can be
+linked to the bes_2017 and bes_2015 datasets
+using the pano, ons_const_id and
+constituency_name variables." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -180,36 +184,69 @@ codes are taken from Wikipedia." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A tibble with the ID, name and hex code for the official colour of a
-variety of political parties.</h1>
+    <h1>2015 General Election Results</h1>
     
-    <div class="hidden name"><code>party_colour.Rd</code></div>
+    <div class="hidden name"><code>bes.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Includes all political parties with MPs and a number without MPs. It
-also contains a 'No Overall Control' party for local government. Hex
-codes are taken from Wikipedia.</p>
+    <p>A tibble with the British Election Study
+2015 Constituency Results Version 2.21.</p>
+<p>A tibble with the British Election Study 2017
+Constituency Results Version 1.0.</p>
+<p>A tibble with demographic information on each constituency, taken from
+the 2011 census data included in the British Election Study. Can be
+linked to the <code>bes_2017</code> and <code>bes_2015</code> datasets
+using the <code>pano</code>, <code>ons_const_id</code> and
+<code>constituency_name</code> variables.</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>party_colour</span></pre>
+    <pre class="usage"><span class='no'>bes_2015</span>
+
+<span class='no'>bes_2017</span>
+
+<span class='no'>census_11</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble, containing 47 rows and 3 columns.</p><dl class='dl-horizontal'>
-<dt><code>party_id</code></dt><dd><p>The party ID, as assigned by the Members Name
-Information Service</p></dd>
-<dt><code>party_name</code></dt><dd><p>The name of the political party</p></dd>
-<dt><code>party_colour</code></dt><dd><p>A hex code for the party colour,
-as used by Wikipedia</p></dd>
-</dl>
+    <p>A tibble, containing 650 rows and 92 columns. For full details see
+the vignette:
+&lt;<a href='http://docs.evanodell.com/parlitools/articles/bes-2015.html'>http://docs.evanodell.com/parlitools/articles/bes-2015.html</a>&gt;</p>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://en.wikipedia.org/wiki/Wikipedia:Index_of_United_Kingdom_political_parties_meta_attributes'>https://en.wikipedia.org/wiki/Wikipedia:Index_of_United_Kingdom_political_parties_meta_attributes</a>
-<a href='http://data.parliament.uk/membersdataplatform/services/mnis/ReferenceData/Parties/'>http://data.parliament.uk/membersdataplatform/services/mnis/ReferenceData/Parties/</a></p>
+    <p><a href='http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/'>http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/</a></p>
+<p><a href='http://www.britishelectionstudy.com/data-object/2017-bes-constituency-results-with-census-and-candidate-data/'>http://www.britishelectionstudy.com/data-object/2017-bes-constituency-results-with-census-and-candidate-data/</a></p>
+<p><a href='http://www.britishelectionstudy.com/data-object/2017-bes-constituency-results-with-census-and-candidate-data/'>http://www.britishelectionstudy.com/data-object/2017-bes-constituency-results-with-census-and-candidate-data/</a></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>A tibble with constituencies results from the British Election Study 2015.
+Census data from the BES has been moved to the <code>census_11</code>
+dataset, and can be linked through the with the <code>pano</code>,
+<code>ons_const_id</code> and <code>constituency_name</code> variables. Only contains
+detailed results from Great Britain; the only data included on Northern
+Irish constituencies is the party that won the seat.</p>
+<p>Variable names have been converted to snake_case and variables have been
+converted to appropriate R classes.</p>
+<p>A tibble with Great Britain constituencies results from the
+2017 General Election. This data can be linked to 2011 census
+information in <code>census_11</code> with the <code>pano</code>,
+<code>ons_const_id</code> and <code>constituency_name</code> variables.</p>
+<p>Variable names have been converted to snake_case and variables have been
+converted to appropriate R classes.</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Fieldhouse, Edward, Jane Green, Geoffrey Evans,
+Hermann Schmitt, Cees van der Eijk, Jonathan Mellon, and
+Christopher Prosser. "British Election Study, 2015: General Election
+Results Dataset," 2015. doi:10.13140/RG.2.1.1162.1844.</p>
+<p>Fieldhouse, E., J. Green., G. Evans., H. Schmitt,
+C. van der Eijk, J. Mellon &amp; C. Prosser (2017) British Election Study
+2017 Constituency Results file, version 1.0.</p>
     
 
   </div>
@@ -220,6 +257,10 @@ as used by Wikipedia</p></dd>
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>
