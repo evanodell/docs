@@ -36,6 +36,10 @@ build_docs <- function() {
   ### Build `refuge`  -----------------
 
   docs::build_refuge()
+  
+  ### Build `guardianapi`  -----------------
+  
+  docs::build_guardianapi()
 
   ### Building homepage -----------
 

@@ -344,3 +344,53 @@ build_refuge <- function() {
   }
   emo::ji("toilet")
 }
+
+
+
+build_guardianapi <- function() {
+  message("Building `guardianapi`")
+  
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\guardianapi")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\guardianapi",
+        preview = FALSE
+      )
+      
+      guardianapi_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\guardianapi\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("guardianapi", recursive = TRUE)
+      dir.create("guardianapi")
+      
+      file.copy(guardianapi_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\guardianapi",
+                recursive = TRUE
+      )
+    }
+  } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/guardianapi",
+      preview = FALSE
+    )
+    
+    guardianapi_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/guardianapi/docs",
+      all.files = TRUE, full.names = TRUE,
+      recursive = FALSE, ignore.case = TRUE,
+      include.dirs = TRUE, no.. = TRUE
+    )
+    
+    unlink("guardianapi", recursive = TRUE)
+    dir.create("guardianapi")
+    
+    file.copy(guardianapi_doc_files,
+              "/Users/evanodell/Documents/Code/packages/docs/guardianapi",
+              recursive = TRUE
+    )
+  }
+  emo::ji("newspaper")
+}
