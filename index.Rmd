@@ -79,6 +79,17 @@ A collection of tools, datasets and maps for analysing UK politics. Available on
 `refuge` is an R client for the [Refuge Restrooms](https://www.refugerestrooms.org/) API, which records public restrooms that are friendly to trans and non-binary people. Available on [CRAN](https://cran.r-project.org/package=refuge) and [GitHub](https://github.com/EvanOdell/refuge).
 
 
+### [`guardianapi`](https://docs.evanodell.com/guardianapi)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)
+[![GitHub tag](https://img.shields.io/github/tag/evanodell/guardianapi.svg)](https://github.com/evanodell/guardianapi)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/guardianapi)](https://dgrtwo.shinyapps.io/cranview/)
+[![DOI](https://zenodo.org/badge/167837281.svg)](https://zenodo.org/badge/latestdoi/167837281)
+
+Access to the [Guardian open data platorm](https://open-platform.theguardian.com/) API, containing all articles published in the Guardian from 1999 to the present. Available on [CRAN](https://cran.r-project.org/package=guardianapi) and [GitHub](https://github.com/EvanOdell/guardianapi).
+
+
 ### [`emisc`](https://docs.evanodell.com/emisc)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
