@@ -346,7 +346,7 @@ build_refuge <- function() {
 }
 
 
-
+#' @export
 build_guardianapi <- function() {
   message("Building `guardianapi`")
   
