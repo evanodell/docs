@@ -9,10 +9,6 @@ build_docs <- function() {
 
   docs::build_hansard()
 
-  ### Build `hansard-ropengov` -----------------
-
-  # docs::build_hansard_opengov()
-
   ### Build `mnis` -----------------
 
   docs::build_mnis()
@@ -40,6 +36,10 @@ build_docs <- function() {
   ### Build `guardianapi`  -----------------
   
   docs::build_guardianapi()
+  
+  ### Build `ukpolice`  -----------------
+  
+  docs::build_ukpolice()
 
   ### Building homepage -----------
 

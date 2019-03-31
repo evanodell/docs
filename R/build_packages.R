@@ -394,3 +394,53 @@ build_guardianapi <- function() {
   }
   emo::ji("newspaper")
 }
+
+
+#' @export
+build_ukpolice <- function() {
+  message("Building `ukpolice`")
+  
+  if (Sys.info()[[4]] == "DRUK-LAPTOP-09") {
+    if (file.exists("C:\\Users\\eodell\\Documents\\Code\\ukpolice")) {
+      pkgdown::build_site(
+        pkg = "C:\\Users\\eodell\\Documents\\Code\\ukpolice",
+        preview = FALSE
+      )
+      
+      ukpolice_doc_files <- list.files(
+        "C:\\Users\\eodell\\Documents\\Code\\ukpolice\\docs",
+        all.files = TRUE, full.names = TRUE, recursive = FALSE,
+        ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
+      )
+      
+      unlink("ukpolice", recursive = TRUE)
+      dir.create("ukpolice")
+      
+      file.copy(ukpolice_doc_files,
+                "C:\\Users\\eodell\\Documents\\Code\\docs\\ukpolice",
+                recursive = TRUE
+      )
+    }
+  } else {
+    pkgdown::build_site(
+      pkg = "/Users/evanodell/Documents/Code/packages/ukpolice",
+      preview = FALSE
+    )
+    
+    ukpolice_doc_files <- list.files(
+      "/Users/evanodell/Documents/Code/packages/ukpolice/docs",
+      all.files = TRUE, full.names = TRUE,
+      recursive = FALSE, ignore.case = TRUE,
+      include.dirs = TRUE, no.. = TRUE
+    )
+    
+    unlink("ukpolice", recursive = TRUE)
+    dir.create("ukpolice")
+    
+    file.copy(ukpolice_doc_files,
+              "/Users/evanodell/Documents/Code/packages/docs/ukpolice",
+              recursive = TRUE
+    )
+  }
+  emo::ji("police")
+}

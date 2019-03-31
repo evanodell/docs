@@ -90,6 +90,20 @@ A collection of tools, datasets and maps for analysing UK politics. Available on
 Access to the [Guardian open data platorm](https://open-platform.theguardian.com/) API, containing all articles published in the Guardian from 1999 to the present. Available on [CRAN](https://cran.r-project.org/package=guardianapi) and [GitHub](https://github.com/EvanOdell/guardianapi).
 
 
+### [`ukpolice`](https://docs.evanodell.com/ukpolice)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)
+[![GitHub tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.com/evanodell/ukpolice)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/ukpolice)](https://dgrtwo.shinyapps.io/cranview/)
+[![DOI](https://zenodo.org/badge/178673884.svg)](https://zenodo.org/badge/latestdoi/178673884)
+
+
+
+Access to the [UK Police API](https://data.police.uk/docs/), with data on police forces, reported crimes and the use of stop and search. Available on <!--[CRAN](https://cran.r-project.org/package=ukpolice) and--> [GitHub](https://github.com/EvanOdell/ukpolice).
+
+
+
 ### [`emisc`](https://docs.evanodell.com/emisc)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)

@@ -87,6 +87,9 @@
       <a href="http://docs.evanodell.com/guardianapi">guardianapi</a>
     </li>
     <li>
+      <a href="http://docs.evanodell.com/ukpolice">ukpolice</a>
+    </li>
+    <li>
       <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
@@ -120,7 +123,7 @@
       <h1>Introduction to hansard</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2019-01-27</h4>
+            <h4 class="date">2019-03-31</h4>
       
       
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -289,7 +292,7 @@ devtools::install_github("EvanOdell/hansard")</a></code></pre>
 ## $ grouped_question_uin                &lt;list&gt; ["list(c(\"65591\", \"65592…
 ## $ answer_text_value                   &lt;chr&gt; "&lt;p&gt;73 clinical commissionin…
 ## $ answering_member_about              &lt;chr&gt; "4019", "4019", "4019", "401…
-## $ answering_member_label_value        &lt;chr&gt; "Biography information for N…
+## $ answering_member_label_value        &lt;chr&gt; "Biography information for B…
 ## $ answering_member_constituency_value &lt;chr&gt; "Oxford West and Abingdon", …
 ## $ answering_member_printed_value      &lt;chr&gt; "Nicola Blackwood", "Nicola …
 ## $ date_of_answer_value                &lt;chr&gt; "2017-03-07", "2017-03-07", …
@@ -366,12 +369,12 @@ devtools::install_github("EvanOdell/hansard")</a></code></pre>
 <pre><code>## Connecting to API</code></pre>
 <pre><code>## Retrieving page 1 of 1</code></pre>
 <pre><code>##    user  system elapsed 
-##   0.506   0.146   4.606</code></pre>
+##   0.418   0.120   6.161</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.time">system.time</a></span>(with_topic &lt;-<span class="st"> </span><span class="kw"><a href="../reference/research_briefings.html">research_briefings</a></span>(<span class="dt">topic =</span> research_topics_list[[<span class="dv">7</span>]], <span class="dt">subtopic=</span>research_subtopics_list[[<span class="dv">7</span>]][<span class="dv">10</span>]))</a></code></pre></div>
 <pre><code>## Connecting to API
 ## Retrieving page 1 of 1</code></pre>
 <pre><code>##    user  system elapsed 
-##   0.028   0.004   0.112</code></pre>
+##   0.029   0.004   0.122</code></pre>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/identical">identical</a></span>(with_topic, without_topic)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>If a specified subtopic is not a subtopic of the specified topic, the function will not return any data.</p>
