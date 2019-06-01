@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Citation and Authors • nomisr</title>
+<title>Northern Ireland GE Results — ni_ge_2017 • parlitools</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -25,12 +25,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Citation and Authors" />
+<meta property="og:title" content="Northern Ireland GE Results — ni_ge_2017" />
+
+<meta property="og:description" content="A tibble with results from UK General Elections in Northern Ireland
+in 2015 and 2017." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -57,7 +61,7 @@
   </head>
 
   <body>
-    <div class="container template-citation-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -69,24 +73,48 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">nomisr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
+        <a class="navbar-link" href="../index.html">parlitools</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="https://docs.evanodell.com">Docs Home</a>
+  <a href="http://docs.evanodell.com">Docs Home</a>
 </li>
 <li>
-  <a href="news/index.html">News</a>
+  <a href="../news/index.html">News</a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="articles/introduction.html">Introduction</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/introduction.html">Introduction</a>
+    </li>
+    <li>
+      <a href="../articles/using-cartograms.html">Using cartograms with parlitools</a>
+    </li>
+    <li>
+      <a href="../articles/mapping-local-authorities.html">Mapping Local Government</a>
+    </li>
+    <li>
+      <a href="../articles/bes-2015.html">British Election Study 2015</a>
+    </li>
+    <li>
+      <a href="../articles/bes-2017.html">British Election Study 2017</a>
+    </li>
+    <li>
+      <a href="../articles/census-11.html">Constituency Level Census Data</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -132,7 +160,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/ropensci/nomisr">
+  <a href="https://github.com/evanodell/parlitools">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -153,53 +181,49 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Citation</h1>
-      <small class="dont-index">Source: <a href='https://github.com/ropensci/nomisr/blob/master/inst/CITATION'><code>inst/CITATION</code></a></small>
+    <h1>Northern Ireland GE Results</h1>
+    <small class="dont-index">Source: <a href='https://github.com/EvanOdell/parlitools/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>ni_ge_2017.Rd</code></div>
     </div>
 
-    <p>Odell E (2018).
-&ldquo;nomisr: Access Nomis UK Labour Market Data With R.&rdquo;
-<em>The Journal of Open Source Software</em>, <b>3</b>(27), 859.
-doi: <a href="https://doi.org/10.21105/joss.00859">10.21105/joss.00859</a>, R package version 0.4.1, <a href="https://github.com/ropensci/nomisr">https://github.com/ropensci/nomisr</a>. 
-</p>
-    <pre>@Article{,
-  title = {{nomisr}: Access Nomis UK Labour Market Data With R},
-  volume = {3},
-  doi = {10.21105/joss.00859},
-  number = {27},
-  journal = {The Journal of Open Source Software},
-  year = {2018},
-  month = {July},
-  pages = {859},
-  author = {Evan Odell},
-  note = {R package version 0.4.1},
-  url = {https://github.com/ropensci/nomisr},
-}</pre>
-    <div class="page-header">
-      <h1>Authors</h1>
+    <div class="ref-description">
+    
+    <p>A tibble with results from UK General Elections in Northern Ireland
+in 2015 and 2017.</p>
+    
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong><a href='https://evanodell.com'>Evan Odell</a></strong>. Author, maintainer. <a href='https://orcid.org/0000-0003-1845-808X' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID' height='16'></a>
-        </p>
-      </li>
-      <li>
-        <p><strong>Paul Egeler</strong>. Reviewer, contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Christophe Dervieux</strong>. Reviewer. <a href='https://orcid.org/0000-0003-4474-2498' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID' height='16'></a>
-        </p>
-      </li>
-    </ul>
+    <pre class="usage"><span class='no'>ni_ge_2017</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A tibble, with 18 rows and 62 columns.</p>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='https://www.electoralcommission.org.uk/our-work/our-research/electoral-data/electoral-data-files-and-reports'>https://www.electoralcommission.org.uk/our-work/our-research/electoral-data/electoral-data-files-and-reports</a></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Data is taken from the Electoral Commission results.</p>
+    
 
   </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      
+      <li><a href="#format">Format</a></li>
 
+      <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
+
+  </div>
 </div>
-
 
       <footer>
       <div class="copyright">
