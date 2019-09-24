@@ -12,7 +12,8 @@ RoxygenNote: 6.1.1
 Imports: 
     emo,
     clisymbols,
-    pkgdown
+    pkgdown,
+    magrittr
 Remotes: 
   hadley/emo
 Encoding: UTF-8

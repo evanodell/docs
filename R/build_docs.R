@@ -40,6 +40,10 @@ build_docs <- function() {
   ### Build `ukpolice`  -----------------
   
   docs::build_ukpolice()
+  
+  ### Build `cqcr`  -----------------
+  
+  docs::build_cqcr()
 
   ### Building homepage -----------
 
