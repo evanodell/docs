@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>docs | docs.evanodell.com • docs</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="docs | docs.evanodell.com">
 <meta property="og:description" content="An internal package to build docs with pkgdown.">
 <meta name="twitter:card" content="summary">
@@ -24,7 +25,7 @@
 </script>
 </head>
 <body>
-    <div class="container template-article">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -49,7 +50,6 @@
   <a href="https://docs.evanodell.com">docs.evanodell.com</a>
 </li>
 <li class="divider">
-</li>
 <li>
   <a href="https://docs.evanodell.com/hansard">hansard</a>
 </li>
@@ -100,86 +100,13 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    
 
-    
-    
+      </header><div class="row">
+  <div class="contents col-md-9">
 <div id="documentation" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#documentation" class="anchor"></a>Documentation</h1></div>
-<p>Online documentation for my R packages.</p>
-<div id="packages" class="section level2">
-<h2 class="hasAnchor">
-<a href="#packages" class="anchor"></a>Packages:</h2>
-<div id="hansard" class="section level3">
-<h3 class="hasAnchor">
-<a href="#hansard" class="anchor"></a><a href="https://docs.evanodell.com/hansard"><code>hansard</code></a>
-</h3>
-<p><a href=""><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a> <a href="https://cran.r-project.org/package=hansard"><img src="https://www.r-pkg.org/badges/version/hansard" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/hansard"><img src="https://img.shields.io/github/tag/evanodell/hansard.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/hansard"></a> <a href="https://zenodo.org/badge/latestdoi/72111315"><img src="https://zenodo.org/badge/72111315.svg" alt="DOI"></a></p>
-<p>An ironically named R package to automatically fetch data from the UK Parliament API. Available on <a href="https://cran.r-project.org/package=hansard">CRAN</a> and <a href="https://github.com/EvanOdell/hansard">GitHub</a>. <code>hansard</code> is part of the <a href="https://ropengov.github.io/">rOpenGov</a> project and its documentation is mirrored on the <a href="https://ropengov.github.io/hansard/">rOpenGov website</a>.</p>
-</div>
-<div id="mnis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#mnis" class="anchor"></a><a href="https://docs.evanodell.com/mnis"><code>mnis</code></a>
-</h3>
-<p><a href="https://github.com/EvanOdell/mnis/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a> <a href="https://cran.r-project.org/package=mnis"><img src="https://www.r-pkg.org/badges/version/mnis" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/mnis"><img src="https://img.shields.io/github/tag/evanodell/mnis.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/mnis"></a> <a href="https://zenodo.org/badge/latestdoi/76553907"><img src="https://zenodo.org/badge/76553907.svg" alt="DOI"></a></p>
-<p>An R package for downloading data from the Members’ Names Information Service API operated by the UK Parliament. Available on <a href="https://cran.r-project.org/package=mnis">CRAN</a> and <a href="https://github.com/EvanOdell/mnis">GitHub</a>.</p>
-</div>
-<div id="parlitools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#parlitools" class="anchor"></a><a href="https://docs.evanodell.com/parlitools"><code>parlitools</code></a>
-</h3>
-<p><a href="https://github.com/EvanOdell/parlitools/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a> <a href="https://cran.r-project.org/package=parlitools"><img src="https://www.r-pkg.org/badges/version/parlitools" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/parlitools"><img src="https://img.shields.io/github/tag/evanodell/parlitools.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/parlitools"></a> <a href="https://zenodo.org/badge/latestdoi/86801920"><img src="https://zenodo.org/badge/86801920.svg" alt="DOI"></a></p>
-<p>A collection of tools, datasets and maps for analysing UK politics. Available on <a href="https://cran.r-project.org/package=parlitools">CRAN</a> and <a href="https://github.com/EvanOdell/parlitools">GitHub</a>.</p>
-</div>
-<div id="nomisr" class="section level3">
-<h3 class="hasAnchor">
-<a href="#nomisr" class="anchor"></a><a href="https://docs.evanodell.com/nomisr"><code>nomisr</code></a>
-</h3>
-<p><a href="https://github.com/EvanOdell/emisc/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a> <a href="https://cran.r-project.org/package=nomisr"><img src="https://www.r-pkg.org/badges/version/nomisr" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/nomisr"><img src="https://img.shields.io/github/tag/evanodell/nomisr.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/nomisr"></a> <a href="https://zenodo.org/badge/latestdoi/118144805"><img src="https://zenodo.org/badge/118144805.svg" alt="DOI"></a></p>
-<p><code>nomisr</code> is for accessing <a href="https://www.nomisweb.co.uk/">Nomis</a> data – UK labour market statistics, census data and other populatlion data – with R. Available on <a href="https://cran.r-project.org/package=nomisr">CRAN</a> and <a href="https://github.com/ropensci/nomisr">GitHub</a>. Part of the rOpenSci community.</p>
-</div>
-<div id="fixerapi" class="section level3">
-<h3 class="hasAnchor">
-<a href="#fixerapi" class="anchor"></a><a href="https://docs.evanodell.com/fixerapi"><code>fixerapi</code></a>
-</h3>
-<p><a href="https://github.com/EvanOdell/emisc/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a> <a href="https://cran.r-project.org/package=fixerapi"><img src="https://www.r-pkg.org/badges/version/fixerapi" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/fixerapi"><img src="https://img.shields.io/github/tag/evanodell/fixerapi.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/fixerapi"></a> <a href="https://zenodo.org/badge/latestdoi/127822432"><img src="https://zenodo.org/badge/127822432.svg" alt="DOI"></a></p>
-<p><code>fixerapi</code> is an R client for the <a href="https://fixer.io">fixer.io</a> currency exchange rate API. Available on <a href="https://cran.r-project.org/package=fixerapi">CRAN</a> and <a href="https://github.com/EvanOdell/fixerapi">GitHub</a>.</p>
-</div>
-<div id="refuge" class="section level3">
-<h3 class="hasAnchor">
-<a href="#refuge" class="anchor"></a><a href="https://docs.evanodell.com/refuge"><code>refuge</code></a>
-</h3>
-<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a> <a href="https://cran.r-project.org/package=refuge"><img src="https://www.r-pkg.org/badges/version/refuge" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/refuge"><img src="https://img.shields.io/github/tag/evanodell/refuge.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/refuge"></a> <a href="https://zenodo.org/badge/latestdoi/129826417"><img src="https://zenodo.org/badge/129826417.svg" alt="DOI"></a></p>
-<p><code>refuge</code> is an R client for the <a href="https://www.refugerestrooms.org/">Refuge Restrooms</a> API, which records public restrooms that are friendly to trans and non-binary people. Available on <a href="https://cran.r-project.org/package=refuge">CRAN</a> and <a href="https://github.com/EvanOdell/refuge">GitHub</a>.</p>
-</div>
-<div id="guardianapi" class="section level3">
-<h3 class="hasAnchor">
-<a href="#guardianapi" class="anchor"></a><a href="https://docs.evanodell.com/guardianapi"><code>guardianapi</code></a>
-</h3>
-<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a> <a href="https://cran.r-project.org/package=guardianapi"><img src="https://www.r-pkg.org/badges/version/guardianapi" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/guardianapi"><img src="https://img.shields.io/github/tag/evanodell/guardianapi.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/guardianapi"></a> <a href="https://zenodo.org/badge/latestdoi/167837281"><img src="https://zenodo.org/badge/167837281.svg" alt="DOI"></a></p>
-<p>Access to the <a href="https://open-platform.theguardian.com/">Guardian open data platorm</a> API, containing all articles published in the Guardian from 1999 to the present. Available on <a href="https://cran.r-project.org/package=guardianapi">CRAN</a> and <a href="https://github.com/EvanOdell/guardianapi">GitHub</a>.</p>
-</div>
-<div id="ukpolice" class="section level3">
-<h3 class="hasAnchor">
-<a href="#ukpolice" class="anchor"></a><a href="https://docs.evanodell.com/ukpolice"><code>ukpolice</code></a>
-</h3>
-<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a> <a href="https://cran.r-project.org/package=ukpolice"><img src="https://www.r-pkg.org/badges/version/ukpolice" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/ukpolice"><img src="https://img.shields.io/github/tag/evanodell/ukpolice.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/ukpolice"></a> <a href="https://zenodo.org/badge/latestdoi/178673884"><img src="https://zenodo.org/badge/178673884.svg" alt="DOI"></a></p>
-<p>Access to the <a href="https://data.police.uk/docs/">UK Police API</a>, with data on police forces, reported crimes and the use of stop and search. Available on <!--[CRAN](https://cran.r-project.org/package=ukpolice) and--> <a href="https://github.com/EvanOdell/ukpolice">GitHub</a>.</p>
-</div>
-<div id="emisc" class="section level3">
-<h3 class="hasAnchor">
-<a href="#emisc" class="anchor"></a><a href="https://docs.evanodell.com/emisc"><code>emisc</code></a>
-</h3>
-<p><a href="https://github.com/EvanOdell/emisc/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a> <a href="https://cran.r-project.org/package=emisc"><img src="https://www.r-pkg.org/badges/version/emisc" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/emisc"><img src="https://img.shields.io/github/tag/evanodell/emisc.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/emisc"></a> <a href="https://zenodo.org/badge/latestdoi/96876145"><img src="https://zenodo.org/badge/96876145.svg" alt="DOI"></a></p>
-<p><code>emisc</code> is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work.</p>
-<p><code>emisc</code> is currently not available on CRAN. You can install <code>emisc</code> from github with:</p>
-<pre><code><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports"># install.packages("devtools")
-devtools::install_github("evanodell/emisc")</a></code></pre>
-</div>
-</div>
+<p>Files for online documentation for my R packages, available at <a href="https://docs.evanodell.com/" class="uri">https://docs.evanodell.com/</a>.</p>
 </div>
   </div>
 
@@ -201,12 +128,11 @@ devtools::install_github("evanodell/emisc")</a></code></pre>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Evan Odell <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li>Evan Odell <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 </ul>
 </div>
 
-      </div>
-
+  </div>
 </div>
 
 
@@ -215,12 +141,14 @@ devtools::install_github("evanodell/emisc")</a></code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

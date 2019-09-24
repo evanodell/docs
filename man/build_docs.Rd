@@ -4,7 +4,7 @@
 \alias{build_docs}
 \title{build_docs}
 \usage{
-build_docs()
+build_docs(force = FALSE)
 }
 \description{
 Build documentation for R packages for for docs.evanodell.com

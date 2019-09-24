@@ -3,51 +3,51 @@
 #'
 #' Build documentation for R packages for for docs.evanodell.com
 #' @export
-build_docs <- function() {
+build_docs <- function(force = FALSE) {
 
   ### Build `hansard`  -----------------
 
-  docs::build_hansard()
+  docs::build_hansard(force = force)
 
   ### Build `mnis` -----------------
 
-  docs::build_mnis()
+  docs::build_mnis(force = force)
 
   ### Build `parlitools` -----------------
 
-  docs::build_parlitools()
+  docs::build_parlitools(force = force)
 
   ### Build `emisc`  -----------------
 
-  docs::build_emisc()
+  docs::build_emisc(force = force)
 
   ### Build `nomisr`  -----------------
 
-  docs::build_nomisr()
+  docs::build_nomisr(force = force)
 
   ### Build `fixerapi`  -----------------
 
-  docs::build_fixerapi()
+  docs::build_fixerapi(force = force)
 
   ### Build `refuge`  -----------------
 
-  docs::build_refuge()
-  
+  docs::build_refuge(force = force)
+
   ### Build `guardianapi`  -----------------
-  
-  docs::build_guardianapi()
-  
+
+  docs::build_guardianapi(force = force)
+
   ### Build `ukpolice`  -----------------
-  
-  docs::build_ukpolice()
-  
+
+  docs::build_ukpolice(force = force)
+
   ### Build `cqcr`  -----------------
-  
-  docs::build_cqcr()
+
+  docs::build_cqcr(force = force)
 
   ### Building homepage -----------
 
-  docs::build_docs_home()
+  docs::build_docs_home(force = force)
 
   message(paste(
     strrep(clisymbols::symbol$star, 5),

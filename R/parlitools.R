@@ -1,54 +1,57 @@
 
 #' @export
-build_parlitools <- function() {
+build_parlitools <- function(force = FALSE) {
   message("Building `parlitools`")
-  
-  base_files <- paste0("/Users/evanodell/Documents/Code/packages/parlitools/", list.files(path = "/Users/evanodell/Documents/Code/packages/parlitools",
-                                                                                          recursive = TRUE))
-  
+
+  base_files <- paste0("/Users/evanodell/Documents/Code/packages/parlitools/", list.files(
+    path = "/Users/evanodell/Documents/Code/packages/parlitools",
+    recursive = TRUE
+  ))
+
   base_files <- base_files[ !grepl("docs", base_files) ]
-  
+
   x <- lapply(base_files, file.info)
-  
+
   base_modified <- purrr::map(x, "mtime") %>%
     purrr::map(as.character) %>%
     unlist() %>%
     as.POSIXct()
-  
-  web_files <- paste0("parlitools/", list.files(path = "parlitools",
-                                                recursive = TRUE))
-  
+
+  web_files <- paste0("parlitools/", list.files(
+    path = "parlitools",
+    recursive = TRUE
+  ))
+
   y <- lapply(web_files, file.info)
-  
+
   web_modified <- purrr::map(y, "mtime") %>%
     purrr::map(as.character) %>%
     unlist() %>%
-    as.POSIXct() 
-  
-  if (max(web_modified) <= max(base_modified)) {
+    as.POSIXct()
+
+  if (max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
       pkg = "/Users/evanodell/Documents/Code/packages/parlitools",
       preview = FALSE
     )
-    
+
     parlitools_doc_files <- list.files(
       "/Users/evanodell/Documents/Code/packages/parlitools/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
     )
-    
+
     unlink("parlitools", recursive = TRUE)
     dir.create("parlitools")
-    
+
     file.copy(parlitools_doc_files,
-              "/Users/evanodell/Documents/Code/packages/docs/parlitools",
-              recursive = TRUE
+      "/Users/evanodell/Documents/Code/packages/docs/parlitools",
+      recursive = TRUE
     )
   } else {
     message("Up to date!")
   }
-  
+
   emo::ji("map")
 }
-
