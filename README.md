@@ -22,8 +22,6 @@ Parliament API. Available on
 
 ### [`cqcr`](https://docs.evanodell.com/cqcr)
 
-<!-- badges: start -->
-
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)
@@ -36,7 +34,6 @@ status](https://ci.appveyor.com/api/projects/status/github/evanodell/cqcr?branch
 [![Codecov test
 coverage](https://codecov.io/gh/evanodell/cqcr/branch/master/graph/badge.svg)](https://codecov.io/gh/evanodell/cqcr?branch=master)
 [![DOI](https://zenodo.org/badge/204009825.svg)](https://zenodo.org/badge/latestdoi/204009825)
-<!-- badges: end -->
 
 Get data from the Care Quality Commission
 [API](https://anypoint.mulesoft.com/exchange/portals/care-quality-commission-5/4d36bd23-127d-4acf-8903-ba292ea615d4/cqc-syndication-1/).
