@@ -4,7 +4,7 @@ output: github_document
 
 # Documentation
 
-Online documentation for my R packages. Click on the names for links to the full documentation.
+Online documentation for my R packages. Click on the names for links to the full documentation. All packages are available from [CRAN](https://cran.r-project.org/) unless otherwise indicated.
 
 ## Packages:
 
@@ -25,9 +25,7 @@ An ironically named R package to automatically fetch data from the UK Parliament
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)
 [![GitHub tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr)
-[![Travis build status](https://travis-ci.org/evanodell/cqcr.svg?branch=master)](https://travis-ci.org/evanodell/cqcr)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/evanodell/cqcr?branch=master&svg=true)](https://ci.appveyor.com/project/evanodell/cqcr)
-[![Codecov test coverage](https://codecov.io/gh/evanodell/cqcr/branch/master/graph/badge.svg)](https://codecov.io/gh/evanodell/cqcr?branch=master)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/cqcr)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/204009825.svg)](https://zenodo.org/badge/latestdoi/204009825)
 
 Get data from the Care Quality Commission [API](https://anypoint.mulesoft.com/exchange/portals/care-quality-commission-5/4d36bd23-127d-4acf-8903-ba292ea615d4/cqc-syndication-1/). Available on [GitHub](https://github.com/EvanOdell/cqcr)
@@ -41,8 +39,7 @@ Get data from the Care Quality Commission [API](https://anypoint.mulesoft.com/ex
 [![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/76553907.svg)](https://zenodo.org/badge/latestdoi/76553907)
 
-An R package for downloading data from the Members' Names Information Service API operated by the UK Parliament. Available on [CRAN](https://cran.r-project.org/package=mnis) and [GitHub](https://github.com/EvanOdell/mnis).
-
+An R package for downloading data from the Members' Names Information Service API operated by the UK Parliament.
 
 ### [`parlitools`](https://docs.evanodell.com/parlitools)
 
@@ -52,7 +49,7 @@ An R package for downloading data from the Members' Names Information Service AP
 [![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/86801920.svg)](https://zenodo.org/badge/latestdoi/86801920)
 
-A collection of tools, datasets and maps for analysing UK politics. Available on [CRAN](https://cran.r-project.org/package=parlitools) and [GitHub](https://github.com/EvanOdell/parlitools).
+A collection of tools, datasets and maps for analysing UK politics.
 
 
 ### [`nomisr`](https://docs.evanodell.com/nomisr)
@@ -63,7 +60,7 @@ A collection of tools, datasets and maps for analysing UK politics. Available on
 [![](https://cranlogs.r-pkg.org/badges/grand-total/nomisr)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/118144805.svg)](https://zenodo.org/badge/latestdoi/118144805)
 
-`nomisr` is for accessing [Nomis](https://www.nomisweb.co.uk/) data -- UK labour market statistics, census data and other populatlion data -- with R. Available on [CRAN](https://cran.r-project.org/package=nomisr) and [GitHub](https://github.com/ropensci/nomisr). Part of the rOpenSci community.
+`nomisr` is for accessing [Nomis](https://www.nomisweb.co.uk/) data -- UK labour market statistics, census data and other population data -- with R. Part of the [rOpenSci](https://github.com/ropensci/repositories) community.
 
 
 ### [`fixerapi`](https://docs.evanodell.com/fixerapi)
@@ -74,7 +71,7 @@ A collection of tools, datasets and maps for analysing UK politics. Available on
 [![](https://cranlogs.r-pkg.org/badges/grand-total/fixerapi)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/127822432.svg)](https://zenodo.org/badge/latestdoi/127822432)
 
-`fixerapi` is an R client for the [fixer.io](https://fixer.io) currency exchange rate API. Available on [CRAN](https://cran.r-project.org/package=fixerapi) and [GitHub](https://github.com/EvanOdell/fixerapi).
+`fixerapi` is an R client for the [fixer.io](https://fixer.io) currency exchange rate API.
 
 
 
@@ -86,7 +83,7 @@ A collection of tools, datasets and maps for analysing UK politics. Available on
 [![](https://cranlogs.r-pkg.org/badges/grand-total/refuge)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/129826417.svg)](https://zenodo.org/badge/latestdoi/129826417)
 
-`refuge` is an R client for the [Refuge Restrooms](https://www.refugerestrooms.org/) API, which records public restrooms that are friendly to trans and non-binary people. Available on [CRAN](https://cran.r-project.org/package=refuge) and [GitHub](https://github.com/EvanOdell/refuge).
+`refuge` is an R client for the [Refuge Restrooms](https://www.refugerestrooms.org/) API, which records public restrooms that are friendly to trans and non-binary people.
 
 
 ### [`guardianapi`](https://docs.evanodell.com/guardianapi)
@@ -97,8 +94,7 @@ A collection of tools, datasets and maps for analysing UK politics. Available on
 [![](https://cranlogs.r-pkg.org/badges/grand-total/guardianapi)](https://dgrtwo.shinyapps.io/cranview/)
 [![DOI](https://zenodo.org/badge/167837281.svg)](https://zenodo.org/badge/latestdoi/167837281)
 
-Access to the [Guardian open data platorm](https://open-platform.theguardian.com/) API, containing all articles published in the Guardian from 1999 to the present. Available on [CRAN](https://cran.r-project.org/package=guardianapi) and [GitHub](https://github.com/EvanOdell/guardianapi).
-
+Access to the [Guardian open data platorm](https://open-platform.theguardian.com/) API, containing all articles published in the Guardian from 1999 to the present.
 
 ### [`ukpolice`](https://docs.evanodell.com/ukpolice)
 
@@ -110,7 +106,7 @@ Access to the [Guardian open data platorm](https://open-platform.theguardian.com
 
 
 
-Access to the [UK Police API](https://data.police.uk/docs/), with data on police forces, reported crimes and the use of stop and search. Available on <!--[CRAN](https://cran.r-project.org/package=ukpolice) and--> [GitHub](https://github.com/EvanOdell/ukpolice).
+Access to the [UK Police API](https://data.police.uk/docs/), with data on police forces, reported crimes and the use of stop and search.
 
 
 
