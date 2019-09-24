@@ -13,6 +13,8 @@ navbar:
     - text: "---------"
     - text: "hansard"
       href: https://docs.evanodell.com/hansard
+    - text: "cqcr"
+      href: https://docs.evanodell.com/cqcr
     - text: "mnis"
       href: https://docs.evanodell.com/mnis
     - text: "parlitools"

@@ -1,15 +1,10 @@
 ---
-title: "index"
-author: "Evan Odell"
-date: "sys.Date()"
-output:
-  html_document:
-    toc: true
+output: github_document
 ---
 
 # Documentation
 
-Online documentation for my R packages.
+Online documentation for my R packages. Click on the names for links to the full documentation.
 
 ## Packages:
 
