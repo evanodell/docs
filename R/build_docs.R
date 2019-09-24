@@ -2,6 +2,7 @@
 #' build_docs
 #'
 #' Build documentation for R packages for for docs.evanodell.com
+#' @param force If TRUE, rebuild everything
 #' @export
 build_docs <- function(force = FALSE) {
 
@@ -47,7 +48,7 @@ build_docs <- function(force = FALSE) {
 
   ### Building homepage -----------
 
-  docs::build_docs_home(force = force)
+  docs::build_docs_home()
 
   message(paste(
     strrep(clisymbols::symbol$star, 5),

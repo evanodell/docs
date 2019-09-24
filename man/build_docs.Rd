@@ -6,6 +6,9 @@
 \usage{
 build_docs(force = FALSE)
 }
+\arguments{
+\item{force}{If TRUE, rebuild everything}
+}
 \description{
 Build documentation for R packages for for docs.evanodell.com
 }
