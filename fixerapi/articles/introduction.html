@@ -5,11 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introduction to <code>fixerapi</code> • fixerapi</title>
+<title>Introduction to `fixerapi` • fixerapi</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to &lt;code&gt;fixerapi&lt;/code&gt;">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to `fixerapi`">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -117,6 +118,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -124,7 +126,7 @@
 </h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2019-06-01</h4>
+            <h4 class="date">2019-11-13</h4>
       
       
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -162,40 +164,40 @@
 <li>Exchange rate fluctuations over a period of up to 365 days, using <code><a href="../reference/fixer_fluctuation.html">fixer_fluctuation()</a></code> (available on “professional plus” and “enterprise” grade accounts)</li>
 </ul>
 <p>With the exception of <code><a href="../reference/fixer_convert.html">fixer_convert()</a></code>, which is limited to two currencies, all functions give an option for a base currency that is indexed to 1 and other currencies are compared to – the default is the Euro – and an option to limit the currencies it is compared with, using the <code>symbols</code> parameter, which takes a character vector of currency symbols. If no symbols are specified, all available currencies are returned.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fixer)</a>
-<a class="sourceLine" id="cb1-2" title="2">today_symbols &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fixer_latest.html">fixer_latest</a></span>(<span class="dt">base =</span> <span class="st">"EUR"</span>, </a>
-<a class="sourceLine" id="cb1-3" title="3">                              <span class="dt">symbols =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"JPY"</span>, <span class="st">"GBP"</span>, <span class="st">"USD"</span>, <span class="st">"CAD"</span>, <span class="st">"CHF"</span>))</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(today_symbols)</a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co">#&gt; A tibble: 5 x 2</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt;   name    value</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt;   &lt;chr&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; 1 JPY   131.   </span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; 2 GBP     0.873</span></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt; 3 USD     1.23 </span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; 4 CAD     1.57 </span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt; 5 CHF     1.18 </span></a>
-<a class="sourceLine" id="cb1-15" title="15"></a>
-<a class="sourceLine" id="cb1-16" title="16"></a>
-<a class="sourceLine" id="cb1-17" title="17">today_all &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fixer_latest.html">fixer_latest</a></span>(<span class="dt">base =</span> <span class="st">"EUR"</span>)</a>
-<a class="sourceLine" id="cb1-18" title="18"></a>
-<a class="sourceLine" id="cb1-19" title="19"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(today_all)</a>
-<a class="sourceLine" id="cb1-20" title="20"></a>
-<a class="sourceLine" id="cb1-21" title="21"><span class="co">#&gt; A tibble: 168 x 2</span></a>
-<a class="sourceLine" id="cb1-22" title="22"><span class="co">#&gt;    name   value</span></a>
-<a class="sourceLine" id="cb1-23" title="23"><span class="co">#&gt;    &lt;chr&gt;  &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb1-24" title="24"><span class="co">#&gt;  1 AED     4.51</span></a>
-<a class="sourceLine" id="cb1-25" title="25"><span class="co">#&gt;  2 AFN    84.9 </span></a>
-<a class="sourceLine" id="cb1-26" title="26"><span class="co">#&gt;  3 ALL   130.  </span></a>
-<a class="sourceLine" id="cb1-27" title="27"><span class="co">#&gt;  4 AMD   589.  </span></a>
-<a class="sourceLine" id="cb1-28" title="28"><span class="co">#&gt;  5 ANG     2.18</span></a>
-<a class="sourceLine" id="cb1-29" title="29"><span class="co">#&gt;  6 AOA   263.  </span></a>
-<a class="sourceLine" id="cb1-30" title="30"><span class="co">#&gt;  7 ARS    24.7 </span></a>
-<a class="sourceLine" id="cb1-31" title="31"><span class="co">#&gt;  8 AUD     1.60</span></a>
-<a class="sourceLine" id="cb1-32" title="32"><span class="co">#&gt;  9 AWG     2.18</span></a>
-<a class="sourceLine" id="cb1-33" title="33"><span class="co">#&gt; 10 AZN     2.09</span></a>
-<a class="sourceLine" id="cb1-34" title="34"><span class="co">#&gt; ... with 158 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(fixer)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>today_symbols &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fixer_latest.html">fixer_latest</a></span>(<span class="dt">base =</span> <span class="st">"EUR"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>                              <span class="dt">symbols =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"JPY"</span>, <span class="st">"GBP"</span>, <span class="st">"USD"</span>, <span class="st">"CAD"</span>, <span class="st">"CHF"</span>))</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(today_symbols)</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#&gt; A tibble: 5 x 2</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co">#&gt;   name    value</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;dbl&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">#&gt; 1 JPY   131.   </span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">#&gt; 2 GBP     0.873</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co">#&gt; 3 USD     1.23 </span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">#&gt; 4 CAD     1.57 </span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co">#&gt; 5 CHF     1.18 </span></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>today_all &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fixer_latest.html">fixer_latest</a></span>(<span class="dt">base =</span> <span class="st">"EUR"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(today_all)</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="co">#&gt; A tibble: 168 x 2</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="co">#&gt;    name   value</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co">#&gt;    &lt;chr&gt;  &lt;dbl&gt;</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co">#&gt;  1 AED     4.51</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co">#&gt;  2 AFN    84.9 </span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="co">#&gt;  3 ALL   130.  </span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="co">#&gt;  4 AMD   589.  </span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="co">#&gt;  5 ANG     2.18</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co">#&gt;  6 AOA   263.  </span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="co">#&gt;  7 ARS    24.7 </span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="co">#&gt;  8 AUD     1.60</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co">#&gt;  9 AWG     2.18</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="co">#&gt; 10 AZN     2.09</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="co">#&gt; ... with 158 more rows</span></span></code></pre></div>
 <p>The example above shows the exchange rates on 2018-04-03.</p>
 <p>Free accounts are limited to the <code><a href="../reference/fixer_latest.html">fixer_latest()</a></code> function, and cannot change the base currency. Free accounts come with 10,000 calls per month, paid accounts with more, depending on the level of the paid account.</p>
 <p>Full documentation for the API itself is available <a href="https://fixer.io/documentation">on the Fixer website</a>, along with the <a href="https://fixer.io/product">signup</a>.</p>
@@ -203,6 +205,7 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+
         <div id="tocnav">
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
@@ -221,17 +224,20 @@
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by <a href="https://evanodell.com">Evan Odell</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
