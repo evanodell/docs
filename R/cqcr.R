@@ -28,7 +28,7 @@ build_cqcr <- function(force = FALSE) {
     unlist() %>%
     as.POSIXct()
 
-  if (max(web_modified) <= max(base_modified) || force == TRUE) {
+  if(is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
       pkg = "/Users/evanodell/Documents/Code/packages/cqcr",
       preview = FALSE

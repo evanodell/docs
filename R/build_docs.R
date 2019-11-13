@@ -45,6 +45,10 @@ build_docs <- function(force = FALSE) {
   ### Build `cqcr`  -----------------
 
   docs::build_cqcr(force = force)
+  
+  ### Build `cqcr`  -----------------
+  
+  docs::build_threesixtygiving(force = force)
 
   ### Building homepage -----------
 

@@ -8,29 +8,8 @@ navbar:
   left:
     - text: "evanodell.com"
       href: https://evanodell.com
-    - text: "docs.evanodell.com"
+    - text: "Documentation Home"
       href: https://docs.evanodell.com
-    - text: "---------"
-    - text: "hansard"
-      href: https://docs.evanodell.com/hansard
-    - text: "cqcr"
-      href: https://docs.evanodell.com/cqcr
-    - text: "mnis"
-      href: https://docs.evanodell.com/mnis
-    - text: "parlitools"
-      href: https://docs.evanodell.com/parlitools
-    - text: "nomisr"
-      href: https://docs.evanodell.com/nomisr
-    - text: "fixerapi"
-      href: http://docs.evanodell.com/fixerapi
-    - text: "refuge"
-      href: http://docs.evanodell.com/refuge
-    - text: "guardianapi"
-      href: http://docs.evanodell.com/guardianapi
-    - text: "ukpolice"
-      href: http://docs.evanodell.com/ukpolice
-    - text: "emisc"
-      href: https://docs.evanodell.com/emisc
 
   right:
     - icon: fa-home fa-lg

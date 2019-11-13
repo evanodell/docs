@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evan Odell's various functions • emisc</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Evan Odell's various functions">
 <meta property="og:description" content="A collection of various R functions I've created. 
     They may or may not be useful to anyone else, and may or may not 
@@ -28,7 +29,7 @@
 </script>
 </head>
 <body>
-    <div class="container template-article">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -58,46 +59,8 @@
 <li>
   <a href="articles/introduction.html">Articles</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Packages
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="http://docs.evanodell.com">Documentation Home</a>
-    </li>
-    <li class="divider">
-    </li>
-<li>
-      <a href="http://docs.evanodell.com/hansard">hansard</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/mnis">mnis</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/parlitools">parlitools</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/nomisr">nomisr</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/refuge">refuge</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/guardianapi">guardianapi</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/ukpolice">ukpolice</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/emisc">emisc</a>
-    </li>
-  </ul>
+  <a href="https://docs.evanodell.com">Documentation Home</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -122,13 +85,10 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    
 
-    
-    
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+      </header><div class="row">
+  <div class="contents col-md-9">
+
 <div id="emisc" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#emisc" class="anchor"></a><code>emisc</code>
@@ -138,27 +98,53 @@
 <div id="emisc-1" class="section level1">
 <h1 class="hasAnchor">
 <a href="#emisc-1" class="anchor"></a>emisc</h1>
-<p><code>emisc</code> is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work. Full documentation is available at <a href="https://docs.evanodell.com/emisc/">https://docs.evanodell.com/emisc/</a>.</p>
+<p><code>emisc</code> is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work. Full documentation is available at <a href="https://docs.evanodell.com/emisc/" class="uri">https://docs.evanodell.com/emisc/</a>.</p>
 <div id="functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#functions" class="anchor"></a>Functions</h2>
-<p><a href="https://docs.evanodell.com/emisc/reference/case_styles.html"><code>case_styles()</code></a> - Convert variable names into one of three styles.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/change_case.html"><code>change_case()</code></a> - Changing variable cases.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/dateable.html"><code>dateable()</code></a> - A function that locates all variables with “date” in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/latex_markup.html"><code>latex_markup()</code></a> - Add LaTeX markup to variables.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/strip_bom.html"><code>strip_bom()</code></a> - A function to strip Byte Order Marks (BOM) out of JSON data that is returned from some online API calls.</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/tidy_bom.html"><code>tidy_bom()</code></a> - Internal Byte Order Mark stripper for <code>strip_bom</code></p>
-<p><a href="https://docs.evanodell.com/emisc/reference/tidy_variables.html"><code>tidy_variables()</code></a> - Strip out most non-alphanumeric characters from variables</p>
-<p><a href="https://docs.evanodell.com/emisc/reference/write_latex.html"><code>write_latex()</code></a> - Write variables to a LaTeX file in rows.</p>
+<p><a href="https://docs.evanodell.com/emisc/reference/case_styles.html"><code>case_styles()</code></a></p>
+<ul>
+<li>Convert variable names into one of three styles.</li>
+</ul>
+<p><a href="https://docs.evanodell.com/emisc/reference/change_case.html"><code>change_case()</code></a></p>
+<ul>
+<li>Changing variable cases.</li>
+</ul>
+<p><a href="https://docs.evanodell.com/emisc/reference/dateable.html"><code>dateable()</code></a></p>
+<ul>
+<li>A function that locates all variables with “date” in the name (ignoring case), and converts them to POSIXct. Works on both dates and datetimes.</li>
+</ul>
+<p><a href="https://docs.evanodell.com/emisc/reference/latex_markup.html"><code>latex_markup()</code></a></p>
+<ul>
+<li>Add LaTeX markup to variables.</li>
+</ul>
+<p><a href="https://docs.evanodell.com/emisc/reference/strip_bom.html"><code>strip_bom()</code></a></p>
+<ul>
+<li>A function to strip Byte Order Marks (BOM) out of JSON data that is returned from some online API calls.</li>
+</ul>
+<p><a href="https://docs.evanodell.com/emisc/reference/tidy_bom.html"><code>tidy_bom()</code></a></p>
+<ul>
+<li>Internal Byte Order Mark stripper for <code>strip_bom</code>
+</li>
+</ul>
+<p><a href="https://docs.evanodell.com/emisc/reference/tidy_variables.html"><code>tidy_variables()</code></a></p>
+<ul>
+<li>Strip out most non-alphanumeric characters from variables</li>
+</ul>
+<p><a href="https://docs.evanodell.com/emisc/reference/write_latex.html"><code>write_latex()</code></a></p>
+<ul>
+<li>Write variables to a LaTeX file in rows.</li>
+</ul>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install <code>emisc</code> from github with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"evanodell/emisc"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"evanodell/emisc"</span>)</span></code></pre></div>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -189,11 +175,11 @@
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://evanodell.com">Evan Odell</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://evanodell.com">Evan Odell</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 </ul>
 </div>
 
-      <div class="dev-status">
+  <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
@@ -207,7 +193,6 @@
 </ul>
 </div>
 </div>
-
 </div>
 
 
@@ -216,12 +201,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

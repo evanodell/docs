@@ -77,7 +77,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hansard</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.0</span>
       </span>
     </div>
 
@@ -104,34 +104,6 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="http://docs.evanodell.com">Documentation Home</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="http://docs.evanodell.com/hansard">hansard</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/mnis">mnis</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/parlitools">parlitools</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/nomisr">nomisr</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/fixerapi">fixerapi</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/refuge">refuge</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/guardianapi">guardianapi</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/ukpolice">ukpolice</a>
-    </li>
-    <li>
-      <a href="http://docs.evanodell.com/emisc">emisc</a>
     </li>
   </ul>
 </li>
@@ -166,19 +138,37 @@
       
     </div>
 
+    <div id="hansard-080" class="section level1">
+<h1 class="page-header">
+<a href="#hansard-080" class="anchor"></a>hansard 0.8.0<small> 2019-11-13 </small>
+</h1>
+<ul>
+<li>Replacing deprecated <code>tidyr</code> functions with up-to-date ones (#14, thanks <a href='https://github.com/counterpig'>@counterpig</a>). This may result in some slight differences in data structures, please check your code.</li>
+</ul>
+<div id="changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#changes" class="anchor"></a>Changes</h2>
+<ul>
+<li>
+<code><a href="../reference/election_candidates.html">election_candidates()</a></code> returns a tibble, with different formats and names than previous versions that will be easier to work with. Please check your code as the structure may have changed in a way that breaks existing code.</li>
+</ul>
+</div>
+</div>
     <div id="hansard-071" class="section level1">
 <h1 class="page-header">
 <a href="#hansard-071" class="anchor"></a>hansard 0.7.1<small> 2019-09-08 </small>
 </h1>
-<p>Updates to vignette to prevent calls to API in demos.</p>
+<ul>
+<li>Updates to vignette to prevent calls to API in demos.</li>
+</ul>
 </div>
     <div id="hansard-070" class="section level1">
 <h1 class="page-header">
 <a href="#hansard-070" class="anchor"></a>hansard 0.7.0<small> 2019-05-21 </small>
 </h1>
-<div id="changes" class="section level2">
+<div id="changes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#changes" class="anchor"></a>Changes</h2>
+<a href="#changes-1" class="anchor"></a>Changes</h2>
 <ul>
 <li><p>Now using the <code>snakecase</code> package to tidy tibble names. This has resulted in minor changes to style options, please check the <code>tidy_style</code> parameter values if there are errors.</p></li>
 <li><p><code><a href="../reference/commons_divisions.html">commons_divisions()</a></code> now accepts <code>division_id</code> or <code>division_uin</code> (#13). Thanks to <a href='https://github.com/basilesimon'>@basilesimon</a> for getting the ball rolling with this parameter.</p></li>
@@ -235,7 +225,9 @@
 <div id="documentation-updates" class="section level2">
 <h2 class="hasAnchor">
 <a href="#documentation-updates" class="anchor"></a>Documentation updates</h2>
-<p>Improvements to some example descriptions</p>
+<ul>
+<li>Improvements to some example descriptions</li>
+</ul>
 </div>
 </div>
     <div id="hansard-061" class="section level1">
@@ -245,7 +237,10 @@
 <div id="code-changes-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-changes-1" class="anchor"></a>Code changes</h2>
-<p><code><a href="../reference/members_search.html">members_search()</a></code> now allows custom lucene queries, with or without wildcards.</p>
+<ul>
+<li>
+<code><a href="../reference/members_search.html">members_search()</a></code> now allows custom lucene queries, with or without wildcards.</li>
+</ul>
 </div>
 </div>
     <div id="hansard-060" class="section level1">
@@ -255,19 +250,25 @@
 <div id="code-changes-2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-changes-2" class="anchor"></a>Code changes</h2>
-<p>Changed default value of <code>verbose</code> parameter to <code>TRUE</code>.</p>
-<p>Adapted <code><a href="../reference/members.html">members()</a></code> to fit follow changes in API structure.</p>
+<ul>
+<li><p>Changed default value of <code>verbose</code> parameter to <code>TRUE</code>.</p></li>
+<li><p>Adapted <code><a href="../reference/members.html">members()</a></code> to fit follow changes in API structure.</p></li>
+</ul>
 </div>
 <div id="bug-fixes-2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bug-fixes-2" class="anchor"></a>Bug fixes</h2>
-<p>Remove URL from <code>about</code> column from <code>all_answered_questions</code> if <code>tidy=TRUE</code>.</p>
-<p>Fixed error in <code><a href="../reference/members_search.html">members_search()</a></code> that produced a 404 error if left empty.</p>
+<ul>
+<li><p>Remove URL from <code>about</code> column from <code>all_answered_questions</code> if <code>tidy=TRUE</code>.</p></li>
+<li><p>Fixed error in <code><a href="../reference/members_search.html">members_search()</a></code> that produced a 404 error if left empty.</p></li>
+</ul>
 </div>
 <div id="testing" class="section level2">
 <h2 class="hasAnchor">
 <a href="#testing" class="anchor"></a>Testing</h2>
-<p>Expanded test coverage</p>
+<ul>
+<li>Expanded test coverage</li>
+</ul>
 </div>
 </div>
     <div id="hansard-059" class="section level1">
@@ -277,7 +278,9 @@
 <div id="bug-fixes-3" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bug-fixes-3" class="anchor"></a>Bug fixes</h2>
-<p>Fixed bugs where capitalised conjunctions in department names were causing queries to fail.</p>
+<ul>
+<li>Fixed bugs where capitalised conjunctions in department names were causing queries to fail.</li>
+</ul>
 </div>
 </div>
     <div id="hansard-058" class="section level1">
@@ -287,26 +290,37 @@
 <div id="new-functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-functions" class="anchor"></a>New Functions</h2>
-<p><code><a href="../reference/bill_publications.html">bill_publications()</a></code> function introduced, to retrieve data on publications associated with different bills.</p>
+<ul>
+<li>
+<code><a href="../reference/bill_publications.html">bill_publications()</a></code> function introduced, to retrieve data on publications associated with different bills.</li>
+</ul>
 </div>
 <div id="performance-improvements" class="section level2">
 <h2 class="hasAnchor">
 <a href="#performance-improvements" class="anchor"></a>Performance improvements</h2>
-<p>Transitioned from if and else statements to <code>dplyr</code>’s <code>case_when()</code> and <code>if_else()</code> functions for internal use. Also replacing <code><a href="https://rdrr.io/r/base/grep.html">gsub()</a></code> with faster <code>stringi</code> functions in some cases. These changes are intended to increase speed and improve ease of maintenance.</p>
+<ul>
+<li>Transitioned from if and else statements to <code>dplyr</code>’s <code>case_when()</code> and <code>if_else()</code> functions for internal use. Also replacing <code><a href="https://rdrr.io/r/base/grep.html">gsub()</a></code> with<br>
+faster <code>stringi</code> functions in some cases. These changes are intended to<br>
+increase speed and improve ease of maintenance.</li>
+</ul>
 </div>
 </div>
     <div id="hansard-057" class="section level1">
 <h1 class="page-header">
 <a href="#hansard-057" class="anchor"></a>hansard 0.5.7<small> Unreleased </small>
 </h1>
-<p>Internal rewrites to make maintenance easier and produce a few very small increases in speed in several functions.</p>
-<p>Fixed some typos in documentation, brought documentation into line with the recommended 80 character maximum width for each line.</p>
+<ul>
+<li><p>Internal rewrites to make maintenance easier and produce a few very small increases in speed in several functions.</p></li>
+<li><p>Fixed some typos in documentation, brought documentation into line with the recommended 80 character maximum width for each line.</p></li>
+</ul>
 </div>
     <div id="hansard-056" class="section level1">
 <h1 class="page-header">
 <a href="#hansard-056" class="anchor"></a>hansard 0.5.6<small> Unreleased </small>
 </h1>
-<p>Fixed bug on <code><a href="../reference/constituencies.html">constituencies()</a></code> so that the <code>NULL</code> default value of parameter <code>current</code> works properly.</p>
+<ul>
+<li>Fixed bug on <code><a href="../reference/constituencies.html">constituencies()</a></code> so that the <code>NULL</code> default value of parameter <code>current</code> works properly.</li>
+</ul>
 </div>
     <div id="hansard-055" class="section level1">
 <h1 class="page-header">
@@ -637,6 +651,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#hansard-080">0.8.0</a></li>
         <li><a href="#hansard-071">0.7.1</a></li>
         <li><a href="#hansard-070">0.7.0</a></li>
         <li><a href="#hansard-063">0.6.3</a></li>
