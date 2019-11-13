@@ -79,17 +79,6 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#documentation" class="anchor"></a>Documentation</h1></div>
 <p>Online documentation for my R packages. Click on the names for links to the full documentation.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(stringr)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(pander)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw"><a href="https://rdrr.io/pkg/pander/man/panderOptions.html">panderOptions</a></span>(<span class="st">'knitr.auto.asis'</span>, <span class="ot">FALSE</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>folders &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/list.files.html">list.dirs</a></span>(<span class="dt">recursive =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a>folders &lt;-<span class="st"> </span>folders[<span class="op">!</span>(folders <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"./tools"</span>, <span class="st">"./R"</span>, <span class="st">"./reference"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>                                    <span class="st">"./inst"</span>,  <span class="st">"./man"</span>, <span class="st">"./index_files"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9"></a>                                    <span class="st">"./img"</span>, <span class="st">"./.git"</span>, <span class="st">"./.Rproj.user"</span>))]</span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a>folders &lt;-<span class="st"> </span><span class="kw"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace_all</a></span>(folders, <span class="st">"./"</span>, <span class="st">""</span>)</span></code></pre></div>
 <div id="packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#packages" class="anchor"></a>Packages:</h2>
@@ -97,17 +86,61 @@
 <h3 class="hasAnchor">
 <a href="#cqcr" class="anchor"></a><a href="https://docs.evanodell.com/cqcr"><code>cqcr</code></a>
 </h3>
-<p><a href="https://cran.r-project.org/package=cqcr"><img src="https://www.r-pkg.org/badges/version/cqcr" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/cqcr"><img src="https://img.shields.io/github/tag/evanodell/cqcr.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/docs"><code>docs</code></a></p>
-<p><a href="https://cran.r-project.org/package=docs"><img src="https://www.r-pkg.org/badges/version/docs" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/docs"><img src="https://img.shields.io/github/tag/evanodell/docs.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/emisc"><code>emisc</code></a></p>
-<p><a href="https://cran.r-project.org/package=emisc"><img src="https://www.r-pkg.org/badges/version/emisc" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/emisc"><img src="https://img.shields.io/github/tag/evanodell/emisc.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/fixerapi"><code>fixerapi</code></a></p>
-<p><a href="https://cran.r-project.org/package=fixerapi"><img src="https://www.r-pkg.org/badges/version/fixerapi" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/fixerapi"><img src="https://img.shields.io/github/tag/evanodell/fixerapi.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/guardianapi"><code>guardianapi</code></a></p>
-<p><a href="https://cran.r-project.org/package=guardianapi"><img src="https://www.r-pkg.org/badges/version/guardianapi" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/guardianapi"><img src="https://img.shields.io/github/tag/evanodell/guardianapi.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/hansard"><code>hansard</code></a></p>
-<p><a href="https://cran.r-project.org/package=hansard"><img src="https://www.r-pkg.org/badges/version/hansard" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/hansard"><img src="https://img.shields.io/github/tag/evanodell/hansard.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/mnis"><code>mnis</code></a></p>
-<p><a href="https://cran.r-project.org/package=mnis"><img src="https://www.r-pkg.org/badges/version/mnis" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/mnis"><img src="https://img.shields.io/github/tag/evanodell/mnis.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/nomisr"><code>nomisr</code></a></p>
-<p><a href="https://cran.r-project.org/package=nomisr"><img src="https://www.r-pkg.org/badges/version/nomisr" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/nomisr"><img src="https://img.shields.io/github/tag/evanodell/nomisr.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/parlitools"><code>parlitools</code></a></p>
-<p><a href="https://cran.r-project.org/package=parlitools"><img src="https://www.r-pkg.org/badges/version/parlitools" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/parlitools"><img src="https://img.shields.io/github/tag/evanodell/parlitools.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/refuge"><code>refuge</code></a></p>
-<p><a href="https://cran.r-project.org/package=refuge"><img src="https://www.r-pkg.org/badges/version/refuge" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/refuge"><img src="https://img.shields.io/github/tag/evanodell/refuge.svg" alt="GitHub tag"></a> ### <a href="https://docs.evanodell.com/ukpolice"><code>ukpolice</code></a></p>
-<p><a href="https://cran.r-project.org/package=ukpolice"><img src="https://www.r-pkg.org/badges/version/ukpolice" alt="CRAN_Status_Badge"></a><a href="https://github.com/evanodell/ukpolice"><img src="https://img.shields.io/github/tag/evanodell/ukpolice.svg" alt="GitHub tag"></a></p>
+<p><a href="https://cran.r-project.org/package=cqcr"><img src="https://www.r-pkg.org/badges/version/cqcr" alt="CRAN_Status_Badge"></a><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a><a href="https://github.com/evanodell/cqcr"><img src="https://img.shields.io/github/tag/evanodell/cqcr.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=cqcr"><img src="https://cranlogs.r-pkg.org/badges/grand-total/cqcr"></a></p>
+</div>
+<div id="fixerapi" class="section level3">
+<h3 class="hasAnchor">
+<a href="#fixerapi" class="anchor"></a><a href="https://docs.evanodell.com/fixerapi"><code>fixerapi</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=fixerapi"><img src="https://www.r-pkg.org/badges/version/fixerapi" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/fixerapiblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/fixerapi"><img src="https://img.shields.io/github/tag/evanodell/fixerapi.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=fixerapi"><img src="https://cranlogs.r-pkg.org/badges/grand-total/fixerapi"></a></p>
+</div>
+<div id="guardianapi" class="section level3">
+<h3 class="hasAnchor">
+<a href="#guardianapi" class="anchor"></a><a href="https://docs.evanodell.com/guardianapi"><code>guardianapi</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=guardianapi"><img src="https://www.r-pkg.org/badges/version/guardianapi" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/guardianapiblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/guardianapi"><img src="https://img.shields.io/github/tag/evanodell/guardianapi.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=guardianapi"><img src="https://cranlogs.r-pkg.org/badges/grand-total/guardianapi"></a></p>
+</div>
+<div id="hansard" class="section level3">
+<h3 class="hasAnchor">
+<a href="#hansard" class="anchor"></a><a href="https://docs.evanodell.com/hansard"><code>hansard</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=hansard"><img src="https://www.r-pkg.org/badges/version/hansard" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/hansardblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/hansard"><img src="https://img.shields.io/github/tag/evanodell/hansard.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=hansard"><img src="https://cranlogs.r-pkg.org/badges/grand-total/hansard"></a></p>
+</div>
+<div id="mnis" class="section level3">
+<h3 class="hasAnchor">
+<a href="#mnis" class="anchor"></a><a href="https://docs.evanodell.com/mnis"><code>mnis</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=mnis"><img src="https://www.r-pkg.org/badges/version/mnis" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/mnisblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/mnis"><img src="https://img.shields.io/github/tag/evanodell/mnis.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=mnis"><img src="https://cranlogs.r-pkg.org/badges/grand-total/mnis"></a></p>
+</div>
+<div id="nomisr" class="section level3">
+<h3 class="hasAnchor">
+<a href="#nomisr" class="anchor"></a><a href="https://docs.evanodell.com/nomisr"><code>nomisr</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=nomisr"><img src="https://www.r-pkg.org/badges/version/nomisr" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/nomisrblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/nomisr"><img src="https://img.shields.io/github/tag/evanodell/nomisr.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=nomisr"><img src="https://cranlogs.r-pkg.org/badges/grand-total/nomisr"></a></p>
+</div>
+<div id="parlitools" class="section level3">
+<h3 class="hasAnchor">
+<a href="#parlitools" class="anchor"></a><a href="https://docs.evanodell.com/parlitools"><code>parlitools</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=parlitools"><img src="https://www.r-pkg.org/badges/version/parlitools" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/parlitoolsblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/parlitools"><img src="https://img.shields.io/github/tag/evanodell/parlitools.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=parlitools"><img src="https://cranlogs.r-pkg.org/badges/grand-total/parlitools"></a></p>
+</div>
+<div id="refuge" class="section level3">
+<h3 class="hasAnchor">
+<a href="#refuge" class="anchor"></a><a href="https://docs.evanodell.com/refuge"><code>refuge</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=refuge"><img src="https://www.r-pkg.org/badges/version/refuge" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/refugeblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/refuge"><img src="https://img.shields.io/github/tag/evanodell/refuge.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=refuge"><img src="https://cranlogs.r-pkg.org/badges/grand-total/refuge"></a></p>
+</div>
+<div id="threesixtygiving" class="section level3">
+<h3 class="hasAnchor">
+<a href="#threesixtygiving" class="anchor"></a><a href="https://docs.evanodell.com/threesixtygiving"><code>threesixtygiving</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=threesixtygiving"><img src="https://www.r-pkg.org/badges/version/threesixtygiving" alt="CRAN_Status_Badge"></a><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a><a href="https://github.com/evanodell/threesixtygiving"><img src="https://img.shields.io/github/tag/evanodell/threesixtygiving.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=threesixtygiving"><img src="https://cranlogs.r-pkg.org/badges/grand-total/threesixtygiving"></a></p>
+</div>
+<div id="ukpolice" class="section level3">
+<h3 class="hasAnchor">
+<a href="#ukpolice" class="anchor"></a><a href="https://docs.evanodell.com/ukpolice"><code>ukpolice</code></a>
+</h3>
+<p><a href="https://cran.r-project.org/package=ukpolice"><img src="https://www.r-pkg.org/badges/version/ukpolice" alt="CRAN_Status_Badge"></a><a href="https://github.com/EvanOdell/ukpoliceblob/master/LICENSE.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><a href="https://github.com/evanodell/ukpolice"><img src="https://img.shields.io/github/tag/evanodell/ukpolice.svg" alt="GitHub tag"></a><a href="https://cran.r-project.org/package=ukpolice"><img src="https://cranlogs.r-pkg.org/badges/grand-total/ukpolice"></a></p>
 <!--
 ### [`hansard`](https://docs.evanodell.com/hansard)
 
@@ -122,7 +155,14 @@ An ironically named R package to automatically fetch data from the UK Parliament
 
 <!-- ### [`cqcr`](https://docs.evanodell.com/cqcr) -->
 <!-- <!-- badges: start -->
-<p>–&gt; <!-- [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) --> <!-- [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr) --> <!-- [![GitHub tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr) --> <!-- [![Travis build status](https://travis-ci.org/evanodell/cqcr.svg?branch=master)](https://travis-ci.org/evanodell/cqcr) --> <!-- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/evanodell/cqcr?branch=master&svg=true)](https://ci.appveyor.com/project/evanodell/cqcr) --> <!-- [![Codecov test coverage](https://codecov.io/gh/evanodell/cqcr/branch/master/graph/badge.svg)](https://codecov.io/gh/evanodell/cqcr?branch=master) --> <!-- [![DOI](https://zenodo.org/badge/204009825.svg)](https://zenodo.org/badge/latestdoi/204009825) --> <!-- <!-- badges: end --> –&gt;</p>
+<!-- [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) -->
+<!-- [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr) -->
+<!-- [![GitHub tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr) -->
+<!-- [![Travis build status](https://travis-ci.org/evanodell/cqcr.svg?branch=master)](https://travis-ci.org/evanodell/cqcr) -->
+<!-- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/evanodell/cqcr?branch=master&svg=true)](https://ci.appveyor.com/project/evanodell/cqcr) -->
+<!-- [![Codecov test coverage](https://codecov.io/gh/evanodell/cqcr/branch/master/graph/badge.svg)](https://codecov.io/gh/evanodell/cqcr?branch=master) -->
+<!-- [![DOI](https://zenodo.org/badge/204009825.svg)](https://zenodo.org/badge/latestdoi/204009825) -->
+<!-- <!-- badges: end -->
 <!-- Get data from the Care Quality Commission [API](https://anypoint.mulesoft.com/exchange/portals/care-quality-commission-5/4d36bd23-127d-4acf-8903-ba292ea615d4/cqc-syndication-1/). Available on [GitHub](https://github.com/EvanOdell/cqcr) -->
 <!-- ### [`mnis`](https://docs.evanodell.com/mnis) -->
 <!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnis/blob/master/LICENSE) -->
@@ -173,19 +213,16 @@ An ironically named R package to automatically fetch data from the UK Parliament
 <!-- [![](https://cranlogs.r-pkg.org/badges/grand-total/ukpolice)](https://dgrtwo.shinyapps.io/cranview/) -->
 <!-- [![DOI](https://zenodo.org/badge/178673884.svg)](https://zenodo.org/badge/latestdoi/178673884) -->
 <!-- Access to the [UK Police API](https://data.police.uk/docs/), with data on police forces, reported crimes and the use of stop and search. Available on <!--[CRAN](https://cran.r-project.org/package=ukpolice) and [GitHub](https://github.com/EvanOdell/ukpolice). -->
-<!-- ### [`emisc`](https://docs.evanodell.com/emisc) -->
-<!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE) -->
-<!-- [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/emisc)](https://cran.r-project.org/package=emisc) -->
-<!-- [![GitHub tag](https://img.shields.io/github/tag/evanodell/emisc.svg)](https://github.com/evanodell/emisc) -->
-<!-- [![](https://cranlogs.r-pkg.org/badges/grand-total/emisc)](https://dgrtwo.shinyapps.io/cranview/) -->
-<!-- [![DOI](https://zenodo.org/badge/96876145.svg)](https://zenodo.org/badge/latestdoi/96876145) -->
-<!-- `emisc` is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work. -->
-<!-- `emisc` is currently not available on CRAN. You can install `emisc` from github with: -->
-<!-- ``` -->
-<!-- # install.packages("devtools") -->
-<!-- devtools::install_github("evanodell/emisc") -->
-<!-- ``` -->
-<!-- -->
+</div>
+<div id="emisc" class="section level3">
+<h3 class="hasAnchor">
+<a href="#emisc" class="anchor"></a><a href="https://docs.evanodell.com/emisc"><code>emisc</code></a>
+</h3>
+<p><a href="https://github.com/EvanOdell/emisc/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a> <a href="https://cran.r-project.org/package=emisc"><img src="https://www.r-pkg.org/badges/version/emisc" alt="CRAN_Status_Badge"></a> <a href="https://github.com/evanodell/emisc"><img src="https://img.shields.io/github/tag/evanodell/emisc.svg" alt="GitHub tag"></a> <a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/emisc"></a> <a href="https://zenodo.org/badge/latestdoi/96876145"><img src="https://zenodo.org/badge/96876145.svg" alt="DOI"></a></p>
+<p><code>emisc</code> is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work.</p>
+<p><code>emisc</code> is currently not available on CRAN. You can install <code>emisc</code> from github with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"evanodell/emisc"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>

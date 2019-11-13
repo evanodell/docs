@@ -4,66 +4,61 @@
 Online documentation for my R packages. Click on the names for links to
 the full documentation.
 
-``` r
-library(stringr)
-library(pander)
-
-panderOptions('knitr.auto.asis', FALSE)
-
-folders <- list.dirs(recursive = FALSE)
-folders <- folders[!(folders %in% c("./tools", "./R", "./reference",
-                                    "./inst",  "./man", "./index_files",
-                                    "./img", "./.git", "./.Rproj.user"))]
-
-folders <- str_replace_all(folders, "./", "")
-```
-
 ## Packages:
 
 ### [`cqcr`](https://docs.evanodell.com/cqcr)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr)
-\#\#\# [`docs`](https://docs.evanodell.com/docs)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)[![License:
+GPL
+v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr)[![](https://cranlogs.r-pkg.org/badges/grand-total/cqcr)](https://cran.r-project.org/package=cqcr)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/docs)](https://cran.r-project.org/package=docs)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/docs.svg)](https://github.com/evanodell/docs)
-\#\#\# [`emisc`](https://docs.evanodell.com/emisc)
+### [`fixerapi`](https://docs.evanodell.com/fixerapi)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/emisc)](https://cran.r-project.org/package=emisc)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/emisc.svg)](https://github.com/evanodell/emisc)
-\#\#\# [`fixerapi`](https://docs.evanodell.com/fixerapi)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/fixerapiblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/fixerapi.svg)](https://github.com/evanodell/fixerapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/fixerapi)](https://cran.r-project.org/package=fixerapi)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/fixerapi.svg)](https://github.com/evanodell/fixerapi)
-\#\#\# [`guardianapi`](https://docs.evanodell.com/guardianapi)
+### [`guardianapi`](https://docs.evanodell.com/guardianapi)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/guardianapi.svg)](https://github.com/evanodell/guardianapi)
-\#\#\# [`hansard`](https://docs.evanodell.com/hansard)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/guardianapiblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/guardianapi.svg)](https://github.com/evanodell/guardianapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/guardianapi)](https://cran.r-project.org/package=guardianapi)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/hansard.svg)](https://github.com/evanodell/hansard)
-\#\#\# [`mnis`](https://docs.evanodell.com/mnis)
+### [`hansard`](https://docs.evanodell.com/hansard)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis)
-\#\#\# [`nomisr`](https://docs.evanodell.com/nomisr)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/hansardblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/hansard.svg)](https://github.com/evanodell/hansard)[![](https://cranlogs.r-pkg.org/badges/grand-total/hansard)](https://cran.r-project.org/package=hansard)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/nomisr.svg)](https://github.com/evanodell/nomisr)
-\#\#\# [`parlitools`](https://docs.evanodell.com/parlitools)
+### [`mnis`](https://docs.evanodell.com/mnis)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/parlitools.svg)](https://github.com/evanodell/parlitools)
-\#\#\# [`refuge`](https://docs.evanodell.com/refuge)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnisblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis)[![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://cran.r-project.org/package=mnis)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/refuge)](https://cran.r-project.org/package=refuge)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/refuge.svg)](https://github.com/evanodell/refuge)
-\#\#\# [`ukpolice`](https://docs.evanodell.com/ukpolice)
+### [`nomisr`](https://docs.evanodell.com/nomisr)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.com/evanodell/ukpolice)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/nomisrblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/nomisr.svg)](https://github.com/evanodell/nomisr)[![](https://cranlogs.r-pkg.org/badges/grand-total/nomisr)](https://cran.r-project.org/package=nomisr)
+
+### [`parlitools`](https://docs.evanodell.com/parlitools)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/parlitoolsblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/parlitools.svg)](https://github.com/evanodell/parlitools)[![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://cran.r-project.org/package=parlitools)
+
+### [`refuge`](https://docs.evanodell.com/refuge)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/refuge)](https://cran.r-project.org/package=refuge)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/refugeblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/refuge.svg)](https://github.com/evanodell/refuge)[![](https://cranlogs.r-pkg.org/badges/grand-total/refuge)](https://cran.r-project.org/package=refuge)
+
+### [`threesixtygiving`](https://docs.evanodell.com/threesixtygiving)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/threesixtygiving)](https://cran.r-project.org/package=threesixtygiving)[![License:
+GPL
+v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/threesixtygiving.svg)](https://github.com/evanodell/threesixtygiving)[![](https://cranlogs.r-pkg.org/badges/grand-total/threesixtygiving)](https://cran.r-project.org/package=threesixtygiving)
+
+### [`ukpolice`](https://docs.evanodell.com/ukpolice)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/ukpoliceblob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.com/evanodell/ukpolice)[![](https://cranlogs.r-pkg.org/badges/grand-total/ukpolice)](https://cran.r-project.org/package=ukpolice)
 
 <!--
 ### [`hansard`](https://docs.evanodell.com/hansard)
@@ -81,15 +76,21 @@ An ironically named R package to automatically fetch data from the UK Parliament
 
 <!-- <!-- badges: start -->
 
-–\>
 <!-- [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) -->
+
 <!-- [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr) -->
+
 <!-- [![GitHub tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr) -->
+
 <!-- [![Travis build status](https://travis-ci.org/evanodell/cqcr.svg?branch=master)](https://travis-ci.org/evanodell/cqcr) -->
+
 <!-- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/evanodell/cqcr?branch=master&svg=true)](https://ci.appveyor.com/project/evanodell/cqcr) -->
+
 <!-- [![Codecov test coverage](https://codecov.io/gh/evanodell/cqcr/branch/master/graph/badge.svg)](https://codecov.io/gh/evanodell/cqcr?branch=master) -->
+
 <!-- [![DOI](https://zenodo.org/badge/204009825.svg)](https://zenodo.org/badge/latestdoi/204009825) -->
-<!-- <!-- badges: end --> –\>
+
+<!-- <!-- badges: end -->
 
 <!-- Get data from the Care Quality Commission [API](https://anypoint.mulesoft.com/exchange/portals/care-quality-commission-5/4d36bd23-127d-4acf-8903-ba292ea615d4/cqc-syndication-1/). Available on [GitHub](https://github.com/EvanOdell/cqcr) -->
 
@@ -191,28 +192,21 @@ An ironically named R package to automatically fetch data from the UK Parliament
 
 <!-- Access to the [UK Police API](https://data.police.uk/docs/), with data on police forces, reported crimes and the use of stop and search. Available on <!--[CRAN](https://cran.r-project.org/package=ukpolice) and [GitHub](https://github.com/EvanOdell/ukpolice). -->
 
-<!-- ### [`emisc`](https://docs.evanodell.com/emisc) -->
+### [`emisc`](https://docs.evanodell.com/emisc)
 
-<!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE) -->
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/emisc)](https://cran.r-project.org/package=emisc)
+[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/emisc.svg)](https://github.com/evanodell/emisc)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/emisc)](https://dgrtwo.shinyapps.io/cranview/)
+[![DOI](https://zenodo.org/badge/96876145.svg)](https://zenodo.org/badge/latestdoi/96876145)
 
-<!-- [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/emisc)](https://cran.r-project.org/package=emisc) -->
+`emisc` is a collection of miscellaneous functions that I have made that
+may or may not be useful, and that may or may not duplicate existing
+work.
 
-<!-- [![GitHub tag](https://img.shields.io/github/tag/evanodell/emisc.svg)](https://github.com/evanodell/emisc) -->
+`emisc` is currently not available on CRAN. You can install `emisc` from
+github with:
 
-<!-- [![](https://cranlogs.r-pkg.org/badges/grand-total/emisc)](https://dgrtwo.shinyapps.io/cranview/) -->
-
-<!-- [![DOI](https://zenodo.org/badge/96876145.svg)](https://zenodo.org/badge/latestdoi/96876145) -->
-
-<!-- `emisc` is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work. -->
-
-<!-- `emisc` is currently not available on CRAN. You can install `emisc` from github with: -->
-
-<!-- ``` -->
-
-<!-- # install.packages("devtools") -->
-
-<!-- devtools::install_github("evanodell/emisc") -->
-
-<!-- ``` -->
-
-<!-- -->
+    # install.packages("devtools")
+    devtools::install_github("evanodell/emisc")
