@@ -23,7 +23,7 @@ homes and medical clinics, and ratings and inspection reports.
 
 ### [`fixerapi`](https://docs.evanodell.com/fixerapi)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/fixerapiblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/fixerapi/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/fixerapi.svg)](https://github.com/evanodell/fixerapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/fixerapi)](https://cran.r-project.org/package=fixerapi)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1211687.svg)](https://doi.org/10.5281/zenodo.1211687)
 
 An R client for the “fixer.io” currency conversion and exchange rate
@@ -33,7 +33,7 @@ on paid accounts. The full API documentation is available at
 
 ### [`guardianapi`](https://docs.evanodell.com/guardianapi)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/guardianapiblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/guardianapi/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/guardianapi.svg)](https://github.com/evanodell/guardianapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/guardianapi)](https://cran.r-project.org/package=guardianapi)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2551001.svg)](https://doi.org/10.5281/zenodo.2551001)
 
 Access to ‘The Guardian’ newspaper’s open API
@@ -44,7 +44,7 @@ registration is required.
 
 ### [`hansard`](https://docs.evanodell.com/hansard)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/hansardblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/hansard/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/hansard.svg)](https://github.com/evanodell/hansard)[![](https://cranlogs.r-pkg.org/badges/grand-total/hansard)](https://cran.r-project.org/package=hansard)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.591264.svg)](https://doi.org/10.5281/zenodo.591264)
 
 Provides functions to download data from the
@@ -56,7 +56,7 @@ when they become available.
 
 ### [`mnis`](https://docs.evanodell.com/mnis)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnisblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnis/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis)[![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://cran.r-project.org/package=mnis)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.591287.svg)](https://doi.org/10.5281/zenodo.591287)
 
 An API package for the Members’ Name Information Service operated by the
@@ -65,7 +65,7 @@ UK parliament. Documentation for the API itself can be found here:
 
 ### [`nomisr`](https://docs.evanodell.com/nomisr)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/nomisrblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/nomisr/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/nomisr.svg)](https://github.com/evanodell/nomisr)[![](https://cranlogs.r-pkg.org/badges/grand-total/nomisr)](https://cran.r-project.org/package=nomisr)[![DOI](https://zenodo.org/badge/DOI/10.21105/joss.00859.svg)](https://doi.org/10.21105/joss.00859)
 
 Access UK official statistics from the ‘Nomis’ database. ‘Nomis’
@@ -76,7 +76,7 @@ National Statistics, based around statistical geographies. See
 
 ### [`parlitools`](https://docs.evanodell.com/parlitools)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/parlitoolsblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/parlitools/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/parlitools.svg)](https://github.com/evanodell/parlitools)[![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://cran.r-project.org/package=parlitools)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.591586.svg)](https://doi.org/10.5281/zenodo.591586)
 
 Provides various tools for analysing UK political data, including
@@ -85,7 +85,7 @@ council member data.
 
 ### [`refuge`](https://docs.evanodell.com/refuge)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/refuge)](https://cran.r-project.org/package=refuge)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/refugeblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/refuge)](https://cran.r-project.org/package=refuge)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/refuge/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/refuge.svg)](https://github.com/evanodell/refuge)[![](https://cranlogs.r-pkg.org/badges/grand-total/refuge)](https://cran.r-project.org/package=refuge)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219900.svg)](https://doi.org/10.5281/zenodo.1219900)
 
 Access the ‘Refuge’ API, a web-application for locating trans and
@@ -108,7 +108,7 @@ search and retrieve data on charitable giving.
 
 ### [`ukpolice`](https://docs.evanodell.com/ukpolice)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/ukpoliceblob/master/LICENSE.md)[![GitHub
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/ukpolice/blob/master/LICENSE.md)[![GitHub
 tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.com/evanodell/ukpolice)[![](https://cranlogs.r-pkg.org/badges/grand-total/ukpolice)](https://cran.r-project.org/package=ukpolice)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2619537.svg)](https://doi.org/10.5281/zenodo.2619537)
 
 Downloads data from the ‘UK Police’ public data API, the full docs of

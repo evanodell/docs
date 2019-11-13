@@ -39,7 +39,7 @@ for (i in seq_along(folders)) {
 desc1 <- packageDescription(folders[[i]])
 
 if(desc1$License  == "MIT + file LICENSE") {
-  license[i] <- paste0("[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/", folders[[i]], "blob/master/LICENSE.md)")
+  license[i] <- paste0("[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/", folders[[i]], "/blob/master/LICENSE.md)")
   } else {
   license[i] <- "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
   }
