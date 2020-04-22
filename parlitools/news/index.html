@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -63,7 +67,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -149,12 +153,21 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
+      <h1 data-toc-skip>Changelog <small></small></h1>
       <small>Source: <a href='https://github.com/EvanOdell/parlitools/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="parlitools-0419000" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.1.9000">
+<a href="#parlitools-0419000" class="anchor"></a>parlitools 0.4.1.9000<small> Unreleased </small>
+</h1>
+<ul>
+<li><p><code><a href="../reference/mps_on_date.html">mps_on_date()</a></code> no longer imports redundant constituency data.</p></li>
+<li><p>updates to <code>party_colours</code> dataset</p></li>
+</ul>
+</div>
     <div id="parlitools-041" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.4.1">
 <a href="#parlitools-041" class="anchor"></a>parlitools 0.4.1<small> 2020-01-12 </small>
 </h1>
 <ul>
@@ -162,7 +175,7 @@
 </ul>
 </div>
     <div id="parlitools-040" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.4.0">
 <a href="#parlitools-040" class="anchor"></a>parlitools 0.4.0<small> 2020-01-11 </small>
 </h1>
 <ul>
@@ -171,7 +184,7 @@
 </ul>
 </div>
     <div id="parlitools-034" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.3.4">
 <a href="#parlitools-034" class="anchor"></a>parlitools 0.3.4<small> 2019-09-15 </small>
 </h1>
 <ul>
@@ -179,7 +192,7 @@
 </ul>
 </div>
     <div id="parlitools-033" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.3.3">
 <a href="#parlitools-033" class="anchor"></a>parlitools 0.3.3<small> 2019-05-30 </small>
 </h1>
 <ul>
@@ -187,7 +200,7 @@
 </ul>
 </div>
     <div id="parlitools-032" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.3.2">
 <a href="#parlitools-032" class="anchor"></a>parlitools 0.3.2<small> Unreleased </small>
 </h1>
 <ul>
@@ -196,7 +209,7 @@
 </ul>
 </div>
     <div id="parlitools-031" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.3.1">
 <a href="#parlitools-031" class="anchor"></a>parlitools 0.3.1<small> 2019-03-22 </small>
 </h1>
 <ul>
@@ -205,7 +218,7 @@
 </ul>
 </div>
     <div id="parlitools-030" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.3.0">
 <a href="#parlitools-030" class="anchor"></a>parlitools 0.3.0<small> 2019-01-07 </small>
 </h1>
 <ul>
@@ -216,7 +229,7 @@
 </ul>
 </div>
     <div id="parlitools-023" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3">
 <a href="#parlitools-023" class="anchor"></a>parlitools 0.2.3<small> Unreleased </small>
 </h1>
 <ul>
@@ -225,7 +238,7 @@
 </ul>
 </div>
     <div id="parlitools-022" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.2">
 <a href="#parlitools-022" class="anchor"></a>parlitools 0.2.2<small> Unreleased </small>
 </h1>
 <div id="data" class="section level2">
@@ -237,7 +250,7 @@
 </div>
 </div>
     <div id="parlitools-021" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.1">
 <a href="#parlitools-021" class="anchor"></a>parlitools 0.2.1<small> 2017-09-23 </small>
 </h1>
 <div id="data-1" class="section level2">
@@ -267,7 +280,7 @@
 </div>
 </div>
     <div id="parlitools-020" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.0">
 <a href="#parlitools-020" class="anchor"></a>parlitools 0.2.0<small> 2017-08-10 </small>
 </h1>
 <div id="data-2" class="section level2">
@@ -287,7 +300,7 @@
 </div>
 </div>
     <div id="parlitools-010" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.1.0">
 <a href="#parlitools-010" class="anchor"></a>parlitools 0.1.0<small> 2017-07-15 </small>
 </h1>
 <ul>
@@ -311,7 +324,7 @@
 </div>
 </div>
     <div id="parlitools-007" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.0.7">
 <a href="#parlitools-007" class="anchor"></a>parlitools 0.0.7<small> 2017-07-07 </small>
 </h1>
 <ul>
@@ -319,7 +332,7 @@
 </ul>
 </div>
     <div id="parlitools-006" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.0.6">
 <a href="#parlitools-006" class="anchor"></a>parlitools 0.0.6<small> Unreleased </small>
 </h1>
 <div id="bug-fixes-1" class="section level2">
@@ -331,7 +344,7 @@
 </div>
 </div>
     <div id="parlitools-005" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.0.5">
 <a href="#parlitools-005" class="anchor"></a>parlitools 0.0.5<small> Unreleased </small>
 </h1>
 <div id="data-updates" class="section level2">
@@ -343,7 +356,7 @@
 </div>
 </div>
     <div id="parlitools-004" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.0.4">
 <a href="#parlitools-004" class="anchor"></a>parlitools 0.0.4<small> 2017-06-05 </small>
 </h1>
 <div id="data-updates-1" class="section level2">
@@ -363,7 +376,7 @@
 </div>
 </div>
     <div id="parlitools-003" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.0.3">
 <a href="#parlitools-003" class="anchor"></a>parlitools 0.0.3<small> Unreleased </small>
 </h1>
 <div id="bug-fixes-3" class="section level2">
@@ -384,7 +397,7 @@
 </div>
 </div>
     <div id="parlitools-002" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.0.2">
 <a href="#parlitools-002" class="anchor"></a>parlitools 0.0.2<small> 2017-05-03 </small>
 </h1>
 <ul>
@@ -406,7 +419,7 @@
 </div>
 </div>
     <div id="parlitools-001" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.0.1">
 <a href="#parlitools-001" class="anchor"></a>parlitools 0.0.1<small> Unreleased </small>
 </h1>
 <div id="introducing-parlitools" class="section level2">
@@ -441,31 +454,10 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#parlitools-041">0.4.1</a></li>
-        <li><a href="#parlitools-040">0.4.0</a></li>
-        <li><a href="#parlitools-034">0.3.4</a></li>
-        <li><a href="#parlitools-033">0.3.3</a></li>
-        <li><a href="#parlitools-032">0.3.2</a></li>
-        <li><a href="#parlitools-031">0.3.1</a></li>
-        <li><a href="#parlitools-030">0.3.0</a></li>
-        <li><a href="#parlitools-023">0.2.3</a></li>
-        <li><a href="#parlitools-022">0.2.2</a></li>
-        <li><a href="#parlitools-021">0.2.1</a></li>
-        <li><a href="#parlitools-020">0.2.0</a></li>
-        <li><a href="#parlitools-010">0.1.0</a></li>
-        <li><a href="#parlitools-007">0.0.7</a></li>
-        <li><a href="#parlitools-006">0.0.6</a></li>
-        <li><a href="#parlitools-005">0.0.5</a></li>
-        <li><a href="#parlitools-004">0.0.4</a></li>
-        <li><a href="#parlitools-003">0.0.3</a></li>
-        <li><a href="#parlitools-002">0.0.2</a></li>
-        <li><a href="#parlitools-001">0.0.1</a></li>
-      </ul>
-    </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 
 </div>
@@ -477,7 +469,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
