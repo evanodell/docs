@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ukpolice</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -92,12 +92,15 @@
 <div id="ukpolice" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#ukpolice" class="anchor"></a>ukpolice</h1></div>
-<p>The <code>ukpolice</code> package downloads data from the UK Police public data API, the full docs of which are available at <a href="https://data.police.uk/docs/" class="uri">https://data.police.uk/docs/</a>.</p>
-<p>It can be installed from CRAN with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">"ukpolice"</span>)</span></code></pre></div>
-<p>Data is available on police forces, crimes, policing areas and stop-and-search.</p>
+<p>The <code>ukpolice</code> package downloads data from the UK Police public data API, the full docs of which are available at <a href="https://data.police.uk/docs/" class="uri">https://data.police.uk/docs/</a>. Data is available on police forces, crimes, policing areas and stop-and-search.</p>
+<p><code>ukpolice</code> is on CRAN, which you can download using:</p>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"ukpolice"</span>)</pre></div>
+<p>You can install the development version of <code>ukpolice</code> from github with:</p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("devtools")</span>
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"evanodell/ukpolice"</span>)</pre></div>
+<p>Data is available on police forces, crimes, policing areas and stop-and-search. All functions begin with <code>ukc_</code>.</p>
 <p>The example below queries stop and searches by the Thames Valley Police in December 2018, and plots them by police-reported ethnic group.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ukpolice</span>)
+<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ukpolice</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
 
@@ -115,7 +118,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="no"><a href="https://scales.r-lib.org//reference/label_percent.html">percent</a></span>,
                      <span class="kw">breaks</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0.25</span>, <span class="fl">0.8</span>, <span class="kw">by</span> <span class="kw">=</span> <span class="fl">0.25</span>)) +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_wrap.html">wrap_format</a></span>(<span class="fl">15</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"none"</span>, <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">8</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"none"</span>, <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">7</span>)) +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Outcome"</span>,
        <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Percentage of stop and searches resulting in outcome"</span>,
        <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Stop and Search Outcomes by Police-Reported Ethnicity"</span>,
@@ -125,6 +128,24 @@
 
 <span class="no">p1</span></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
+<p>For more details, see the package vignette <a href="https://docs.evanodell.com/ukpolice/articles/introduction.html">vignette</a> and <a href="https://docs.evanodell.com/ukpolice/reference/index.html">function documentation</a>.</p>
+<div id="meta" class="section level2">
+<h2 class="hasAnchor">
+<a href="#meta" class="anchor"></a>Meta</h2>
+<p>Please note that the ‘ukpolice’ project is released with a <a href="https://github.com/evanodell/ukpolice/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>The UK Police API is operated by the UK Government’s Home Office. The <code>ukpolice</code> package is not affiliated with the Home Office. All data accessed through <code>ukpolice</code> is licenced with <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</p>
+<p>Get citation information for <code>ukpolice</code> in R with <code><a href="https://rdrr.io/r/utils/citation.html">citation(package = 'ukpolice')</a></code>, or use the citation information below:</p>
+<p>Odell E, Tierney N (2019). <em>ukpolice: Download Data on UK Police and Crime</em>. doi: <a href="https://doi.org/10.5281/zenodo.2619537">10.5281/zenodo.2619537</a>, R package version 0.1.4.9000, URL: <a href="https://github.com/evanodell/ukpolice" class="uri">https://github.com/evanodell/ukpolice</a>.</p>
+<p>A BibTeX entry for LaTeX users is:</p>
+<pre><code>  @Manual{,
+    title = {{ukpolice}: Download Data on UK Police and Crime},
+    author = {Evan Odell and Nicholas Tierney},
+    year = {2019},
+    note = {R package version 0.1.4.9000},
+    doi = {10.5281/zenodo.2619537},
+    url = {https://github.com/evanodell/ukpolice},
+  }</code></pre>
+</div>
 </div>
 
   </div>
@@ -148,6 +169,12 @@
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 <div class="citation">
 <h2>Citation</h2>
 <ul class="list-unstyled">
@@ -159,6 +186,7 @@
 <ul class="list-unstyled">
 <li>
 <a href="https://evanodell.com">Evan Odell</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Tierney Nicholas <br><small class="roles"> Author </small> <a href="https://orcid.org/https://orcid.org/0000-0003-1460-8722" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
@@ -180,7 +208,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://evanodell.com">Evan Odell</a>.</p>
+  <p>Developed by <a href="https://evanodell.com">Evan Odell</a>, Tierney Nicholas.</p>
 </div>
 
 <div class="pkgdown">

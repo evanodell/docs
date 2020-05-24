@@ -124,11 +124,11 @@
 
 <span class="co"># Download all the grant data available.</span>
 <span class="co"># It comes out in a list of tibbles but that's not a problem:</span>
-<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">0</span>)
+<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">0</span>)
 
 <span class="co"># Get just the core data required by the 360Giving standard.</span>
 <span class="co"># Convert that list of tibbles into a tidy format:</span>
-<span class="no">all_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
+<span class="no">all_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">avg_size</span> <span class="kw">&lt;-</span> <span class="no">all_data</span> <span class="kw">%&gt;%</span> <span class="co">#This %&gt;% thing is a called a pipe. Pipes are love. Pipes are life.</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">currency</span> <span class="kw">==</span> <span class="st">"GBP"</span>) <span class="kw">%&gt;%</span> <span class="co"># Filter out non-£ data</span>
@@ -175,7 +175,7 @@
 <span class="co">#  9 Barrow Cadbury Trust                          2013 34753.</span>
 <span class="co"># 10 Barrow Cadbury Trust                          2014 30378.</span>
 <span class="co"># # ... with 589 more rows</span></pre></body></html></div>
-<p>The <code><a href="../reference/tsg_all_grants.html">tsg_all_grants()</a></code> function retrieves all the grant data. And if data isn’t available, or there is a downloading error, it will print a message warning you. No more silently failing downloads. There is even a <code><a href="../reference/tsg_missing.html">tsg_missing()</a></code> function, which will take the output of <code><a href="../reference/tsg_all_grants.html">tsg_all_grants()</a></code> and tell you what’s missing. Brilliant eh?</p>
+<p>The <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants()</a></code> function retrieves all the grant data. And if data isn’t available, or there is a downloading error, it will print a message warning you. No more silently failing downloads. There is even a <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_missing.html">tsg_missing()</a></code> function, which will take the output of <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants()</a></code> and tell you what’s missing. Brilliant eh?</p>
 <p>Say you want to include all the grants that are in currencies other than pounds, but convert their value to pounds? In the example below I show a way to do that where I just looked up the currency conversion rates on my phone and changed the currency based on that, but you could also write some code that takes the currency code, the award date, and passes them to the <a href="https://fixer.io" class="uri">https://fixer.io</a> currency conversion service using the <a href="https://cran.r-project.org/package=fixerapi"><code>fixerapi</code></a> package, which provided you have the right account type, will convert the currency value to pound using the conversion rate on the day the grant was awarded. Pretty cool, if you’re into that sort of thing.</p>
 <div id="retrieve-all-grants" class="section level2">
 <h2 class="hasAnchor">
@@ -189,9 +189,9 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">stringr</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)</pre></body></html></div>
 <p>First, I’m going to retrieve all the grant data. The <code>timeout = 8</code> means I’m having the function give up trying to retrieve data after 8 seconds for each file, and <code>retries = 1</code> means it is only going to retry failed retrievals once, then it will give up and move on to retrieve the next data set.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)</pre></body></html></div>
 <p>Because of my minimal timeout and retries, as well as possible other problems with how organisations configure their servers, there are some datasets missing:</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/tsg_missing.html">tsg_missing</a></span>(<span class="no">grants</span>)
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_missing.html">tsg_missing</a></span>(<span class="no">grants</span>)
 
 <span class="co"># # A tibble: 7 x 14</span>
 <span class="co">#   title description identifier license license_name issued modified download_url access_url data_type</span>
@@ -205,13 +205,13 @@
 <span class="co"># 7 Wood~ ""          a001p0000~ https:~ Creative Co~ 2017-~ 2018-08~ http://ods.~ http://ww~ unknown  </span>
 <span class="co"># # ... with 4 more variables: publisher_name &lt;chr&gt;, publisher_website &lt;chr&gt;, publisher_logo &lt;chr&gt;,</span>
 <span class="co"># #   publisher_prefix &lt;chr&gt;</span></pre></body></html></div>
-<p>However, we know they are missing, and we can retry downloading just them if needed using the <code><a href="../reference/tsg_specific_df.html">tsg_specific_df()</a></code> function. But I’ll ignore them for now.</p>
+<p>However, we know they are missing, and we can retry downloading just them if needed using the <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_specific_df.html">tsg_specific_df()</a></code> function. But I’ll ignore them for now.</p>
 </div>
 <div id="core-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#core-data" class="anchor"></a>Core data</h2>
 <p><code>tsg_all_grants</code> returns a list of tibbles, due to differences in the data provided by each funder. <code>tsg_core_data</code> returns a tibble with the 10 columns in the <a href="https://standard.threesixtygiving.org/en/latest/#">360Giving Open Standard</a>, plus the publisher prefix used to identify each funder. In the case below I have converted non-GBP currencies to GBP on the rates on 2019-11-14.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">df2</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">amount_awarded</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(
@@ -294,7 +294,7 @@
 <h3 class="hasAnchor">
 <a href="#award-sizes" class="anchor"></a>Award sizes</h3>
 <p>In the two examples below, we can see differences between the amount of money applied for and the amount awarded. Not every funder reports the amount applied for, and some report what seem like placeholder values, such as grant programmes where applicants do not need to specify the value of the grant, only what they want to do and leave the award amount up to the funder.</p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">proc_df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_process_data.html">tsg_process_data</a></span>(<span class="no">grants</span>)
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">proc_df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_process_data.html">tsg_process_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">proc_amount_df</span> <span class="kw">&lt;-</span> <span class="no">proc_df</span>  <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">identifier</span>, <span class="no">title</span>, <span class="no">description</span>, <span class="no">funding_org_name</span>,
@@ -358,7 +358,7 @@
 <a href="#systemic-change-funders" class="anchor"></a>Systemic change funders</h3>
 <p>Organisations that are focused on systemic change and policy-influencing seem to be particularly reliant on trusts and foundations for income. This may be because charitable trusts, particularly large, professionalised funders, have different criteria than members of the public donating money. The most popular type of charity for public donations is animal welfare, according to the <a href="https://www.cafonline.org/docs/default-source/about-us-publications/caf-uk-giving-2019-report-an-overview-of-charitable-giving-in-the-uk.pdf?sfvrsn=c4a29a40_4">Charities Aid Foundation</a>, likely because of the emotional connection many people feel with animals.</p>
 <p>The code below is going to get a little bit more complicated, it includes some very basic functional programming and regular expressions. If you don’t know what functional programming is, it’s basically a way of turning everything into a mathematical formula. If you don’t know what regular expressions are, count yourself lucky.</p>
-<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">proc_df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_process_data.html">tsg_process_data</a></span>(<span class="no">grants</span>)
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">proc_df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_process_data.html">tsg_process_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">animal_df</span> <span class="kw">&lt;-</span> <span class="no">proc_df</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter_all.html">filter_at</a></span>(<span class="kw">.vars</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/vars.html">vars</a></span>(<span class="no">description</span>, <span class="no">title</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">contains</a></span>(<span class="st">"primary"</span>),

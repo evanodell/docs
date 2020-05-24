@@ -120,9 +120,9 @@ install.packages("threesixtygiving")
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 
-<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)
+<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)
 
-<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">df2</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">amount_awarded</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(

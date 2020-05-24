@@ -9,7 +9,8 @@ build_parlitools <- function(force = FALSE) {
   ))
 
   base_files <- base_files[ !grepl("docs", base_files) ]
-
+  base_files <- base_files[ !grepl("data-raw", base_files) ]
+  
   x <- lapply(base_files, file.info)
 
   base_modified <- purrr::map(x, "mtime") %>%
