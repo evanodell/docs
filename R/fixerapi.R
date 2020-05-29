@@ -1,7 +1,7 @@
 #' @export
 build_fixerapi <- function(force = FALSE) {
   tictoc::tic()
-message("Building `fixerapi`")
+  message("Building `fixerapi`")
 
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/fixerapi/",
@@ -11,9 +11,9 @@ message("Building `fixerapi`")
     )
   )
 
-  base_files <- base_files[ !grepl("docs", base_files) ]
-  base_files <- base_files[ !grepl("data-raw", base_files) ]
-  base_files <- base_files[ !grepl("tests", base_files) ]
+  base_files <- base_files[!grepl("docs", base_files)]
+  base_files <- base_files[!grepl("data-raw", base_files)]
+  base_files <- base_files[!grepl("tests", base_files)]
 
   x <- lapply(base_files, file.info)
 
@@ -55,5 +55,5 @@ message("Building `fixerapi`")
     message("Up to date!")
   }
   tictoc::toc()
-emo::ji("currency")
+  emo::ji("currency")
 }

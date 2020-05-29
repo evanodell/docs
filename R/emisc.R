@@ -2,16 +2,16 @@
 #' @export
 build_emisc <- function(force = FALSE) {
   tictoc::tic()
-message("Building `emisc`")
+  message("Building `emisc`")
 
   base_files <- paste0("/Users/evanodell/Documents/Code/packages/emisc/", list.files(
     path = "/Users/evanodell/Documents/Code/packages/emisc",
     recursive = TRUE
   ))
 
-  base_files <- base_files[ !grepl("docs", base_files) ]
-  base_files <- base_files[ !grepl("data-raw", base_files) ]
-  base_files <- base_files[ !grepl("tests", base_files) ]
+  base_files <- base_files[!grepl("docs", base_files)]
+  base_files <- base_files[!grepl("data-raw", base_files)]
+  base_files <- base_files[!grepl("tests", base_files)]
 
   x <- lapply(base_files, file.info)
 
@@ -32,7 +32,7 @@ message("Building `emisc`")
     unlist() %>%
     as.POSIXct()
 
-  if(is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TRUE) {
+  if (is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
       pkg = "/Users/evanodell/Documents/Code/packages/emisc",
       preview = FALSE
@@ -56,5 +56,5 @@ message("Building `emisc`")
   }
 
   tictoc::toc()
-emo::ji("owl")
+  emo::ji("owl")
 }

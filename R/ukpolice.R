@@ -1,7 +1,7 @@
 #' @export
 build_ukpolice <- function(force = FALSE) {
   tictoc::tic()
-message("Building `ukpolice`")
+  message("Building `ukpolice`")
 
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/ukpolice/",
@@ -11,9 +11,9 @@ message("Building `ukpolice`")
     )
   )
 
-  base_files <- base_files[ !grepl("docs", base_files) ]
-  base_files <- base_files[ !grepl("data-raw", base_files) ]
-  base_files <- base_files[ !grepl("tests", base_files) ]
+  base_files <- base_files[!grepl("docs", base_files)]
+  base_files <- base_files[!grepl("data-raw", base_files)]
+  base_files <- base_files[!grepl("tests", base_files)]
 
   x <- lapply(base_files, file.info)
 

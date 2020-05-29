@@ -6,42 +6,6 @@ the full documentation.
 
 ## Packages:
 
-### [`cqcr`](https://docs.evanodell.com/cqcr)
-
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)[![License:
-GPL
-v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr)[![](https://cranlogs.r-pkg.org/badges/grand-total/cqcr)](https://cran.r-project.org/package=cqcr)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3452020.svg)](https://doi.org/10.5281/zenodo.3452020)
-
-Access data from the ‘Care Quality Commission’, the health and adult
-social care regulator for England. The ‘Care Quality Commission’
-operates an API
-<https://www.cqc.org.uk/about-us/transparency/using-cqc-data#api>, with
-data available under the Open Government License. Data includes
-information on service providers, locations such as hospitals, care
-homes and medical clinics, and ratings and inspection reports.
-
-### [`fixerapi`](https://docs.evanodell.com/fixerapi)
-
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/fixerapi/blob/master/LICENSE.md)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/fixerapi.svg)](https://github.com/evanodell/fixerapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/fixerapi)](https://cran.r-project.org/package=fixerapi)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1211687.svg)](https://doi.org/10.5281/zenodo.1211687)
-
-An R client for the “fixer.io” currency conversion and exchange rate
-API. The API requires registration and some features are only available
-on paid accounts. The full API documentation is available at
-<https://fixer.io/documentation>.
-
-### [`guardianapi`](https://docs.evanodell.com/guardianapi)
-
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/guardianapi/blob/master/LICENSE.md)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/guardianapi.svg)](https://github.com/evanodell/guardianapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/guardianapi)](https://cran.r-project.org/package=guardianapi)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2551001.svg)](https://doi.org/10.5281/zenodo.2551001)
-
-Access to ‘The Guardian’ newspaper’s open API
-<https://open-platform.theguardian.com/>, containing all articles
-published in ‘The Guardian’ from 1999 to the present, including article
-text, metadata, tags and contributor information. An API key and
-registration is required.
-
 ### [`hansard`](https://docs.evanodell.com/hansard)
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/hansard/blob/master/LICENSE.md)[![GitHub
@@ -54,14 +18,15 @@ of use, as well as some functions designed to retrieve specific pieces
 of commonly used data. Functions for each new API will be added as and
 when they become available.
 
-### [`mnis`](https://docs.evanodell.com/mnis)
+### [`ukpolice`](https://docs.evanodell.com/ukpolice)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnis/blob/master/LICENSE.md)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis)[![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://cran.r-project.org/package=mnis)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.591287.svg)](https://doi.org/10.5281/zenodo.591287)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/ukpolice/blob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.com/evanodell/ukpolice)[![](https://cranlogs.r-pkg.org/badges/grand-total/ukpolice)](https://cran.r-project.org/package=ukpolice)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2619537.svg)](https://doi.org/10.5281/zenodo.2619537)
 
-An API package for the Members’ Name Information Service operated by the
-UK parliament. Documentation for the API itself can be found here:
-<http://data.parliament.uk/membersdataplatform/default.aspx>.
+Downloads data from the ‘UK Police’ public data API, the full docs of
+which are available at <https://data.police.uk/docs/>. Includes data on
+police forces and police force areas, crime reports, and the use of
+stop-and-search powers.
 
 ### [`nomisr`](https://docs.evanodell.com/nomisr)
 
@@ -83,6 +48,51 @@ Provides various tools for analysing UK political data, including
 election result datasets, hexagonal cartograms and functions to retrieve
 council member data.
 
+### [`mnis`](https://docs.evanodell.com/mnis)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnis/blob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis)[![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://cran.r-project.org/package=mnis)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.591287.svg)](https://doi.org/10.5281/zenodo.591287)
+
+An API package for the Members’ Name Information Service operated by the
+UK parliament. Documentation for the API itself can be found here:
+<http://data.parliament.uk/membersdataplatform/default.aspx>.
+
+### [`fixerapi`](https://docs.evanodell.com/fixerapi)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/fixerapi/blob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/fixerapi.svg)](https://github.com/evanodell/fixerapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/fixerapi)](https://cran.r-project.org/package=fixerapi)[![DOI](https://zenodo.org/badge/DOI/.svg)](https://doi.org/)
+
+An R client for the “fixer.io” currency conversion and exchange rate
+API. The API requires registration and some features are only available
+on paid accounts. The full API documentation is available at
+<https://fixer.io/documentation>.
+
+### [`cqcr`](https://docs.evanodell.com/cqcr)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)[![License:
+GPL
+v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr)[![](https://cranlogs.r-pkg.org/badges/grand-total/cqcr)](https://cran.r-project.org/package=cqcr)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3452020.svg)](https://doi.org/10.5281/zenodo.3452020)
+
+Access data from the ‘Care Quality Commission’, the health and adult
+social care regulator for England. The ‘Care Quality Commission’
+operates an API
+<https://www.cqc.org.uk/about-us/transparency/using-cqc-data#api>, with
+data available under the Open Government License. Data includes
+information on service providers, locations such as hospitals, care
+homes and medical clinics, and ratings and inspection reports.
+
+### [`guardianapi`](https://docs.evanodell.com/guardianapi)
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/guardianapi/blob/master/LICENSE.md)[![GitHub
+tag](https://img.shields.io/github/tag/evanodell/guardianapi.svg)](https://github.com/evanodell/guardianapi)[![](https://cranlogs.r-pkg.org/badges/grand-total/guardianapi)](https://cran.r-project.org/package=guardianapi)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2551001.svg)](https://doi.org/10.5281/zenodo.2551001)
+
+Access to ‘The Guardian’ newspaper’s open API
+<https://open-platform.theguardian.com/>, containing all articles
+published in ‘The Guardian’ from 1999 to the present, including article
+text, metadata, tags and contributor information. An API key and
+registration is required.
+
 ### [`refuge`](https://docs.evanodell.com/refuge)
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/refuge)](https://cran.r-project.org/package=refuge)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/refuge/blob/master/LICENSE.md)[![GitHub
@@ -103,18 +113,11 @@ v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/li
 tag](https://img.shields.io/github/tag/evanodell/threesixtygiving.svg)](https://github.com/evanodell/threesixtygiving)[![](https://cranlogs.r-pkg.org/badges/grand-total/threesixtygiving)](https://cran.r-project.org/package=threesixtygiving)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3474128.svg)](https://doi.org/10.5281/zenodo.3474128)
 
 Access open data from <https://www.threesixtygiving.org>, a database of
-charitable grant giving in the UK. The package provides functions to
-search and retrieve data on charitable giving.
-
-### [`ukpolice`](https://docs.evanodell.com/ukpolice)
-
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/ukpolice/blob/master/LICENSE.md)[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.com/evanodell/ukpolice)[![](https://cranlogs.r-pkg.org/badges/grand-total/ukpolice)](https://cran.r-project.org/package=ukpolice)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2619537.svg)](https://doi.org/10.5281/zenodo.2619537)
-
-Downloads data from the ‘UK Police’ public data API, the full docs of
-which are available at <https://data.police.uk/docs/>. Includes data on
-police forces and police force areas, crime reports, and the use of
-stop-and-search powers.
+charitable grant giving in the UK operated by ‘360Giving’. The package
+provides functions to search and retrieve data on charitable grant
+giving, and process that data into tidy formats. It relies on the
+‘360Giving’ data standard, described at
+<https://standard.threesixtygiving.org/>.
 
 ### [`emisc`](https://docs.evanodell.com/emisc)
 

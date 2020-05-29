@@ -13,8 +13,11 @@ knitr::opts_chunk$set(results="asis")
 ## Packages:
 
 ```{r folder-names, include=FALSE}
+#devtools::install_github("metacran/cranlogs")
 library(stringr)
 library(pander)
+library(cranlogs)
+library(dplyr)
 
 panderOptions('knitr.auto.asis', FALSE)
 
@@ -25,31 +28,40 @@ folders <- folders[!(folders %in% c("./tools", "./R", "./reference",
                                     "./emisc", "./docs"))]
 
 folders <- str_replace_all(folders, "./", "")
-folders <- str_sort(folders)
 
-folders2 <- paste0("[`", folders,
-                   "`](https://docs.evanodell.com/", folders, ")")
+folders <- tibble::tibble(folders = folders, downloads = NA)
+
+for (i in seq_along(folders$folders)) {
+  folders$downloads[[i]] <- sum(
+    cran_downloads(folders$folders[[i]], "last-month")$count
+    )
+}
+
+folders <- folders %>% arrange(desc(downloads))
+
+folders2 <- paste0("[`", folders$folders,
+                   "`](https://docs.evanodell.com/", folders$folders, ")")
 
 license <- c()
 descr <- c()
 doi <- c()
 
-for (i in seq_along(folders)) {
+for (i in seq_along(folders$folders)) {
 ## License types
-desc1 <- packageDescription(folders[[i]])
+desc1 <- packageDescription(folders$folders[[i]])
 
 if(desc1$License  == "MIT + file LICENSE") {
-  license[i] <- paste0("[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/", folders[[i]], "/blob/master/LICENSE.md)")
+  license[i] <- paste0("[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/", folders$folders[[i]], "/blob/master/LICENSE.md)")
   } else {
   license[i] <- "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
   }
 ## Description
 
-desc1 <- packageDescription(folders[[i]])
+desc1 <- packageDescription(folders$folders[[i]])
 
 descr[i] <- str_squish(desc1$Description)
 
-doi1 <- citation(folders[[i]])
+doi1 <- citation(folders$folders[[i]])
 
 doi[i] <-  paste0("[![DOI](https://zenodo.org/badge/DOI/", doi1[1]$doi,
                   ".svg)](https://doi.org/", doi1[1]$doi, ")")
@@ -57,21 +69,21 @@ doi[i] <-  paste0("[![DOI](https://zenodo.org/badge/DOI/", doi1[1]$doi,
 }
 
 cran_status <- paste0(
-  "[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/", folders,
-  ")](https://cran.r-project.org/package=", folders, ")")
+  "[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/", folders$folders,
+  ")](https://cran.r-project.org/package=", folders$folders, ")")
 
 github_status <- paste0(
-  "[![GitHub tag](https://img.shields.io/github/tag/evanodell/", folders,
-  ".svg)](https://github.com/evanodell/", folders, ")")
+  "[![GitHub tag](https://img.shields.io/github/tag/evanodell/", folders$folders,
+  ".svg)](https://github.com/evanodell/", folders$folders, ")")
 
 downloads <- paste0(
-  "[![](https://cranlogs.r-pkg.org/badges/grand-total/", folders,
-  ")](https://cran.r-project.org/package=", folders, ")")
+  "[![](https://cranlogs.r-pkg.org/badges/grand-total/", folders$folders,
+  ")](https://cran.r-project.org/package=", folders$folders, ")")
 ```
 
 ```{r echo=FALSE}
 
-for (i in seq_along(folders)) {
+for (i in seq_along(folders$folders)) {
   cat(pandoc.header.return(folders2[[i]], level = 3), "\n")
 
   cat(pander(cran_status[[i]]))

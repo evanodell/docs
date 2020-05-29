@@ -2,16 +2,16 @@
 #' @export
 build_hansard <- function(force = FALSE) {
   tictoc::tic()
-message("Building `hansard`")
+  message("Building `hansard`")
 
   base_files <- paste0("/Users/evanodell/Documents/Code/packages/hansard/", list.files(
     path = "/Users/evanodell/Documents/Code/packages/hansard",
     recursive = TRUE
   ))
 
-  base_files <- base_files[ !grepl("docs", base_files) ]
-  base_files <- base_files[ !grepl("data-raw", base_files) ]
-  base_files <- base_files[ !grepl("tests", base_files) ]
+  base_files <- base_files[!grepl("docs", base_files)]
+  base_files <- base_files[!grepl("data-raw", base_files)]
+  base_files <- base_files[!grepl("tests", base_files)]
 
   x <- lapply(base_files, file.info)
 
@@ -55,5 +55,5 @@ message("Building `hansard`")
   }
 
   tictoc::toc()
-emo::ji("document")
+  emo::ji("document")
 }

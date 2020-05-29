@@ -97,5 +97,5 @@ build_docs_home <- function() {
   )
 
   tictoc::toc()
-emo::ji("graph")
+  emo::ji("graph")
 }

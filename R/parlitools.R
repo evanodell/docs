@@ -2,23 +2,23 @@
 #' @export
 build_parlitools <- function(force = FALSE) {
   tictoc::tic()
-message("Building `parlitools`")
+  message("Building `parlitools`")
 
   base_files <- paste0("/Users/evanodell/Documents/Code/packages/parlitools/", list.files(
     path = "/Users/evanodell/Documents/Code/packages/parlitools",
     recursive = TRUE
   ))
 
-  base_files <- base_files[ !grepl("docs", base_files) ]
-  base_files <- base_files[ !grepl("data-raw", base_files) ]
-  base_files <- base_files[ !grepl("tests", base_files) ]
-  
+  base_files <- base_files[!grepl("docs", base_files)]
+  base_files <- base_files[!grepl("data-raw", base_files)]
+  base_files <- base_files[!grepl("tests", base_files)]
+
   x <- lapply(base_files, file.info)
 
   base_modified <- purrr::map(x, "mtime") %>%
     purrr::map(as.character) %>%
     unlist() %>%
-    as.POSIXct() %>% 
+    as.POSIXct() %>%
     round("hour")
 
   web_files <- paste0("parlitools/", list.files(
@@ -31,7 +31,7 @@ message("Building `parlitools`")
   web_modified <- purrr::map(y, "mtime") %>%
     purrr::map(as.character) %>%
     unlist() %>%
-    as.POSIXct() %>% 
+    as.POSIXct() %>%
     round("hour")
 
   if (max(web_modified) < max(base_modified) || force == TRUE) {
@@ -59,5 +59,5 @@ message("Building `parlitools`")
   }
 
   tictoc::toc()
-emo::ji("map")
+  emo::ji("map")
 }

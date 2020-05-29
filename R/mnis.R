@@ -1,7 +1,7 @@
 #' @export
 build_mnis <- function(force = FALSE) {
   tictoc::tic()
-message("Building `mnis`")
+  message("Building `mnis`")
 
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/mnis/",
@@ -11,9 +11,9 @@ message("Building `mnis`")
     )
   )
 
-  base_files <- base_files[ !grepl("docs", base_files) ]
-  base_files <- base_files[ !grepl("data-raw", base_files) ]
-  base_files <- base_files[ !grepl("tests", base_files) ]
+  base_files <- base_files[!grepl("docs", base_files)]
+  base_files <- base_files[!grepl("data-raw", base_files)]
+  base_files <- base_files[!grepl("tests", base_files)]
 
   x <- lapply(base_files, file.info)
 
@@ -55,5 +55,5 @@ message("Building `mnis`")
     message("Up to date!")
   }
   tictoc::toc()
-emo::ji("british")
+  emo::ji("british")
 }

@@ -2,7 +2,7 @@
 #' @export
 build_nomisr <- function(force = FALSE) {
   tictoc::tic()
-message("Building `nomisr`")
+  message("Building `nomisr`")
 
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/nomisr/",
@@ -12,9 +12,9 @@ message("Building `nomisr`")
     )
   )
 
-  base_files <- base_files[ !grepl("docs", base_files) ]
-  base_files <- base_files[ !grepl("data-raw", base_files) ]
-  base_files <- base_files[ !grepl("tests", base_files) ]
+  base_files <- base_files[!grepl("docs", base_files)]
+  base_files <- base_files[!grepl("data-raw", base_files)]
+  base_files <- base_files[!grepl("tests", base_files)]
 
   x <- lapply(base_files, file.info)
 
@@ -59,5 +59,5 @@ message("Building `nomisr`")
   }
 
   tictoc::toc()
-emo::ji("map")
+  emo::ji("map")
 }
