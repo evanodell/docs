@@ -83,6 +83,7 @@ other_docs <- function(pkg = "/Users/evanodell/Documents/GitHub/",
 #'
 #' @export
 build_docs_home <- function() {
+  tictoc::tic()
   pkgdown::build_site(preview = FALSE)
 
   doc_files <- list.files("docs",
