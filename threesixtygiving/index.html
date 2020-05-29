@@ -42,7 +42,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">threesixtygiving</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -120,9 +120,9 @@ install.packages("threesixtygiving")
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 
-<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)
+<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)
 
-<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">df2</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">amount_awarded</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(
@@ -172,15 +172,15 @@ install.packages("threesixtygiving")
 <a href="#citing-threesixtygiving" class="anchor"></a>Citing <code>threesixtygiving</code>
 </h3>
 <p>Please cite <code>threesixtygiving</code> as:</p>
-<p>Odell, Evan (2019). <em>threesixtygiving: Download Charitable Grants from the ‘360Giving’ Platform</em>. doi: <a href="https://doi.org/10.5281/zenodo.3474128">10.5281/zenodo.3474128</a>, R package version 0.1.1.9000, URL: <a href="https://docs.evanodell.com/threesixtygiving" class="uri">https://docs.evanodell.com/threesixtygiving</a></p>
+<p>Odell, Evan (2020). <em>threesixtygiving: Download Charitable Grants from the ‘360Giving’ Platform</em>. doi: <a href="https://doi.org/10.5281/zenodo.3474128">10.5281/zenodo.3474128</a>, R package version 0.2.0, URL: <a href="https://docs.evanodell.com/threesixtygiving" class="uri">https://docs.evanodell.com/threesixtygiving</a></p>
 <p>A BibTeX entry for LaTeX users is:</p>
 <pre><code>  @Manual{,
     title = {threesixtygiving: Download Charitable Grants from the '360Giving' Platform},
     author = {Evan Odell},
-    year = {2019},
+    year = {2020},
     doi = {10.5281/zenodo.3474128},
     url = {https://docs.evanodell.com/threesixtygiving},
-    note = {R package version 0.1.1.9000},
+    note = {R package version 0.2.0},
   }</code></pre>
 </div>
 <div id="code-of-conduct" class="section level3">

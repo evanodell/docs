@@ -1,6 +1,7 @@
 #' @export
 build_cqcr <- function(force = FALSE) {
-  message("Building `cqcr`")
+  tictoc::tic()
+message("Building `cqcr`")
 
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/cqcr/",
@@ -11,6 +12,8 @@ build_cqcr <- function(force = FALSE) {
   )
 
   base_files <- base_files[ !grepl("docs", base_files) ]
+  base_files <- base_files[ !grepl("data-raw", base_files) ]
+  base_files <- base_files[ !grepl("tests", base_files) ]
 
   x <- lapply(base_files, file.info)
 
@@ -51,5 +54,6 @@ build_cqcr <- function(force = FALSE) {
   } else {
     message("Up to date!")
   }
-  emo::ji("medicine")
+  tictoc::toc()
+emo::ji("medicine")
 }

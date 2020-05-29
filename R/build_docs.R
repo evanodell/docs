@@ -45,9 +45,9 @@ build_docs <- function(force = FALSE) {
   ### Build `cqcr`  -----------------
 
   docs::build_cqcr(force = force)
-  
+
   ### Build `cqcr`  -----------------
-  
+
   docs::build_threesixtygiving(force = force)
 
   ### Building homepage -----------
@@ -96,5 +96,6 @@ build_docs_home <- function() {
     recursive = TRUE
   )
 
-  emo::ji("graph")
+  tictoc::toc()
+emo::ji("graph")
 }

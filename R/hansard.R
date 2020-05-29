@@ -1,7 +1,8 @@
 
 #' @export
 build_hansard <- function(force = FALSE) {
-  message("Building `hansard`")
+  tictoc::tic()
+message("Building `hansard`")
 
   base_files <- paste0("/Users/evanodell/Documents/Code/packages/hansard/", list.files(
     path = "/Users/evanodell/Documents/Code/packages/hansard",
@@ -9,6 +10,8 @@ build_hansard <- function(force = FALSE) {
   ))
 
   base_files <- base_files[ !grepl("docs", base_files) ]
+  base_files <- base_files[ !grepl("data-raw", base_files) ]
+  base_files <- base_files[ !grepl("tests", base_files) ]
 
   x <- lapply(base_files, file.info)
 
@@ -51,5 +54,6 @@ build_hansard <- function(force = FALSE) {
     message("Up to date!")
   }
 
-  emo::ji("document")
+  tictoc::toc()
+emo::ji("document")
 }

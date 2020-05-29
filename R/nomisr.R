@@ -1,7 +1,8 @@
 
 #' @export
 build_nomisr <- function(force = FALSE) {
-  message("Building `nomisr`")
+  tictoc::tic()
+message("Building `nomisr`")
 
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/nomisr/",
@@ -12,6 +13,8 @@ build_nomisr <- function(force = FALSE) {
   )
 
   base_files <- base_files[ !grepl("docs", base_files) ]
+  base_files <- base_files[ !grepl("data-raw", base_files) ]
+  base_files <- base_files[ !grepl("tests", base_files) ]
 
   x <- lapply(base_files, file.info)
 
@@ -55,5 +58,6 @@ build_nomisr <- function(force = FALSE) {
     message("Up to date!")
   }
 
-  emo::ji("map")
+  tictoc::toc()
+emo::ji("map")
 }

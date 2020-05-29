@@ -1,6 +1,7 @@
 #' @export
 build_refuge <- function(force = FALSE) {
-  message("Building `refuge`")
+  tictoc::tic()
+message("Building `refuge`")
 
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/refuge/",
@@ -9,7 +10,10 @@ build_refuge <- function(force = FALSE) {
       recursive = TRUE
     )
   )
+  
   base_files <- base_files[ !grepl("docs", base_files) ]
+  base_files <- base_files[ !grepl("data-raw", base_files) ]
+  base_files <- base_files[ !grepl("tests", base_files) ]
 
   x <- lapply(base_files, file.info)
 
@@ -50,5 +54,6 @@ build_refuge <- function(force = FALSE) {
   } else {
     message("Up to date!")
   }
-  emo::ji("toilet")
+  tictoc::toc()
+emo::ji("toilet")
 }

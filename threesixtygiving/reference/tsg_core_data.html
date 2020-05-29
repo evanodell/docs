@@ -86,7 +86,7 @@ and the licence the data was published under." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">threesixtygiving</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -140,7 +140,7 @@ and the licence the data was published under." />
     </div>
 
     <div class="ref-description">
-    <p>Given a list returned by <code>tsg_all_grants()</code> or <code>tsg_search_grants()</code>, creates
+    <p>Given a list returned by <code><a href='tsg_all_grants.html'>tsg_all_grants()</a></code> or <code><a href='tsg_search_grants.html'>tsg_search_grants()</a></code>, creates
 a tibble with the core variables required by the
 <a href='https://standard.threesixtygiving.org/en/latest/'>360Giving</a> open standard,
 as well as the publisher prefix, which is useful for data processing,
@@ -154,7 +154,7 @@ and the licence the data was published under.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A list of tibble with grant data returned by <code>tsg_all_grants()</code>.</p></td>
+      <td><p>A list of tibble with grant data returned by <code><a href='tsg_all_grants.html'>tsg_all_grants()</a></code>.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
@@ -168,12 +168,12 @@ Defaults to <code>TRUE</code>.</p></td>
     <p>A tibble with the core variables in the 360Giving standard.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>tsg_process_data()</code>, which does the same processing but returns
+    <div class='dont-index'><p><code><a href='tsg_process_data.html'>tsg_process_data()</a></code>, which does the same processing but returns
 all available variables.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>grants</span> <span class='kw'>&lt;-</span> <span class='fu'>tsg_all_grants</span>()
+<span class='no'>grants</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='tsg_all_grants.html'>tsg_all_grants</a></span>()
 
 <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>tsg_core_data</span>(<span class='no'>grants</span>)
 }</div></pre>

@@ -1,6 +1,7 @@
 #' @export
 build_threesixtygiving <- function(force = FALSE) {
-  message("Building `threesixtygiving`")
+  tictoc::tic()
+message("Building `threesixtygiving`")
   
   base_files <- paste0(
     "/Users/evanodell/Documents/Code/packages/threesixtygiving/",
@@ -11,6 +12,8 @@ build_threesixtygiving <- function(force = FALSE) {
   )
   
   base_files <- base_files[ !grepl("docs", base_files) ]
+  base_files <- base_files[ !grepl("data-raw", base_files) ]
+  base_files <- base_files[ !grepl("tests", base_files) ]
   
   x <- lapply(base_files, file.info)
   
@@ -51,5 +54,6 @@ if(is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TR
   } else {
     message("Up to date!")
   }
-  emo::ji("money")
+  tictoc::toc()
+emo::ji("money")
 }

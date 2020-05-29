@@ -1,5 +1,6 @@
 #' @export
 build_guardianapi <- function(force = FALSE) {
+  tictoc::tic()
   message("Building `guardianapi`")
 
   base_files <- paste0(
@@ -11,6 +12,8 @@ build_guardianapi <- function(force = FALSE) {
   )
 
   base_files <- base_files[ !grepl("docs", base_files) ]
+  base_files <- base_files[ !grepl("data-raw", base_files) ]
+  base_files <- base_files[ !grepl("tests", base_files) ]
 
   x <- lapply(base_files, file.info)
 
@@ -51,5 +54,6 @@ build_guardianapi <- function(force = FALSE) {
   } else {
     message("Up to date!")
   }
+  tictoc::toc()
   emo::ji("newspaper")
 }

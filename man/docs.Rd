@@ -3,8 +3,4 @@
 \docType{package}
 \name{docs}
 \alias{docs}
-\alias{docs-package}
 \title{docs: docs | docs.evanodell.com}
-\description{
-docs: docs | docs.evanodell.com
-}
