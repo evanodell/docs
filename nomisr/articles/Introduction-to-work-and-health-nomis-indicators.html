@@ -255,13 +255,17 @@
 ## 5 TYPE232 2011 scottish intermediate zones   2011 scottish intermediate zones   
 ## 6 TYPE241 scottish parliamentary regions     scottish parliamentary regions</code></pre>
 <p>If you wanted all local authorities, combined authorities and regions in England, it is easier to create a vector which you can then feed into the <code><a href="../reference/nomis_get_data.html">nomis_get_data()</a></code> function.</p>
-<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="no">EN_LAs</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE464"</span>)[<span class="fl">1</span>:<span class="fl">326</span>, ] <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="no">EN_LAs</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>,
+                             <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE464"</span>)[<span class="fl">1</span>:<span class="fl">326</span>, ] <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">type</span> <span class="kw">=</span> <span class="fl">464</span>)
-<span class="no">EN_CAs</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE442"</span>) <span class="kw">%&gt;%</span>
+<span class="no">EN_CAs</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>,
+                             <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE442"</span>) <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">type</span> <span class="kw">=</span> <span class="fl">442</span>)
-<span class="no">EN_Regions</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE480"</span>)[<span class="fl">1</span>:<span class="fl">9</span>, ] <span class="kw">%&gt;%</span>
+<span class="no">EN_Regions</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>,
+                                 <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE480"</span>)[<span class="fl">1</span>:<span class="fl">9</span>, ] <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">type</span> <span class="kw">=</span> <span class="fl">480</span>)
-<span class="no">EN_Country</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE499"</span>)[<span class="fl">3</span>, ] <span class="kw">%&gt;%</span>
+<span class="no">EN_Country</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>,
+                                 <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE499"</span>)[<span class="fl">3</span>, ] <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">type</span> <span class="kw">=</span> <span class="fl">499</span>)
 
 <span class="co"># use rbind to combine all of the above objects together to create a single object containing all geographies of interest and select only the id, parentCode, label.en and type  </span>
@@ -283,7 +287,8 @@
 ## 10 1946157066 2013265921 North Tyneside         464
 ## # … with 336 more rows</code></pre>
 <div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="co"># Save it as a vector so can plug it into nomis_get_data function</span>
-<span class="no">EN_geographies</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1946157057</span>:<span class="fl">1946157382</span>, <span class="fl">1853882369</span>:<span class="fl">1853882372</span>, <span class="fl">1853882374</span>:<span class="fl">1853882379</span>, <span class="fl">2013265921</span>:<span class="fl">2013265929</span>, <span class="fl">2092957699</span>)</pre></body></html></div>
+<span class="no">EN_geographies</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1946157057</span>:<span class="fl">1946157382</span>, <span class="fl">1853882369</span>:<span class="fl">1853882372</span>,
+                    <span class="fl">1853882374</span>:<span class="fl">1853882379</span>, <span class="fl">2013265921</span>:<span class="fl">2013265929</span>, <span class="fl">2092957699</span>)</pre></body></html></div>
 </div>
 </div>
 <div id="downloading-data" class="section level2">
@@ -297,7 +302,10 @@
 <li>Step 4: select the variable(s) of interest - in this example the working age population aged 16-64 years [id = 18] has been selected</li>
 <li>Step 5: select the measures of interest - in this example all measures available are pulled</li>
 </ul>
-<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">working_age_pop</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">18</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">working_age_pop</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                                  <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>,
+                                  <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">18</span>,
+                                  <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>))</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -377,7 +385,8 @@
 <span class="co"># Need to extract the denominator from our previously created working_age_pop dataframe:</span>
 <span class="no">first_stack</span> <span class="kw">&lt;-</span> <span class="no">working_age_pop</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Denominator"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>) <span class="kw">%&gt;%</span>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>) <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">grouping</span> <span class="kw">=</span> <span class="fl">1</span>)
 
 <span class="co"># replace na with 0</span>
@@ -400,11 +409,15 @@
 <div class="sourceCode" id="cb28"><html><body><pre class="r"><span class="co"># SECOND STACK: Economically active and economically inactive</span>
 
 <span class="co"># Extract economically active variable:</span>
-<span class="no">econ_active</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">84</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+<span class="no">econ_active</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                              <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>,
+                              <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">84</span>,
+                              <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Denominator"</span>) <span class="kw">%&gt;%</span>
   <span class="fu">select</span>(-<span class="no">VARIABLE_NAME</span>) <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">VARIABLE_NAME</span> <span class="kw">=</span> <span class="st">"economically active"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -425,9 +438,12 @@
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
 <div class="sourceCode" id="cb31"><html><body><pre class="r"><span class="co"># Extract economically inactive variable:</span>
-<span class="no">econ_inactive</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">111</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+<span class="no">econ_inactive</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                                <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">111</span>,
+                                <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Numerator"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -472,9 +488,12 @@
 <div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="co"># THIRD STACK: Employed, unemployed, want a job, don't want a job</span>
 
 <span class="co"># Extract employed variable:</span>
-<span class="no">employed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+<span class="no">employed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                           <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">45</span>,
+                           <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Numerator"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -495,9 +514,12 @@
 ## )
 ## See spec(...) for full column specifications.</code></pre>
 <div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="co"># Extract unemployed variable:</span>
-<span class="no">unemployed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">84</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+<span class="no">unemployed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                             <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">84</span>,
+                             <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Numerator"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -518,9 +540,12 @@
 ## )
 ## See spec(...) for full column specifications.</code></pre>
 <div class="sourceCode" id="cb39"><html><body><pre class="r"><span class="co"># Extract want a job variable:</span>
-<span class="no">want_job</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">1487</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+<span class="no">want_job</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                           <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">1487</span>,
+                           <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Numerator"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -541,9 +566,12 @@
 ## )
 ## See spec(...) for full column specifications.</code></pre>
 <div class="sourceCode" id="cb41"><html><body><pre class="r"><span class="co"># Extract don't want a job variable:</span>
-<span class="no">dont_want_job</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">1488</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+<span class="no">dont_want_job</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                                <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fl">1488</span>,
+                                <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Numerator"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -594,9 +622,12 @@
   <span class="fu">rename</span>(<span class="kw">VARIABLE_NAME</span> <span class="kw">=</span> <span class="no">Active</span>)
 
 <span class="co"># Extract reasons variables:</span>
-<span class="no">reasons</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1493</span>:<span class="fl">1499</span>), <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+<span class="no">reasons</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                          <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1493</span>:<span class="fl">1499</span>),
+                          <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="no">MEASURES_NAME</span> <span class="kw">==</span> <span class="st">"Numerator"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>,
+         <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -670,7 +701,9 @@
 <span class="no">data</span>$<span class="no">Key</span>[<span class="no">data</span>$<span class="no">Key</span> <span class="kw">==</span> <span class="st">"% of economically inactive discouraged"</span>] <span class="kw">&lt;-</span> <span class="st">"4g. Discouraged"</span>
 
 <span class="co"># Get 15 colours - first one is white as you don't want it shown on the chart:</span>
-<span class="no">colours</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#FFFFFF"</span>, <span class="st">"#1B927D"</span>, <span class="st">"#006182"</span>, <span class="st">"#4D6594"</span>, <span class="st">"#D2D1C7"</span>, <span class="st">"#A7B0B6"</span>, <span class="st">"#D59F68"</span>, <span class="st">"#E9A225"</span>, <span class="st">"#A7A917"</span>, <span class="st">"#09A659"</span>, <span class="st">"#77B5B5"</span>, <span class="st">"#3277AC"</span>, <span class="st">"#234389"</span>, <span class="st">"#6B2865"</span>, <span class="st">"#C51A4A"</span>)
+<span class="no">colours</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#FFFFFF"</span>, <span class="st">"#1B927D"</span>, <span class="st">"#006182"</span>, <span class="st">"#4D6594"</span>, <span class="st">"#D2D1C7"</span>, <span class="st">"#A7B0B6"</span>,
+             <span class="st">"#D59F68"</span>, <span class="st">"#E9A225"</span>, <span class="st">"#A7A917"</span>, <span class="st">"#09A659"</span>, <span class="st">"#77B5B5"</span>, <span class="st">"#3277AC"</span>,
+             <span class="st">"#234389"</span>, <span class="st">"#6B2865"</span>, <span class="st">"#C51A4A"</span>)
 
 
 <span class="co"># Plot chart</span>
@@ -687,7 +720,8 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span>(<span class="kw">values</span> <span class="kw">=</span> <span class="no">colours</span>) +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span>() +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"Labour market summary, "</span>, <span class="no">area_of_interest_name</span>, <span class="st">", January 2019 to December 2019."</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"Labour market summary, "</span>, <span class="no">area_of_interest_name</span>,
+                      <span class="st">", January 2019 to December 2019."</span>)) +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"right"</span>)
 
 <span class="no">p</span></pre></body></html></div>
@@ -725,8 +759,11 @@
   <span class="fu">pull</span>(<span class="no">id</span>)
 
 <span class="co"># get data for pie</span>
-<span class="no">pie_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="no">pie_vars</span>, <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">VARIABLE_CODE</span>, <span class="no">MEASURES_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
+<span class="no">pie_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_17_5"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"latest"</span>,
+                           <span class="kw">geography</span> <span class="kw">=</span> <span class="no">EN_geographies</span>, <span class="kw">variable</span> <span class="kw">=</span> <span class="no">pie_vars</span>,
+                           <span class="kw">measures</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20599</span>, <span class="fl">21001</span>, <span class="fl">21002</span>, <span class="fl">21003</span>)) <span class="kw">%&gt;%</span>
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>,
+         <span class="no">VARIABLE_CODE</span>, <span class="no">MEASURES_NAME</span>, <span class="no">OBS_VALUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
@@ -766,7 +803,8 @@
 
 <span class="no">pie_data</span> <span class="kw">&lt;-</span> <span class="no">pie_data</span> <span class="kw">%&gt;%</span>
   <span class="fu">arrange</span>(<span class="no">GEOGRAPHY_NAME</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>, <span class="no">OBS_VALUE</span>, <span class="no">group</span>)
+  <span class="fu">select</span>(<span class="no">DATE_NAME</span>, <span class="no">GEOGRAPHY</span>, <span class="no">GEOGRAPHY_NAME</span>, <span class="no">GEOGRAPHY_CODE</span>, <span class="no">VARIABLE_NAME</span>,
+         <span class="no">OBS_VALUE</span>, <span class="no">group</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">pie_data</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 2,076 x 7
 ##    DATE_NAME GEOGRAPHY GEOGRAPHY_NAME GEOGRAPHY_CODE VARIABLE_NAME OBS_VALUE
@@ -804,12 +842,18 @@
 <span class="no">pie1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">pie1_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">""</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">OBS_VALUE</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">Key</span>))+
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="kw">stat</span><span class="kw">=</span><span class="st">"identity"</span>, <span class="kw">width</span><span class="kw">=</span><span class="fl">1</span>)
 
-<span class="no">pie1</span> <span class="kw">=</span> <span class="no">pie1</span> + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span>(<span class="st">"y"</span>, <span class="kw">start</span><span class="kw">=</span><span class="fl">0</span>) + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">label</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="no">OBS_VALUE</span>, <span class="st">"%"</span>)), <span class="kw">position</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_stack.html">position_stack</a></span>(<span class="kw">vjust</span> <span class="kw">=</span> <span class="fl">0.5</span>))
+<span class="no">pie1</span> <span class="kw">=</span> <span class="no">pie1</span> + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span>(<span class="st">"y"</span>, <span class="kw">start</span><span class="kw">=</span><span class="fl">0</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">label</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="no">OBS_VALUE</span>, <span class="st">"%"</span>)),
+            <span class="kw">position</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_stack.html">position_stack</a></span>(<span class="kw">vjust</span> <span class="kw">=</span> <span class="fl">0.5</span>))
 
 <span class="co"># Choose colours for the slides</span>
 <span class="no">pie1</span> <span class="kw">=</span> <span class="no">pie1</span> + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span>(<span class="kw">values</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#862633"</span>,<span class="st">"#00AB8E"</span>,<span class="st">"#01216A"</span>))
 
-<span class="no">pie1</span> <span class="kw">=</span> <span class="no">pie1</span> + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">title</span> <span class="kw">=</span> (<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"Participation in the labour market, "</span>, <span class="no">area_of_interest_name</span>, <span class="st">", January 2019 to December 2019"</span>)), <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Working age population (16-64)"</span>)
+<span class="no">pie1</span> <span class="kw">=</span> <span class="no">pie1</span> + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="kw">NULL</span>,
+                   <span class="kw">title</span> <span class="kw">=</span> (<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"Participation in the labour market, "</span>,
+                                   <span class="no">area_of_interest_name</span>, <span class="st">",
+                                   January 2019 to December 2019"</span>)),
+                   <span class="kw">subtitle</span> <span class="kw">=</span> <span class="st">"Working age population (16-64)"</span>)
 
 
 <span class="co"># Tidy up the theme</span>

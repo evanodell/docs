@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nomisr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3.9000</span>
       </span>
     </div>
 
@@ -139,14 +139,15 @@
 <h2 class="hasAnchor">
 <a href="#using-nomisr" class="anchor"></a>Using <code>nomisr</code>
 </h2>
-<p><code>nomisr</code> contains functions to search for datasets, identify the query options for different datasets and retrieve data from queries, all done with <a href="https://tibble.tidyverse.org/"><code>tibbles</code></a>, to take advantage of how <code>tibble</code> manages list-columns. The use of metadata queries, rather than simply downloading all available data, is useful to avoid overwhelming the rate limits of the API. For full details on all available functions and demonstrations of their use, please see the package <a href="https://docs.evanodell.com/nomisr/articles/introduction.html">vignette</a>.</p>
+<p><code>nomisr</code> contains functions to search for datasets, identify the query options for different datasets and retrieve data from queries, all done with <a href="https://tibble.tidyverse.org/"><code>tibbles</code></a>, to take advantage of how <code>tibble</code> manages list-columns. The use of metadata queries, rather than simply downloading all available data, is useful to avoid overwhelming the rate limits of the API.</p>
+<p>There are two <code>nomisr</code> vignettes. The <a href="https://docs.evanodell.com/nomisr/articles/introduction.html">introduction</a> has details on all available functions and basic demonstrations of their use. The <a href="https://docs.evanodell.com/nomisr/articles/introduction-to-work-and-health-nomis-indicators">Work and Health Indicators with nomisr</a> vignette shows a worked-through demonstration demonstrating the use of key indicators, courtesy of <a href="github.com/ninarobery">Nina Robery</a> from Public Health England.</p>
 <p>The example below demostrates a workflow to retrieve the latest data on Jobseeker’s Allowance with rates and proportions, on a national level, with all male claimants and workforce.</p>
 <div class="sourceCode" id="cb3"><pre class="r"> <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">nomisr</span>)
  <span class="no">jobseekers_search</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/nomis_search.html">nomis_search</a></span>(<span class="kw">name</span> <span class="kw">=</span> <span class="st">"*Jobseeker*"</span>)
 
  <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span>(<span class="no">jobseekers_search</span>)
-<span class="co">#&gt; Observations: 17</span>
-<span class="co">#&gt; Variables: 14</span>
+<span class="co">#&gt; Rows: 17</span>
+<span class="co">#&gt; Columns: 14</span>
 <span class="co">#&gt; $ agencyid                             &lt;chr&gt; "NOMIS", "NOMIS", "NOMIS", "NOMI…</span>
 <span class="co">#&gt; $ id                                   &lt;chr&gt; "NM_1_1", "NM_4_1", "NM_8_1", "N…</span>
 <span class="co">#&gt; $ uri                                  &lt;chr&gt; "Nm-1d1", "Nm-4d1", "Nm-8d1", "N…</span>
@@ -165,8 +166,8 @@
  <span class="no">jobseekers_measures</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="st">"NM_1_1"</span>, <span class="st">"measures"</span>)
 
  <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span>(<span class="no">jobseekers_measures</span>)
-<span class="co">#&gt; Observations: 4</span>
-<span class="co">#&gt; Variables: 3</span>
+<span class="co">#&gt; Rows: 4</span>
+<span class="co">#&gt; Columns: 3</span>
 <span class="co">#&gt; $ id             &lt;chr&gt; "20100", "20201", "20202", "20203"</span>
 <span class="co">#&gt; $ label.en       &lt;chr&gt; "claimants", "workforce", "active", "residence"</span>
 <span class="co">#&gt; $ description.en &lt;chr&gt; "claimants", "workforce", "active", "residence"</span>
@@ -187,8 +188,8 @@
  <span class="no">jobseekers_sex</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="st">"NM_1_1"</span>, <span class="st">"sex"</span>, <span class="st">"TYPE"</span>)
 
  <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span>(<span class="no">jobseekers_sex</span>)
-<span class="co">#&gt; Observations: 3</span>
-<span class="co">#&gt; Variables: 4</span>
+<span class="co">#&gt; Rows: 3</span>
+<span class="co">#&gt; Columns: 4</span>
 <span class="co">#&gt; $ id             &lt;chr&gt; "5", "6", "7"</span>
 <span class="co">#&gt; $ parentCode     &lt;chr&gt; "7", "7", NA</span>
 <span class="co">#&gt; $ label.en       &lt;chr&gt; "Male", "Female", "Total"</span>
@@ -220,11 +221,11 @@
 <span class="co">#&gt; See spec(...) for full column specifications.</span>
 
  <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span>(<span class="no">z</span>)
-<span class="co">#&gt; Observations: 70</span>
-<span class="co">#&gt; Variables: 34</span>
-<span class="co">#&gt; $ DATE                &lt;chr&gt; "2020-01", "2020-01", "2020-01", "2020-01", "2020…</span>
-<span class="co">#&gt; $ DATE_NAME           &lt;chr&gt; "January 2020", "January 2020", "January 2020", "…</span>
-<span class="co">#&gt; $ DATE_CODE           &lt;chr&gt; "2020-01", "2020-01", "2020-01", "2020-01", "2020…</span>
+<span class="co">#&gt; Rows: 70</span>
+<span class="co">#&gt; Columns: 34</span>
+<span class="co">#&gt; $ DATE                &lt;chr&gt; "2020-05", "2020-05", "2020-05", "2020-05", "2020…</span>
+<span class="co">#&gt; $ DATE_NAME           &lt;chr&gt; "May 2020", "May 2020", "May 2020", "May 2020", "…</span>
+<span class="co">#&gt; $ DATE_CODE           &lt;chr&gt; "2020-05", "2020-05", "2020-05", "2020-05", "2020…</span>
 <span class="co">#&gt; $ DATE_TYPE           &lt;chr&gt; "date", "date", "date", "date", "date", "date", "…</span>
 <span class="co">#&gt; $ DATE_TYPECODE       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…</span>
 <span class="co">#&gt; $ DATE_SORTORDER      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…</span>
@@ -248,15 +249,15 @@
 <span class="co">#&gt; $ ITEM_SORTORDER      &lt;dbl&gt; 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 0, 0, 1, 1, 2, 2, 3…</span>
 <span class="co">#&gt; $ MEASURES            &lt;dbl&gt; 20100, 20201, 20100, 20201, 20100, 20201, 20100, …</span>
 <span class="co">#&gt; $ MEASURES_NAME       &lt;chr&gt; "Persons claiming JSA", "Workplace-based estimate…</span>
-<span class="co">#&gt; $ OBS_VALUE           &lt;dbl&gt; 105592.0, 0.6, NA, NA, NA, NA, NA, NA, NA, NA, 98…</span>
+<span class="co">#&gt; $ OBS_VALUE           &lt;dbl&gt; 177301.0, 0.9, NA, NA, NA, NA, NA, NA, NA, NA, 16…</span>
 <span class="co">#&gt; $ OBS_STATUS          &lt;chr&gt; "A", "A", "Q", "Q", "Q", "Q", "Q", "Q", "Q", "Q",…</span>
 <span class="co">#&gt; $ OBS_STATUS_NAME     &lt;chr&gt; "Normal Value", "Normal Value", "These figures ar…</span>
 <span class="co">#&gt; $ OBS_CONF            &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, …</span>
 <span class="co">#&gt; $ OBS_CONF_NAME       &lt;chr&gt; "Free (free for publication)", "Free (free for pu…</span>
-<span class="co">#&gt; $ URN                 &lt;chr&gt; "Nm-1d1d32321e0d2092957697d5d1d20100", "Nm-1d1d32…</span>
+<span class="co">#&gt; $ URN                 &lt;chr&gt; "Nm-1d1d32325e0d2092957697d5d1d20100", "Nm-1d1d32…</span>
 <span class="co">#&gt; $ RECORD_OFFSET       &lt;dbl&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,…</span>
 <span class="co">#&gt; $ RECORD_COUNT        &lt;dbl&gt; 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 7…</span></pre></div>
-<p>There is a lot of data available through Nomis, and there are some limits to the amount of data that can be retrieved within a certain period of time, although those are not published. For more details, see the <a href="https://www.nomisweb.co.uk/api/v01/help">full API documentation</a> from Nomis. Full package documentation is available at <a href="https://docs.evanodell.com/nomisr">docs.evanodell.com/nomisr</a></p>
+<p>There is a lot of data available through Nomis, and there are some limits to the amount of data that can be retrieved within a certain period of time, although those are not published. For more details, see the <a href="https://www.nomisweb.co.uk/api/v01/help">full API documentation</a> from Nomis. Full package documentation is available at <a href="https://docs.evanodell.com/nomisr">docs.evanodell.com/nomisr</a>.</p>
 </div>
 <div id="meta" class="section level2">
 <h2 class="hasAnchor">
@@ -264,22 +265,20 @@
 <p>Bug reports, suggestions, and code contributions are all welcome. Please see <a href="https://github.com/ropensci/nomisr/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> for details.</p>
 <p>Please note that this project is released with a <a href="https://github.com/ropensci/nomisr/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 <p>Please note that this project is not affiliated with the Office for National Statistics or the University of Durham (who run Nomis on behalf o the Office for National Statistics).</p>
-<p>Please use the reference below when citing <code>nomisr</code>, which is the same as <code><a href="https://rdrr.io/r/utils/citation.html">citation(package = 'nomisr')</a></code>.</p>
-<p>Odell, (2018). nomisr: Access ‘Nomis’ UK Labour Market Data. <em>Journal of Open Source Software</em>, 3(27), 859, <a href="https://doi.org/10.21105/joss.00859" class="uri">https://doi.org/10.21105/joss.00859</a>.</p>
+<p>Please use the reference below when citing <code>nomisr</code>, or use <code><a href="https://rdrr.io/r/utils/citation.html">citation(package = 'nomisr')</a></code>.</p>
+<p>Odell, (2018). nomisr: Access ‘Nomis’ UK Labour Market Data. <em>Journal of Open Source Software</em>, 3(27), 859, doi: <a href="https://doi.org/10.21105/joss.00859">10.21105/joss.00859</a>.</p>
 <p>A BibTeX entry for LaTeX users is</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="op">@</span>article{odell2018,</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  title =<span class="st"> </span>{Nomisr<span class="op">:</span><span class="st"> </span>{{Access Nomis UK Labour Market Data}}},</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  volume =<span class="st"> </span>{<span class="dv">3</span>},</span>
-<span id="cb4-4"><a href="#cb4-4"></a>  issn =<span class="st"> </span>{<span class="dv">2475-9066</span>},</span>
-<span id="cb4-5"><a href="#cb4-5"></a>  url =<span class="st"> </span>{https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>ropensci<span class="op">/</span>nomisr},</span>
-<span id="cb4-6"><a href="#cb4-6"></a>  doi =<span class="st"> </span>{<span class="fl">10.21105</span><span class="op">/</span>joss<span class="fl">.00859</span>},</span>
-<span id="cb4-7"><a href="#cb4-7"></a>  number =<span class="st"> </span>{<span class="dv">27</span>},</span>
-<span id="cb4-8"><a href="#cb4-8"></a>  journaltitle =<span class="st"> </span>{Journal of Open Source Software},</span>
-<span id="cb4-9"><a href="#cb4-9"></a>  urldate =<span class="st"> </span>{<span class="dv">2018-08-01</span>},</span>
-<span id="cb4-10"><a href="#cb4-10"></a>  date =<span class="st"> </span>{<span class="dv">2018-07-28</span>},</span>
-<span id="cb4-11"><a href="#cb4-11"></a>  pages =<span class="st"> </span>{<span class="dv">859</span>},</span>
-<span id="cb4-12"><a href="#cb4-12"></a>  author =<span class="st"> </span>{Odell, Evan}</span>
-<span id="cb4-13"><a href="#cb4-13"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="op">@</span>Article{odell2018,</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    title =<span class="st"> </span>{{nomisr}<span class="op">:</span><span class="st"> </span>Access Nomis UK Labour Market Data With R},</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    volume =<span class="st"> </span>{<span class="dv">3</span>},</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    doi =<span class="st"> </span>{<span class="fl">10.21105</span><span class="op">/</span>joss<span class="fl">.00859</span>},</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    number =<span class="st"> </span>{<span class="dv">27</span>},</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    journal =<span class="st"> </span>{The Journal of Open Source Software},</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    year =<span class="st"> </span>{<span class="dv">2018</span>},</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    month =<span class="st"> </span>{July},</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    pages =<span class="st"> </span>{<span class="dv">859</span>},</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    author =<span class="st"> </span>{Evan Odell},</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  }</span></code></pre></div>
 <p>License: <a href="https://github.com/ropensci/nomisr/blob/master/LICENSE.md">MIT</a></p>
 <p><a href="https://ropensci.org"><img src="https://ropensci.org/public_images/ropensci_footer.png" alt="ropensci_footer"></a></p>
 </div>

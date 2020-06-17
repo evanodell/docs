@@ -82,7 +82,7 @@
 
       
 
-      </header><script src="introduction_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><script src="introduction_files/header-attrs-2.2/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to <code>threesixtygiving</code>
@@ -108,11 +108,11 @@
 
 <span class="co"># Download all the grant data available.</span>
 <span class="co"># It comes out in a list of tibbles but that's not a problem:</span>
-<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">0</span>)
+<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">0</span>)
 
 <span class="co"># Get just the core data required by the 360Giving standard.</span>
 <span class="co"># Convert that list of tibbles into a tidy format:</span>
-<span class="no">all_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
+<span class="no">all_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">avg_size</span> <span class="kw">&lt;-</span> <span class="no">all_data</span> <span class="kw">%&gt;%</span> <span class="co">#This %&gt;% thing is a called a pipe. Pipes are love. Pipes are life.</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">currency</span> <span class="kw">==</span> <span class="st">"GBP"</span>) <span class="kw">%&gt;%</span> <span class="co"># Filter out non-£ data</span>
@@ -135,7 +135,7 @@
 <span class="co">#  9 Cloudesley                                14441.</span>
 <span class="co"># 10 Co-operative Group                         3238.</span>
 <span class="co"># # ... with 99 more rows</span></pre></body></html></div>
-<p>The <code><a href="../reference/tsg_all_grants.html">tsg_all_grants()</a></code> function retrieves all the grant data. And if data isn’t available, or there is a downloading error, it will print a message warning you. No more silently failing downloads. There is even a <code><a href="../reference/tsg_missing.html">tsg_missing()</a></code> function, which will take the output of <code><a href="../reference/tsg_all_grants.html">tsg_all_grants()</a></code> and tell you what’s missing.</p>
+<p>The <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants()</a></code> function retrieves all the grant data. And if data isn’t available, or there is a downloading error, it will print a message warning you. No more silently failing downloads. There is even a <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_missing.html">tsg_missing()</a></code> function, which will take the output of <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants()</a></code> and tell you what’s missing.</p>
 <p>Say you want to include all the grants that are in currencies other than pounds, but convert their value to pounds? In the example below I show a way to do that where I just looked up the currency conversion rates on my phone and changed the currency based on that, but you could also write some code that takes the currency code, the award date, and passes them to the <a href="https://fixer.io" class="uri">https://fixer.io</a> currency conversion service using the <a href="https://cran.r-project.org/package=fixerapi"><code>fixerapi</code></a> package, which provided you have the right account type, will convert the currency value to pound using the conversion rate on the day the grant was awarded.</p>
 <div id="retrieve-all-grants" class="section level2">
 <h2 class="hasAnchor">
@@ -149,9 +149,9 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">stringr</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)</pre></body></html></div>
 <p>First, I’m going to retrieve all the grant data. The <code>timeout = 8</code> means I’m having the function give up trying to retrieve data after 8 seconds for each file, and <code>retries = 1</code> means it is only going to retry failed retrievals once, then it will give up and move on to retrieve the next data set.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)</pre></body></html></div>
 <p>Because of my minimal timeout and retries, as well as possible other problems with how organisations configure their servers, there are some datasets missing:</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/tsg_missing.html">tsg_missing</a></span>(<span class="no">grants</span>)
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_missing.html">tsg_missing</a></span>(<span class="no">grants</span>)
 
 <span class="co"># # A tibble: 7 x 14</span>
 <span class="co">#   title description identifier license license_name issued modified download_url access_url data_type</span>
@@ -165,13 +165,13 @@
 <span class="co"># 7 Wood~ ""          a001p0000~ https:~ Creative Co~ 2017-~ 2018-08~ http://ods.~ http://ww~ unknown  </span>
 <span class="co"># # ... with 4 more variables: publisher_name &lt;chr&gt;, publisher_website &lt;chr&gt;, publisher_logo &lt;chr&gt;,</span>
 <span class="co"># #   publisher_prefix &lt;chr&gt;</span></pre></body></html></div>
-<p>However, we know they are missing, and we can retry downloading just them if needed using the <code><a href="../reference/tsg_specific_df.html">tsg_specific_df()</a></code> function. But I’ll ignore them for now.</p>
+<p>However, we know they are missing, and we can retry downloading just them if needed using the <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_specific_df.html">tsg_specific_df()</a></code> function. But I’ll ignore them for now.</p>
 </div>
 <div id="core-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#core-data" class="anchor"></a>Core data</h2>
-<p><code>tsg_all_grants</code> returns a list of tibbles, due to differences in the data provided by each funder. <code>tsg_core_data</code> returns a tibble with the 10 columns in the <a href="https://standard.threesixtygiving.org/en/latest/#">360Giving Open Standard</a>, plus the publisher prefix used to identify each funder. <code><a href="../reference/tsg_process_data.html">tsg_process_data()</a></code> converts a list of tibbles into a single tibble, preserving all columns (with an option to only preserve columns where a minimum proportion have data). In the case below I have converted non-GBP currencies to GBP on the rates on 2020-01-17.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
+<p><code>tsg_all_grants</code> returns a list of tibbles, due to differences in the data provided by each funder. <code>tsg_core_data</code> returns a tibble with the 10 columns in the <a href="https://standard.threesixtygiving.org/en/latest/#">360Giving Open Standard</a>, plus the publisher prefix used to identify each funder. <code><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_process_data.html">tsg_process_data()</a></code> converts a list of tibbles into a single tibble, preserving all columns (with an option to only preserve columns where a minimum proportion have data). In the case below I have converted non-GBP currencies to GBP on the rates on 2020-01-17.</p>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">df2</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">amount_awarded</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(
@@ -181,14 +181,14 @@
     <span class="no">currency</span> <span class="kw">==</span> <span class="st">"EUR"</span> ~ <span class="no">amount_awarded</span>/<span class="fl">1.1750</span>,
     <span class="fl">TRUE</span> ~ <span class="no">amount_awarded</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(<span class="no">funding_org_name</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/n.html">n</a></span>(),
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span>(),
             <span class="kw">amount_awarded</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">amount_awarded</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">avg</span> <span class="kw">=</span> <span class="no">amount_awarded</span>/<span class="no">n</span>)</pre></body></html></div>
 </div>
 <div id="processing-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#processing-data" class="anchor"></a>Processing data</h2>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">proc_df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/tsg_process_data.html">tsg_process_data</a></span>(<span class="no">grants</span>)
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">proc_df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_process_data.html">tsg_process_data</a></span>(<span class="no">grants</span>)
 
 <span class="no">proc_amount_df</span> <span class="kw">&lt;-</span> <span class="no">proc_df</span>  <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">identifier</span>, <span class="no">title</span>, <span class="no">description</span>, <span class="no">funding_org_name</span>,
@@ -204,7 +204,7 @@
 
 <span class="no">count0</span> <span class="kw">&lt;-</span> <span class="no">proc_amount_df</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">difference</span><span class="kw">==</span><span class="fl">0</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>()
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">tally</a></span>()
 
 <span class="no">p4</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">proc_amount_df</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">difference</span> <span class="kw">!=</span> <span class="fl">0</span>),
              <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">difference</span>)) +

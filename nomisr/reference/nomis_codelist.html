@@ -85,7 +85,7 @@ Note that some codelists, particularly geography, can be very large." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nomisr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3.9000</span>
       </span>
     </div>
 
@@ -212,18 +212,15 @@ for some datasets.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codelist</span>(<span class='st'>"NM_1_1"</span>, <span class='st'>"item"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `as.tibble()` is deprecated as of tibble 2.0.0.</span>
-#&gt; <span class='warning'>Please use `as_tibble()` instead.</span>
-#&gt; <span class='warning'>The signature and semantics have changed, see `?as_tibble`.</span>
-#&gt; <span class='warning'><span style='color: #555555;'>This warning is displayed once every 8 hours.</span><span></span>
-#&gt; <span class='warning'></span><span style='color: #555555;'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span><span></span></div><div class='input'>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codelist</span>(<span class='st'>"NM_1_1"</span>, <span class='st'>"item"</span>)
+
 
 <span class='co'># Searching for codes ending with "london"</span>
 <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codelist</span>(<span class='st'>"NM_1_1"</span>, <span class='st'>"geography"</span>, <span class='kw'>search</span> <span class='kw'>=</span> <span class='st'>"*london"</span>)
 
 
 <span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>nomis_codelist</span>(<span class='st'>"NM_161_1"</span>, <span class='st'>"cause_of_death"</span>)
-<span class='co'># }</span></div></span></pre>
+<span class='co'># }</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
