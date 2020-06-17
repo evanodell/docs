@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nomisr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3.9000</span>
       </span>
     </div>
 
@@ -113,13 +113,13 @@
 
       
 
-      </header><script src="introduction_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><script src="introduction_files/header-attrs-2.2/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to nomisr</h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2020-04-22</h4>
+            <h4 class="date">2020-06-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ropensci/nomisr/blob/master/../docs/vignettes/introduction.Rmd"><code>../docs/vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -339,13 +339,9 @@
 <h3 class="hasAnchor">
 <a href="#concept-values" class="anchor"></a>Concept Values</h3>
 <p>If provided with a concept name it returns the available values for that concept. However, in some cases, espescially with the geography concept, there are multiple options available, which Nomis labels types. In that case <code><a href="../reference/nomis_get_metadata.html">nomis_get_metadata()</a></code> returns the values of the lowest indexed type available.</p>
-<div class="sourceCode" id="cb33"><html><body><pre class="r"><span class="no">b</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"GEOGRAPHY"</span>)</pre></body></html></div>
-<pre><code>## Warning: `as.tibble()` is deprecated as of tibble 2.0.0.
-## Please use `as_tibble()` instead.
-## The signature and semantics have changed, see `?as_tibble`.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
-<div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">b</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb33"><html><body><pre class="r"><span class="no">b</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"GEOGRAPHY"</span>)
+
+<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">b</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 3 x 4
 ##   id         parentCode label.en          description.en   
 ##   &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;             &lt;chr&gt;            
@@ -353,7 +349,7 @@
 ## 2 2092957699 &lt;NA&gt;       England           England          
 ## 3 2092957700 2092957700 Wales             Wales</code></pre>
 <p>We can now pass a generic “type” string to the <code>type</code> parameter in <code><a href="../reference/nomis_get_metadata.html">nomis_get_metadata()</a></code>, which returns all available geography types for dataset “NM_893_1”.</p>
-<div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="no">c</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"type"</span>)
+<div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="no">c</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"type"</span>)
 
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">c</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 22 x 3
@@ -371,7 +367,7 @@
 ## 10 TYPE279 parishes 2011                     parishes 2011                      
 ## # … with 12 more rows</code></pre>
 <p>Passing a specific type to the <code>type</code> parameter, in this case “TYPE460” for all post-2010 parliamentary constituencies, returns a tibble with geographic codes for those specific constituencies, which can be used to filter queries.</p>
-<div class="sourceCode" id="cb39"><html><body><pre class="r"><span class="no">d</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE460"</span>)
+<div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="no">d</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_metadata.html">nomis_get_metadata</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">concept</span> <span class="kw">=</span> <span class="st">"geography"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"TYPE460"</span>)
 
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">d</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 573 x 4
@@ -395,7 +391,7 @@
 <h2 class="hasAnchor">
 <a href="#downloading-data" class="anchor"></a>Downloading data</h2>
 <p>Using the information above, we can now query the latest data on bedroom occupancy per household type in different NHS clinical commissioning groups.</p>
-<div class="sourceCode" id="cb41"><html><body><pre class="r"><span class="no">z</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">time</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="st">"TYPE266"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb39"><html><body><pre class="r"><span class="no">z</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">time</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="st">"TYPE266"</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_double(),
@@ -420,7 +416,7 @@
 ##   URN = col_character()
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
-<div class="sourceCode" id="cb44"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">z</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb42"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">z</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 44,310 x 40
 ##     DATE DATE_NAME DATE_CODE DATE_TYPE DATE_TYPECODE DATE_SORTORDER GEOGRAPHY
 ##    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;
@@ -447,7 +443,7 @@
 ## #   OBS_VALUE &lt;dbl&gt;, OBS_STATUS &lt;chr&gt;, OBS_STATUS_NAME &lt;chr&gt;, OBS_CONF &lt;lgl&gt;,
 ## #   OBS_CONF_NAME &lt;chr&gt;, URN &lt;chr&gt;, RECORD_OFFSET &lt;dbl&gt;, RECORD_COUNT &lt;dbl&gt;</code></pre>
 <p>We can also query bedroom occupancy per household type in the Manchester, Gorton and Manchester, Withington parliamentary constituencies.</p>
-<div class="sourceCode" id="cb46"><html><body><pre class="r"><span class="no">x</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">time</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"1929380119"</span>, <span class="st">"1929380120"</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb44"><html><body><pre class="r"><span class="no">x</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_893_1"</span>, <span class="kw">time</span> <span class="kw">=</span> <span class="st">"latest"</span>, <span class="kw">geography</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"1929380119"</span>, <span class="st">"1929380120"</span>))</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_double(),
@@ -472,7 +468,7 @@
 ##   URN = col_character()
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
-<div class="sourceCode" id="cb49"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">x</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb47"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">x</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 420 x 40
 ##     DATE DATE_NAME DATE_CODE DATE_TYPE DATE_TYPECODE DATE_SORTORDER GEOGRAPHY
 ##    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;
@@ -499,7 +495,7 @@
 ## #   OBS_VALUE &lt;dbl&gt;, OBS_STATUS &lt;chr&gt;, OBS_STATUS_NAME &lt;chr&gt;, OBS_CONF &lt;lgl&gt;,
 ## #   OBS_CONF_NAME &lt;chr&gt;, URN &lt;chr&gt;, RECORD_OFFSET &lt;dbl&gt;, RECORD_COUNT &lt;dbl&gt;</code></pre>
 <p><code>nomisr</code> also allows for time series queries. The example below shows how to retrieve the percentage of the workforce claiming Jobseekers Allowance from January 2015 to January 2020, inclusive, for each region of the UK, divided by male and female claimants, with an accompanying graph.</p>
-<div class="sourceCode" id="cb51"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
+<div class="sourceCode" id="cb49"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 
 <span class="no">jsa</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/nomis_get_data.html">nomis_get_data</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"NM_1_1"</span>, <span class="kw">time</span> <span class="kw">=</span> <span class="st">"2015-01-2020-01"</span>,
                       <span class="kw">geography</span> <span class="kw">=</span> <span class="st">"TYPE480"</span>, <span class="kw">measures</span><span class="kw">=</span><span class="fl">20201</span>,
@@ -526,7 +522,7 @@
 ##   URN = col_character()
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
-<div class="sourceCode" id="cb54"><html><body><pre class="r"><span class="no">jsa</span> <span class="kw">&lt;-</span> <span class="no">jsa</span> <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb52"><html><body><pre class="r"><span class="no">jsa</span> <span class="kw">&lt;-</span> <span class="no">jsa</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">date</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="no">date</span>, <span class="st">"-01"</span>)),
          <span class="kw">obs_value</span> <span class="kw">=</span> <span class="no">obs_value</span>/<span class="fl">100</span>)
 
