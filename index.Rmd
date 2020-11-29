@@ -13,7 +13,6 @@ knitr::opts_chunk$set(results="asis")
 ## Packages:
 
 ```{r folder-names, include=FALSE}
-#devtools::install_github("metacran/cranlogs")
 library(stringr)
 library(pander)
 library(cranlogs)
