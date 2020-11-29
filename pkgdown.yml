@@ -2,7 +2,7 @@ pandoc: 2.11.2
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2020-11-29T11:26Z
+last_built: 2020-11-29T11:40Z
 urls:
   reference: https://docs.evanodell.com/reference
   article: https://docs.evanodell.com/articles
