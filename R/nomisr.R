@@ -59,5 +59,5 @@ build_nomisr <- function(force = FALSE) {
   }
 
   tictoc::toc()
-  emo::ji("map")
+  message(emo::ji("map"))
 }

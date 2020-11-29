@@ -55,6 +55,8 @@ build_ukpolice <- function(force = FALSE) {
     message("Up to date!")
   }
   tictoc::toc()
-  message(emo::ji("british"),
-          sample(c(rep(emo::ji("police"),4), emo::ji("pig")), 1))
+  message(
+    emo::ji("british"),
+    sample(c(rep(emo::ji("police"), 4), emo::ji("pig")), 1)
+  )
 }

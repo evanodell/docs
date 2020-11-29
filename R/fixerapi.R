@@ -55,5 +55,5 @@ build_fixerapi <- function(force = FALSE) {
     message("Up to date!")
   }
   tictoc::toc()
-  emo::ji("currency")
+  message(emo::ji("currency"))
 }

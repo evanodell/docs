@@ -55,5 +55,5 @@ build_threesixtygiving <- function(force = FALSE) {
     message("Up to date!")
   }
   tictoc::toc()
-  emo::ji("money")
+  message(emo::ji("money"))
 }

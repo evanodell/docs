@@ -56,5 +56,5 @@ build_emisc <- function(force = FALSE) {
   }
 
   tictoc::toc()
-  emo::ji("owl")
+  message(emo::ji("owl"))
 }

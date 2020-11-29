@@ -134,10 +134,12 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install from CRAN, use:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"fixerapi"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"fixerapi"</span><span class="op">)</span></code></pre></div>
 <p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"evanodell/fixerapi"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"evanodell/fixerapi"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="using-fixerapi" class="section level2">
 <h2 class="hasAnchor">
@@ -153,11 +155,12 @@
 <li>Exchange rate fluctuations over a period of up to 365 days, using <code><a href="reference/fixer_fluctuation.html">fixer_fluctuation()</a></code> (available on “professional plus” and “enterprise” grade accounts)</li>
 </ul>
 <p>With the exception of <code><a href="reference/fixer_convert.html">fixer_convert()</a></code>, which is limited to two currencies, all functions give an option for a base currency that is indexed to 1 and other currencies are compared to – the default is the Euro – and to limit the currencies it is compared with, using the <code>symbols</code> parameter, which takes a character vector of currency symbols. If no symbols are specified, all available currencies are returned.</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fixer</span>)
-<span class="no">today_symbols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/fixer_latest.html">fixer_latest</a></span>(<span class="kw">base</span> <span class="kw">=</span> <span class="st">"EUR"</span>,
-                              <span class="kw">symbols</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"JPY"</span>, <span class="st">"GBP"</span>, <span class="st">"USD"</span>, <span class="st">"CAD"</span>, <span class="st">"CHF"</span>))
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fixer</span><span class="op">)</span>
+<span class="va">today_symbols</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/fixer_latest.html">fixer_latest</a></span><span class="op">(</span>base <span class="op">=</span> <span class="st">"EUR"</span>, 
+                              symbols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"JPY"</span>, <span class="st">"GBP"</span>, <span class="st">"USD"</span>, <span class="st">"CAD"</span>, <span class="st">"CHF"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">today_symbols</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">today_symbols</span><span class="op">)</span>
 
 <span class="co">#&gt; A tibble: 5 x 2</span>
 <span class="co">#&gt;   name    value</span>
@@ -166,21 +169,21 @@
 <span class="co">#&gt; 2 GBP     0.873</span>
 <span class="co">#&gt; 3 USD     1.23 </span>
 <span class="co">#&gt; 4 CAD     1.57 </span>
-<span class="co">#&gt; 5 CHF     1.18 </span></pre></div>
+<span class="co">#&gt; 5 CHF     1.18 </span></code></pre></div>
 <p>The example above shows some exchange rates on 2018-04-03.</p>
 <p>Please note that this project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 <p>This project is not affiliated with or supported by <a href="https://fixer.io">fixer.io</a>.</p>
 <p>To cite package <code>fixerapi</code> in publications use:</p>
 <p>Odell E (2018). <em>fixerapi: An R Client for the “Fixer.io” Currency API</em>. doi: 10.5281/zenodo.1211687 (URL: <a href="http://doi.org/10.5281/zenodo.1211687" class="uri">http://doi.org/10.5281/zenodo.1211687</a>), R package version 0.1.6, &lt;URL: <a href="https://docs.evanodell.com/fixerapi" class="uri">https://docs.evanodell.com/fixerapi</a>&gt;.</p>
 <p>A BibTeX entry for LaTeX users is</p>
-<pre><code>  @Manual{,
-    title = {{fixerapi}: An R Client for the "Fixer.io" Currency API},
-    author = {Evan Odell},
-    year = {2018},
-    note = {R package version 0.1.6},
-    doi = {10.5281/zenodo.1211687},
-    url = {https://docs.evanodell.com/fixerapi},
-  }</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="sc">@</span>Manual{,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    title <span class="ot">=</span> {{fixerapi}<span class="sc">:</span> An R Client <span class="cf">for</span> the <span class="st">"Fixer.io"</span> Currency API},</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    author <span class="ot">=</span> {Evan Odell},</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2018</span>},</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="fl">1.6</span>},</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    doi <span class="ot">=</span> {<span class="fl">10.5281</span><span class="sc">/</span>zenodo<span class="fl">.1211687</span>},</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>docs.evanodell.com<span class="sc">/</span>fixerapi},</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 </div>
 </div>
 
@@ -233,7 +236,7 @@
 <li><a href="https://cran.r-project.org/package=fixerapi"><img src="https://www.r-pkg.org/badges/version/fixerapi" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://github.com/evanodell/fixerapi"><img src="https://img.shields.io/github/tag/evanodell/fixerapi.svg" alt="GitHub tag"></a></li>
 <li><a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/fixerapi"></a></li>
-<li><a href="https://travis-ci.org/evanodell/fixerapi"><img src="https://travis-ci.org/evanodell/fixerapi.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://github.com/evanodell/fixerapi/actions"><img src="https://github.com/evanodell/fixerapi/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/evanodell/fixerapi"><img src="https://ci.appveyor.com/api/projects/status/github/evanodell/fixerapi?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://codecov.io/github/evanodell/fixerapi?branch=master"><img src="https://img.shields.io/codecov/c/github/evanodell/fixerapi/master.svg" alt="Coverage Status"></a></li>
 <li><a href="https://zenodo.org/badge/latestdoi/127822432"><img src="https://zenodo.org/badge/127822432.svg" alt="DOI"></a></li>
@@ -248,7 +251,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

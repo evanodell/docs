@@ -55,5 +55,5 @@ build_mnis <- function(force = FALSE) {
     message("Up to date!")
   }
   tictoc::toc()
-  emo::ji("british")
+  message(emo::ji("british"))
 }

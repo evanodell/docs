@@ -42,7 +42,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">threesixtygiving</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -94,7 +94,7 @@
 <div id="threesixtygiving" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#threesixtygiving" class="anchor"></a>threesixtygiving</h1></div>
-<p>Access open data from <a href="https://www.threesixtygiving.org/">360Giving</a> publishers. 360Giving is a data standard for publishing information about charitable grant giving in the UK. 360Giving maintains a <a href="http://data.threesixtygiving.org/">registry of grant makers</a> using the standard. The package provides functions to search and retrieve data on charitable giving.</p>
+<p>Access open data from <a href="https://www.threesixtygiving.org/">360Giving</a> publishers. 360Giving is a data standard for publishing information about charitable grant giving in the UK. 360Giving maintains a <a href="https://data.threesixtygiving.org/">registry of grant makers</a> using the standard. The package provides functions to search and retrieve data on charitable giving.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -105,8 +105,9 @@ install.packages("threesixtygiving")
 ```
 -->
 <p>You can install the development version from <a href="https://github.com/evanodell/threesixtygiving">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"evanodell/threesixtygiving"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"evanodell/threesixtygiving"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="purpose" class="section level2">
 <h2 class="hasAnchor">
@@ -116,52 +117,70 @@ install.packages("threesixtygiving")
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">threesixtygiving</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
+<p>The example below shows how to retrieve all available grants, and presents the total value of grants since 2018-01-01. It uses the <a href="https://cran.r-project.org/package=fixerapi"><code>fixerapi</code></a> package to perform currency conversions, as some grants are reported in currencies other than GBP.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.evanodell.com/threesixtygiving">threesixtygiving</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.evanodell.com/fixerapi">fixerapi</a></span><span class="op">)</span> <span class="co"># for currency rates</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://stringi.gagolewski.com/">stringi</a></span><span class="op">)</span>
 
-<span class="no">grants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_all_grants.html">tsg_all_grants</a></span>(<span class="kw">timeout</span> <span class="kw">=</span> <span class="fl">8</span>, <span class="kw">retries</span> <span class="kw">=</span> <span class="fl">1</span>)
+<span class="va">grants</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tsg_all_grants.html">tsg_all_grants</a></span><span class="op">(</span>timeout <span class="op">=</span> <span class="fl">8</span>, retries <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
-<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/threesixtygiving/man/tsg_core_data.html">tsg_core_data</a></span>(<span class="no">grants</span>)
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tsg_core_data.html">tsg_core_data</a></span><span class="op">(</span><span class="va">grants</span><span class="op">)</span>
 
-<span class="no">df2</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">amount_awarded</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(
-    <span class="no">currency</span> <span class="kw">==</span> <span class="st">"USD"</span> ~ <span class="no">amount_awarded</span>/<span class="fl">1.29</span>, <span class="co">## rate on 2019-10-24</span>
-    <span class="no">currency</span> <span class="kw">==</span> <span class="st">"CAD"</span> ~ <span class="no">amount_awarded</span>/<span class="fl">1.70</span>,
-    <span class="no">currency</span> <span class="kw">==</span> <span class="st">"CHF"</span> ~ <span class="no">amount_awarded</span>/<span class="fl">1.27</span>,
-    <span class="no">currency</span> <span class="kw">==</span> <span class="st">"EUR"</span> ~ <span class="no">amount_awarded</span>/<span class="fl">1.17</span>,
-    <span class="fl">TRUE</span> ~ <span class="no">amount_awarded</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(<span class="no">funding_org_name</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span>(),
-            <span class="kw">amount_awarded</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">amount_awarded</span>)) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">avg</span> <span class="kw">=</span> <span class="no">amount_awarded</span>/<span class="no">n</span>)
+<span class="co"># Retrieve currency exchange rates</span>
+<span class="va">currencies</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://docs.evanodell.com/fixerapi/reference/fixer_latest.html">fixer_latest</a></span><span class="op">(</span><span class="st">"EUR"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">currency</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>())
+<span class="co"># Convert exchange rates to use GBP as the base currencies</span>
+<span class="va">currencies</span> <span class="op">&lt;-</span> <span class="va">currencies</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>value <span class="op">=</span> <span class="va">value</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">currencies</span><span class="op">$</span><span class="va">value</span><span class="op">[</span><span class="va">currencies</span><span class="op">$</span><span class="va">name</span> <span class="op">==</span> <span class="st">"GBP"</span><span class="op">]</span><span class="op">)</span><span class="op">)</span>
 
-<span class="no">p1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">df2</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span>(<span class="fl">20</span>, <span class="no">amount_awarded</span>) <span class="kw">%&gt;%</span>
-               <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">amount_awarded2</span> <span class="kw">=</span> <span class="no">amount_awarded</span>/<span class="fl">100000</span>),
-             <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span>(<span class="no">funding_org_name</span>, -<span class="no">amount_awarded2</span>),
-                 <span class="kw">y</span> <span class="kw">=</span> <span class="no">amount_awarded2</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">amount_awarded2</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_sqrt</a></span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_dollar.html">dollar_format</a></span>(<span class="kw">prefix</span> <span class="kw">=</span> <span class="st">"£"</span>),
-               <span class="kw">breaks</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1000</span>, <span class="fl">5000</span>, <span class="fl">10000</span>, <span class="fl">25000</span>, <span class="fl">50000</span>, <span class="fl">75000</span>, <span class="fl">100000</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_wrap.html">wrap_format</a></span>(<span class="fl">30</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_c</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Funder"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Amount Awarded 
+<span class="va">currencies</span>
+
+<span class="co">## rate on 2020-11-28</span>
+<span class="va">df2</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>amount_awarded <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span>
+    <span class="va">currency</span> <span class="op">==</span> <span class="st">"USD"</span> <span class="op">~</span> <span class="va">amount_awarded</span><span class="op">/</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">currencies</span>, <span class="va">name</span><span class="op">==</span><span class="st">"USD"</span><span class="op">)</span><span class="op">$</span><span class="va">value</span>,
+    <span class="va">currency</span> <span class="op">==</span> <span class="st">"CAD"</span> <span class="op">~</span> <span class="va">amount_awarded</span><span class="op">/</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">currencies</span>, <span class="va">name</span><span class="op">==</span><span class="st">"CAD"</span><span class="op">)</span><span class="op">$</span><span class="va">value</span>,
+    <span class="va">currency</span> <span class="op">==</span> <span class="st">"CHF"</span> <span class="op">~</span> <span class="va">amount_awarded</span><span class="op">/</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">currencies</span>, <span class="va">name</span><span class="op">==</span><span class="st">"CHF"</span><span class="op">)</span><span class="op">$</span><span class="va">value</span>,
+    <span class="va">currency</span> <span class="op">==</span> <span class="st">"EUR"</span> <span class="op">~</span> <span class="va">amount_awarded</span><span class="op">/</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">currencies</span>, <span class="va">name</span><span class="op">==</span><span class="st">"EUR"</span><span class="op">)</span><span class="op">$</span><span class="va">value</span>,
+    <span class="va">currency</span> <span class="op">==</span> <span class="st">"ILS"</span> <span class="op">~</span> <span class="va">amount_awarded</span><span class="op">/</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">currencies</span>, <span class="va">name</span><span class="op">==</span><span class="st">"ILS"</span><span class="op">)</span><span class="op">$</span><span class="va">value</span>,
+    <span class="cn">TRUE</span> <span class="op">~</span> <span class="va">amount_awarded</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">award_date</span> <span class="op">&gt;=</span> <span class="st">"2018-01-01"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">funding_org_name</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,
+            amount_awarded <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">amount_awarded</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>avg <span class="op">=</span> <span class="va">amount_awarded</span><span class="op">/</span><span class="va">n</span><span class="op">)</span>
+
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df2</span> <span class="op">%&gt;%</span> 
+               <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">20</span>, <span class="va">amount_awarded</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+               <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>amount_awarded2 <span class="op">=</span> <span class="va">amount_awarded</span><span class="op">/</span><span class="fl">100000</span><span class="op">)</span>,
+             <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">funding_org_name</span>, <span class="op">-</span><span class="va">amount_awarded2</span><span class="op">)</span>,
+                 y <span class="op">=</span> <span class="va">amount_awarded2</span>, fill <span class="op">=</span> <span class="va">amount_awarded2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_sqrt</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_dollar.html">dollar_format</a></span><span class="op">(</span>prefix <span class="op">=</span> <span class="st">"£"</span><span class="op">)</span>,
+               breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">5000</span>, <span class="fl">10000</span>, <span class="fl">25000</span>, <span class="fl">50000</span>, <span class="fl">75000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org//reference/label_wrap.html">wrap_format</a></span><span class="op">(</span><span class="fl">40</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_c</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Funder"</span>, y <span class="op">=</span> <span class="st">"Amount Awarded 
        (in 100,000s, note logarithmic scale)"</span>,
-       <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Total Value of Grants Awarded by Twenty Largest Funders"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"(c) Evan Odell | Disability Rights UK | 2020 | CC-BY-SA
-       Data from 360Giving"</span>) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>, <span class="kw">size</span> <span class="kw">=</span> <span class="fl">8</span>),
-        <span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"none"</span>)
+       title <span class="op">=</span> <span class="st">"Total Value of Grants Awarded by Twenty Largest Funders"</span>,
+       caption <span class="op">=</span> <span class="st">"(c) Evan Odell | 2020 | CC-BY-SA | Data from 360Giving"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span>, size <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,
+        legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> 
+  
+<span class="va">p1</span>
 
-<span class="no">p1</span></pre></div>
+<span class="co">#ggsave("man/figures/total-value.png", p1, width = 10)</span></code></pre></div>
 <p><img src="reference/figures/total-value.png"></p>
 </div>
 <div id="notes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#notes" class="anchor"></a>Notes</h2>
-<p>This project is possible thanks to support and encouragement from David Kane at <a href="http://www.threesixtygiving.org/">360Giving</a>, and from <a href="https://www.disabilityrightsuk.org/">Disability Rights UK</a>.</p>
+<p>This project is possible thanks to support and encouragement from David Kane at <a href="https://www.threesixtygiving.org/">360Giving</a>, and from <a href="https://www.disabilityrightsuk.org/">Disability Rights UK</a>.</p>
 <div id="data-licences" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-licences" class="anchor"></a>Data licences</h3>
@@ -172,21 +191,22 @@ install.packages("threesixtygiving")
 <a href="#citing-threesixtygiving" class="anchor"></a>Citing <code>threesixtygiving</code>
 </h3>
 <p>Please cite <code>threesixtygiving</code> as:</p>
-<p>Odell, Evan (2020). <em>threesixtygiving: Download Charitable Grants from the ‘360Giving’ Platform</em>. doi: <a href="https://doi.org/10.5281/zenodo.3474128">10.5281/zenodo.3474128</a>, R package version 0.2.0, URL: <a href="https://docs.evanodell.com/threesixtygiving" class="uri">https://docs.evanodell.com/threesixtygiving</a></p>
+<p>Odell, Evan (2020). <em>threesixtygiving: Download Charitable Grants from the ‘360Giving’ Platform</em>. doi: <a href="https://doi.org/10.5281/zenodo.3474128">10.5281/zenodo.3474128</a>, R package version 0.2.2, URL: <a href="https://docs.evanodell.com/threesixtygiving" class="uri">https://docs.evanodell.com/threesixtygiving</a>.</p>
 <p>A BibTeX entry for LaTeX users is:</p>
-<pre><code>  @Manual{,
-    title = {threesixtygiving: Download Charitable Grants from the '360Giving' Platform},
-    author = {Evan Odell},
-    year = {2020},
-    doi = {10.5281/zenodo.3474128},
-    url = {https://docs.evanodell.com/threesixtygiving},
-    note = {R package version 0.2.0},
-  }</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="sc">@</span>Manual{,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    title <span class="ot">=</span> {threesixtygiving<span class="sc">:</span> Download Charitable Grants from the <span class="st">'360Giving'</span> Platform},</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    author <span class="ot">=</span> {Evan Odell},</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2020</span>},</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    doi <span class="ot">=</span> {<span class="fl">10.5281</span><span class="sc">/</span>zenodo<span class="fl">.3474128</span>},</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>docs.evanodell.com<span class="sc">/</span>threesixtygiving},</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="fl">2.2</span>},</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 </div>
 <div id="code-of-conduct" class="section level3">
 <h3 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h3>
 <p>Please note that the <code>threesixtygiving</code> package is released with a <a href="https://github.com/evanodell/threesixtygiving/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>The code in this package is licensed using the <a href="https://www.gnu.org/licenses/gpl-3.0">GNU General Public License Version 3</a> software license.</p>
 </div>
 </div>
 </div>
@@ -237,7 +257,7 @@ install.packages("threesixtygiving")
 <li><a href="https://cran.r-project.org/package=threesixtygiving"><img src="https://www.r-pkg.org/badges/version/threesixtygiving" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://github.com/evanodell/threesixtygiving"><img src="https://img.shields.io/github/tag/evanodell/threesixtygiving.svg" alt="GitHub tag"></a></li>
 <li><a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/threesixtygiving"></a></li>
-<li><a href="https://travis-ci.org/evanodell/threesixtygiving"><img src="https://travis-ci.org/evanodell/threesixtygiving.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://github.com/evanodell/threesixtygiving/actions"><img src="https://github.com/evanodell/threesixtygiving/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/gh/evanodell/threesixtygiving?branch=master"><img src="https://codecov.io/gh/evanodell/threesixtygiving/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://ci.appveyor.com/project/evanodell/threesixtygiving"><img src="https://ci.appveyor.com/api/projects/status/github/evanodell/threesixtygiving?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 <li><a href="https://zenodo.org/badge/latestdoi/195080045"><img src="https://zenodo.org/badge/195080045.svg" alt="DOI"></a></li>
@@ -252,7 +272,7 @@ install.packages("threesixtygiving")
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

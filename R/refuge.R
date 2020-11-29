@@ -55,5 +55,5 @@ build_refuge <- function(force = FALSE) {
     message("Up to date!")
   }
   tictoc::toc()
-  emo::ji("toilet")
+  message(emo::ji("toilet"))
 }

@@ -165,12 +165,13 @@ on a date or between two dates." />
 on a date or between two dates.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mps_on_date</span>(
-  <span class='kw'>date1</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>(),
-  <span class='kw'>date2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>tidy_style</span> <span class='kw'>=</span> <span class='st'>"snake_case"</span>
-)</pre>
+    <pre class="usage"><span class='fu'>mps_on_date</span><span class='op'>(</span>
+  date1 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span>,
+  date2 <span class='op'>=</span> <span class='cn'>NULL</span>,
+  constituency <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  tidy <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  tidy_style <span class='op'>=</span> <span class='st'>"snake_case"</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -215,18 +216,15 @@ parameter), or on or between the two dates if both <code>date1</code> and
 
     <p>Returns information on all MPs who were members of the House of Commons on
 the date specificed (if only one date is included as a parameter), or on or
-between the two dates if both are specified. Includes constituency and
-electoral information if the date is 2010-05-06 or later, or if the date
-range is entirely between 2010-05-06 and the present day. This function
-is identical to the <code>mnis_mps_on_date</code> function from
-the <code>[mnis](https://cran.r-project.org/package=mnis)</code> package, except it
-includes consituency data from the
-2010 General Election (on 2010-05-06) onwards.</p>
+between the two dates if both are specified.</p>
+<p>This function is identical to the <code>mnis_mps_on_date</code> function from
+the <code>[mnis](https://cran.r-project.org/package=mnis)</code> package.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>mps_on_date</span>(<span class='kw'>date1</span> <span class='kw'>=</span> <span class='st'>"2017-04-19"</span>, <span class='kw'>date2</span> <span class='kw'>=</span> <span class='st'>"2010-05-04"</span>)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>mps_on_date</span><span class='op'>(</span>date1 <span class='op'>=</span> <span class='st'>"2017-04-19"</span>, date2 <span class='op'>=</span> <span class='st'>"2010-05-04"</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -242,7 +240,7 @@ includes consituency data from the
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

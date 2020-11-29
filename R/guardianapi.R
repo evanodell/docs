@@ -55,5 +55,5 @@ build_guardianapi <- function(force = FALSE) {
     message("Up to date!")
   }
   tictoc::toc()
-  emo::ji("newspaper")
+  message(emo::ji("newspaper"))
 }

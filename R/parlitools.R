@@ -59,5 +59,5 @@ build_parlitools <- function(force = FALSE) {
   }
 
   tictoc::toc()
-  emo::ji("map")
+  message(emo::ji("map"))
 }

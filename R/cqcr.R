@@ -55,5 +55,5 @@ build_cqcr <- function(force = FALSE) {
     message("Up to date!")
   }
   tictoc::toc()
-  emo::ji("medicine")
+  message(emo::ji("medicine"))
 }

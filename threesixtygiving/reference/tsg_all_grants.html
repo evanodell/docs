@@ -83,7 +83,7 @@ returned by tsg_available()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">threesixtygiving</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -138,10 +138,10 @@ returned by tsg_available()." />
 
     <div class="ref-description">
     <p>Returns a list of data frames with details of all grants from funders
-returned by <code>tsg_available()</code>.</p>
+returned by <code><a href='tsg_available.html'>tsg_available()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsg_all_grants</span>(<span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>timeout</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>retries</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>correct_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>tsg_all_grants</span><span class='op'>(</span>verbose <span class='op'>=</span> <span class='cn'>TRUE</span>, timeout <span class='op'>=</span> <span class='fl'>30</span>, retries <span class='op'>=</span> <span class='fl'>0</span>, correct_names <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -176,13 +176,15 @@ such as spelling mistakes. Defaults to <code>TRUE</code>.</p></td>
 
     <p>Due to the structure of the 360 Giving data, the package will make
 multiple attempts to request data. This can cause issues with servers
-automatically blocking requests. You can use <code>tsg_missing()</code> to identify
+automatically blocking requests. You can use <code><a href='tsg_missing.html'>tsg_missing()</a></code> to identify
 missing sets of grant data.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>all_grants</span> <span class='kw'>&lt;-</span> <span class='fu'>tsg_all_grants</span>()
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>all_grants</span> <span class='op'>&lt;-</span> <span class='fu'>tsg_all_grants</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -198,7 +200,7 @@ missing sets of grant data.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

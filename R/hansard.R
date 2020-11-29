@@ -55,5 +55,5 @@ build_hansard <- function(force = FALSE) {
   }
 
   tictoc::toc()
-  emo::ji("document")
+  message(emo::ji("document"))
 }

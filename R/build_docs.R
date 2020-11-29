@@ -5,6 +5,7 @@
 #' @param force If TRUE, rebuild everything
 #' @export
 build_docs <- function(force = FALSE) {
+  tictoc::tic("total")
 
   ### Build `hansard`  -----------------
 
@@ -59,6 +60,8 @@ build_docs <- function(force = FALSE) {
     "DOC BUILDING COMPLETE",
     strrep(clisymbols::symbol$star, 5)
   ))
+
+  tictoc::toc()
 }
 
 
@@ -98,5 +101,5 @@ build_docs_home <- function() {
   )
 
   tictoc::toc()
-  emo::ji("graph")
+  message(emo::ji("graph"))
 }

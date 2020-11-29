@@ -176,14 +176,14 @@ Mon was moved to be closer to the mainland of Wales.</p>
 Northing. Converted coordinates into Latitude and Longitude in QGIS.</p>
     </div>
 
-    <pre class="usage"><span class='no'>west_hex_map</span>
+    <pre class="usage"><span class='va'>west_hex_map</span>
 
-<span class='no'>local_hex_map</span></pre>
+<span class='va'>local_hex_map</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An sf and data.frame object, containing 650 elements and 8 variables.</p><dl'>
+    <p>An sf and data.frame object, containing 650 elements and 8 variables.</p><dl>
 <dt><code>object_id</code></dt><dd><p>Row Name</p></dd>
 <dt><code>constituency_name</code></dt><dd><p>The name of the constituency</p></dd>
 <dt><code>description</code></dt><dd><p>Description of constituency type</p></dd>
@@ -195,6 +195,17 @@ Service) code</p></dd>
 <dt><code>geometry</code></dt><dd><p>Shape geometry/projection</p></dd>
 
 </dl>
+
+<p>An sf and data.frame object, containing 650 elements and 8 variables.</p><dl>
+<dt><code>object_id</code></dt><dd><p>Row Name</p></dd>
+<dt><code>la_code</code></dt><dd><p>Local Authority identifier code</p></dd>
+<dt><code>la_name</code></dt><dd><p>Local Authority Name</p></dd>
+<dt><code>shape_length</code></dt><dd><p>The lengths of the shape</p></dd>
+<dt><code>shape_area</code></dt><dd><p>The area of the shape</p></dd>
+<dt><code>geometry</code></dt><dd><p>Shape geometry/projection</p></dd>
+
+</dl>
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p><a href='http://www.arcgis.com/home/item.html?id=15baaa6fecd54aa4b7250780b6534682'>http://www.arcgis.com/home/item.html?id=15baaa6fecd54aa4b7250780b6534682</a></p>
@@ -215,7 +226,7 @@ Service) code</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
