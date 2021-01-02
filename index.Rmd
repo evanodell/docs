@@ -17,6 +17,8 @@ library(stringr)
 library(pander)
 library(cranlogs)
 library(dplyr)
+library(pkgsearch)
+library(janitor)
 
 panderOptions('knitr.auto.asis', FALSE)
 
@@ -28,39 +30,43 @@ folders <- folders[!(folders %in% c("./tools", "./R", "./reference",
 
 folders <- str_replace_all(folders, "./", "")
 
-folders <- tibble::tibble(folders = folders, downloads = NA)
+folders <- tibble::tibble(package = folders, downloads = NA)
 
-for (i in seq_along(folders$folders)) {
+for (i in seq_along(folders$package)) {
   folders$downloads[[i]] <- sum(
-    cran_downloads(folders$folders[[i]], "last-month")$count
+    cran_downloads(folders$package[[i]], "last-month")$count
     )
 }
 
-folders <- folders %>% arrange(desc(downloads))
+folders <- folders %>% arrange(desc(downloads)) %>%
+  left_join(cran_packages(folders$package) %>%
+  clean_names() %>% 
+  select(package, date_publication)) %>% 
+  mutate(date_publication = paste("_Published to CRAN:_",
+                                  as.Date(date_publication)))
 
-folders2 <- paste0("[`", folders$folders,
-                   "`](https://docs.evanodell.com/", folders$folders, ")")
+
+folders2 <- paste0("[`", folders$package,
+                   "`](https://docs.evanodell.com/", folders$package, ")")
 
 license <- c()
 descr <- c()
 doi <- c()
 
-for (i in seq_along(folders$folders)) {
+for (i in seq_along(folders$package)) {
 ## License types
-desc1 <- packageDescription(folders$folders[[i]])
+desc1 <- packageDescription(folders$package[[i]])
 
 if(desc1$License  == "MIT + file LICENSE") {
-  license[i] <- paste0("[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/", folders$folders[[i]], "/blob/master/LICENSE.md)")
+  license[i] <- paste0("[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/", folders$package[[i]], "/blob/master/LICENSE.md)")
   } else {
   license[i] <- "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
   }
 ## Description
 
-desc1 <- packageDescription(folders$folders[[i]])
-
 descr[i] <- str_squish(desc1$Description)
 
-doi1 <- citation(folders$folders[[i]])
+doi1 <- citation(folders$package[[i]])
 
 doi[i] <-  paste0("[![DOI](https://zenodo.org/badge/DOI/", doi1[1]$doi,
                   ".svg)](https://doi.org/", doi1[1]$doi, ")")
@@ -68,28 +74,29 @@ doi[i] <-  paste0("[![DOI](https://zenodo.org/badge/DOI/", doi1[1]$doi,
 }
 
 cran_status <- paste0(
-  "[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/", folders$folders,
-  ")](https://cran.r-project.org/package=", folders$folders, ")")
+  "[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/", folders$package,
+  ")](https://cran.r-project.org/package=", folders$package, ")")
 
 github_status <- paste0(
-  "[![GitHub tag](https://img.shields.io/github/tag/evanodell/", folders$folders,
-  ".svg)](https://github.com/evanodell/", folders$folders, ")")
+  "[![GitHub tag](https://img.shields.io/github/tag/evanodell/", folders$package,
+  ".svg)](https://github.com/evanodell/", folders$package, ")")
 
 downloads <- paste0(
-  "[![](https://cranlogs.r-pkg.org/badges/grand-total/", folders$folders,
-  ")](https://cran.r-project.org/package=", folders$folders, ")")
+  "[![](https://cranlogs.r-pkg.org/badges/last-month/", folders$package,
+  "?color=blue)](https://cran.r-project.org/package=", folders$package, ")")
 ```
 
 ```{r echo=FALSE}
 
-for (i in seq_along(folders$folders)) {
+for (i in seq_along(folders$package)) {
   cat(pandoc.header.return(folders2[[i]], level = 3), "\n")
 
   cat(pander(cran_status[[i]]))
   cat(pander(license[[i]]))
   cat(pander(github_status[[i]]))
-  cat(pander(downloads[[i]]))
-  cat(pander(doi[[i]]), "\n\n")
+  cat(pander(downloads[[i]]), "\n")
+  cat(pander(doi[[i]]), "\n")
+  cat(pander(folders$date_publication[[i]]),  "\n\n")
   cat(pander(descr[[i]]), "\n")
   
 }
