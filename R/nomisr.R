@@ -5,9 +5,9 @@ build_nomisr <- function(force = FALSE) {
   message("Building `nomisr`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/nomisr/",
+    "../nomisr/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/nomisr",
+      path = "../nomisr",
       recursive = TRUE
     )
   )
@@ -37,12 +37,12 @@ build_nomisr <- function(force = FALSE) {
 
   if (max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/nomisr",
+      pkg = "../nomisr",
       preview = FALSE
     )
 
     nomisr_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/nomisr/docs",
+      "../nomisr/docs",
       all.files = TRUE, full.names = TRUE, recursive = FALSE,
       ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
     )
@@ -51,7 +51,7 @@ build_nomisr <- function(force = FALSE) {
     dir.create("nomisr")
 
     file.copy(nomisr_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/nomisr",
+      "../docs/nomisr",
       recursive = TRUE
     )
   } else {

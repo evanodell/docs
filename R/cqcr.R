@@ -4,9 +4,9 @@ build_cqcr <- function(force = FALSE) {
   message("Building `cqcr`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/cqcr/",
+    "../cqcr/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/cqcr",
+      path = "../cqcr",
       recursive = TRUE
     )
   )
@@ -33,12 +33,12 @@ build_cqcr <- function(force = FALSE) {
 
   if (is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/cqcr",
+      pkg = "../cqcr",
       preview = FALSE
     )
 
     cqcr_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/cqcr/docs",
+      "../cqcr/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -48,7 +48,7 @@ build_cqcr <- function(force = FALSE) {
     dir.create("cqcr")
 
     file.copy(cqcr_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/cqcr",
+      "../docs/cqcr",
       recursive = TRUE
     )
   } else {

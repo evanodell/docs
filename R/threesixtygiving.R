@@ -4,9 +4,9 @@ build_threesixtygiving <- function(force = FALSE) {
   message("Building `threesixtygiving`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/threesixtygiving/",
+    "../threesixtygiving/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/threesixtygiving",
+      path = "../threesixtygiving",
       recursive = TRUE
     )
   )
@@ -33,12 +33,12 @@ build_threesixtygiving <- function(force = FALSE) {
 
   if (is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/threesixtygiving",
+      pkg = "../threesixtygiving",
       preview = FALSE
     )
 
     threesixtygiving_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/threesixtygiving/docs",
+      "../threesixtygiving/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -48,7 +48,7 @@ build_threesixtygiving <- function(force = FALSE) {
     dir.create("threesixtygiving")
 
     file.copy(threesixtygiving_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/threesixtygiving",
+      "../docs/threesixtygiving",
       recursive = TRUE
     )
   } else {

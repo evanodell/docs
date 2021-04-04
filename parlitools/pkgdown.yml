@@ -1,4 +1,4 @@
-pandoc: 2.11.2
+pandoc: '2.13'
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
@@ -9,5 +9,5 @@ articles:
   introduction: introduction.html
   mapping-local-authorities: mapping-local-authorities.html
   using-cartograms: using-cartograms.html
-last_built: 2020-11-29T10:35Z
+last_built: 2021-04-04T15:31Z
 

@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">refuge</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -99,13 +99,13 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/EvanOdell/refuge">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="http://evanodell.com">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -119,15 +119,14 @@
 
       
 
-      </header><script src="introduction_files/header-attrs-2.5/header-attrs.js"></script><link href="introduction_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="introduction_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="introduction_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to <code>refuge</code>
 </h1>
                         <h4 class="author">Evan Odell</h4>
             
-            <h4 class="date">2020-11-29</h4>
+            <h4 class="date">2021-04-04</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/evanodell/refuge/blob/master/../docs/vignettes/introduction.Rmd"><code>../docs/vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -144,244 +143,15 @@
 <p>Refuge Restrooms uses all user supplied data, which can be messy, and result in inconsistent coverage. It is nonetheless still useful. The example below shows how to convert US state names to the full name, including correcting a couple spelling mistakes, lowercased, and create a map showing the number of unisex, Americans with Disability Act (ADA) accessible restrooms in each state.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.evanodell.com/refuge">refuge</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://usmap.dev">usmap</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sjmgarnier/viridis">viridis</a></span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: viridisLite</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://stringi.gagolewski.com/">stringi</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">usmap</span><span class="op">)</span>
 
 <span class="va">all</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rfg_all_restrooms.html">rfg_all_restrooms</a></span><span class="op">(</span>accessible <span class="op">=</span> <span class="cn">TRUE</span>, unisex <span class="op">=</span> <span class="cn">TRUE</span>, 
                          verbose <span class="op">=</span> <span class="cn">TRUE</span>, tidy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; Retrieving page 1 of 228</span>
-<span class="co">#&gt; Retrieving page 2 of 228</span>
-<span class="co">#&gt; Retrieving page 3 of 228</span>
-<span class="co">#&gt; Retrieving page 4 of 228</span>
-<span class="co">#&gt; Retrieving page 5 of 228</span>
-<span class="co">#&gt; Retrieving page 6 of 228</span>
-<span class="co">#&gt; Retrieving page 7 of 228</span>
-<span class="co">#&gt; Retrieving page 8 of 228</span>
-<span class="co">#&gt; Retrieving page 9 of 228</span>
-<span class="co">#&gt; Retrieving page 10 of 228</span>
-<span class="co">#&gt; Retrieving page 11 of 228</span>
-<span class="co">#&gt; Retrieving page 12 of 228</span>
-<span class="co">#&gt; Retrieving page 13 of 228</span>
-<span class="co">#&gt; Retrieving page 14 of 228</span>
-<span class="co">#&gt; Retrieving page 15 of 228</span>
-<span class="co">#&gt; Retrieving page 16 of 228</span>
-<span class="co">#&gt; Retrieving page 17 of 228</span>
-<span class="co">#&gt; Retrieving page 18 of 228</span>
-<span class="co">#&gt; Retrieving page 19 of 228</span>
-<span class="co">#&gt; Retrieving page 20 of 228</span>
-<span class="co">#&gt; Retrieving page 21 of 228</span>
-<span class="co">#&gt; Retrieving page 22 of 228</span>
-<span class="co">#&gt; Retrieving page 23 of 228</span>
-<span class="co">#&gt; Retrieving page 24 of 228</span>
-<span class="co">#&gt; Retrieving page 25 of 228</span>
-<span class="co">#&gt; Retrieving page 26 of 228</span>
-<span class="co">#&gt; Retrieving page 27 of 228</span>
-<span class="co">#&gt; Retrieving page 28 of 228</span>
-<span class="co">#&gt; Retrieving page 29 of 228</span>
-<span class="co">#&gt; Retrieving page 30 of 228</span>
-<span class="co">#&gt; Retrieving page 31 of 228</span>
-<span class="co">#&gt; Retrieving page 32 of 228</span>
-<span class="co">#&gt; Retrieving page 33 of 228</span>
-<span class="co">#&gt; Retrieving page 34 of 228</span>
-<span class="co">#&gt; Retrieving page 35 of 228</span>
-<span class="co">#&gt; Retrieving page 36 of 228</span>
-<span class="co">#&gt; Retrieving page 37 of 228</span>
-<span class="co">#&gt; Retrieving page 38 of 228</span>
-<span class="co">#&gt; Retrieving page 39 of 228</span>
-<span class="co">#&gt; Retrieving page 40 of 228</span>
-<span class="co">#&gt; Retrieving page 41 of 228</span>
-<span class="co">#&gt; Retrieving page 42 of 228</span>
-<span class="co">#&gt; Retrieving page 43 of 228</span>
-<span class="co">#&gt; Retrieving page 44 of 228</span>
-<span class="co">#&gt; Retrieving page 45 of 228</span>
-<span class="co">#&gt; Retrieving page 46 of 228</span>
-<span class="co">#&gt; Retrieving page 47 of 228</span>
-<span class="co">#&gt; Retrieving page 48 of 228</span>
-<span class="co">#&gt; Retrieving page 49 of 228</span>
-<span class="co">#&gt; Retrieving page 50 of 228</span>
-<span class="co">#&gt; Retrieving page 51 of 228</span>
-<span class="co">#&gt; Retrieving page 52 of 228</span>
-<span class="co">#&gt; Retrieving page 53 of 228</span>
-<span class="co">#&gt; Retrieving page 54 of 228</span>
-<span class="co">#&gt; Retrieving page 55 of 228</span>
-<span class="co">#&gt; Retrieving page 56 of 228</span>
-<span class="co">#&gt; Retrieving page 57 of 228</span>
-<span class="co">#&gt; Retrieving page 58 of 228</span>
-<span class="co">#&gt; Retrieving page 59 of 228</span>
-<span class="co">#&gt; Retrieving page 60 of 228</span>
-<span class="co">#&gt; Retrieving page 61 of 228</span>
-<span class="co">#&gt; Retrieving page 62 of 228</span>
-<span class="co">#&gt; Retrieving page 63 of 228</span>
-<span class="co">#&gt; Retrieving page 64 of 228</span>
-<span class="co">#&gt; Retrieving page 65 of 228</span>
-<span class="co">#&gt; Retrieving page 66 of 228</span>
-<span class="co">#&gt; Retrieving page 67 of 228</span>
-<span class="co">#&gt; Retrieving page 68 of 228</span>
-<span class="co">#&gt; Retrieving page 69 of 228</span>
-<span class="co">#&gt; Retrieving page 70 of 228</span>
-<span class="co">#&gt; Retrieving page 71 of 228</span>
-<span class="co">#&gt; Retrieving page 72 of 228</span>
-<span class="co">#&gt; Retrieving page 73 of 228</span>
-<span class="co">#&gt; Retrieving page 74 of 228</span>
-<span class="co">#&gt; Retrieving page 75 of 228</span>
-<span class="co">#&gt; Retrieving page 76 of 228</span>
-<span class="co">#&gt; Retrieving page 77 of 228</span>
-<span class="co">#&gt; Retrieving page 78 of 228</span>
-<span class="co">#&gt; Retrieving page 79 of 228</span>
-<span class="co">#&gt; Retrieving page 80 of 228</span>
-<span class="co">#&gt; Retrieving page 81 of 228</span>
-<span class="co">#&gt; Retrieving page 82 of 228</span>
-<span class="co">#&gt; Retrieving page 83 of 228</span>
-<span class="co">#&gt; Retrieving page 84 of 228</span>
-<span class="co">#&gt; Retrieving page 85 of 228</span>
-<span class="co">#&gt; Retrieving page 86 of 228</span>
-<span class="co">#&gt; Retrieving page 87 of 228</span>
-<span class="co">#&gt; Retrieving page 88 of 228</span>
-<span class="co">#&gt; Retrieving page 89 of 228</span>
-<span class="co">#&gt; Retrieving page 90 of 228</span>
-<span class="co">#&gt; Retrieving page 91 of 228</span>
-<span class="co">#&gt; Retrieving page 92 of 228</span>
-<span class="co">#&gt; Retrieving page 93 of 228</span>
-<span class="co">#&gt; Retrieving page 94 of 228</span>
-<span class="co">#&gt; Retrieving page 95 of 228</span>
-<span class="co">#&gt; Retrieving page 96 of 228</span>
-<span class="co">#&gt; Retrieving page 97 of 228</span>
-<span class="co">#&gt; Retrieving page 98 of 228</span>
-<span class="co">#&gt; Retrieving page 99 of 228</span>
-<span class="co">#&gt; Retrieving page 100 of 228</span>
-<span class="co">#&gt; Retrieving page 101 of 228</span>
-<span class="co">#&gt; Retrieving page 102 of 228</span>
-<span class="co">#&gt; Retrieving page 103 of 228</span>
-<span class="co">#&gt; Retrieving page 104 of 228</span>
-<span class="co">#&gt; Retrieving page 105 of 228</span>
-<span class="co">#&gt; Retrieving page 106 of 228</span>
-<span class="co">#&gt; Retrieving page 107 of 228</span>
-<span class="co">#&gt; Retrieving page 108 of 228</span>
-<span class="co">#&gt; Retrieving page 109 of 228</span>
-<span class="co">#&gt; Retrieving page 110 of 228</span>
-<span class="co">#&gt; Retrieving page 111 of 228</span>
-<span class="co">#&gt; Retrieving page 112 of 228</span>
-<span class="co">#&gt; Retrieving page 113 of 228</span>
-<span class="co">#&gt; Retrieving page 114 of 228</span>
-<span class="co">#&gt; Retrieving page 115 of 228</span>
-<span class="co">#&gt; Retrieving page 116 of 228</span>
-<span class="co">#&gt; Retrieving page 117 of 228</span>
-<span class="co">#&gt; Retrieving page 118 of 228</span>
-<span class="co">#&gt; Retrieving page 119 of 228</span>
-<span class="co">#&gt; Retrieving page 120 of 228</span>
-<span class="co">#&gt; Retrieving page 121 of 228</span>
-<span class="co">#&gt; Retrieving page 122 of 228</span>
-<span class="co">#&gt; Retrieving page 123 of 228</span>
-<span class="co">#&gt; Retrieving page 124 of 228</span>
-<span class="co">#&gt; Retrieving page 125 of 228</span>
-<span class="co">#&gt; Retrieving page 126 of 228</span>
-<span class="co">#&gt; Retrieving page 127 of 228</span>
-<span class="co">#&gt; Retrieving page 128 of 228</span>
-<span class="co">#&gt; Retrieving page 129 of 228</span>
-<span class="co">#&gt; Retrieving page 130 of 228</span>
-<span class="co">#&gt; Retrieving page 131 of 228</span>
-<span class="co">#&gt; Retrieving page 132 of 228</span>
-<span class="co">#&gt; Retrieving page 133 of 228</span>
-<span class="co">#&gt; Retrieving page 134 of 228</span>
-<span class="co">#&gt; Retrieving page 135 of 228</span>
-<span class="co">#&gt; Retrieving page 136 of 228</span>
-<span class="co">#&gt; Retrieving page 137 of 228</span>
-<span class="co">#&gt; Retrieving page 138 of 228</span>
-<span class="co">#&gt; Retrieving page 139 of 228</span>
-<span class="co">#&gt; Retrieving page 140 of 228</span>
-<span class="co">#&gt; Retrieving page 141 of 228</span>
-<span class="co">#&gt; Retrieving page 142 of 228</span>
-<span class="co">#&gt; Retrieving page 143 of 228</span>
-<span class="co">#&gt; Retrieving page 144 of 228</span>
-<span class="co">#&gt; Retrieving page 145 of 228</span>
-<span class="co">#&gt; Retrieving page 146 of 228</span>
-<span class="co">#&gt; Retrieving page 147 of 228</span>
-<span class="co">#&gt; Retrieving page 148 of 228</span>
-<span class="co">#&gt; Retrieving page 149 of 228</span>
-<span class="co">#&gt; Retrieving page 150 of 228</span>
-<span class="co">#&gt; Retrieving page 151 of 228</span>
-<span class="co">#&gt; Retrieving page 152 of 228</span>
-<span class="co">#&gt; Retrieving page 153 of 228</span>
-<span class="co">#&gt; Retrieving page 154 of 228</span>
-<span class="co">#&gt; Retrieving page 155 of 228</span>
-<span class="co">#&gt; Retrieving page 156 of 228</span>
-<span class="co">#&gt; Retrieving page 157 of 228</span>
-<span class="co">#&gt; Retrieving page 158 of 228</span>
-<span class="co">#&gt; Retrieving page 159 of 228</span>
-<span class="co">#&gt; Retrieving page 160 of 228</span>
-<span class="co">#&gt; Retrieving page 161 of 228</span>
-<span class="co">#&gt; Retrieving page 162 of 228</span>
-<span class="co">#&gt; Retrieving page 163 of 228</span>
-<span class="co">#&gt; Retrieving page 164 of 228</span>
-<span class="co">#&gt; Retrieving page 165 of 228</span>
-<span class="co">#&gt; Retrieving page 166 of 228</span>
-<span class="co">#&gt; Retrieving page 167 of 228</span>
-<span class="co">#&gt; Retrieving page 168 of 228</span>
-<span class="co">#&gt; Retrieving page 169 of 228</span>
-<span class="co">#&gt; Retrieving page 170 of 228</span>
-<span class="co">#&gt; Retrieving page 171 of 228</span>
-<span class="co">#&gt; Retrieving page 172 of 228</span>
-<span class="co">#&gt; Retrieving page 173 of 228</span>
-<span class="co">#&gt; Retrieving page 174 of 228</span>
-<span class="co">#&gt; Retrieving page 175 of 228</span>
-<span class="co">#&gt; Retrieving page 176 of 228</span>
-<span class="co">#&gt; Retrieving page 177 of 228</span>
-<span class="co">#&gt; Retrieving page 178 of 228</span>
-<span class="co">#&gt; Retrieving page 179 of 228</span>
-<span class="co">#&gt; Retrieving page 180 of 228</span>
-<span class="co">#&gt; Retrieving page 181 of 228</span>
-<span class="co">#&gt; Retrieving page 182 of 228</span>
-<span class="co">#&gt; Retrieving page 183 of 228</span>
-<span class="co">#&gt; Retrieving page 184 of 228</span>
-<span class="co">#&gt; Retrieving page 185 of 228</span>
-<span class="co">#&gt; Retrieving page 186 of 228</span>
-<span class="co">#&gt; Retrieving page 187 of 228</span>
-<span class="co">#&gt; Retrieving page 188 of 228</span>
-<span class="co">#&gt; Retrieving page 189 of 228</span>
-<span class="co">#&gt; Retrieving page 190 of 228</span>
-<span class="co">#&gt; Retrieving page 191 of 228</span>
-<span class="co">#&gt; Retrieving page 192 of 228</span>
-<span class="co">#&gt; Retrieving page 193 of 228</span>
-<span class="co">#&gt; Retrieving page 194 of 228</span>
-<span class="co">#&gt; Retrieving page 195 of 228</span>
-<span class="co">#&gt; Retrieving page 196 of 228</span>
-<span class="co">#&gt; Retrieving page 197 of 228</span>
-<span class="co">#&gt; Retrieving page 198 of 228</span>
-<span class="co">#&gt; Retrieving page 199 of 228</span>
-<span class="co">#&gt; Retrieving page 200 of 228</span>
-<span class="co">#&gt; Retrieving page 201 of 228</span>
-<span class="co">#&gt; Retrieving page 202 of 228</span>
-<span class="co">#&gt; Retrieving page 203 of 228</span>
-<span class="co">#&gt; Retrieving page 204 of 228</span>
-<span class="co">#&gt; Retrieving page 205 of 228</span>
-<span class="co">#&gt; Retrieving page 206 of 228</span>
-<span class="co">#&gt; Retrieving page 207 of 228</span>
-<span class="co">#&gt; Retrieving page 208 of 228</span>
-<span class="co">#&gt; Retrieving page 209 of 228</span>
-<span class="co">#&gt; Retrieving page 210 of 228</span>
-<span class="co">#&gt; Retrieving page 211 of 228</span>
-<span class="co">#&gt; Retrieving page 212 of 228</span>
-<span class="co">#&gt; Retrieving page 213 of 228</span>
-<span class="co">#&gt; Retrieving page 214 of 228</span>
-<span class="co">#&gt; Retrieving page 215 of 228</span>
-<span class="co">#&gt; Retrieving page 216 of 228</span>
-<span class="co">#&gt; Retrieving page 217 of 228</span>
-<span class="co">#&gt; Retrieving page 218 of 228</span>
-<span class="co">#&gt; Retrieving page 219 of 228</span>
-<span class="co">#&gt; Retrieving page 220 of 228</span>
-<span class="co">#&gt; Retrieving page 221 of 228</span>
-<span class="co">#&gt; Retrieving page 222 of 228</span>
-<span class="co">#&gt; Retrieving page 223 of 228</span>
-<span class="co">#&gt; Retrieving page 224 of 228</span>
-<span class="co">#&gt; Retrieving page 225 of 228</span>
-<span class="co">#&gt; Retrieving page 226 of 228</span>
-<span class="co">#&gt; Retrieving page 227 of 228</span>
-<span class="co">#&gt; Retrieving page 228 of 228</span>
 
 <span class="va">all</span> <span class="op">&lt;-</span> <span class="va">all</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"US"</span><span class="op">)</span>
 
@@ -402,16 +172,16 @@
 <span class="va">all</span> <span class="op">&lt;-</span> <span class="va">all</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n_toilets<span class="op">=</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; `summarise()` ungrouping output (override with `.groups` argument)</span>
 
-<span class="va">p_toilets</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/usmap/man/plot_usmap.html">plot_usmap</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">all</span>, values <span class="op">=</span> <span class="st">"n_toilets"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/viridis/man/scale_viridis.html">scale_fill_viridis</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Number of\nRestrooms"</span>, label <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span><span class="op">)</span> <span class="op">+</span>
+<span class="va">p_toilets</span> <span class="op">&lt;-</span> <span class="fu">plot_usmap</span><span class="op">(</span>data <span class="op">=</span> <span class="va">all</span>, values <span class="op">=</span> <span class="st">"n_toilets"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://rdrr.io/pkg/viridis/man/scale_viridis.html">scale_fill_viridis</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Number of\nRestrooms"</span>, label <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_number.html">comma</a></span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">""</span><span class="op">)</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">""</span>,
+       caption <span class="op">=</span> <span class="st">"Data from refuge API | January 2021 | CC-BY Evan Odell"</span><span class="op">)</span>
 
 <span class="va">p_toilets</span></code></pre></div>
-<p><img src="introduction_files/figure-html/unnamed-chunk-1-1.png" width="700"></p>
+<p><img src="us-map.png" width="100%"></p>
 <p>All functions in <code>refuge</code> include parameters to limit queries to accessible and/or unisex restrooms.</p>
 </div>
   </div>

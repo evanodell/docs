@@ -4,9 +4,9 @@ build_refuge <- function(force = FALSE) {
   message("Building `refuge`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/refuge/",
+    "../refuge/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/refuge",
+      path = "../refuge",
       recursive = TRUE
     )
   )
@@ -33,12 +33,12 @@ build_refuge <- function(force = FALSE) {
 
   if (max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/refuge",
+      pkg = "../refuge",
       preview = FALSE
     )
 
     refuge_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/refuge/docs",
+      "../refuge/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -48,7 +48,7 @@ build_refuge <- function(force = FALSE) {
     dir.create("refuge")
 
     file.copy(refuge_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/refuge",
+      "../docs/refuge",
       recursive = TRUE
     )
   } else {

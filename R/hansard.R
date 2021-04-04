@@ -4,8 +4,8 @@ build_hansard <- function(force = FALSE) {
   tictoc::tic()
   message("Building `hansard`")
 
-  base_files <- paste0("/Users/evanodell/Documents/Code/packages/hansard/", list.files(
-    path = "/Users/evanodell/Documents/Code/packages/hansard",
+  base_files <- paste0("../hansard/", list.files(
+    path = "../hansard",
     recursive = TRUE
   ))
 
@@ -34,7 +34,7 @@ build_hansard <- function(force = FALSE) {
 
   if (max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/hansard",
+      pkg = "../hansard",
       preview = FALSE
     )
 
@@ -43,7 +43,7 @@ build_hansard <- function(force = FALSE) {
     dir.create("hansard")
 
     hansard_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/hansard/docs",
+      "../hansard/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE

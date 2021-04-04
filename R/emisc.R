@@ -4,8 +4,8 @@ build_emisc <- function(force = FALSE) {
   tictoc::tic()
   message("Building `emisc`")
 
-  base_files <- paste0("/Users/evanodell/Documents/Code/packages/emisc/", list.files(
-    path = "/Users/evanodell/Documents/Code/packages/emisc",
+  base_files <- paste0("../emisc/", list.files(
+    path = "../emisc",
     recursive = TRUE
   ))
 
@@ -34,12 +34,12 @@ build_emisc <- function(force = FALSE) {
 
   if (is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/emisc",
+      pkg = "../emisc",
       preview = FALSE
     )
 
     emisc_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/emisc/docs",
+      "../emisc/docs",
       all.files = TRUE, full.names = TRUE, recursive = FALSE,
       ignore.case = TRUE, include.dirs = TRUE, no.. = TRUE
     )
@@ -48,7 +48,7 @@ build_emisc <- function(force = FALSE) {
     dir.create("emisc")
 
     file.copy(emisc_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/emisc",
+      "../docs/emisc",
       recursive = TRUE
     )
   } else {

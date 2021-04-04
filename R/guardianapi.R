@@ -4,9 +4,9 @@ build_guardianapi <- function(force = FALSE) {
   message("Building `guardianapi`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/guardianapi/",
+    "../guardianapi/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/guardianapi",
+      path = "../guardianapi",
       recursive = TRUE
     )
   )
@@ -33,12 +33,12 @@ build_guardianapi <- function(force = FALSE) {
 
   if (is.na(web_modified) || max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/guardianapi",
+      pkg = "../guardianapi",
       preview = FALSE
     )
 
     guardianapi_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/guardianapi/docs",
+      "../guardianapi/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -48,7 +48,7 @@ build_guardianapi <- function(force = FALSE) {
     dir.create("guardianapi")
 
     file.copy(guardianapi_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/guardianapi",
+      "../docs/guardianapi",
       recursive = TRUE
     )
   } else {

@@ -4,9 +4,9 @@ build_fixerapi <- function(force = FALSE) {
   message("Building `fixerapi`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/fixerapi/",
+    "../fixerapi/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/fixerapi",
+      path = "../fixerapi",
       recursive = TRUE
     )
   )
@@ -33,12 +33,12 @@ build_fixerapi <- function(force = FALSE) {
 
   if (max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/fixerapi",
+      pkg = "../fixerapi",
       preview = FALSE
     )
 
     fixerapi_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/fixerapi/docs",
+      "../fixerapi/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -48,7 +48,7 @@ build_fixerapi <- function(force = FALSE) {
     dir.create("fixerapi")
 
     file.copy(fixerapi_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/fixerapi",
+      "../docs/fixerapi",
       recursive = TRUE
     )
   } else {

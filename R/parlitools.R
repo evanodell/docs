@@ -4,8 +4,8 @@ build_parlitools <- function(force = FALSE) {
   tictoc::tic()
   message("Building `parlitools`")
 
-  base_files <- paste0("/Users/evanodell/Documents/Code/packages/parlitools/", list.files(
-    path = "/Users/evanodell/Documents/Code/packages/parlitools",
+  base_files <- paste0("../parlitools/", list.files(
+    path = "../parlitools",
     recursive = TRUE
   ))
 
@@ -36,12 +36,12 @@ build_parlitools <- function(force = FALSE) {
 
   if (max(web_modified) < max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/parlitools",
+      pkg = "../parlitools",
       preview = FALSE
     )
 
     parlitools_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/parlitools/docs",
+      "../parlitools/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -51,7 +51,7 @@ build_parlitools <- function(force = FALSE) {
     dir.create("parlitools")
 
     file.copy(parlitools_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/parlitools",
+      "../docs/parlitools",
       recursive = TRUE
     )
   } else {

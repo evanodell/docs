@@ -42,7 +42,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">refuge</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -104,13 +104,13 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/EvanOdell/refuge">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="http://evanodell.com">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -131,6 +131,7 @@
 <a href="#refuge" class="anchor"></a>refuge</h1></div>
 <!-- badges: start -->
 
+<!-- badges: end -->
 <p>The <code>refuge</code> package provides access to the <a href="https://www.refugerestrooms.org/api/docs/#!/restrooms">Refuge Restrooms API</a> in R.</p>
 <p><a href="https://www.refugerestrooms.org/">Refuge Restrooms</a> “is a web application that seeks to provide safe restroom access for transgender, intersex, and gender nonconforming individuals.” The web application includes a public API, which this package allows access to. The API does not require users to sign up or use a key. For further details on the API see the <a href="https://www.refugerestrooms.org/api/docs/">API docs</a>, or the package <a href="https://docs.evanodell.com/refuge/articles/introduction.html">vignette</a>. For details on the organisation providing this data, check out the <a href="https://www.refugerestrooms.org/">Refuge Restrooms homepage</a>.</p>
 <p>The API does not require registration or an API key.</p>
@@ -152,74 +153,23 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.evanodell.com/refuge">refuge</a></span><span class="op">)</span>
 
-<span class="va">bathrooms</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rfg_location.html">rfg_location</a></span><span class="op">(</span>lat<span class="op">=</span><span class="fl">39</span>, lng<span class="op">=</span><span class="op">-</span><span class="fl">75</span><span class="op">)</span>
-<span class="co">#&gt; Retrieving page 1 of 1</span>
-
-<span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">bathrooms</span><span class="op">)</span>
-<span class="co">#&gt; Rows: 15</span>
-<span class="co">#&gt; Columns: 21</span>
-<span class="co">#&gt; $ id             &lt;int&gt; 23292, 51429, 18468, 35541, 31275, 36036, 36048, 23588…</span>
-<span class="co">#&gt; $ name           &lt;chr&gt; "Acme", "Red Store", "Dellas 5 &amp; 10", "Harry's Ocean B…</span>
-<span class="co">#&gt; $ street         &lt;chr&gt; "3845 Bayshore Road", "500 Cape Ave", "503 Washington …</span>
-<span class="co">#&gt; $ city           &lt;chr&gt; "North Cape May", "Cape May Point", "Cape May", "Cape …</span>
-<span class="co">#&gt; $ state          &lt;chr&gt; "NJ", "New Jersey", "New Jersey", "NJ", "Nj", "New Jer…</span>
-<span class="co">#&gt; $ accessible     &lt;lgl&gt; TRUE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE,…</span>
-<span class="co">#&gt; $ unisex         &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …</span>
-<span class="co">#&gt; $ directions     &lt;chr&gt; "At the back of the store, between the butter / dairy …</span>
-<span class="co">#&gt; $ comment        &lt;chr&gt; "You don't have to be a paying customer. There are two…</span>
-<span class="co">#&gt; $ latitude       &lt;dbl&gt; 38.97527, 38.93867, 38.93303, 38.93174, 39.01546, 38.9…</span>
-<span class="co">#&gt; $ longitude      &lt;dbl&gt; -74.94259, -74.96650, -74.92252, -74.91153, -74.87687,…</span>
-<span class="co">#&gt; $ created_at     &lt;chr&gt; "2016-06-17T03:28:13.497Z", "2019-07-31T19:46:53.494Z"…</span>
-<span class="co">#&gt; $ updated_at     &lt;chr&gt; "2016-06-17T03:28:13.497Z", "2019-07-31T19:46:53.515Z"…</span>
-<span class="co">#&gt; $ downvote       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</span>
-<span class="co">#&gt; $ upvote         &lt;int&gt; 0, 1, 1, 1, 0, 1, 2, 0, 0, 0, 0, 1, 0, 2, 1</span>
-<span class="co">#&gt; $ country        &lt;chr&gt; "US", "US", "US", "US", "US", "US", "US", "US", "US", …</span>
-<span class="co">#&gt; $ changing_table &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,…</span>
-<span class="co">#&gt; $ edit_id        &lt;int&gt; 23292, 51429, 18468, 35541, 31275, 36036, 36048, 23588…</span>
-<span class="co">#&gt; $ approved       &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …</span>
-<span class="co">#&gt; $ distance       &lt;dbl&gt; 3.525190, 4.603666, 6.223601, 6.696027, 6.696431, 10.0…</span>
-<span class="co">#&gt; $ bearing        &lt;chr&gt; "113.306001647996", "151.350613346059", "130.839725640…</span></code></pre></div>
+<span class="va">bathrooms</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rfg_location.html">rfg_location</a></span><span class="op">(</span>lat<span class="op">=</span><span class="fl">39</span>, lng<span class="op">=</span><span class="op">-</span><span class="fl">75</span><span class="op">)</span></code></pre></div>
 <p>Locating all unisex, accessible restrooms in Toronto, using the <code><a href="reference/rfg_search.html">rfg_search()</a></code> function.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">toronto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rfg_search.html">rfg_search</a></span><span class="op">(</span><span class="st">"toronto"</span>, accessible <span class="op">=</span> <span class="cn">TRUE</span>, unisex <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; Retrieving page 1 of 2</span>
-<span class="co">#&gt; Retrieving page 2 of 2</span>
-
-<span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">toronto</span><span class="op">)</span>
-<span class="co">#&gt; Rows: 171</span>
-<span class="co">#&gt; Columns: 19</span>
-<span class="co">#&gt; $ id             &lt;int&gt; 1656, 20153, 26253, 38754, 46678, 56095, 56347, 56394,…</span>
-<span class="co">#&gt; $ name           &lt;chr&gt; "New College, University of Toronto", "Alumni Hall (Un…</span>
-<span class="co">#&gt; $ street         &lt;chr&gt; "40 Wilcocks", "121 St. Joseph Street, M5S 1J4", "525 …</span>
-<span class="co">#&gt; $ city           &lt;chr&gt; "Toronto", "Toronto", "Toronto", "Toronto", "Toronto",…</span>
-<span class="co">#&gt; $ state          &lt;chr&gt; "ON", "Ontario", "Ontario", "Ontario", "Ontario", "Ont…</span>
-<span class="co">#&gt; $ accessible     &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …</span>
-<span class="co">#&gt; $ unisex         &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …</span>
-<span class="co">#&gt; $ directions     &lt;chr&gt; "Go in the entrance as though you wanted to go to the …</span>
-<span class="co">#&gt; $ comment        &lt;chr&gt; "Door is open until the library closes. I think around…</span>
-<span class="co">#&gt; $ latitude       &lt;dbl&gt; 43.66162, 43.66499, 43.65976, 43.70860, 43.63918, 43.7…</span>
-<span class="co">#&gt; $ longitude      &lt;dbl&gt; -79.40040, -79.39033, -79.36334, -79.40075, -79.40036,…</span>
-<span class="co">#&gt; $ created_at     &lt;chr&gt; "2014-02-02T20:51:23.312Z", "2016-02-02T08:16:28.822Z"…</span>
-<span class="co">#&gt; $ updated_at     &lt;chr&gt; "2014-02-02T20:51:23.312Z", "2016-02-02T08:16:28.822Z"…</span>
-<span class="co">#&gt; $ downvote       &lt;int&gt; 1, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 1, 1, …</span>
-<span class="co">#&gt; $ upvote         &lt;int&gt; 2, 0, 0, 0, 4, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 3, 0, 0, …</span>
-<span class="co">#&gt; $ country        &lt;chr&gt; "CA", "CA", "CA", "CA", "CA", "CA", "CA", "CA", "CA", …</span>
-<span class="co">#&gt; $ changing_table &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, F…</span>
-<span class="co">#&gt; $ edit_id        &lt;int&gt; 1656, 20153, 26253, 38754, 46678, 56095, 56347, 56394,…</span>
-<span class="co">#&gt; $ approved       &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …</span></code></pre></div>
+<code class="sourceCode R"><span class="va">toronto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rfg_search.html">rfg_search</a></span><span class="op">(</span><span class="st">"toronto"</span>, accessible <span class="op">=</span> <span class="cn">TRUE</span>, unisex <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>For more detailed examples, check out the <a href="https://docs.evanodell.com/refuge/articles/introduction.html">vignette</a>.</p>
 </div>
 <div id="citing-refuge" class="section level2">
 <h2 class="hasAnchor">
 <a href="#citing-refuge" class="anchor"></a>Citing <code>refuge</code>
 </h2>
-<p>Odell E (2018). <em>refuge: Locate Trans and Intersex-Friendly Toilets</em>. doi: 10.5281/zenodo.1219900 (URL: <a href="http://doi.org/10.5281/zenodo.1219900" class="uri">http://doi.org/10.5281/zenodo.1219900</a>), R package version 0.3.2, &lt;URL: <a href="https://github.com/evanodell/refuge" class="uri">https://github.com/evanodell/refuge</a>&gt;.</p>
+<p>Odell E (2018). <em>refuge: Locate Trans and Intersex-Friendly Toilets</em>. doi: <a href="https://doi.org/10.5281/zenodo.1219900">10.5281/zenodo.1219900</a>, R package version 0.3.2.9000, &lt;URL: <a href="https://github.com/evanodell/refuge" class="uri">https://github.com/evanodell/refuge</a>&gt;.</p>
 <p>A BibTeX entry for LaTeX users is</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>  <span class="sc">@</span>Manual{,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    title <span class="ot">=</span> {{refuge}<span class="sc">:</span> Locate Trans and Intersex<span class="sc">-</span>Friendly Toilets},</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    author <span class="ot">=</span> {Evan Odell},</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2018</span>},</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="fl">3.2</span>},</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="dv">3</span>.<span class="fl">2.9000</span>},</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    doi <span class="ot">=</span> {<span class="fl">10.5281</span><span class="sc">/</span>zenodo<span class="fl">.1219900</span>},</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>evanodell<span class="sc">/</span>refuge},</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
@@ -227,7 +177,7 @@
 <div id="notes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#notes" class="anchor"></a>Notes</h2>
-<p>Please note that this project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+<p>Please note that this project is released with a <a href="https://github.com/evanodell/refuge/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 <p>This project is not affiliated with the <a href="https://www.refugerestrooms.org/">Refuge Restrooms</a> application.</p>
 </div>
 </div>
@@ -283,7 +233,7 @@
 <li><a href="https://github.com/evanodell/refuge/actions"><img src="https://github.com/evanodell/refuge/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/evanodell/refuge"><img src="https://ci.appveyor.com/api/projects/status/github/evanodell/refuge?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 <li><a href="https://codecov.io/github/evanodell/refuge?branch=master"><img src="https://codecov.io/gh/evanodell/refuge/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
-<li><a href="https://zenodo.org/badge/latestdoi/129826417"><img src="https://zenodo.org/badge/129826417.svg" alt="DOI"></a></li>
+<li><a href="https://doi.org/10.5281/zenodo.1219900"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1219900.svg" alt="DOI"></a></li>
 </ul>
 </div>
 </div>

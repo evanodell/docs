@@ -4,9 +4,9 @@ build_ukpolice <- function(force = FALSE) {
   message("Building `ukpolice`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/ukpolice/",
+    "../ukpolice/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/ukpolice",
+      path = "../ukpolice",
       recursive = TRUE
     )
   )
@@ -33,12 +33,12 @@ build_ukpolice <- function(force = FALSE) {
 
   if (max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/ukpolice",
+      pkg = "../ukpolice",
       preview = FALSE
     )
 
     ukpolice_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/ukpolice/docs",
+      "../ukpolice/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -48,7 +48,7 @@ build_ukpolice <- function(force = FALSE) {
     dir.create("ukpolice")
 
     file.copy(ukpolice_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/ukpolice",
+      "../docs/ukpolice",
       recursive = TRUE
     )
   } else {

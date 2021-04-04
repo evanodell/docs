@@ -4,9 +4,9 @@ build_mnis <- function(force = FALSE) {
   message("Building `mnis`")
 
   base_files <- paste0(
-    "/Users/evanodell/Documents/Code/packages/mnis/",
+    "../mnis/",
     list.files(
-      path = "/Users/evanodell/Documents/Code/packages/mnis",
+      path = "../mnis",
       recursive = TRUE
     )
   )
@@ -33,12 +33,12 @@ build_mnis <- function(force = FALSE) {
 
   if (max(web_modified) <= max(base_modified) || force == TRUE) {
     pkgdown::build_site(
-      pkg = "/Users/evanodell/Documents/Code/packages/mnis",
+      pkg = "../mnis",
       preview = FALSE
     )
 
     mnis_doc_files <- list.files(
-      "/Users/evanodell/Documents/Code/packages/mnis/docs",
+      "../mnis/docs",
       all.files = TRUE, full.names = TRUE,
       recursive = FALSE, ignore.case = TRUE,
       include.dirs = TRUE, no.. = TRUE
@@ -48,7 +48,7 @@ build_mnis <- function(force = FALSE) {
     dir.create("mnis")
 
     file.copy(mnis_doc_files,
-      "/Users/evanodell/Documents/Code/packages/docs/mnis",
+      "../docs/mnis",
       recursive = TRUE
     )
   } else {
