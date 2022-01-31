@@ -16,15 +16,11 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90706059-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-90706059-1');
-</script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -37,14 +33,14 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">guardianapi</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="http://docs.evanodell.com">Docs Home</a>
+  <a href="http://docs.evanodell.com" class="external-link">Docs Home</a>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -56,19 +52,19 @@
   <a href="../articles/introduction.html">Articles</a>
 </li>
 <li>
-  <a href="https://docs.evanodell.com">Documentation Home</a>
+  <a href="https://docs.evanodell.com" class="external-link">Documentation Home</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/EvanOdell/guardianapi">
-    <span class="fas fa-github fa-lg"></span>
+  <a href="https://github.com/EvanOdell/guardianapi" class="external-link">
+    <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://evanodell.com">
-    <span class="fas fa-home fa-lg"></span>
+  <a href="https://evanodell.com" class="external-link">
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -82,227 +78,237 @@
 
       
 
-      </header><script src="introduction_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to <code>guardianapi</code>
 </h1>
-                        <h4 class="author">Evan Odell</h4>
+                        <h4 data-toc-skip class="author">Evan Odell</h4>
             
-            <h4 class="date">2021-04-04</h4>
+            <h4 data-toc-skip class="date">2022-01-31</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/evanodell/guardianapi/blob/master/../docs/vignettes/introduction.Rmd"><code>../docs/vignettes/introduction.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/evanodell/guardianapi/blob/HEAD/../docs/vignettes/introduction.Rmd" class="external-link"><code>../docs/vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
 
     </div>
 
     
     
-<div id="functions" class="section level1">
-<h1 class="hasAnchor">
-<a href="#functions" class="anchor"></a>Functions</h1>
-<p><code>guardianapi</code> contains functions to search and retrieve articles, tags and editions from the <a href="https://open-platform.theguardian.com/documentation/">Guardian open data platform</a>.</p>
-<p>Let’s look at a few reviewers. For example, I noticed that comedy critic Brian Logan seemed to give out very few five star or one star reviews, so I wanted to see if that was true. I’ve included all his reviews from 2002–2018</p>
+<div class="section level1">
+<h1 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h1>
+<p><code>guardianapi</code> contains functions to search and retrieve
+articles, tags and editions from the <a href="https://open-platform.theguardian.com/documentation/" class="external-link">Guardian
+open data platform</a>.</p>
+<p>Let’s look at a few reviewers. For example, I noticed that comedy
+critic Brian Logan seemed to give out very few five star or one star
+reviews, so I wanted to see if that was true. I’ve included all his
+reviews from 2002–2018</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.evanodell.com/guardianapi">guardianapi</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.evanodell.com/guardianapi" class="external-link">guardianapi</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org" class="external-link">lubridate</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
 
 <span class="va">logan_search</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/gu_items.html">gu_items</a></span><span class="op">(</span>query <span class="op">=</span> <span class="st">"profile/brianlogan"</span><span class="op">)</span>
 
-<span class="va">logan_search</span><span class="op">$</span><span class="va">star_rating</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">logan_search</span><span class="op">$</span><span class="va">star_rating</span><span class="op">)</span>
+<span class="va">logan_search</span><span class="op">$</span><span class="va">star_rating</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">logan_search</span><span class="op">$</span><span class="va">star_rating</span><span class="op">)</span>
 
-<span class="va">logan_reviews</span> <span class="op">&lt;-</span> <span class="va">logan_search</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">star_rating</span><span class="op">)</span>, 
-         <span class="va">web_publication_date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2002-01-01"</span><span class="op">)</span>,
-         <span class="va">web_publication_date</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2018-12-31"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">logan_reviews</span> <span class="op">&lt;-</span> <span class="va">logan_search</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">star_rating</span><span class="op">)</span>, 
+         <span class="va">web_publication_date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2002-01-01"</span><span class="op">)</span>,
+         <span class="va">web_publication_date</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2018-12-31"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">logan_reviews</span><span class="op">$</span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">logan_reviews</span><span class="op">$</span><span class="va">web_publication_date</span><span class="op">)</span><span class="op">)</span>
+<span class="va">logan_reviews</span><span class="op">$</span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html" class="external-link">year</a></span><span class="op">(</span><span class="va">logan_reviews</span><span class="op">$</span><span class="va">web_publication_date</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">logan_summary</span> <span class="op">&lt;-</span> <span class="va">logan_reviews</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">star_rating</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="va">count</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>star_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">star_rating</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">logan_summary</span> <span class="op">&lt;-</span> <span class="va">logan_reviews</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">star_rating</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="va">count</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>star_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">star_rating</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">p_logan</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">logan_summary</span>,
-                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">count</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
+<span class="va">p_logan</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">logan_summary</span>,
+                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">count</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_colour_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">p_logan</span></code></pre></div>
 <p><img src="logan-plot.png" width="100%"></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">p_logan_area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">logan_summary</span>,
-                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">perc</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_area</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_percent.html">percent</a></span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> 
+<code class="sourceCode R"><span class="va">p_logan_area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">logan_summary</span>,
+                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">perc</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html" class="external-link">geom_area</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_percent.html" class="external-link">percent</a></span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_fill_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> 
 
 
 <span class="va">p_logan_area</span></code></pre></div>
 <p><img src="logan-area.png" width="100%"></p>
-<p>As you can see here, Brian Logan is pretty stingy with five star reviews, and didn’t give out a single five star rating in all of 2017. Likewise, he hasn’t completed panned any act with a single star since 2014.</p>
-<p>Now let’s take a look at film critic Peter Bradshaw. I’ve used the same time span, and I’ve removed the single <a href="https://www.theguardian.com/culture/2002/oct/04/artsfeatures8">0-star rating</a> given to the 2008 film <a href="https://www.imdb.com/title/tt0285462/">Boat Trip</a>. There are more than four times as many film reviews from Peter Bradshaw as there are comedy reviews from Brian Logan over the same time period.</p>
+<p>As you can see here, Brian Logan is pretty stingy with five star
+reviews, and didn’t give out a single five star rating in all of 2017.
+Likewise, he hasn’t completed panned any act with a single star since
+2014.</p>
+<p>Now let’s take a look at film critic Peter Bradshaw. I’ve used the
+same time span, and I’ve removed the single <a href="https://www.theguardian.com/culture/2002/oct/04/artsfeatures8" class="external-link">0-star
+rating</a> given to the 2008 film <a href="https://www.imdb.com/title/tt0285462/" class="external-link">Boat Trip</a>. There are
+more than four times as many film reviews from Peter Bradshaw as there
+are comedy reviews from Brian Logan over the same time period.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org" class="external-link">lubridate</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
 
 <span class="va">bradshaw_search</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/gu_items.html">gu_items</a></span><span class="op">(</span>query <span class="op">=</span> <span class="st">"profile/peterbradshaw"</span><span class="op">)</span>
 
-<span class="va">bradshaw_search</span><span class="op">$</span><span class="va">star_rating</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">bradshaw_search</span><span class="op">$</span><span class="va">star_rating</span><span class="op">)</span>
+<span class="va">bradshaw_search</span><span class="op">$</span><span class="va">star_rating</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">bradshaw_search</span><span class="op">$</span><span class="va">star_rating</span><span class="op">)</span>
 
-<span class="va">bradshaw_reviews</span> <span class="op">&lt;-</span> <span class="va">bradshaw_search</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">star_rating</span><span class="op">)</span>, <span class="va">star_rating</span> <span class="op">!=</span> <span class="fl">0</span>,
-         <span class="va">web_publication_date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2002-01-01"</span><span class="op">)</span>,
-         <span class="va">web_publication_date</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2018-12-31"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">bradshaw_reviews</span> <span class="op">&lt;-</span> <span class="va">bradshaw_search</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">star_rating</span><span class="op">)</span>, <span class="va">star_rating</span> <span class="op">!=</span> <span class="fl">0</span>,
+         <span class="va">web_publication_date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2002-01-01"</span><span class="op">)</span>,
+         <span class="va">web_publication_date</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2018-12-31"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">bradshaw_reviews</span><span class="op">$</span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">bradshaw_reviews</span><span class="op">$</span><span class="va">web_publication_date</span><span class="op">)</span><span class="op">)</span>
+<span class="va">bradshaw_reviews</span><span class="op">$</span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html" class="external-link">year</a></span><span class="op">(</span><span class="va">bradshaw_reviews</span><span class="op">$</span><span class="va">web_publication_date</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">bradshaw_summary</span> <span class="op">&lt;-</span> <span class="va">bradshaw_reviews</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">star_rating</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="va">count</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>star_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">star_rating</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">bradshaw_summary</span> <span class="op">&lt;-</span> <span class="va">bradshaw_reviews</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">star_rating</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="va">count</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>star_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">star_rating</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">p_bradshaw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bradshaw_summary</span>,
-                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">count</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
+<span class="va">p_bradshaw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bradshaw_summary</span>,
+                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">count</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span>, alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_colour_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">p_bradshaw</span></code></pre></div>
 <p><img src="bradshaw-plot.png" width="100%"></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">p_bradshaw_area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bradshaw_summary</span>,
-                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">perc</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_area</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_percent.html">percent</a></span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">p_bradshaw_area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bradshaw_summary</span>,
+                  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">perc</span>, group <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html" class="external-link">geom_area</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">star_rating</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_percent.html" class="external-link">percent</a></span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_fill_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Number of Review with Rating"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">p_bradshaw_area</span></code></pre></div>
 <p><img src="bradshaw-area.png" width="100%"></p>
-<p>We can compare the distributions of ratings given by the two critics.</p>
+<p>We can compare the distributions of ratings given by the two
+critics.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">bradshaw_reviews</span><span class="op">$</span><span class="va">byline</span> <span class="op">&lt;-</span> <span class="st">"Peter Bradshaw"</span>
 
 <span class="va">logan_reviews</span><span class="op">$</span><span class="va">byline</span> <span class="op">&lt;-</span> <span class="st">"Brian Logan"</span>
 
-<span class="va">comp_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span><span class="op">(</span><span class="va">logan_reviews</span>, <span class="va">bradshaw_reviews</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>star_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">star_rating</span><span class="op">)</span><span class="op">)</span>
+<span class="va">comp_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">logan_reviews</span>, <span class="va">bradshaw_reviews</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>star_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">star_rating</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">comp_df2</span> <span class="op">&lt;-</span> <span class="va">comp_df</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">star_rating</span>, <span class="va">byline</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">byline</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="va">count</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span>
+<span class="va">comp_df2</span> <span class="op">&lt;-</span> <span class="va">comp_df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">star_rating</span>, <span class="va">byline</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">byline</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="va">count</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">comp_p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">comp_df</span>, 
-                 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">star_rating</span>, y <span class="op">=</span> <span class="va">..density..</span>, fill <span class="op">=</span> <span class="va">byline</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, bins <span class="op">=</span> <span class="fl">5</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_percent.html">percent</a></span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>end <span class="op">=</span> <span class="fl">0.9</span>, option <span class="op">=</span> <span class="st">"inferno"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Star Rating"</span>, y <span class="op">=</span> <span class="st">""</span>, fill <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">star_rating</span>, y <span class="op">=</span> <span class="va">perc</span>,
+<span class="va">comp_p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">comp_df</span>, 
+                 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">star_rating</span>, y <span class="op">=</span> <span class="va">..density..</span>, fill <span class="op">=</span> <span class="va">byline</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, bins <span class="op">=</span> <span class="fl">5</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/label_percent.html" class="external-link">percent</a></span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_fill_viridis_d</a></span><span class="op">(</span>end <span class="op">=</span> <span class="fl">0.9</span>, option <span class="op">=</span> <span class="st">"inferno"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Star Rating"</span>, y <span class="op">=</span> <span class="st">""</span>, fill <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">star_rating</span>, y <span class="op">=</span> <span class="va">perc</span>,
                 colour <span class="op">=</span> <span class="va">byline</span>, group <span class="op">=</span> <span class="va">byline</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">comp_df2</span>,
             size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>end <span class="op">=</span> <span class="fl">0.9</span>, option <span class="op">=</span> <span class="st">"inferno"</span><span class="op">)</span>  <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_colour_viridis_d</a></span><span class="op">(</span>end <span class="op">=</span> <span class="fl">0.9</span>, option <span class="op">=</span> <span class="st">"inferno"</span><span class="op">)</span>  <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
 <span class="va">comp_p</span></code></pre></div>
 <p><img src="logan-bradshaw-comp.png" width="100%"></p>
-<p>We can also use <code><a href="../reference/gu_content.html">gu_content()</a></code> for more general queries. For example, here’s all the articles returned for “relationships” between the two given dates:</p>
+<p>We can also use <code><a href="../reference/gu_content.html">gu_content()</a></code> for more general queries.
+For example, here’s all the articles returned for “relationships”
+between the two given dates:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">relations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/gu_content.html">gu_content</a></span><span class="op">(</span>query <span class="op">=</span> <span class="st">"relationships"</span>, from_date <span class="op">=</span> <span class="st">"2018-11-30"</span>,
                         to_date <span class="op">=</span> <span class="st">"2018-12-30"</span><span class="op">)</span>
 
-<span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">relations</span><span class="op">)</span></code></pre></div>
-<pre><code>#&gt; # A tibble: 170 x 44
-#&gt;    id      type  section_id section_name web_publication_da… web_title  web_url 
-#&gt;    &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;dttm&gt;              &lt;chr&gt;      &lt;chr&gt;   
-#&gt;  1 music/… arti… music      Music        2018-12-02 09:10:28 The 1975:… https:/…
-#&gt;  2 film/2… arti… film       Film         2018-12-18 09:48:12 Woman cla… https:/…
-#&gt;  3 lifean… arti… lifeandst… Life and st… 2018-12-10 09:00:39 I’m in a … https:/…
-#&gt;  4 politi… arti… politics   Politics     2018-12-25 18:00:00 'Special … https:/…
-#&gt;  5 footba… arti… football   Football     2018-12-19 11:08:41 Kelly Cat… https:/…
-#&gt;  6 film/2… arti… film       Film         2018-12-14 15:06:11 Sondra Lo… https:/…
-#&gt;  7 footba… arti… football   Football     2018-12-05 02:16:40 Mancheste… https:/…
-#&gt;  8 commen… arti… commentis… Opinion      2018-12-24 11:41:14 How to ge… https:/…
-#&gt;  9 books/… arti… books      Books        2018-12-15 15:00:13 Dolly Ald… https:/…
-#&gt; 10 footba… arti… football   Football     2018-12-09 18:00:20 Phoenix s… https:/…
-#&gt; # … with 160 more rows, and 37 more variables: api_url &lt;chr&gt;, tags &lt;list&gt;,
-#&gt; #   is_hosted &lt;lgl&gt;, pillar_id &lt;chr&gt;, pillar_name &lt;chr&gt;, headline &lt;chr&gt;,
-#&gt; #   standfirst &lt;chr&gt;, trail_text &lt;chr&gt;, byline &lt;chr&gt;, main &lt;chr&gt;, body &lt;chr&gt;,
-#&gt; #   newspaper_page_number &lt;chr&gt;, star_rating &lt;chr&gt;, wordcount &lt;chr&gt;,
-#&gt; #   comment_close_date &lt;dttm&gt;, commentable &lt;chr&gt;,
-#&gt; #   first_publication_date &lt;dttm&gt;, is_inappropriate_for_sponsorship &lt;chr&gt;,
-#&gt; #   is_premoderated &lt;chr&gt;, last_modified &lt;chr&gt;, newspaper_edition_date &lt;date&gt;,
-#&gt; #   production_office &lt;chr&gt;, publication &lt;chr&gt;, short_url &lt;chr&gt;,
-#&gt; #   should_hide_adverts &lt;chr&gt;, show_in_related_content &lt;chr&gt;, thumbnail &lt;chr&gt;,
-#&gt; #   legally_sensitive &lt;chr&gt;, lang &lt;chr&gt;, body_text &lt;chr&gt;, char_count &lt;chr&gt;,
-#&gt; #   should_hide_reader_revenue &lt;chr&gt;, show_affiliate_links &lt;chr&gt;,
-#&gt; #   sensitive &lt;chr&gt;, display_hint &lt;chr&gt;, byline_html &lt;chr&gt;,
-#&gt; #   live_blogging_now &lt;chr&gt;</code></pre>
-<p>Use the <code>tag</code> parameter to limit articles to particular sections:</p>
+<span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">relations</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">#&gt; <span style="color: #949494;"># A tibble: 170 × 44</span></span>
+<span class="co">#&gt;    id      type  section_id section_name web_publication_da… web_title  web_url </span>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> music/… arti… music      Music        2018-12-02 <span style="color: #949494;">09:10:28</span> The 1975:… https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> film/2… arti… film       Film         2018-12-18 <span style="color: #949494;">09:48:12</span> Woman cla… https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> lifean… arti… lifeandst… Life and st… 2018-12-10 <span style="color: #949494;">09:00:39</span> I’m in a … https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> politi… arti… politics   Politics     2018-12-25 <span style="color: #949494;">18:00:00</span> 'Special … https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> footba… arti… football   Football     2018-12-19 <span style="color: #949494;">11:08:41</span> Kelly Cat… https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> film/2… arti… film       Film         2018-12-14 <span style="color: #949494;">15:06:11</span> Sondra Lo… https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> footba… arti… football   Football     2018-12-05 <span style="color: #949494;">02:16:40</span> Mancheste… https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> commen… arti… commentis… Opinion      2018-12-24 <span style="color: #949494;">11:41:14</span> How to ge… https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> books/… arti… books      Books        2018-12-15 <span style="color: #949494;">15:00:13</span> Dolly Ald… https:/…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> footba… arti… football   Football     2018-12-09 <span style="color: #949494;">18:00:20</span> Phoenix s… https:/…</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 160 more rows, and 37 more variables: api_url &lt;chr&gt;, tags &lt;list&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   is_hosted &lt;lgl&gt;, pillar_id &lt;chr&gt;, pillar_name &lt;chr&gt;, headline &lt;chr&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   standfirst &lt;chr&gt;, trail_text &lt;chr&gt;, byline &lt;chr&gt;, main &lt;chr&gt;, body &lt;chr&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   newspaper_page_number &lt;chr&gt;, star_rating &lt;chr&gt;, wordcount &lt;chr&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   comment_close_date &lt;dttm&gt;, commentable &lt;chr&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   first_publication_date &lt;dttm&gt;, is_inappropriate_for_sponsorship &lt;chr&gt;,</span></span>
+<span class="co">#&gt; <span style="color: #949494;">#   is_premoderated &lt;chr&gt;, last_modified &lt;chr&gt;, …</span></span></code></pre>
+<p>Use the <code>tag</code> parameter to limit articles to particular
+sections:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">relations_sex</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/gu_content.html">gu_content</a></span><span class="op">(</span>query <span class="op">=</span> <span class="st">"relationships"</span>, from_date <span class="op">=</span> <span class="st">"2018-11-30"</span>,
                             to_date <span class="op">=</span> <span class="st">"2018-12-30"</span>, tag <span class="op">=</span> <span class="st">"lifeandstyle/sex"</span><span class="op">)</span>
 
 <span class="va">relations_sex</span></code></pre></div>
-<pre><code>#&gt; Rows: 5
-#&gt; Columns: 40
-#&gt; $ id                               &lt;chr&gt; "lifeandstyle/2018/dec/10/im-in-a-rel…
-#&gt; $ type                             &lt;chr&gt; "article", "article", "article", "art…
-#&gt; $ section_id                       &lt;chr&gt; "lifeandstyle", "lifeandstyle", "life…
-#&gt; $ section_name                     &lt;chr&gt; "Life and style", "Life and style", "…
-#&gt; $ web_publication_date             &lt;dttm&gt; 2018-12-10 09:00:39, 2018-12-21 11:0…
-#&gt; $ web_title                        &lt;chr&gt; "I’m in a relationship with another m…
-#&gt; $ web_url                          &lt;chr&gt; "https://www.theguardian.com/lifeands…
-#&gt; $ api_url                          &lt;chr&gt; "https://content.guardianapis.com/lif…
-#&gt; $ tags                             &lt;list&gt; [&lt;data.frame[10 x 13]&gt;], [&lt;data.fram…
-#&gt; $ is_hosted                        &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE
-#&gt; $ pillar_id                        &lt;chr&gt; "pillar/lifestyle", "pillar/lifestyle…
-#&gt; $ pillar_name                      &lt;chr&gt; "Lifestyle", "Lifestyle", "Lifestyle"…
-#&gt; $ headline                         &lt;chr&gt; "I’m in a relationship with another m…
-#&gt; $ standfirst                       &lt;chr&gt; "We kiss and cuddle, but he won’t go …
-#&gt; $ trail_text                       &lt;chr&gt; "We kiss and cuddle, but he won’t go …
-#&gt; $ byline                           &lt;chr&gt; "Pamela Stephenson Connolly", "Anonym…
-#&gt; $ main                             &lt;chr&gt; "&lt;figure class=\"element element-imag…
-#&gt; $ body                             &lt;chr&gt; "&lt;p&gt;&lt;strong&gt;Until last year, I identi…
-#&gt; $ newspaper_page_number            &lt;chr&gt; "7", "66", "83", NA, "44"
-#&gt; $ wordcount                        &lt;chr&gt; "387", "307", "2189", "759", "1559"
-#&gt; $ comment_close_date               &lt;dttm&gt; 2018-12-13 09:00:39, 2018-12-23 21:00…
-#&gt; $ commentable                      &lt;chr&gt; "true", "true", "true", "false", "fal…
-#&gt; $ first_publication_date           &lt;dttm&gt; 2018-12-10 09:00:39, 2018-12-21 11:00…
-#&gt; $ is_inappropriate_for_sponsorship &lt;chr&gt; "false", "false", "false", "false", …
-#&gt; $ is_premoderated                  &lt;chr&gt; "true", "true", "true", "false", "fal…
-#&gt; $ last_modified                    &lt;chr&gt; "2018-12-10T08:00:39Z", "2018-12-23T…
-#&gt; $ newspaper_edition_date           &lt;date&gt; 2018-12-10, 2018-12-22, 2018-12-08, N…
-#&gt; $ production_office                &lt;chr&gt; "UK", "UK", "UK", "UK", "UK"
-#&gt; $ publication                      &lt;chr&gt; "The Guardian", "The Guardian", "The …
-#&gt; $ short_url                        &lt;chr&gt; "https://gu.com/p/a5fad", "https://gu…
-#&gt; $ should_hide_adverts              &lt;chr&gt; "false", "false", "false", "false", …
-#&gt; $ show_in_related_content          &lt;chr&gt; "true", "true", "true", "true", "true"
-#&gt; $ thumbnail                        &lt;chr&gt; "https://media.guim.co.uk/35fd3d18854…
-#&gt; $ legally_sensitive                &lt;chr&gt; "false", "false", "false", "false", "…
-#&gt; $ sensitive                        &lt;chr&gt; "true", NA, NA, NA, "true"
-#&gt; $ lang                             &lt;chr&gt; "en", "en", "en", "en", "en"
-#&gt; $ body_text                        &lt;chr&gt; "Until last year, I identified as a s…
-#&gt; $ char_count                       &lt;chr&gt; "2192", "1729", "12190", "4404", "866…
-#&gt; $ should_hide_reader_revenue       &lt;chr&gt; "false", "false", "false", "false", "…
-#&gt; $ show_affiliate_links             &lt;chr&gt; "false", "false", "false", "false", "…</code></pre>
+<pre><code><span class="co">#&gt; Rows: 5</span>
+<span class="co">#&gt; Columns: 40</span>
+<span class="co">#&gt; $ id                               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "lifeandstyle/2018/dec/10/im-in-a-rel…</span>
+<span class="co">#&gt; $ type                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "article", "article", "article", "art…</span>
+<span class="co">#&gt; $ section_id                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "lifeandstyle", "lifeandstyle", "life…</span>
+<span class="co">#&gt; $ section_name                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Life and style", "Life and style", "…</span>
+<span class="co">#&gt; $ web_publication_date             <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 2018-12-10 09:00:39, 2018-12-21 11:0…</span>
+<span class="co">#&gt; $ web_title                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "I’m in a relationship with another m…</span>
+<span class="co">#&gt; $ web_url                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://www.theguardian.com/lifeands…</span>
+<span class="co">#&gt; $ api_url                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://content.guardianapis.com/lif…</span>
+<span class="co">#&gt; $ tags                             <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> [&lt;data.frame[10 x 13]&gt;], [&lt;data.fram…</span>
+<span class="co">#&gt; $ is_hosted                        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, FALSE, FALSE</span>
+<span class="co">#&gt; $ pillar_id                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "pillar/lifestyle", "pillar/lifestyle…</span>
+<span class="co">#&gt; $ pillar_name                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Lifestyle", "Lifestyle", "Lifestyle"…</span>
+<span class="co">#&gt; $ headline                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "I’m in a relationship with another m…</span>
+<span class="co">#&gt; $ standfirst                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "We kiss and cuddle, but he won’t go …</span>
+<span class="co">#&gt; $ trail_text                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "We kiss and cuddle, but he won’t go …</span>
+<span class="co">#&gt; $ byline                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Pamela Stephenson Connolly", "Anonym…</span>
+<span class="co">#&gt; $ main                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "&lt;figure class=\"element element-imag…</span>
+<span class="co">#&gt; $ body                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "&lt;p&gt;&lt;strong&gt;Until last year, I identi…</span>
+<span class="co">#&gt; $ newspaper_page_number            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "7", "66", "83", NA, "44"</span>
+<span class="co">#&gt; $ wordcount                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "387", "307", "2189", "759", "1559"</span>
+<span class="co">#&gt; $ comment_close_date               <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 2018-12-13 09:00:39, 2018-12-23 21:00…</span>
+<span class="co">#&gt; $ commentable                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "true", "true", "true", "false", "fal…</span>
+<span class="co">#&gt; $ first_publication_date           <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 2018-12-10 09:00:39, 2018-12-21 11:00…</span>
+<span class="co">#&gt; $ is_inappropriate_for_sponsorship <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "false", "false", "false", "false", …</span>
+<span class="co">#&gt; $ is_premoderated                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "true", "true", "true", "false", "fal…</span>
+<span class="co">#&gt; $ last_modified                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2018-12-10T08:00:39Z", "2018-12-23T…</span>
+<span class="co">#&gt; $ newspaper_edition_date           <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2018-12-10, 2018-12-22, 2018-12-08, N…</span>
+<span class="co">#&gt; $ production_office                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "UK", "UK", "UK", "UK", "UK"</span>
+<span class="co">#&gt; $ publication                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "The Guardian", "The Guardian", "The …</span>
+<span class="co">#&gt; $ short_url                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://gu.com/p/a5fad", "https://gu…</span>
+<span class="co">#&gt; $ should_hide_adverts              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "false", "false", "false", "false", …</span>
+<span class="co">#&gt; $ show_in_related_content          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "true", "true", "true", "true", "true"</span>
+<span class="co">#&gt; $ thumbnail                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://media.guim.co.uk/35fd3d18854…</span>
+<span class="co">#&gt; $ legally_sensitive                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "false", "false", "false", "false", "…</span>
+<span class="co">#&gt; $ sensitive                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "true", NA, NA, NA, "true"</span>
+<span class="co">#&gt; $ lang                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "en", "en", "en", "en", "en"</span>
+<span class="co">#&gt; $ body_text                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Until last year, I identified as a s…</span>
+<span class="co">#&gt; $ char_count                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2192", "1729", "12190", "4404", "866…</span>
+<span class="co">#&gt; $ should_hide_reader_revenue       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "false", "false", "false", "false", "…</span>
+<span class="co">#&gt; $ show_affiliate_links             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "false", "false", "false", "false", "…</span></code></pre>
 </div>
   </div>
 
@@ -317,11 +323,14 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://evanodell.com">Evan Odell</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://evanodell.com" class="external-link">Evan Odell</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.1.</p>
 </div>
 
       </footer>
@@ -329,6 +338,8 @@
 
   
 
+
+  
 
   </body>
 </html>

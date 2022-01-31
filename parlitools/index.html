@@ -18,15 +18,11 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90706059-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-90706059-1');
-</script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -39,14 +35,14 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">parlitools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="http://docs.evanodell.com">Docs Home</a>
+  <a href="http://docs.evanodell.com" class="external-link">Docs Home</a>
 </li>
 <li>
   <a href="news/index.html">News</a>
@@ -82,19 +78,19 @@
   </ul>
 </li>
 <li>
-  <a href="https://docs.evanodell.com">Documentation Home</a>
+  <a href="https://docs.evanodell.com" class="external-link">Documentation Home</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/evanodell/parlitools">
-    <span class="fas fa-github fa-lg"></span>
+  <a href="https://github.com/evanodell/parlitools" class="external-link">
+    <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://evanodell.com">
-    <span class="fas fa-home fa-lg"></span>
+  <a href="https://evanodell.com" class="external-link">
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -112,70 +108,121 @@
   <div class="contents col-md-9">
 
 
-<div id="parlitools" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#parlitools" class="anchor"></a>parlitools</h1></div>
-<p>A collection of useful tools for UK politics, including base maps and datasets. Initially inspired by Bhaskar Karambelkar’s <a href="https://cran.r-project.org/package=tilegramsR"><code>tilegrams</code></a> package, but with the ability to create a hexagonal map of UK parliamentary constituencies and local authorities. The package also includes functions for data retrieval of current MPs and their consituency details (as it requires calls to two different APIs, this function is not included in my <a href="https://cran.r-project.org/package=hansard"><code>hansard</code></a> or <a href="https://cran.r-project.org/package=mnis"><code>mnis</code></a> packages), and local government composition. There are inbuilt datasets from the 2015 and 2017 UK General Elections and 2011 Census, courtesy of the British Election Study, estimates of EU referendum votes from Chris Hanretty, and hex codes for different party colours.</p>
-<p>The most up-to-date documentation will always be at <a href="http://docs.evanodell.com/parlitools/" class="uri">http://docs.evanodell.com/parlitools/</a>.</p>
-<div id="installing" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installing" class="anchor"></a>Installing</h2>
-<p><code>parlitools</code> is available on CRAN. To install on CRAN run:</p>
+<div class="section level1">
+<div class="page-header"><h1 id="parlitools">parlitools<a class="anchor" aria-label="anchor" href="#parlitools"></a>
+</h1></div>
+<p>A collection of useful tools for UK politics, including base maps and
+datasets. Initially inspired by Bhaskar Karambelkar’s <a href="https://cran.r-project.org/package=tilegramsR" class="external-link"><code>tilegrams</code></a>
+package, but with the ability to create a hexagonal map of UK
+parliamentary constituencies and local authorities. The package also
+includes functions for data retrieval of current MPs and their
+consituency details (as it requires calls to two different APIs, this
+function is not included in my <a href="https://cran.r-project.org/package=hansard" class="external-link"><code>hansard</code></a>
+or <a href="https://cran.r-project.org/package=mnis" class="external-link"><code>mnis</code></a>
+packages), and local government composition. There are inbuilt datasets
+from the 2015 and 2017 UK General Elections and 2011 Census, courtesy of
+the British Election Study, estimates of EU referendum votes from Chris
+Hanretty, and hex codes for different party colours.</p>
+<p>The most up-to-date documentation will always be at <a href="http://docs.evanodell.com/parlitools/" class="external-link uri">http://docs.evanodell.com/parlitools/</a>.</p>
+<div class="section level2">
+<h2 id="installing">Installing<a class="anchor" aria-label="anchor" href="#installing"></a>
+</h2>
+<p><code>parlitools</code> is available on CRAN. To install on CRAN
+run:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"parlitools"</span>)</span></code></pre></div>
-<p>Or, if you use <a href="https://cran.r-project.org/package=pacman">pacman</a>:</p>
+<p>Or, if you use <a href="https://cran.r-project.org/package=pacman" class="external-link">pacman</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(parlitools)</span></code></pre></div>
 <p>To install the development version from GitHub, run:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">##install.packages("parlitools")</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"evanodell/parlitools"</span>)</span></code></pre></div>
 </div>
-<div id="functions-and-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#functions-and-data" class="anchor"></a>Functions and Data</h2>
-<p>For more details see <a href="https://docs.evanodell.com/parlitools/reference">the full documentation</a> or the <a href="https://docs.evanodell.com/parlitools/articles/">vignettes</a>.</p>
-<div id="included-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#included-data" class="anchor"></a>Included Data</h3>
-<p><code>party_colour</code> - A tibble with the ID, name and hex code for the official colour of a variety of political parties, taken from Wikipedia. Includes all political parties with MPs and a number without MPs. (Sources: <a href="https://en.wikipedia.org/wiki/Wikipedia:Index_of_United_Kingdom_political_parties_meta_attributes" class="uri">https://en.wikipedia.org/wiki/Wikipedia:Index_of_United_Kingdom_political_parties_meta_attributes</a>, <a href="https://cran.r-project.org/package=mnis"><code>mnis::ref_parties()</code></a>)</p>
-<p><code>bes_2015</code> - A tibble with the British Election Study 2015 Constituency Results Version 2.2. For information on all the variables in this dataset, see the <a href="http://docs.evanodell.com/parlitools/articles/bes-2015.html">bes-2015 vignette</a> (Source: <a href="http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/" class="uri">http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/</a>)</p>
-<p><code>bes_2017</code> - A tibble with Great Britain constituencies results from the 2017 general election. This data can be linked to 2011 census information in <a href="https://docs.evanodell.com/parlitools/reference/bes.html"><code>census_11</code></a>.</p>
-<p><code>census_11</code> - A tibble with constituency-level census data.</p>
-<p><code>leave_votes_west</code> - The percentage of votes cast for leave in the 2016 EU referendum. Some constituencies have actual results and others only have estimates by Chris Hanretty; in cases where the actual cote count is known, both the estimates and the actual results are reported. (Sources: Hanretty, C. (2017). Areal interpolation and the UK’s referendum on EU membership. <em>Journal of Elections, Public Opinion and Parties</em>, 27(4), 466–483. <a href="https://doi.org/10.1080/17457289.2017.1287081" class="uri">https://doi.org/10.1080/17457289.2017.1287081</a>, <a href="http://www.bbc.co.uk/news/uk-northern-ireland-36616830" class="uri">http://www.bbc.co.uk/news/uk-northern-ireland-36616830</a>)</p>
-</div>
-<div id="data-retrieval-functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#data-retrieval-functions" class="anchor"></a>Data Retrieval Functions</h3>
-<p><code>current_mps</code> - Uses functions from <code>hansard</code> and <code>mnis</code> to create a tibble with data on all current MPs, their party affiliation and their constituency.</p>
-<p><code>mps_on_date</code> - Uses functions from <code>hansard</code> and <code>mnis</code> to create a tibble with data on all MPs from a given date, their party affiliation and their constituency.</p>
-<p><code>west_hex_map</code> - A hexagonal cartogram, stored as a simple feature and data frame, of Westminster parliamentary constituencies. <code>west_hex_map</code> can be used to create maps like this:</p>
-<p><img src="tools/hex_map.png" width="456px"></p>
-<p><code>local_hex_map</code> - Hexagonal cartogram, A hexagonal cartogram, stored as a simple feature and data frame, of all Local Authorities in England, Wales and Scotland.</p>
-</div>
-<div id="using-parlitools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#using-parlitools" class="anchor"></a>Using <code>parlitools</code>
+<div class="section level2">
+<h2 id="functions-and-data">Functions and Data<a class="anchor" aria-label="anchor" href="#functions-and-data"></a>
+</h2>
+<p>For more details see <a href="https://docs.evanodell.com/parlitools/reference" class="external-link">the full
+documentation</a> or the <a href="https://docs.evanodell.com/parlitools/articles/" class="external-link">vignettes</a>.</p>
+<div class="section level3">
+<h3 id="included-data">Included Data<a class="anchor" aria-label="anchor" href="#included-data"></a>
 </h3>
-<p>For more details, please see the <a href="https://docs.evanodell.com/parlitools/articles/introduction.html">introductory vignette</a>, <a href="https://docs.evanodell.com/parlitools/articles/using-cartograms.html">using <code>parlitools</code> with <code>cartogram</code></a>, <a href="https://docs.evanodell.com/parlitools/articles/mapping-local-authorities.html">mapping local authorities</a> and the vignette detailing <a href="https://docs.evanodell.com/parlitools/articles/bes-2015.html">British Election Study 2015</a> variables.</p>
+<p><code>party_colour</code> - A tibble with the ID, name and hex code
+for the official colour of a variety of political parties, taken from
+Wikipedia. Includes all political parties with MPs and a number without
+MPs. (Sources: <a href="https://en.wikipedia.org/wiki/Wikipedia:Index_of_United_Kingdom_political_parties_meta_attributes" class="external-link uri">https://en.wikipedia.org/wiki/Wikipedia:Index_of_United_Kingdom_political_parties_meta_attributes</a>,
+<a href="https://cran.r-project.org/package=mnis" class="external-link"><code>mnis::ref_parties()</code></a>)</p>
+<p><code>bes_2015</code> - A tibble with the British Election Study 2015
+Constituency Results Version 2.2. For information on all the variables
+in this dataset, see the <a href="http://docs.evanodell.com/parlitools/articles/bes-2015.html" class="external-link">bes-2015
+vignette</a> (Source: <a href="http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/" class="external-link uri">http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/</a>)</p>
+<p><code>bes_2017</code> - A tibble with Great Britain constituencies
+results from the 2017 general election. This data can be linked to 2011
+census information in <a href="https://docs.evanodell.com/parlitools/reference/bes.html" class="external-link"><code>census_11</code></a>.</p>
+<p><code>census_11</code> - A tibble with constituency-level census
+data.</p>
+<p><code>leave_votes_west</code> - The percentage of votes cast for
+leave in the 2016 EU referendum. Some constituencies have actual results
+and others only have estimates by Chris Hanretty; in cases where the
+actual cote count is known, both the estimates and the actual results
+are reported. (Sources: Hanretty, C. (2017). Areal interpolation and the
+UK’s referendum on EU membership. <em>Journal of Elections, Public
+Opinion and Parties</em>, 27(4), 466–483. <a href="https://doi.org/10.1080/17457289.2017.1287081" class="external-link uri">https://doi.org/10.1080/17457289.2017.1287081</a>, <a href="http://www.bbc.co.uk/news/uk-northern-ireland-36616830" class="external-link uri">http://www.bbc.co.uk/news/uk-northern-ireland-36616830</a>)</p>
+</div>
+<div class="section level3">
+<h3 id="data-retrieval-functions">Data Retrieval Functions<a class="anchor" aria-label="anchor" href="#data-retrieval-functions"></a>
+</h3>
+<p><code>current_mps</code> - Uses functions from <code>hansard</code>
+and <code>mnis</code> to create a tibble with data on all current MPs,
+their party affiliation and their constituency.</p>
+<p><code>mps_on_date</code> - Uses functions from <code>hansard</code>
+and <code>mnis</code> to create a tibble with data on all MPs from a
+given date, their party affiliation and their constituency.</p>
+<p><code>west_hex_map</code> - A hexagonal cartogram, stored as a simple
+feature and data frame, of Westminster parliamentary constituencies.
+<code>west_hex_map</code> can be used to create maps like this:</p>
+<p><img src="tools/hex_map.png" width="456px"></p>
+<p><code>local_hex_map</code> - Hexagonal cartogram, A hexagonal
+cartogram, stored as a simple feature and data frame, of all Local
+Authorities in England, Wales and Scotland.</p>
+</div>
+<div class="section level3">
+<h3 id="using-parlitools">Using <code>parlitools</code>
+<a class="anchor" aria-label="anchor" href="#using-parlitools"></a>
+</h3>
+<p>For more details, please see the <a href="https://docs.evanodell.com/parlitools/articles/introduction.html" class="external-link">introductory
+vignette</a>, <a href="https://docs.evanodell.com/parlitools/articles/using-cartograms.html" class="external-link">using
+<code>parlitools</code> with <code>cartogram</code></a>, <a href="https://docs.evanodell.com/parlitools/articles/mapping-local-authorities.html" class="external-link">mapping
+local authorities</a> and the vignette detailing <a href="https://docs.evanodell.com/parlitools/articles/bes-2015.html" class="external-link">British
+Election Study 2015</a> variables.</p>
 </div>
 </div>
-<div id="data-sources" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-sources" class="anchor"></a>Data Sources</h2>
-<p>There are a variety of potentially relevant data sources and datasets on UK politics, far too many for me to include them all in this package.</p>
+<div class="section level2">
+<h2 id="data-sources">Data Sources<a class="anchor" aria-label="anchor" href="#data-sources"></a>
+</h2>
+<p>There are a variety of potentially relevant data sources and datasets
+on UK politics, far too many for me to include them all in this
+package.</p>
 <ul>
 <li>
-<p><a href="http://www.electoralcommission.org.uk/our-work/our-research/electoral-data">Electoral Commission</a></p>
+<p><a href="http://www.electoralcommission.org.uk/our-work/our-research/electoral-data" class="external-link">Electoral
+Commission</a></p>
 <ul>
 <li>Electoral results dating back to 2005.</li>
 </ul>
 </li>
 <li>
-<p><a href="http://www.britishelectionstudy.com/data/">British Election Study</a></p>
+<p><a href="http://www.britishelectionstudy.com/data/" class="external-link">British
+Election Study</a></p>
 <ul>
-<li>A large selection of open data, including panel surveys, linked data and aggregated Twitter data, covering elections and referenda.</li>
+<li>A large selection of open data, including panel surveys, linked data
+and aggregated Twitter data, covering elections and referenda.</li>
 </ul>
 </li>
-<li><p>My <a href="https://cran.r-project.org/package=hansard"><code>hansard</code></a> &amp; <a href="https://cran.r-project.org/package=mnis"><code>mnis</code></a> data retrieval packages for parliamentary APIs.</p></li>
-<li><p><a href="http://opencouncildata.co.uk/">Open Council Data</a> has data on the names, parties, and wards of all UK councillors, updated more or less weekly. <code>parlitools</code> uses this site to power the <code><a href="reference/council_seats.html">council_seats()</a></code> function.</p></li>
+<li><p>My <a href="https://cran.r-project.org/package=hansard" class="external-link"><code>hansard</code></a>
+&amp; <a href="https://cran.r-project.org/package=mnis" class="external-link"><code>mnis</code></a>
+data retrieval packages for parliamentary APIs.</p></li>
+<li><p><a href="http://opencouncildata.co.uk/" class="external-link">Open Council Data</a> has
+data on the names, parties, and wards of all UK councillors, updated
+more or less weekly. <code>parlitools</code> uses this site to power the
+<code><a href="reference/council_seats.html">council_seats()</a></code> function.</p></li>
 </ul>
 </div>
 </div>
@@ -184,60 +231,65 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=parlitools">https://​cloud.r-project.org/​package=parlitools</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/EvanOdell/parlitools/">https://​github.com/​EvanOdell/​parlitools/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/EvanOdell/parlitools/issues">https://​github.com/​EvanOdell/​parlitools/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
-</ul>
-</div>
-<div class="citation">
-<h2>Citation</h2>
-<ul class="list-unstyled">
-<li><a href="authors.html">Citing parlitools</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>
-<a href="https://evanodell.com">Evan Odell</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="https://cloud.r-project.org/package=parlitools" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/EvanOdell/parlitools/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/EvanOdell/parlitools/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
-<li><a href="https://cran.r-project.org/package=parlitools"><img src="https://www.r-pkg.org/badges/version/parlitools" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://github.com/evanodell/parlitools"><img src="https://img.shields.io/github/tag/evanodell/parlitools.svg" alt="GitHub tag"></a></li>
-<li><a href="https://dgrtwo.shinyapps.io/cranview/"><img src="https://cranlogs.r-pkg.org/badges/grand-total/parlitools"></a></li>
-<li><a href="https://travis-ci.org/evanodell/parlitools"><img src="https://travis-ci.org/evanodell/parlitools.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/evanodell/parlitools"><img src="https://ci.appveyor.com/api/projects/status/github/evanodell/parlitools?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
-<li><a href="https://codecov.io/github/evanodell/parlitools?branch=master"><img src="https://img.shields.io/codecov/c/github/evanodell/parlitools/master.svg" alt="Coverage Status"></a></li>
-<li><a href="https://zenodo.org/badge/latestdoi/86801920"><img src="https://zenodo.org/badge/86801920.svg" alt="DOI"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing parlitools</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>
+<a href="https://evanodell.com" class="external-link">Evan Odell</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1845-808X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
+<li><a href="https://cran.r-project.org/package=parlitools" class="external-link"><img src="https://www.r-pkg.org/badges/version/parlitools" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://github.com/evanodell/parlitools" class="external-link"><img src="https://img.shields.io/github/tag/evanodell/parlitools.svg" alt="GitHub tag"></a></li>
+<li><a href="https://dgrtwo.shinyapps.io/cranview/" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/parlitools"></a></li>
+<li><a href="https://travis-ci.org/evanodell/parlitools" class="external-link"><img src="https://travis-ci.org/evanodell/parlitools.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/evanodell/parlitools" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/github/evanodell/parlitools?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
+<li><a href="https://codecov.io/github/evanodell/parlitools?branch=master" class="external-link"><img src="https://img.shields.io/codecov/c/github/evanodell/parlitools/master.svg" alt="Coverage Status"></a></li>
+<li><a href="https://zenodo.org/badge/latestdoi/86801920" class="external-link"><img src="https://zenodo.org/badge/86801920.svg" alt="DOI"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://evanodell.com">Evan Odell</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://evanodell.com" class="external-link">Evan Odell</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.1.</p>
 </div>
 
       </footer>
@@ -245,6 +297,8 @@
 
   
 
+
+  
 
   </body>
 </html>

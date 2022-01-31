@@ -10,7 +10,7 @@ the full documentation. All packages are available from
 ### [`hansard`](https://docs.evanodell.com/hansard)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/hansard)](https://cran.r-project.org/package=hansard)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/hansard.svg)](https://github.com/evanodell/hansard)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/hansard)](https://dgrtwo.shinyapps.io/cranview/)
@@ -25,7 +25,7 @@ Parliament API. Available on
 
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cqcr)](https://cran.r-project.org/package=cqcr)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/cqcr.svg)](https://github.com/evanodell/cqcr)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/cqcr)](https://dgrtwo.shinyapps.io/cranview/)
@@ -38,7 +38,7 @@ Available on [GitHub](https://github.com/EvanOdell/cqcr)
 ### [`mnis`](https://docs.evanodell.com/mnis)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/mnis/blob/master/LICENSE)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/mnis)](https://cran.r-project.org/package=mnis)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/mnis.svg)](https://github.com/evanodell/mnis)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/mnis)](https://dgrtwo.shinyapps.io/cranview/)
@@ -50,7 +50,7 @@ Service API operated by the UK Parliament.
 ### [`parlitools`](https://docs.evanodell.com/parlitools)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/parlitools/blob/master/LICENSE)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/parlitools)](https://cran.r-project.org/package=parlitools)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/parlitools.svg)](https://github.com/evanodell/parlitools)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/parlitools)](https://dgrtwo.shinyapps.io/cranview/)
@@ -61,7 +61,7 @@ A collection of tools, datasets and maps for analysing UK politics.
 ### [`nomisr`](https://docs.evanodell.com/nomisr)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/nomisr)](https://cran.r-project.org/package=nomisr)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/nomisr.svg)](https://github.com/evanodell/nomisr)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/nomisr)](https://dgrtwo.shinyapps.io/cranview/)
@@ -75,7 +75,7 @@ community.
 ### [`fixerapi`](https://docs.evanodell.com/fixerapi)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/fixerapi)](https://cran.r-project.org/package=fixerapi)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/fixerapi.svg)](https://github.com/evanodell/fixerapi)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/fixerapi)](https://dgrtwo.shinyapps.io/cranview/)
@@ -88,7 +88,7 @@ exchange rate API.
 
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/refuge)](https://cran.r-project.org/package=refuge)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/refuge)](https://cran.r-project.org/package=refuge)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/refuge.svg)](https://github.com/evanodell/refuge)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/refuge)](https://dgrtwo.shinyapps.io/cranview/)
@@ -102,7 +102,7 @@ restrooms that are friendly to trans and non-binary people.
 
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/guardianapi)](https://cran.r-project.org/package=guardianapi)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/guardianapi.svg)](https://github.com/evanodell/guardianapi)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/guardianapi)](https://dgrtwo.shinyapps.io/cranview/)
@@ -116,7 +116,7 @@ articles published in the Guardian from 1999 to the present.
 
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ukpolice)](https://cran.r-project.org/package=ukpolice)
 [![GitHub
 tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.com/evanodell/ukpolice)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/ukpolice)](https://dgrtwo.shinyapps.io/cranview/)
@@ -124,22 +124,3 @@ tag](https://img.shields.io/github/tag/evanodell/ukpolice.svg)](https://github.c
 
 Access to the [UK Police API](https://data.police.uk/docs/), with data
 on police forces, reported crimes and the use of stop and search.
-
-### [`emisc`](https://docs.evanodell.com/emisc)
-
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/emisc)](https://cran.r-project.org/package=emisc)
-[![GitHub
-tag](https://img.shields.io/github/tag/evanodell/emisc.svg)](https://github.com/evanodell/emisc)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/emisc)](https://dgrtwo.shinyapps.io/cranview/)
-[![DOI](https://zenodo.org/badge/96876145.svg)](https://zenodo.org/badge/latestdoi/96876145)
-
-`emisc` is a collection of miscellaneous functions that I have made that
-may or may not be useful, and that may or may not duplicate existing
-work.
-
-`emisc` is currently not available on CRAN. You can install `emisc` from
-github with:
-
-    # install.packages("devtools")
-    devtools::install_github("evanodell/emisc")

@@ -16,15 +16,11 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90706059-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-90706059-1');
-</script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -37,14 +33,14 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">parlitools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="http://docs.evanodell.com">Docs Home</a>
+  <a href="http://docs.evanodell.com" class="external-link">Docs Home</a>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -80,19 +76,19 @@
   </ul>
 </li>
 <li>
-  <a href="https://docs.evanodell.com">Documentation Home</a>
+  <a href="https://docs.evanodell.com" class="external-link">Documentation Home</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/evanodell/parlitools">
-    <span class="fas fa-github fa-lg"></span>
+  <a href="https://github.com/evanodell/parlitools" class="external-link">
+    <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://evanodell.com">
-    <span class="fas fa-home fa-lg"></span>
+  <a href="https://evanodell.com" class="external-link">
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -106,26 +102,32 @@
 
       
 
-      </header><script src="bes-2015_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>British Election Study 2015 Variables</h1>
-                        <h4 class="author">Evan Odell</h4>
+                        <h4 data-toc-skip class="author">Evan Odell</h4>
             
-            <h4 class="date">2021-04-04</h4>
+            <h4 data-toc-skip class="date">2022-01-31</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/EvanOdell/parlitools/blob/master/../docs/vignettes/bes-2015.Rmd"><code>../docs/vignettes/bes-2015.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/EvanOdell/parlitools/blob/HEAD/../docs/vignettes/bes-2015.Rmd" class="external-link"><code>../docs/vignettes/bes-2015.Rmd</code></a></small>
       <div class="hidden name"><code>bes-2015.Rmd</code></div>
 
     </div>
 
     
     
-<div id="variable-names-in-bes_2015" class="section level1">
-<h1 class="hasAnchor">
-<a href="#variable-names-in-bes_2015" class="anchor"></a>Variable names in <code>bes_2015</code>
+<div class="section level1">
+<h1 id="variable-names-in-bes_2015">Variable names in <code>bes_2015</code><a class="anchor" aria-label="anchor" href="#variable-names-in-bes_2015"></a>
 </h1>
-<p>Due to the 92 variables included in the <code>bes_2015</code> dataset, including information on each variable in the <code>parlitools</code> reference manual is very lengthy and not very user friendly. This vignette reproduces the table including with the British Election Study data, available <a href="http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/">here</a>. The ‘Name’ column refers to the variable name used in the <code>bes_2015</code> dataset, the ‘Label’ is the description of the variable, and the ‘Data Type’ column refers to the R data type.</p>
+<p>Due to the 92 variables included in the <code>bes_2015</code>
+dataset, including information on each variable in the
+<code>parlitools</code> reference manual is very lengthy and not very
+user friendly. This vignette reproduces the table including with the
+British Election Study data, available <a href="http://www.britishelectionstudy.com/data-object/2015-bes-constituency-results-with-census-and-candidate-data/" class="external-link">here</a>.
+The ‘Name’ column refers to the variable name used in the
+<code>bes_2015</code> dataset, the ‘Label’ is the description of the
+variable, and the ‘Data Type’ column refers to the R data type.</p>
 <table class="table">
 <colgroup>
 <col width="25%">
@@ -310,7 +312,8 @@
 </tr>
 <tr class="odd">
 <td><code>ukip_1015</code></td>
-<td>2010-15 United Kingdom Independence Party (UKIP) vote share change</td>
+<td>2010-15 United Kingdom Independence Party (UKIP) vote share
+change</td>
 <td>numeric</td>
 </tr>
 <tr class="even">
@@ -530,12 +533,14 @@
 </tr>
 <tr class="odd">
 <td><code>con_long_spend_percent</code></td>
-<td>Conservative Candidate Long Campaign Spending as % of Long Limit</td>
+<td>Conservative Candidate Long Campaign Spending as % of Long
+Limit</td>
 <td>numeric</td>
 </tr>
 <tr class="even">
 <td><code>con_short_spend_percent</code></td>
-<td>Conservative Candidate Short Campaign Spending as % of Short Limit</td>
+<td>Conservative Candidate Short Campaign Spending as % of Short
+Limit</td>
 <td>numeric</td>
 </tr>
 <tr class="odd">
@@ -550,12 +555,14 @@
 </tr>
 <tr class="odd">
 <td><code>ldlong_spend_percent</code></td>
-<td>Liberal Democrat Candidate Long Campaign Spending as % of Long Limit</td>
+<td>Liberal Democrat Candidate Long Campaign Spending as % of Long
+Limit</td>
 <td>numeric</td>
 </tr>
 <tr class="even">
 <td><code>ldshort_spend_percent</code></td>
-<td>Liberal Democrat Candidate Short Campaign Spending as % of Short Limit</td>
+<td>Liberal Democrat Candidate Short Campaign Spending as % of Short
+Limit</td>
 <td>numeric</td>
 </tr>
 <tr class="odd">
@@ -575,7 +582,8 @@
 </tr>
 <tr class="even">
 <td><code>pcshort_spend_percent</code></td>
-<td>Plaid Cymru Candidate Short Campaign Spending as % of Short Limit</td>
+<td>Plaid Cymru Candidate Short Campaign Spending as % of Short
+Limit</td>
 <td>numeric</td>
 </tr>
 <tr class="odd">
@@ -595,7 +603,8 @@
 </tr>
 <tr class="even">
 <td><code>green_short_spend_percent</code></td>
-<td>Green Party Candidate Short Campaign Spending as % of Short Limit</td>
+<td>Green Party Candidate Short Campaign Spending as % of Short
+Limit</td>
 <td>numeric</td>
 </tr>
 </tbody>
@@ -614,11 +623,14 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://evanodell.com">Evan Odell</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://evanodell.com" class="external-link">Evan Odell</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.1.</p>
 </div>
 
       </footer>
@@ -626,6 +638,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -19,10 +19,6 @@ build_docs <- function(force = FALSE) {
 
   docs::build_parlitools(force = force)
 
-  ### Build `emisc`  -----------------
-
-  docs::build_emisc(force = force)
-
   ### Build `nomisr`  -----------------
 
   docs::build_nomisr(force = force)
@@ -47,7 +43,7 @@ build_docs <- function(force = FALSE) {
 
   docs::build_cqcr(force = force)
 
-  ### Build `cqcr`  -----------------
+  ### Build `threesixtygiving`  -----------------
 
   docs::build_threesixtygiving(force = force)
 

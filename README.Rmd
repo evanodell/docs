@@ -108,21 +108,3 @@ Access to the [Guardian open data platorm](https://open-platform.theguardian.com
 
 Access to the [UK Police API](https://data.police.uk/docs/), with data on police forces, reported crimes and the use of stop and search.
 
-
-
-### [`emisc`](https://docs.evanodell.com/emisc)
-
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/EvanOdell/emisc/blob/master/LICENSE)
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/emisc)](https://cran.r-project.org/package=emisc)
-[![GitHub tag](https://img.shields.io/github/tag/evanodell/emisc.svg)](https://github.com/evanodell/emisc)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/emisc)](https://dgrtwo.shinyapps.io/cranview/)
-[![DOI](https://zenodo.org/badge/96876145.svg)](https://zenodo.org/badge/latestdoi/96876145)
-
-`emisc` is a collection of miscellaneous functions that I have made that may or may not be useful, and that may or may not duplicate existing work.
-
-`emisc` is currently not available on CRAN. You can install `emisc` from github with:
-
-```
-# install.packages("devtools")
-devtools::install_github("evanodell/emisc")
-```
